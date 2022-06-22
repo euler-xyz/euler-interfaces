@@ -151,6 +151,9 @@ interface IEulerExec {
         bytes result;
     }
 
+    /// @notice Error containing results of a simulated batch dispatch
+    error BatchDispatchSimulation(EulerBatchItemResponse[] simulation);
+
     /// @notice Compute aggregate liquidity for an account
     /// @param account User address
     /// @return status Aggregate liquidity (sum of all entered assets)
@@ -182,22 +185,13 @@ interface IEulerExec {
     /// @notice Execute several operations in a single transaction
     /// @param items List of operations to execute
     /// @param deferLiquidityChecks List of user accounts to defer liquidity checks for
-    /// @return List of operation results
-    function batchDispatch(EulerBatchItem[] calldata items, address[] calldata deferLiquidityChecks) external returns (EulerBatchItemResponse[] memory);
+    function batchDispatch(EulerBatchItem[] calldata items, address[] calldata deferLiquidityChecks) external;
 
-    /// @notice Results of a batchDispatch, but with extra information
-    struct EulerBatchExtra {
-        EulerBatchItemResponse[] responses;
-        uint gasUsed;
-        AssetLiquidity[][] liquidities;
-    }
-
-    /// @notice Call batchDispatch, but return extra information. Only intended to be used with callStatic.
+    /// @notice Call batch dispatch, but instruct it to revert with the responses, before the liquidity checks.
     /// @param items List of operations to execute
     /// @param deferLiquidityChecks List of user accounts to defer liquidity checks for
-    /// @param queryLiquidity List of user accounts to return detailed liquidity information for
-    /// @return output Structure with extra information
-    function batchDispatchExtra(EulerBatchItem[] calldata items, address[] calldata deferLiquidityChecks, address[] calldata queryLiquidity) external returns (EulerBatchExtra memory output);
+    /// @dev During simulation all batch items are executed, regardless of the `allowError` flag
+    function batchDispatchSimulate(EulerBatchItem[] calldata items, address[] calldata deferLiquidityChecks) external;
 
     /// @notice Enable average liquidity tracking for your account. Operations will cost more gas, but you may get additional benefits when performing liquidations
     /// @param subAccountId subAccountId 0 for primary, 1-255 for a sub-account. 
