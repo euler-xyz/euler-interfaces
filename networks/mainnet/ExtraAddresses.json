@@ -1,0 +1,11 @@
+{
+  "accountLens": "0xbD1bBb58E07f0350e8521FdbFB3bFAc50F53AAEF",
+  "escrowedCollateralPerspective": "",
+  "eulerUngoverned0xPerspective": "",
+  "eulerUngoverned1xPerspective": "",
+  "factoryPerspective": "",
+  "governedPerspective": "",
+  "oracleLens": "0x0F8560f6361051De80Cd15Dc439c76199C47bd4f",
+  "utilsLens": "0xC567525783af9c2309364ecade152Fd79624a753",
+  "vaultLens": "0x66529DD85bdbad70A73B98c86C979Fc6F0d98498"
+}
