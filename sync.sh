@@ -37,4 +37,5 @@ if [[ $deployment_name != "" ]]; then
   cp "$addresses_dir_path/CoreAddresses.json" "./addresses/$network_id/CoreAddresses.json"
   cp "$addresses_dir_path/PeripheryAddresses.json" "./addresses/$network_id/PeripheryAddresses.json"
   cp "$addresses_dir_path/LensAddresses.json" "./addresses/$network_id/LensAddresses.json"
+  cp "$addresses_dir_path/OracleAdaptersAddresses.csv" "./addresses/$network_id/OracleAdaptersAddresses.csv"
 fi
