@@ -1,7 +1,7 @@
 {
-  "accountLens": "0xbD1bBb58E07f0350e8521FdbFB3bFAc50F53AAEF",
-  "irmLens": "",
-  "oracleLens": "0x0F8560f6361051De80Cd15Dc439c76199C47bd4f",
-  "utilsLens": "0xC567525783af9c2309364ecade152Fd79624a753",
-  "vaultLens": "0x66529DD85bdbad70A73B98c86C979Fc6F0d98498"
+  "accountLens": "0x8F59c64fA1Fb2a57e9D084ab3481a13e7db68753",
+  "irmLens": "0x0a6bF6C5BB7301fa6731261c6cFb65df778e7743",
+  "oracleLens": "0x76E96f682D1705D6Ff163e8751d8cd926D59A766",
+  "utilsLens": "0xEf3f5dAD6779bd4aee85D8914Af3C23AF5bbd3d1",
+  "vaultLens": "0x91f5a069A5569cB1edecBc4EBa5b85dBF36209e8"
 }
