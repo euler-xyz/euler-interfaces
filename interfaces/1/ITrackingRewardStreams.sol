@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.0;
 
-interface IBaseRewardStreams {
+interface ITrackingRewardStreams {
     error AccumulatorOverflow();
     error AddressEmptyCode(address target);
     error ControllerDisabled();
@@ -32,6 +32,7 @@ interface IBaseRewardStreams {
     function MAX_EPOCHS_AHEAD() external view returns (uint256);
     function MAX_REWARDS_ENABLED() external view returns (uint256);
     function balanceOf(address account, address rewarded) external view returns (uint256);
+    function balanceTrackerHook(address account, uint256 newAccountBalance, bool forfeitRecentReward) external;
     function claimReward(address rewarded, address reward, address recipient, bool ignoreRecentReward)
         external
         returns (uint256);
