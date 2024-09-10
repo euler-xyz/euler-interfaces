@@ -129,6 +129,11 @@ interface IVaultLens {
         RewardAmountInfo[] epochInfoUpcoming;
     }
 
+    error OwnableInvalidOwner(address owner);
+    error OwnableUnauthorizedAccount(address account);
+
+    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+
     function TTL_ERROR() external view returns (int256);
     function TTL_INFINITY() external view returns (int256);
     function TTL_LIQUIDATION() external view returns (int256);
@@ -154,4 +159,9 @@ interface IVaultLens {
         returns (VaultInterestRateModelInfo memory);
     function irmLens() external view returns (address);
     function oracleLens() external view returns (address);
+    function owner() external view returns (address);
+    function renounceOwnership() external;
+    function setIRMLens(address _irmLens) external;
+    function setOracleLens(address _oracleLens) external;
+    function transferOwnership(address newOwner) external;
 }

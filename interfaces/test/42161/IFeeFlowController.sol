@@ -1,14 +1,16 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.0;
 
-interface IFeeFlowController {
+library FeeFlowController {
     struct Slot0 {
         uint8 locked;
         uint16 epochId;
         uint192 initPrice;
         uint40 startTime;
     }
+}
 
+interface IFeeFlowController {
     error ControllerDisabled();
     error DeadlinePassed();
     error EVC_InvalidAddress();
@@ -46,7 +48,7 @@ interface IFeeFlowController {
     ) external returns (uint256 paymentAmount);
     function epochPeriod() external view returns (uint256);
     function getPrice() external view returns (uint256);
-    function getSlot0() external view returns (Slot0 memory);
+    function getSlot0() external view returns (FeeFlowController.Slot0 memory);
     function minInitPrice() external view returns (uint256);
     function paymentReceiver() external view returns (address);
     function paymentToken() external view returns (address);

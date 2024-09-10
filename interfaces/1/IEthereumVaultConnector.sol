@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.0;
 
-interface IEthereumVaultConnector {
+library IEVC {
     struct BatchItem {
         address targetContract;
         address onBehalfOfAccount;
@@ -19,7 +19,9 @@ interface IEthereumVaultConnector {
         bool isValid;
         bytes result;
     }
+}
 
+interface IEthereumVaultConnector {
     error EVC_BatchPanic();
     error EVC_ChecksReentrancy();
     error EVC_ControlCollateralReentrancy();
@@ -36,9 +38,9 @@ interface IEthereumVaultConnector {
     error EVC_OnBehalfOfAccountNotAuthenticated();
     error EVC_PermitDisabledMode();
     error EVC_RevertedBatchResult(
-        BatchItemResult[] batchItemsResult,
-        StatusCheckResult[] accountsStatusResult,
-        StatusCheckResult[] vaultsStatusResult
+        IEVC.BatchItemResult[] batchItemsResult,
+        IEVC.StatusCheckResult[] accountsStatusResult,
+        IEVC.StatusCheckResult[] vaultsStatusResult
     );
     error EVC_SimulationBatchNested();
     error InvalidIndex();
@@ -68,15 +70,15 @@ interface IEthereumVaultConnector {
 
     function areChecksDeferred() external view returns (bool);
     function areChecksInProgress() external view returns (bool);
-    function batch(BatchItem[] memory items) external payable;
-    function batchRevert(BatchItem[] memory items) external payable;
-    function batchSimulation(BatchItem[] memory items)
+    function batch(IEVC.BatchItem[] memory items) external payable;
+    function batchRevert(IEVC.BatchItem[] memory items) external payable;
+    function batchSimulation(IEVC.BatchItem[] memory items)
         external
         payable
         returns (
-            BatchItemResult[] memory batchItemsResult,
-            StatusCheckResult[] memory accountsStatusCheckResult,
-            StatusCheckResult[] memory vaultsStatusCheckResult
+            IEVC.BatchItemResult[] memory batchItemsResult,
+            IEVC.StatusCheckResult[] memory accountsStatusCheckResult,
+            IEVC.StatusCheckResult[] memory vaultsStatusCheckResult
         );
     function call(address targetContract, address onBehalfOfAccount, uint256 value, bytes memory data)
         external

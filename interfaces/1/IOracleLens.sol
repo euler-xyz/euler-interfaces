@@ -13,7 +13,7 @@ interface IOracleLens {
     function TTL_LIQUIDATION() external view returns (int256);
     function TTL_MORE_THAN_ONE_YEAR() external view returns (int256);
     function adapterRegistry() external view returns (address);
-    function getOracleInfo(address oracleAddress, address[] memory bases, address unitOfAccount)
+    function getOracleInfo(address oracleAddress, address[] memory bases, address[] memory quotes)
         external
         view
         returns (OracleDetailedInfo memory);

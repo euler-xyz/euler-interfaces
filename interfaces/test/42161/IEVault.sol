@@ -1,7 +1,17 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.0;
 
-interface IEVault {
+library Base {
+    struct Integrations {
+        address evc;
+        address protocolConfig;
+        address sequenceRegistry;
+        address balanceTracker;
+        address permit2;
+    }
+}
+
+library Dispatch {
     struct DeployedModules {
         address initialize;
         address token;
@@ -12,15 +22,9 @@ interface IEVault {
         address balanceForwarder;
         address governance;
     }
+}
 
-    struct Integrations {
-        address evc;
-        address protocolConfig;
-        address sequenceRegistry;
-        address balanceTracker;
-        address permit2;
-    }
-
+interface IEVault {
     error E_AccountLiquidity();
     error E_AmountTooLargeToEncode();
     error E_BadAddress();

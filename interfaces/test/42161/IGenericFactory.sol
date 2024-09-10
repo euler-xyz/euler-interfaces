@@ -1,13 +1,15 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.0;
 
-interface IGenericFactory {
+library GenericFactory {
     struct ProxyConfig {
         bool upgradeable;
         address implementation;
         bytes trailingData;
     }
+}
 
+interface IGenericFactory {
     error E_BadAddress();
     error E_BadQuery();
     error E_DeploymentFailed();
@@ -23,7 +25,7 @@ interface IGenericFactory {
     function createProxy(address desiredImplementation, bool upgradeable, bytes memory trailingData)
         external
         returns (address);
-    function getProxyConfig(address proxy) external view returns (ProxyConfig memory config);
+    function getProxyConfig(address proxy) external view returns (GenericFactory.ProxyConfig memory config);
     function getProxyListLength() external view returns (uint256);
     function getProxyListSlice(uint256 start, uint256 end) external view returns (address[] memory list);
     function implementation() external view returns (address);
