@@ -18,4 +18,5 @@ interface IOracleLens {
         view
         returns (OracleDetailedInfo memory);
     function getValidAdapters(address base, address quote) external view returns (address[] memory);
+    function isStalePullOracle(address oracleAddress, bytes memory failureReason) external view returns (bool);
 }
