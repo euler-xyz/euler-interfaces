@@ -32,6 +32,7 @@ contracts=(
   "UtilsLens"
   "IRMLinearKink"
   "EulerRouter"
+  "TermsOfUseSigner"
 )
 
 for contract in "${contracts[@]}"; do
