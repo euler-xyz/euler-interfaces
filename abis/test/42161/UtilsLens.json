@@ -1,1 +1,151 @@
-[{"type":"function","name":"TTL_ERROR","inputs":[],"outputs":[{"name":"","type":"int256","internalType":"int256"}],"stateMutability":"view"},{"type":"function","name":"TTL_INFINITY","inputs":[],"outputs":[{"name":"","type":"int256","internalType":"int256"}],"stateMutability":"view"},{"type":"function","name":"TTL_LIQUIDATION","inputs":[],"outputs":[{"name":"","type":"int256","internalType":"int256"}],"stateMutability":"view"},{"type":"function","name":"TTL_MORE_THAN_ONE_YEAR","inputs":[],"outputs":[{"name":"","type":"int256","internalType":"int256"}],"stateMutability":"view"},{"type":"function","name":"calculateTimeToLiquidation","inputs":[{"name":"liabilityVault","type":"address","internalType":"address"},{"name":"liabilityValue","type":"uint256","internalType":"uint256"},{"name":"collaterals","type":"address[]","internalType":"address[]"},{"name":"collateralValues","type":"uint256[]","internalType":"uint256[]"}],"outputs":[{"name":"","type":"int256","internalType":"int256"}],"stateMutability":"view"},{"type":"function","name":"computeAPYs","inputs":[{"name":"borrowSPY","type":"uint256","internalType":"uint256"},{"name":"supplySPY","type":"uint256","internalType":"uint256"}],"outputs":[{"name":"borrowAPY","type":"uint256","internalType":"uint256"},{"name":"supplyAPY","type":"uint256","internalType":"uint256"}],"stateMutability":"pure"},{"type":"function","name":"computeSupplySPY","inputs":[{"name":"borrowSPY","type":"uint256","internalType":"uint256"},{"name":"cash","type":"uint256","internalType":"uint256"},{"name":"borrows","type":"uint256","internalType":"uint256"},{"name":"interestFee","type":"uint256","internalType":"uint256"}],"outputs":[{"name":"","type":"uint256","internalType":"uint256"}],"stateMutability":"pure"}]
+[
+  {
+    "type": "function",
+    "name": "TTL_ERROR",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "int256",
+        "internalType": "int256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "TTL_INFINITY",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "int256",
+        "internalType": "int256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "TTL_LIQUIDATION",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "int256",
+        "internalType": "int256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "TTL_MORE_THAN_ONE_YEAR",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "int256",
+        "internalType": "int256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "calculateTimeToLiquidation",
+    "inputs": [
+      {
+        "name": "liabilityVault",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "liabilityValue",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "collaterals",
+        "type": "address[]",
+        "internalType": "address[]"
+      },
+      {
+        "name": "collateralValues",
+        "type": "uint256[]",
+        "internalType": "uint256[]"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "int256",
+        "internalType": "int256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "computeAPYs",
+    "inputs": [
+      {
+        "name": "borrowSPY",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "supplySPY",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "borrowAPY",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "supplyAPY",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "pure"
+  },
+  {
+    "type": "function",
+    "name": "computeSupplySPY",
+    "inputs": [
+      {
+        "name": "borrowSPY",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "cash",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "borrows",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "interestFee",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "pure"
+  }
+]
