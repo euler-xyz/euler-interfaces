@@ -44,14 +44,21 @@ for contract in "${contracts[@]}"; do
 done
   
 for file in $addresses_path/*.json; do
-  addresses=$(basename "$file" .json)
+  while IFS= read -r line; do
+    key=$(echo "$line" | jq -r '.key')
+    value=$(echo "$line" | jq -r '.value')
+    checksummed_value=$(cast to-check-sum-address "$value")
+    jq --arg key "$key" --arg value "$checksummed_value" '.[$key] = $value' "$file" > "$file.tmp" && mv "$file.tmp" "$file"
+  done < <(jq -c 'to_entries[]' "$file")
 
-  echo "// SPDX-License-Identifier: MIT" > $addresses_path/$addresses.sol
-  echo "pragma solidity ^0.8.0;" >> $addresses_path/$addresses.sol
-  echo "" >> $addresses_path/$addresses.sol
-  echo "library $addresses {" >> $addresses_path/$addresses.sol
+  solidityFile=$(basename "$file" .json)
 
-  jq -r 'to_entries[] | "    address public constant \(.key) = \(.value);"' "$file" >> $addresses_path/$addresses.sol
+  echo "// SPDX-License-Identifier: MIT" > $addresses_path/$solidityFile.sol
+  echo "pragma solidity ^0.8.0;" >> $addresses_path/$solidityFile.sol
+  echo "" >> $addresses_path/$solidityFile.sol
+  echo "library $solidityFile {" >> $addresses_path/$solidityFile.sol
 
-  echo "}" >> $addresses_path/$addresses.sol
+  jq -r 'to_entries[] | "    address public constant \(.key) = \(.value);"' "$file" >> $addresses_path/$solidityFile.sol
+
+  echo "}" >> $addresses_path/$solidityFile.sol
 done
