@@ -245,6 +245,11 @@
                     "internalType": "uint256"
                   },
                   {
+                    "name": "collateralValueRaw",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                  },
+                  {
                     "name": "collateralLiquidityBorrowingInfo",
                     "type": "tuple[]",
                     "internalType": "struct CollateralLiquidityInfo[]",
@@ -263,6 +268,23 @@
                   },
                   {
                     "name": "collateralLiquidityLiquidationInfo",
+                    "type": "tuple[]",
+                    "internalType": "struct CollateralLiquidityInfo[]",
+                    "components": [
+                      {
+                        "name": "collateral",
+                        "type": "address",
+                        "internalType": "address"
+                      },
+                      {
+                        "name": "collateralValue",
+                        "type": "uint256",
+                        "internalType": "uint256"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "collateralLiquidityRawInfo",
                     "type": "tuple[]",
                     "internalType": "struct CollateralLiquidityInfo[]",
                     "components": [
@@ -540,6 +562,11 @@
                     "internalType": "uint256"
                   },
                   {
+                    "name": "collateralValueRaw",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                  },
+                  {
                     "name": "collateralLiquidityBorrowingInfo",
                     "type": "tuple[]",
                     "internalType": "struct CollateralLiquidityInfo[]",
@@ -558,6 +585,23 @@
                   },
                   {
                     "name": "collateralLiquidityLiquidationInfo",
+                    "type": "tuple[]",
+                    "internalType": "struct CollateralLiquidityInfo[]",
+                    "components": [
+                      {
+                        "name": "collateral",
+                        "type": "address",
+                        "internalType": "address"
+                      },
+                      {
+                        "name": "collateralValue",
+                        "type": "uint256",
+                        "internalType": "uint256"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "collateralLiquidityRawInfo",
                     "type": "tuple[]",
                     "internalType": "struct CollateralLiquidityInfo[]",
                     "components": [
@@ -951,6 +995,11 @@
                 "internalType": "uint256"
               },
               {
+                "name": "collateralValueRaw",
+                "type": "uint256",
+                "internalType": "uint256"
+              },
+              {
                 "name": "collateralLiquidityBorrowingInfo",
                 "type": "tuple[]",
                 "internalType": "struct CollateralLiquidityInfo[]",
@@ -969,6 +1018,23 @@
               },
               {
                 "name": "collateralLiquidityLiquidationInfo",
+                "type": "tuple[]",
+                "internalType": "struct CollateralLiquidityInfo[]",
+                "components": [
+                  {
+                    "name": "collateral",
+                    "type": "address",
+                    "internalType": "address"
+                  },
+                  {
+                    "name": "collateralValue",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                  }
+                ]
+              },
+              {
+                "name": "collateralLiquidityRawInfo",
                 "type": "tuple[]",
                 "internalType": "struct CollateralLiquidityInfo[]",
                 "components": [
