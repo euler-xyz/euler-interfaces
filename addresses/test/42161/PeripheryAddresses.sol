@@ -3,8 +3,8 @@ pragma solidity ^0.8.0;
 
 library PeripheryAddresses {
     address public constant escrowedCollateralPerspective = 0x1e61711f49dA04F56463Fb1D9B36E911E6b1f2dA;
-    address public constant eulerUngoverned0xPerspective = 0x1C9C098B1879DaFCc7F9e48488Cf2070fE65cF46;
-    address public constant eulerUngovernedNzxPerspective = 0x559EaE08eb9a927152001C65fb7285eEABbCb2d8;
+    address public constant eulerUngoverned0xPerspective = 0x8EbD51B0fce9256d104A2523b641390A82cC2942;
+    address public constant eulerUngovernedNzxPerspective = 0xF2166802F0327da2d6080323c17e837C41e71447;
     address public constant evkFactoryPerspective = 0x8298Ccc2b0Ca4def3820Cb70507bAFD82bBf59e0;
     address public constant externalVaultRegistry = 0x4d5Fb6f9550bED458f24F5f8443150ba6DC20fb5;
     address public constant feeFlowController = 0xFff00F5eda0FcdB4C80f1246B52857B148Fdb47A;

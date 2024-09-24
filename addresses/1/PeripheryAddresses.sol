@@ -15,4 +15,5 @@ library PeripheryAddresses {
     address public constant oracleRouterFactory = 0x70B3f6F61b7Bf237DF04589DdAA842121072326A;
     address public constant swapVerifier = 0xae26485ACDDeFd486Fe9ad7C2b34169d360737c7;
     address public constant swapper = 0xbF893F7062FCcEB83d295e7FB407a64F941d5204;
+    address public constant termsOfUseSigner = 0x0000000000000000000000000000000000000000;
 }
