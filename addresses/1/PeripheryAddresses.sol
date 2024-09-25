@@ -3,8 +3,8 @@ pragma solidity ^0.8.0;
 
 library PeripheryAddresses {
     address public constant escrowedCollateralPerspective = 0xc68CB3658ACf1d49547Fa8605dc158D876cD5828;
-    address public constant eulerUngoverned0xPerspective = 0x5345562eD3Ce537582A1A568d3B06c8382Cd60BD;
-    address public constant eulerUngovernedNzxPerspective = 0x2206c3341582daAF007BA4569321c8Dd39f0710b;
+    address public constant eulerUngoverned0xPerspective = 0x000D8AA9E414b9E7E7591A456CA910Fb3bb05875;
+    address public constant eulerUngovernedNzxPerspective = 0x7695A341E1e51CbE2dDF1FEE5FD89f4D7617351c;
     address public constant evkFactoryPerspective = 0xB30f23bc5F93F097B3A699f71B0b1718Fc82e182;
     address public constant externalVaultRegistry = 0xB3b30ffb54082CB861B17DfBE459370d1Cc219AC;
     address public constant feeFlowController = 0xFcd3Db06EA814eB21C84304fC7F90798C00D1e32;
@@ -15,5 +15,5 @@ library PeripheryAddresses {
     address public constant oracleRouterFactory = 0x70B3f6F61b7Bf237DF04589DdAA842121072326A;
     address public constant swapVerifier = 0xae26485ACDDeFd486Fe9ad7C2b34169d360737c7;
     address public constant swapper = 0xbF893F7062FCcEB83d295e7FB407a64F941d5204;
-    address public constant termsOfUseSigner = 0x0000000000000000000000000000000000000000;
+    address public constant termsOfUseSigner = 0x9ba11Acd88B79b657BDbD00B6dE759718AaAdCbA;
 }
