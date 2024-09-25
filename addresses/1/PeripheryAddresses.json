@@ -1,7 +1,7 @@
 {
   "escrowedCollateralPerspective": "0xc68CB3658ACf1d49547Fa8605dc158D876cD5828",
-  "eulerUngoverned0xPerspective": "0x5345562eD3Ce537582A1A568d3B06c8382Cd60BD",
-  "eulerUngovernedNzxPerspective": "0x2206c3341582daAF007BA4569321c8Dd39f0710b",
+  "eulerUngoverned0xPerspective": "0x000D8AA9E414b9E7E7591A456CA910Fb3bb05875",
+  "eulerUngovernedNzxPerspective": "0x7695A341E1e51CbE2dDF1FEE5FD89f4D7617351c",
   "evkFactoryPerspective": "0xB30f23bc5F93F097B3A699f71B0b1718Fc82e182",
   "externalVaultRegistry": "0xB3b30ffb54082CB861B17DfBE459370d1Cc219AC",
   "feeFlowController": "0xFcd3Db06EA814eB21C84304fC7F90798C00D1e32",
