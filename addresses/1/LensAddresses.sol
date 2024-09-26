@@ -2,9 +2,10 @@
 pragma solidity ^0.8.0;
 
 library LensAddresses {
-    address public constant accountLens = 0x8F59c64fA1Fb2a57e9D084ab3481a13e7db68753;
+    address public constant accountLens = 0x5903C59B12219cB93355EEbD3397f1B5dE91B45a;
+    address public constant eulerEarnVaultLens = 0x0000000000000000000000000000000000000000;
     address public constant irmLens = 0x0a6bF6C5BB7301fa6731261c6cFb65df778e7743;
-    address public constant oracleLens = 0x1c4224B8f39B53e8317740258e4870cDD3fE518e;
-    address public constant utilsLens = 0xEf3f5dAD6779bd4aee85D8914Af3C23AF5bbd3d1;
-    address public constant vaultLens = 0x352e64E70bd1d2Fa46bDc2331D8220202c3f2c3B;
+    address public constant oracleLens = 0x79211feB623CCc1ed357B8Cf14cD60c04D08faB6;
+    address public constant utilsLens = 0xf364CeEE501fb73e5dD7B313ECf0a6b98F6118ea;
+    address public constant vaultLens = 0x57904B4DF131F00DEE9BB75a8FA1D27744035c90;
 }

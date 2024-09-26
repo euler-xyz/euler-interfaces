@@ -15,5 +15,4 @@ interface ITermsOfUseSigner {
         view
         returns (uint256);
     function signTermsOfUse(string memory termsOfUseMessage, bytes32 termsOfUseHash) external;
-    function termsOfUseLastSignatureTimestamps(address, bytes32) external view returns (uint256);
 }

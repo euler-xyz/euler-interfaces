@@ -2,6 +2,19 @@
 pragma solidity ^0.8.0;
 
 interface IUtilsLens {
+    struct AssetPriceInfo {
+        bool queryFailure;
+        bytes queryFailureReason;
+        uint256 timestamp;
+        address oracle;
+        address asset;
+        address unitOfAccount;
+        uint256 amountIn;
+        uint256 amountOutMid;
+        uint256 amountOutBid;
+        uint256 amountOutAsk;
+    }
+
     function TTL_ERROR() external view returns (int256);
     function TTL_INFINITY() external view returns (int256);
     function TTL_LIQUIDATION() external view returns (int256);
@@ -20,4 +33,10 @@ interface IUtilsLens {
         external
         pure
         returns (uint256);
+    function getAssetPriceInfo(address asset, address unitOfAccount) external view returns (AssetPriceInfo memory);
+    function getControllerAssetPriceInfo(address controller, address asset)
+        external
+        view
+        returns (AssetPriceInfo memory);
+    function oracleLens() external view returns (address);
 }

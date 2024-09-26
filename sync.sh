@@ -31,18 +31,21 @@ contracts=(
   "OracleLens"
   "VaultLens"
   "UtilsLens"
+  "EulerEarnVaultLens"
   "IRMLinearKink"
   "EulerRouter"
   "TermsOfUseSigner"
 )
 
-for contract in "${contracts[@]}"; do
-  jq '.abi' $evk_periphery_repo_path/out/${contract}.sol/${contract}.json | jq '.' > $abis_path/${contract}.json
-  
-  cast interface --name I${contract} --pragma ^0.8.0 -o $interfaces_path/I${contract}.sol $abis_path/${contract}.json
-  sed -i '' 's/\/\/ SPDX-License-Identifier: UNLICENSED/\/\/ SPDX-License-Identifier: MIT/' "$interfaces_path/I${contract}.sol"
-done
-  
+if [[ "$@" != *"--only-addresses"* ]]; then
+    for contract in "${contracts[@]}"; do
+      jq '.abi' $evk_periphery_repo_path/out/${contract}.sol/${contract}.json | jq '.' > $abis_path/${contract}.json
+      
+      cast interface --name I${contract} --pragma ^0.8.0 -o $interfaces_path/I${contract}.sol $abis_path/${contract}.json
+      sed -i '' 's/\/\/ SPDX-License-Identifier: UNLICENSED/\/\/ SPDX-License-Identifier: MIT/' "$interfaces_path/I${contract}.sol"
+    done
+fi
+
 for file in $addresses_path/*.json; do
   while IFS= read -r line; do
     key=$(echo "$line" | jq -r '.key')

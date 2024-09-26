@@ -15,8 +15,10 @@ interface IAccountLens {
         uint256 liabilityValue;
         uint256 collateralValueBorrowing;
         uint256 collateralValueLiquidation;
+        uint256 collateralValueRaw;
         CollateralLiquidityInfo[] collateralLiquidityBorrowingInfo;
         CollateralLiquidityInfo[] collateralLiquidityLiquidationInfo;
+        CollateralLiquidityInfo[] collateralLiquidityRawInfo;
     }
 
     struct AccountMultipleVaultsInfo {
