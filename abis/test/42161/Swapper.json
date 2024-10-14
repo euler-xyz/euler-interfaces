@@ -3,11 +3,6 @@
     "type": "constructor",
     "inputs": [
       {
-        "name": "oneInchAggregator",
-        "type": "address",
-        "internalType": "address"
-      },
-      {
         "name": "uniswapRouterV2",
         "type": "address",
         "internalType": "address"
@@ -16,31 +11,13 @@
         "name": "uniswapRouterV3",
         "type": "address",
         "internalType": "address"
-      },
-      {
-        "name": "uniswapRouter02",
-        "type": "address",
-        "internalType": "address"
       }
     ],
     "stateMutability": "nonpayable"
   },
   {
     "type": "function",
-    "name": "HANDLER_ONE_INCH",
-    "inputs": [],
-    "outputs": [
-      {
-        "name": "",
-        "type": "bytes32",
-        "internalType": "bytes32"
-      }
-    ],
-    "stateMutability": "view"
-  },
-  {
-    "type": "function",
-    "name": "HANDLER_UNISWAP_AUTOROUTER",
+    "name": "HANDLER_GENERIC",
     "inputs": [],
     "outputs": [
       {
@@ -117,19 +94,6 @@
     ],
     "outputs": [],
     "stateMutability": "nonpayable"
-  },
-  {
-    "type": "function",
-    "name": "oneInchAggregator",
-    "inputs": [],
-    "outputs": [
-      {
-        "name": "",
-        "type": "address",
-        "internalType": "address"
-      }
-    ],
-    "stateMutability": "view"
   },
   {
     "type": "function",
@@ -274,19 +238,6 @@
     ],
     "outputs": [],
     "stateMutability": "nonpayable"
-  },
-  {
-    "type": "function",
-    "name": "uniswapRouter02",
-    "inputs": [],
-    "outputs": [
-      {
-        "name": "",
-        "type": "address",
-        "internalType": "address"
-      }
-    ],
-    "stateMutability": "view"
   },
   {
     "type": "function",

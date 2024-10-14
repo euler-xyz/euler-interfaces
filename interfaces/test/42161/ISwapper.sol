@@ -24,18 +24,15 @@ interface ISwapper {
     error UniswapV2Handler_InvalidPath();
     error UniswapV3Handler_InvalidPath();
 
-    function HANDLER_ONE_INCH() external view returns (bytes32);
-    function HANDLER_UNISWAP_AUTOROUTER() external view returns (bytes32);
+    function HANDLER_GENERIC() external view returns (bytes32);
     function HANDLER_UNISWAP_V2() external view returns (bytes32);
     function HANDLER_UNISWAP_V3() external view returns (bytes32);
     function deposit(address token, address vault, uint256 amountMin, address account) external;
     function multicall(bytes[] memory calls) external;
-    function oneInchAggregator() external view returns (address);
     function repay(address token, address vault, uint256 repayAmount, address account) external;
     function repayAndDeposit(address token, address vault, uint256 repayAmount, address account) external;
     function swap(SwapParams memory params) external;
     function sweep(address token, uint256 amountMin, address to) external;
-    function uniswapRouter02() external view returns (address);
     function uniswapRouterV2() external view returns (address);
     function uniswapRouterV3() external view returns (address);
 }
