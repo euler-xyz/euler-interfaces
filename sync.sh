@@ -35,6 +35,7 @@ contracts=(
   "IRMLinearKink"
   "EulerRouter"
   "TermsOfUseSigner"
+  "RewardToken"
 )
 
 if [[ "$@" != *"--only-addresses"* ]]; then
