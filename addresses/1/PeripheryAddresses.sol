@@ -9,6 +9,7 @@ library PeripheryAddresses {
     address public constant externalVaultRegistry = 0xB3b30ffb54082CB861B17DfBE459370d1Cc219AC;
     address public constant feeFlowController = 0xFcd3Db06EA814eB21C84304fC7F90798C00D1e32;
     address public constant governedPerspective = 0xC0121817FF224a018840e4D15a864747d36e6Eb2;
+    address public constant indicativeOracleRouter = 0x0000000000000000000000000000000000000000;
     address public constant irmRegistry = 0x7fa4d5E5eFACAB275c555eeC77fbdd3B994521Df;
     address public constant kinkIRMFactory = 0xcAe0A39B45Ee9C3213f64392FA6DF30CE034C9F9;
     address public constant oracleAdapterRegistry = 0xA084A7F49723E3cc5722E052CF7fce910E7C5Fe6;
