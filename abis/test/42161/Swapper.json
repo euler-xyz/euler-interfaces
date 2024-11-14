@@ -277,6 +277,22 @@
   },
   {
     "type": "error",
+    "name": "Swapper_SwapError",
+    "inputs": [
+      {
+        "name": "swapProvider",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "rawError",
+        "type": "bytes",
+        "internalType": "bytes"
+      }
+    ]
+  },
+  {
+    "type": "error",
     "name": "Swapper_TargetDebt",
     "inputs": []
   },

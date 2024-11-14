@@ -15,6 +15,7 @@ interface IRewardToken {
     error EnumerableMapNonexistentKey(bytes32 key);
     error FailedCall();
     error InsufficientBalance(uint256 balance, uint256 needed);
+    error InvalidWhitelistStatus();
     error NotAuthorized();
     error OwnableInvalidOwner(address owner);
     error OwnableUnauthorizedAccount(address account);
@@ -27,9 +28,12 @@ interface IRewardToken {
     event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
     event RemainderReceiverSet(address indexed remainderReceiver);
     event Transfer(address indexed from, address indexed to, uint256 value);
-    event WhitelistStatus(address indexed account, bool status);
+    event WhitelistStatusSet(address indexed account, uint256 status);
 
     function EVC() external view returns (address);
+    function WHITELIST_STATUS_ADMIN() external view returns (uint256);
+    function WHITELIST_STATUS_DISTRIBUTOR() external view returns (uint256);
+    function WHITELIST_STATUS_NONE() external view returns (uint256);
     function allowance(address owner, address spender) external view returns (uint256);
     function approve(address spender, uint256 value) external returns (bool);
     function balanceOf(address account) external view returns (uint256);
@@ -43,19 +47,20 @@ interface IRewardToken {
         external
         view
         returns (uint256, uint256);
-    function isWhitelisted(address) external view returns (bool);
     function name() external view returns (string memory);
     function owner() external view returns (address);
     function remainderReceiver() external view returns (address);
-    function renounceOwnership() external;
+    function renounceOwnership() external pure;
     function setRemainderReceiver(address _remainderReceiver) external;
-    function setWhitelistStatus(address account, bool status) external;
+    function setWhitelistStatus(address account, uint256 status) external;
+    function setWhitelistStatus(uint256 status) external;
     function symbol() external view returns (string memory);
     function totalSupply() external view returns (uint256);
     function transfer(address to, uint256 amount) external returns (bool);
     function transferFrom(address from, address to, uint256 amount) external returns (bool);
     function transferOwnership(address newOwner) external;
     function underlying() external view returns (address);
+    function whitelistStatus(address) external view returns (uint256);
     function withdrawTo(address account, uint256 amount) external returns (bool);
     function withdrawToByLockTimestamp(address account, uint256 lockTimestamp, bool allowRemainderLoss)
         external
