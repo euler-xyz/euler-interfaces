@@ -13,7 +13,7 @@ library PeripheryAddresses {
     address public constant kinkIRMFactory = 0x29D739716F64E84E81552ffDDc36547A39282bCa;
     address public constant oracleAdapterRegistry = 0x51861eeE49c2E26506bc5761699cFc6B7CFf2597;
     address public constant oracleRouterFactory = 0x09867085527984d5b74d6C0796f4D600198b7b6E;
-    address public constant swapVerifier = 0x8aAA2CaEca30AB50d48EB0EA71b83c49A2f49791;
-    address public constant swapper = 0x3A1019E38BE5D580299C6d4aB431cDbf83248D6b;
-    address public constant termsOfUseSigner = 0xA8525dEEB8A6f289bf00318d1702EA2aD231Cf34;
+    address public constant swapVerifier = 0xB75533a5722Ee9Db81eBD51A8166149f3EcD8451;
+    address public constant swapper = 0x6dE964be1B989A2Ff39bd4f2Ad0F580C60EFb342;
+    address public constant termsOfUseSigner = 0xAD39Fd02A659D96e3b44669648Ed885DBfc90D7C;
 }
