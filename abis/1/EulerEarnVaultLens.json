@@ -99,12 +99,17 @@
             "internalType": "address[]"
           },
           {
-            "name": "yieldAggregatorManagerAdmins",
+            "name": "eulerEarnManagerAdmins",
             "type": "address[]",
             "internalType": "address[]"
           },
           {
             "name": "withdrawalQueueManagerAdmins",
+            "type": "address[]",
+            "internalType": "address[]"
+          },
+          {
+            "name": "rebalancerAdmins",
             "type": "address[]",
             "internalType": "address[]"
           },
@@ -119,12 +124,17 @@
             "internalType": "address[]"
           },
           {
-            "name": "yieldAggregatorManagers",
+            "name": "eulerEarnManagers",
             "type": "address[]",
             "internalType": "address[]"
           },
           {
             "name": "withdrawalQueueManagers",
+            "type": "address[]",
+            "internalType": "address[]"
+          },
+          {
+            "name": "rebalancers",
             "type": "address[]",
             "internalType": "address[]"
           }
@@ -310,12 +320,17 @@
                 "internalType": "address[]"
               },
               {
-                "name": "yieldAggregatorManagerAdmins",
+                "name": "eulerEarnManagerAdmins",
                 "type": "address[]",
                 "internalType": "address[]"
               },
               {
                 "name": "withdrawalQueueManagerAdmins",
+                "type": "address[]",
+                "internalType": "address[]"
+              },
+              {
+                "name": "rebalancerAdmins",
                 "type": "address[]",
                 "internalType": "address[]"
               },
@@ -330,12 +345,17 @@
                 "internalType": "address[]"
               },
               {
-                "name": "yieldAggregatorManagers",
+                "name": "eulerEarnManagers",
                 "type": "address[]",
                 "internalType": "address[]"
               },
               {
                 "name": "withdrawalQueueManagers",
+                "type": "address[]",
+                "internalType": "address[]"
+              },
+              {
+                "name": "rebalancers",
                 "type": "address[]",
                 "internalType": "address[]"
               }
