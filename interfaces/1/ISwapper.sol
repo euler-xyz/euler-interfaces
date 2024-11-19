@@ -17,6 +17,7 @@ interface ISwapper {
 
     error E_EmptyError();
     error Swapper_Reentrancy();
+    error Swapper_SwapError(address swapProvider, bytes rawError);
     error Swapper_TargetDebt();
     error Swapper_UnknownHandler();
     error Swapper_UnknownMode();
