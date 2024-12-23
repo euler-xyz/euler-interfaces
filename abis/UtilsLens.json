@@ -106,35 +106,6 @@
         "internalType": "uint256"
       },
       {
-        "name": "supplySPY",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "outputs": [
-      {
-        "name": "borrowAPY",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
-      {
-        "name": "supplyAPY",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "stateMutability": "pure"
-  },
-  {
-    "type": "function",
-    "name": "computeSupplySPY",
-    "inputs": [
-      {
-        "name": "borrowSPY",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
-      {
         "name": "cash",
         "type": "uint256",
         "internalType": "uint256"
@@ -152,7 +123,12 @@
     ],
     "outputs": [
       {
-        "name": "",
+        "name": "borrowAPY",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "supplyAPY",
         "type": "uint256",
         "internalType": "uint256"
       }

@@ -3,11 +3,8 @@ pragma solidity ^0.8.0;
 
 interface ITrackingRewardStreams {
     error AccumulatorOverflow();
-    error AddressEmptyCode(address target);
     error ControllerDisabled();
     error EVC_InvalidAddress();
-    error FailedCall();
-    error InsufficientBalance(uint256 balance, uint256 needed);
     error InvalidAmount();
     error InvalidDistribution();
     error InvalidEpoch();

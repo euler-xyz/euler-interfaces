@@ -525,11 +525,6 @@
                     "internalType": "uint256"
                   },
                   {
-                    "name": "supplySPY",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                  },
-                  {
                     "name": "borrowAPY",
                     "type": "uint256",
                     "internalType": "uint256"
@@ -889,11 +884,6 @@
                 "internalType": "uint256"
               },
               {
-                "name": "supplySPY",
-                "type": "uint256",
-                "internalType": "uint256"
-              },
-              {
                 "name": "borrowAPY",
                 "type": "uint256",
                 "internalType": "uint256"
@@ -985,11 +975,6 @@
               },
               {
                 "name": "borrowSPY",
-                "type": "uint256",
-                "internalType": "uint256"
-              },
-              {
-                "name": "supplySPY",
                 "type": "uint256",
                 "internalType": "uint256"
               },

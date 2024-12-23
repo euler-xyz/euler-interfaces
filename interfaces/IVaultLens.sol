@@ -21,7 +21,6 @@ interface IVaultLens {
         uint256 cash;
         uint256 borrows;
         uint256 borrowSPY;
-        uint256 supplySPY;
         uint256 borrowAPY;
         uint256 supplyAPY;
     }

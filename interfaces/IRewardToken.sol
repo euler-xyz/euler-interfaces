@@ -2,7 +2,6 @@
 pragma solidity ^0.8.0;
 
 interface IRewardToken {
-    error AddressEmptyCode(address target);
     error ControllerDisabled();
     error ERC20InsufficientAllowance(address spender, uint256 allowance, uint256 needed);
     error ERC20InsufficientBalance(address sender, uint256 balance, uint256 needed);
@@ -13,8 +12,6 @@ interface IRewardToken {
     error ERC20InvalidUnderlying(address token);
     error EVC_InvalidAddress();
     error EnumerableMapNonexistentKey(bytes32 key);
-    error FailedCall();
-    error InsufficientBalance(uint256 balance, uint256 needed);
     error InvalidWhitelistStatus();
     error NotAuthorized();
     error OwnableInvalidOwner(address owner);

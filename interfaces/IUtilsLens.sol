@@ -25,14 +25,10 @@ interface IUtilsLens {
         address[] memory collaterals,
         uint256[] memory collateralValues
     ) external view returns (int256);
-    function computeAPYs(uint256 borrowSPY, uint256 supplySPY)
+    function computeAPYs(uint256 borrowSPY, uint256 cash, uint256 borrows, uint256 interestFee)
         external
         pure
         returns (uint256 borrowAPY, uint256 supplyAPY);
-    function computeSupplySPY(uint256 borrowSPY, uint256 cash, uint256 borrows, uint256 interestFee)
-        external
-        pure
-        returns (uint256);
     function getAssetPriceInfo(address asset, address unitOfAccount) external view returns (AssetPriceInfo memory);
     function getControllerAssetPriceInfo(address controller, address asset)
         external
