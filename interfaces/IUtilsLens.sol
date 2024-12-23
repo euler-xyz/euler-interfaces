@@ -35,4 +35,9 @@ interface IUtilsLens {
         view
         returns (AssetPriceInfo memory);
     function oracleLens() external view returns (address);
+    function tokenAllowances(address spender, address account, address[] memory tokens)
+        external
+        view
+        returns (uint256[] memory);
+    function tokenBalances(address account, address[] memory tokens) external view returns (uint256[] memory);
 }
