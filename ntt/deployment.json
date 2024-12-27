@@ -1,0 +1,49 @@
+{
+  "network": "Mainnet",
+  "chains": {
+    "Ethereum": {
+      "version": "1.1.0",
+      "mode": "locking",
+      "paused": false,
+      "owner": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+      "manager": "0x9502ad5ED0CeEd39EB604Ae7f411836bd8e7b925",
+      "token": "0xd9Fcd98c322942075A5C3860693e9f4f03AAE07b",
+      "transceivers": {
+        "threshold": 1,
+        "wormhole": {
+          "address": "0x73cb24f20Ef23fd24D52969398C62ED6030C00cD",
+          "pauser": "0xB1345E7A4D35FB3E6bF22A32B3741Ae74E5Fba27"
+        }
+      },
+      "limits": {
+        "outbound": "100000.000000000000000000",
+        "inbound": {
+          "Base": "0.000000000000000000"
+        }
+      },
+      "pauser": "0xB1345E7A4D35FB3E6bF22A32B3741Ae74E5Fba27"
+    },
+    "Base": {
+      "version": "1.1.0",
+      "mode": "burning",
+      "paused": false,
+      "owner": "0x95058F3d4C69F14f6125ad4602E925845BD5d6A4",
+      "manager": "0xf673457b6D6dF5091F000102652395f0933C513a",
+      "token": "0xa153Ad732F831a79b5575Fa02e793EC4E99181b0",
+      "transceivers": {
+        "threshold": 1,
+        "wormhole": {
+          "address": "0x0F2Ac6Aa16F7DE9054f680831e08F2DBD2dB3dF1",
+          "pauser": "0x33C71422B3E20ef2472Bc9aa9252220CAeAF207e"
+        }
+      },
+      "limits": {
+        "outbound": "100000.000000000000000000",
+        "inbound": {
+          "Ethereum": "10000.000000000000000000"
+        }
+      },
+      "pauser": "0x33C71422B3E20ef2472Bc9aa9252220CAeAF207e"
+    }
+  }
+}
