@@ -5,7 +5,7 @@
       "version": "1.1.0",
       "mode": "locking",
       "paused": false,
-      "owner": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+      "owner": "0xcAD001c30E96765aC90307669d578219D4fb1DCe",
       "manager": "0x9502ad5ED0CeEd39EB604Ae7f411836bd8e7b925",
       "token": "0xd9Fcd98c322942075A5C3860693e9f4f03AAE07b",
       "transceivers": {
@@ -18,8 +18,8 @@
       "limits": {
         "outbound": "100000.000000000000000000",
         "inbound": {
-          "Base": "0.000000000000000000",
-          "Polygon": "0.000000000000000000"
+          "Base": "10000.000000000000000000",
+          "Polygon": "10000.000000000000000000"
         }
       },
       "pauser": "0xB1345E7A4D35FB3E6bF22A32B3741Ae74E5Fba27"
