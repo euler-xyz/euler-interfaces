@@ -260,6 +260,11 @@
             "internalType": "uint256"
           },
           {
+            "name": "interestSmearingPeriod",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
             "name": "performanceFee",
             "type": "uint256",
             "internalType": "uint256"
