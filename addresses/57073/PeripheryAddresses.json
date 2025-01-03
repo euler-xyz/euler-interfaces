@@ -1,5 +1,7 @@
 {
   "escrowedCollateralPerspective": "0x0B9B5A99CD83e225866B977ef15D944A7B3DFAca",
+  "eulerEarnFactoryPerspective": "0xf3F6783B558D574f3E3D2d7f7334075F67b5C85D",
+  "eulerEarnGovernedPerspective": "0x6C00D9fb93680808c7fD178eceCCC7F83c83710f",
   "eulerUngoverned0xPerspective": "0x62CaC5edE7e4c6A32986eA467fA95EE9735bea66",
   "eulerUngovernedNzxPerspective": "0x89f3Da32214cEbCE841562261DB5414b81dCC86C",
   "evkFactoryPerspective": "0x2cB1f52f89BcC88d537cA05c54d087768a03dcfB",
