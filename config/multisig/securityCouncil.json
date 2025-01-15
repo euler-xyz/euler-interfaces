@@ -1,6 +1,8 @@
 {
-    "threshold": 1,
+    "threshold": 2,
     "signers": [
-        "labs"
+        "labs",
+        "securityPartnerA",
+        "securityPartnerB"
     ]
 }
