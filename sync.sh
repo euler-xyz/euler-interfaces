@@ -38,7 +38,19 @@ contracts=(
 
 for contract in "${contracts[@]}"; do
   jq '.abi' $evk_periphery_repo_path/out/${contract}.sol/${contract}.json | jq '.' > $abis_path/${contract}.json
-  
-  cast interface --name I${contract} --pragma ^0.8.0 -o $interfaces_path/I${contract}.sol $abis_path/${contract}.json
+done
+
+contracts=(
+  "EulerEarn"
+  "EulerEarnFactory"
+)
+
+for contract in "${contracts[@]}"; do
+  jq '.abi' $evk_periphery_repo_path/out-euler-earn/${contract}.sol/${contract}.json | jq '.' > $abis_path/${contract}.json
+done
+
+for abi_file in "$abis_path"/*.json; do
+  contract=$(basename "$abi_file" .json)
+  cast interface --name I${contract} --pragma ^0.8.0 -o $interfaces_path/I${contract}.sol $abi_file
   sed -i '' 's/\/\/ SPDX-License-Identifier: UNLICENSED/\/\/ SPDX-License-Identifier: MIT/' "$interfaces_path/I${contract}.sol"
 done
