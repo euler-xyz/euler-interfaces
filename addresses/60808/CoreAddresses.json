@@ -1,7 +1,7 @@
 {
   "balanceTracker": "0x5a3828beA292E5f29725Fa449F9113Cb5E60ADF8",
-  "eVaultFactory": "0x78326028199555727172966A3327ec4d421ceaB2",
-  "eVaultImplementation": "0x0F7694357b21F833e3806B0c7cE52abeFe8d620b",
+  "eVaultFactory": "0x046a9837A61d6b6263f54F4E27EE072bA4bdC7e4",
+  "eVaultImplementation": "0x32CFc56917C0025501b34C43f7FE767Ef1EDE3a2",
   "eulerEarnFactory": "0x118feebFBaFc7106aE79Dd4d6D2661df4D031B1E",
   "eulerEarnImplementation": "0x2D72821B5C46718A728Bc2eD9d346cf11A91638C",
   "evc": "0x59f0FeEc4fA474Ad4ffC357cC8d8595B68abE47d",
