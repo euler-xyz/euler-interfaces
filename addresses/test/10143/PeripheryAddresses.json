@@ -1,0 +1,18 @@
+{
+  "escrowedCollateralPerspective": "0x70593995977C3FbA561913Cd95109C267FF87dAF",
+  "eulerEarnFactoryPerspective": "0x43aB840aE31C5Da920FbF464aF9741908A8C56a9",
+  "eulerEarnGovernedPerspective": "0x0C4218bA47BFfBDd0A21b68877e327E7179DE47E",
+  "eulerUngoverned0xPerspective": "0xbF10AaEAF69b581cCcE1769AeFF8d0216DA6a7Eb",
+  "eulerUngovernedNzxPerspective": "0x9d41E55a2980692A142220E3c757082776F8D7A1",
+  "evkFactoryPerspective": "0xd229E514E92b41beEE33d23580feE43F34324D2d",
+  "externalVaultRegistry": "0x26fAd148138Ddd7Ce01f1a74E5c09CCFEa78444B",
+  "feeFlowController": "0x0000000000000000000000000000000000000000",
+  "governedPerspective": "0xFc346e584d1eb5909C857EBCdb21A9E9d1bfCdA3",
+  "irmRegistry": "0x13E8e15D672108401BEeC755F98D2C662616B072",
+  "kinkIRMFactory": "0x105e915E71B4647F4200e4E9b66bEf159a7a3d8C",
+  "oracleAdapterRegistry": "0x2Bde417F8e6E05128F2faC4a1fbBFFD74Ea68E46",
+  "oracleRouterFactory": "0x602A21Bb79B70Ce05B0e88397827c69AfEd29579",
+  "swapVerifier": "0xB1EB001f9bb0075Bd24DEc6cF13335A766653715",
+  "swapper": "0x5B1f010897F3Cd538a3B4A5Af02f97d30EaE57e6",
+  "termsOfUseSigner": "0x3fD9211082d94875afd05bb328BD9843d092e4cf"
+}
