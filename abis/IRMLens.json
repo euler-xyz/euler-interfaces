@@ -6,6 +6,11 @@
         "name": "_kinkIRMFactory",
         "type": "address",
         "internalType": "address"
+      },
+      {
+        "name": "_adaptiveCurveIRMFactory",
+        "type": "address",
+        "internalType": "address"
       }
     ],
     "stateMutability": "nonpayable"
@@ -58,6 +63,19 @@
         "name": "",
         "type": "int256",
         "internalType": "int256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "adaptiveCurveIRMFactory",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
       }
     ],
     "stateMutability": "view"

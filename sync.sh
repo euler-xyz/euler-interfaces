@@ -34,6 +34,7 @@ contracts=(
   "EulerRouter"
   "TermsOfUseSigner"
   "RewardToken"
+  "EdgeFactory"
 )
 
 for contract in "${contracts[@]}"; do

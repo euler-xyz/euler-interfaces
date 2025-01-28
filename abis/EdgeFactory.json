@@ -1,0 +1,288 @@
+[
+  {
+    "type": "constructor",
+    "inputs": [
+      {
+        "name": "_eVaultFactory",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "_eulerRouterFactory",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "_escrowedCollateralPerspective",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "deploy",
+    "inputs": [
+      {
+        "name": "params",
+        "type": "tuple",
+        "internalType": "struct IEdgeFactory.DeployParams",
+        "components": [
+          {
+            "name": "vaults",
+            "type": "tuple[]",
+            "internalType": "struct IEdgeFactory.VaultParams[]",
+            "components": [
+              {
+                "name": "asset",
+                "type": "address",
+                "internalType": "address"
+              },
+              {
+                "name": "irm",
+                "type": "address",
+                "internalType": "address"
+              },
+              {
+                "name": "escrow",
+                "type": "bool",
+                "internalType": "bool"
+              }
+            ]
+          },
+          {
+            "name": "router",
+            "type": "tuple",
+            "internalType": "struct IEdgeFactory.RouterParams",
+            "components": [
+              {
+                "name": "externalResolvedVaults",
+                "type": "address[]",
+                "internalType": "address[]"
+              },
+              {
+                "name": "adapters",
+                "type": "tuple[]",
+                "internalType": "struct IEdgeFactory.AdapterParams[]",
+                "components": [
+                  {
+                    "name": "base",
+                    "type": "address",
+                    "internalType": "address"
+                  },
+                  {
+                    "name": "adapter",
+                    "type": "address",
+                    "internalType": "address"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "ltv",
+            "type": "tuple[]",
+            "internalType": "struct IEdgeFactory.LTVParams[]",
+            "components": [
+              {
+                "name": "collateralVaultIndex",
+                "type": "uint256",
+                "internalType": "uint256"
+              },
+              {
+                "name": "controllerVaultIndex",
+                "type": "uint256",
+                "internalType": "uint256"
+              },
+              {
+                "name": "borrowLTV",
+                "type": "uint16",
+                "internalType": "uint16"
+              },
+              {
+                "name": "liquidationLTV",
+                "type": "uint16",
+                "internalType": "uint16"
+              }
+            ]
+          },
+          {
+            "name": "unitOfAccount",
+            "type": "address",
+            "internalType": "address"
+          }
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "",
+        "type": "address[]",
+        "internalType": "address[]"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "eVaultFactory",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "escrowedCollateralPerspective",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "eulerRouterFactory",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getDeployment",
+    "inputs": [
+      {
+        "name": "i",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address[]",
+        "internalType": "address[]"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getDeploymentsListLength",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getDeploymentsListSlice",
+    "inputs": [
+      {
+        "name": "start",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "end",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "list",
+        "type": "address[][]",
+        "internalType": "address[][]"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "isDeployed",
+    "inputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "name",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "string",
+        "internalType": "string"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "event",
+    "name": "EdgeDeployed",
+    "inputs": [
+      {
+        "name": "router",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "vaults",
+        "type": "address[]",
+        "indexed": false,
+        "internalType": "address[]"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "error",
+    "name": "E_BadQuery",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "E_TooFewVaults",
+    "inputs": []
+  }
+]
