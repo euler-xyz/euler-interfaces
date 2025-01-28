@@ -1,4 +1,7 @@
 {
+  "adaptiveCurveIRMFactory": "0xf7290823bb65091C09545a18f18c78c781eecFa5",
+  "edgeFactory": "0x324Cb0E0749FFd56E26CADA68769e0B5e2D8B7b7",
+  "edgeFactoryPerspective": "0x46a660DCcDdB8f196607D9299b09dDC5D6e7f16B",
   "escrowedCollateralPerspective": "0x3aFb14bD3797f94e4c4E6BF6b5012c27837f71fA",
   "eulerEarnFactoryPerspective": "0xf3F6783B558D574f3E3D2d7f7334075F67b5C85D",
   "eulerEarnGovernedPerspective": "0x6C00D9fb93680808c7fD178eceCCC7F83c83710f",
