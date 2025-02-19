@@ -1,0 +1,5 @@
+{
+  "accessControlEmergencyGovernor": "0xe5B91c1D476B0BC65F97DdBEc37Bf4360F868fc5",
+  "eVaultFactoryGovernor": "0x76b51527D0a872D66369711DB1E7Aa2EFfDE3062",
+  "eVaultFactoryTimelockController": "0x58387F78372f79a1D898717cE766EDf6fE279158"
+}
