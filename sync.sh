@@ -55,3 +55,6 @@ for abi_file in "$abis_path"/*.json; do
   cast interface --name I${contract} --pragma ^0.8.0 -o $interfaces_path/I${contract}.sol $abi_file
   sed -i '' 's/\/\/ SPDX-License-Identifier: UNLICENSED/\/\/ SPDX-License-Identifier: MIT/' "$interfaces_path/I${contract}.sol"
 done
+
+
+node chains.js
