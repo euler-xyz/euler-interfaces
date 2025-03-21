@@ -42,15 +42,23 @@ let chains = [
     status: 'production',
   },
 
-  //// BETA
-
   {
     chainId: 80094,
     name: 'berachain',
     safeBaseUrl: 'https://safe.berachain.com',
     safeAddressPrefix: 'berachain',
-    status: 'beta',
+    status: 'production',
   },
+
+  {
+    chainId: 43114,
+    name: 'avalanche',
+    safeBaseUrl: 'https://app.safe.global',
+    safeAddressPrefix: 'avax',
+    status: 'production',
+  },
+
+  //// BETA
 
   //// TESTING
 
@@ -107,14 +115,6 @@ let chains = [
     name: 'arbitrum',
     safeBaseUrl: 'https://app.safe.global',
     safeAddressPrefix: 'arb1',
-    status: 'testing',
-  },
-
-  {
-    chainId: 43114,
-    name: 'avalanche',
-    safeBaseUrl: 'https://app.safe.global',
-    safeAddressPrefix: 'avax',
     status: 'testing',
   },
 
