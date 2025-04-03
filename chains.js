@@ -142,6 +142,14 @@ let chains = [
     safeAddressPrefix: 'ink',
     status: 'testing',
   },
+
+  {
+    chainId: 999,
+    name: 'hyperevm',
+    safeBaseUrl: 'https://safe.onchainden.com',
+    safeAddressPrefix: 'hyperevm',
+    status: 'testing',
+  },
 ];
 
 
