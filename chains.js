@@ -150,6 +150,14 @@ let chains = [
     safeAddressPrefix: 'hyperevm',
     status: 'testing',
   },
+
+  {
+    chainId: 59144,
+    name: 'linea',
+    safeBaseUrl: 'https://app.safe.global',
+    safeAddressPrefix: 'linea',
+    status: 'testing',
+  },
 ];
 
 
