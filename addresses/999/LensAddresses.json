@@ -1,0 +1,8 @@
+{
+  "accountLens": "0xD761b8cE2D79A7DadEAc6d33bAa5083bBC1240bd",
+  "eulerEarnVaultLens": "0xD2f34ec2e0eA798aeEfc3ef91C37fDe16d2E4234",
+  "irmLens": "0x9600dc97eB012158c352e1c90c569670602C39dE",
+  "oracleLens": "0xFa052dCC0c32c51d3127f12eE0d003ef5742E61f",
+  "utilsLens": "0xe7b60a4eaBE6bd1ea85a1c4fdf05E83ffA710c33",
+  "vaultLens": "0x5abb93A7a1FfC728469Cff685Df45Bc0503fB517"
+}
