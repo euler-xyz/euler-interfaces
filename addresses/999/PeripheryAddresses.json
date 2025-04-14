@@ -1,6 +1,6 @@
 {
   "adaptiveCurveIRMFactory": "0xF62bFaA502E4dC83260e34aCF2B4875FdBDc31c9",
-  "capRiskStewardFactory": "0x9c06b33f7bE3302993193290089D39ff94380b15",
+  "capRiskStewardFactory": "0x459Fe76a4fc9406feBe3AcFdb42955197059b089",
   "edgeFactory": "0x724904bc492959Ee175f5664d117B78DCBf2628e",
   "edgeFactoryPerspective": "0xd15E7cD7875C77E4fA448F72476A93D409dbc033",
   "escrowedCollateralPerspective": "0xaDaDF50246512dBA23889A1eC44611B191dfF6Fc",
