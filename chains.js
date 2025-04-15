@@ -58,6 +58,16 @@ let chains = [
     status: 'production',
   },
 
+  {
+    chainId: 56,
+    name: 'bnb',
+    viemName: 'bsc',
+    safeBaseUrl: 'https://app.safe.global',
+    safeAddressPrefix: 'bnb',
+    status: 'production',
+  },
+
+
   //// BETA
 
   //// TESTING
@@ -123,15 +133,6 @@ let chains = [
     name: 'worldchain',
     safeBaseUrl: 'https://app.safe.global',
     safeAddressPrefix: 'wc',
-    status: 'testing',
-  },
-
-  {
-    chainId: 56,
-    name: 'bnb',
-    viemName: 'bsc',
-    safeBaseUrl: 'https://app.safe.global',
-    safeAddressPrefix: 'bnb',
     status: 'testing',
   },
 
