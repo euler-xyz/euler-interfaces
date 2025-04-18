@@ -1,0 +1,23 @@
+{
+  "adaptiveCurveIRMFactory": "0xc65a0e2a410Ca52B0a5b57b1d239a857b3cd618b",
+  "capRiskStewardFactory": "0xec1b75024AFDe61492b514489DA6eEB02844c1Bb",
+  "edgeFactory": "0x2BeB74b6845Ec05A78F642262CaA8e7e3f00C42a",
+  "edgeFactoryPerspective": "0xdcE47c28B8B34E0370b1DAe8067B8b2b9D24E3df",
+  "escrowedCollateralPerspective": "0xc8d904FE94b65612AED5A73203C0eF8f3A0308C0",
+  "eulerEarnFactoryPerspective": "0x4E218189C3Dd8dbef3bebAb61FE219348aAB9272",
+  "eulerEarnGovernedPerspective": "0x8Dc7f5F434966439B213C14fE9cf73021D18B2E4",
+  "eulerUngoverned0xPerspective": "0xA3B087CC842749e2dC251DE7Ea1967a936C5335a",
+  "eulerUngovernedNzxPerspective": "0x246667c6f8119E64b5d88cC963Ef9d4391C77C81",
+  "evkFactoryPerspective": "0x832ca1e2FCBedf717b9C71C00Dd26805e3bE4270",
+  "externalVaultRegistry": "0x28aF9ba9152832A5B22f51510556801baDa96bBC",
+  "feeFlowController": "0xbF939812A673CB088f466d610c4b120b13eA5fAB",
+  "governedPerspective": "0x74f9fD22aA0Dd5Bbf6006a4c9818248eb476C50A",
+  "governorAccessControlEmergencyFactory": "0x1Fa5297507c725f91479f3fa033a81c7f2E2d52D",
+  "irmRegistry": "0xe47732e6BAB2ae02D35879C061ac1751e7BE7aF9",
+  "kinkIRMFactory": "0x2940Df424dBDc697de86212eAb665721B6d32338",
+  "oracleAdapterRegistry": "0x5f81DdA3f9155c31f552ABC3eb4B47676ba09680",
+  "oracleRouterFactory": "0xf0125F638c7134e6997e4F825b78c324CcF289aF",
+  "swapVerifier": "0x77C9B0E7Ac0405797F04E5230Ed0A54DB39f98f0",
+  "swapper": "0x1480Cfff566f27BbB2AEAd6eeABEc4BA068e5405",
+  "termsOfUseSigner": "0x47613A45370f7C7021025Bad0DAe65be213678b9"
+}
