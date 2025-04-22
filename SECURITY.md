@@ -20,7 +20,7 @@ For security-related questions or inquiries (not vulnerability reports), you can
 ## Previous Security Reviews
 
 Euler undergoes regular security audits. You can find details of previous security reviews here:  
-[Euler Security Reviews](https://docs.euler.finance/security/security-reviews)  
+[Euler Security Reviews](https://docs.euler.finance/security/overview/)  
 
 ## Preferred Languages
 
