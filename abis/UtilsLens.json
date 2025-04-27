@@ -3,6 +3,11 @@
     "type": "constructor",
     "inputs": [
       {
+        "name": "_eVaultFactory",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
         "name": "_oracleLens",
         "type": "address",
         "internalType": "address"
@@ -134,6 +139,43 @@
       }
     ],
     "stateMutability": "pure"
+  },
+  {
+    "type": "function",
+    "name": "eVaultFactory",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "contract GenericFactory"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getAPYs",
+    "inputs": [
+      {
+        "name": "vault",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "borrowAPY",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "supplyAPY",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
   },
   {
     "type": "function",
@@ -281,6 +323,87 @@
             "name": "amountOutAsk",
             "type": "uint256",
             "internalType": "uint256"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getVaultInfoERC4626",
+    "inputs": [
+      {
+        "name": "vault",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "internalType": "struct VaultInfoERC4626",
+        "components": [
+          {
+            "name": "timestamp",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "vault",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "vaultName",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "vaultSymbol",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "vaultDecimals",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "asset",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "assetName",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "assetSymbol",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "assetDecimals",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "totalShares",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "totalAssets",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "isEVault",
+            "type": "bool",
+            "internalType": "bool"
           }
         ]
       }
