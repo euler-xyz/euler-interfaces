@@ -71,12 +71,28 @@ interface IEulerEarnVaultLens {
         uint256 allocationPoints;
         uint256 allocationCap;
         bool isInEmergency;
+        VaultInfoERC4626 info;
     }
 
     struct OracleDetailedInfo {
         address oracle;
         string name;
         bytes oracleInfo;
+    }
+
+    struct VaultInfoERC4626 {
+        uint256 timestamp;
+        address vault;
+        string vaultName;
+        string vaultSymbol;
+        uint256 vaultDecimals;
+        address asset;
+        string assetName;
+        string assetSymbol;
+        uint256 assetDecimals;
+        uint256 totalShares;
+        uint256 totalAssets;
+        bool isEVault;
     }
 
     function TTL_ERROR() external view returns (int256);
