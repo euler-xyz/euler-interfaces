@@ -67,6 +67,14 @@ let chains = [
     status: 'production',
   },
 
+  {
+    chainId: 130,
+    name: 'unichain',
+    safeBaseUrl: 'https://app.safe.global',
+    safeAddressPrefix: 'unichain',
+    status: 'production',
+  },
+
 
   //// BETA
 
@@ -85,14 +93,6 @@ let chains = [
     name: 'gnosis',
     safeBaseUrl: 'https://app.safe.global',
     safeAddressPrefix: 'gno',
-    status: 'testing',
-  },
-
-  {
-    chainId: 130,
-    name: 'unichain',
-    safeBaseUrl: 'https://app.safe.global',
-    safeAddressPrefix: 'unichain',
     status: 'testing',
   },
 
