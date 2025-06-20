@@ -75,6 +75,22 @@ let chains = [
     status: 'production',
   },
 
+  {
+    chainId: 42161,
+    name: 'arbitrum',
+    safeBaseUrl: 'https://app.safe.global',
+    safeAddressPrefix: 'arb1',
+    status: 'production',
+  },
+
+  {
+    chainId: 239,
+    name: 'TAC',
+    safeBaseUrl: 'https://app.safe.tac.build',
+    safeAddressPrefix: 'tac',
+    status: 'production',
+  },
+
 
   //// BETA
 
@@ -117,14 +133,6 @@ let chains = [
     name: 'morph',
     safeBaseUrl: 'https://safe.morphl2.io/',
     safeAddressPrefix: 'morph',
-    status: 'testing',
-  },
-
-  {
-    chainId: 42161,
-    name: 'arbitrum',
-    safeBaseUrl: 'https://app.safe.global',
-    safeAddressPrefix: 'arb1',
     status: 'testing',
   },
 
