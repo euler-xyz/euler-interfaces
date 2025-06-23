@@ -17,7 +17,7 @@ interface IEulerEarnVaultLens {
         uint256 lostAssets;
         uint256 performanceFee;
         address feeReceiver;
-        address skimRecipient;
+        address owner;
         address creator;
         address curator;
         address guardian;
@@ -33,7 +33,6 @@ interface IEulerEarnVaultLens {
         uint256 pendingAllocationCap;
         uint256 pendingAllocationCapValidAt;
         uint256 removableAt;
-        bool enabled;
         VaultInfoERC4626 info;
     }
 

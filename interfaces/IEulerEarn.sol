@@ -8,9 +8,11 @@ interface IEulerEarn {
     }
 
     error AboveMaxTimelock();
+    error AddressEmptyCode(address target);
     error AllCapsReached();
     error AlreadyPending();
     error AlreadySet();
+    error BadAssetReceiver();
     error BelowMinTimelock();
     error ControllerDisabled();
     error DuplicateMarket(address id);
@@ -25,6 +27,7 @@ interface IEulerEarn {
     error ERC4626ExceededMaxRedeem(address owner, uint256 shares, uint256 max);
     error ERC4626ExceededMaxWithdraw(address owner, uint256 assets, uint256 max);
     error EVC_InvalidAddress();
+    error FailedCall();
     error InconsistentAsset(address id);
     error InconsistentReallocation();
     error InvalidMarketRemovalNonZeroCap(address id);
@@ -48,11 +51,9 @@ interface IEulerEarn {
     error ReentrancyGuardReentrantCall();
     error SafeCastOverflowedUintDowncast(uint8 bits, uint256 value);
     error SafeERC20FailedOperation(address token);
-    error SkimNotAllowed();
     error SupplyCapExceeded(address id);
     error TimelockNotElapsed();
     error UnauthorizedMarket(address id);
-    error ZeroAddress();
     error ZeroFeeRecipient();
 
     event AccrueInterest(uint256 newTotalAssets, uint256 feeShares);
@@ -75,12 +76,10 @@ interface IEulerEarn {
     event SetGuardian(address indexed caller, address indexed guardian);
     event SetIsAllocator(address indexed allocator, bool isAllocator);
     event SetName(string name);
-    event SetSkimRecipient(address indexed newSkimRecipient);
     event SetSupplyQueue(address indexed caller, address[] newSupplyQueue);
     event SetSymbol(string symbol);
     event SetTimelock(address indexed caller, uint256 newTimelock);
     event SetWithdrawQueue(address indexed caller, address[] newWithdrawQueue);
-    event Skim(address indexed caller, address indexed token, uint256 amount);
     event SubmitCap(address indexed caller, address indexed id, uint256 cap);
     event SubmitGuardian(address indexed newGuardian);
     event SubmitMarketRemoval(address indexed caller, address indexed id);
@@ -119,6 +118,7 @@ interface IEulerEarn {
     function maxRedeem(address owner) external view returns (uint256);
     function maxWithdraw(address owner) external view returns (uint256 assets);
     function mint(uint256 shares, address receiver) external returns (uint256 assets);
+    function multicall(bytes[] memory data) external returns (bytes[] memory results);
     function name() external view returns (string memory);
     function owner() external view returns (address);
     function pendingCap(address) external view returns (uint192 value, uint64 validAt);
@@ -142,11 +142,8 @@ interface IEulerEarn {
     function setFeeRecipient(address newFeeRecipient) external;
     function setIsAllocator(address newAllocator, bool newIsAllocator) external;
     function setName(string memory newName) external;
-    function setSkimRecipient(address newSkimRecipient) external;
     function setSupplyQueue(address[] memory newSupplyQueue) external;
     function setSymbol(string memory newSymbol) external;
-    function skim(address token) external;
-    function skimRecipient() external view returns (address);
     function submitCap(address id, uint256 newSupplyCap) external;
     function submitGuardian(address newGuardian) external;
     function submitMarketRemoval(address id) external;

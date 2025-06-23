@@ -483,6 +483,25 @@
   },
   {
     "type": "function",
+    "name": "multicall",
+    "inputs": [
+      {
+        "name": "data",
+        "type": "bytes[]",
+        "internalType": "bytes[]"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "results",
+        "type": "bytes[]",
+        "internalType": "bytes[]"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
     "name": "name",
     "inputs": [],
     "outputs": [
@@ -842,19 +861,6 @@
   },
   {
     "type": "function",
-    "name": "setSkimRecipient",
-    "inputs": [
-      {
-        "name": "newSkimRecipient",
-        "type": "address",
-        "internalType": "address"
-      }
-    ],
-    "outputs": [],
-    "stateMutability": "nonpayable"
-  },
-  {
-    "type": "function",
     "name": "setSupplyQueue",
     "inputs": [
       {
@@ -878,32 +884,6 @@
     ],
     "outputs": [],
     "stateMutability": "nonpayable"
-  },
-  {
-    "type": "function",
-    "name": "skim",
-    "inputs": [
-      {
-        "name": "token",
-        "type": "address",
-        "internalType": "address"
-      }
-    ],
-    "outputs": [],
-    "stateMutability": "nonpayable"
-  },
-  {
-    "type": "function",
-    "name": "skimRecipient",
-    "inputs": [],
-    "outputs": [
-      {
-        "name": "",
-        "type": "address",
-        "internalType": "address"
-      }
-    ],
-    "stateMutability": "view"
   },
   {
     "type": "function",
@@ -1548,19 +1528,6 @@
   },
   {
     "type": "event",
-    "name": "SetSkimRecipient",
-    "inputs": [
-      {
-        "name": "newSkimRecipient",
-        "type": "address",
-        "indexed": true,
-        "internalType": "address"
-      }
-    ],
-    "anonymous": false
-  },
-  {
-    "type": "event",
     "name": "SetSupplyQueue",
     "inputs": [
       {
@@ -1625,31 +1592,6 @@
         "type": "address[]",
         "indexed": false,
         "internalType": "contract IERC4626[]"
-      }
-    ],
-    "anonymous": false
-  },
-  {
-    "type": "event",
-    "name": "Skim",
-    "inputs": [
-      {
-        "name": "caller",
-        "type": "address",
-        "indexed": true,
-        "internalType": "address"
-      },
-      {
-        "name": "token",
-        "type": "address",
-        "indexed": true,
-        "internalType": "address"
-      },
-      {
-        "name": "amount",
-        "type": "uint256",
-        "indexed": false,
-        "internalType": "uint256"
       }
     ],
     "anonymous": false
@@ -1819,6 +1761,17 @@
   },
   {
     "type": "error",
+    "name": "AddressEmptyCode",
+    "inputs": [
+      {
+        "name": "target",
+        "type": "address",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "error",
     "name": "AllCapsReached",
     "inputs": []
   },
@@ -1830,6 +1783,11 @@
   {
     "type": "error",
     "name": "AlreadySet",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "BadAssetReceiver",
     "inputs": []
   },
   {
@@ -2030,6 +1988,11 @@
   },
   {
     "type": "error",
+    "name": "FailedCall",
+    "inputs": []
+  },
+  {
+    "type": "error",
     "name": "InconsistentAsset",
     "inputs": [
       {
@@ -2210,11 +2173,6 @@
   },
   {
     "type": "error",
-    "name": "SkimNotAllowed",
-    "inputs": []
-  },
-  {
-    "type": "error",
     "name": "SupplyCapExceeded",
     "inputs": [
       {
@@ -2239,11 +2197,6 @@
         "internalType": "contract IERC4626"
       }
     ]
-  },
-  {
-    "type": "error",
-    "name": "ZeroAddress",
-    "inputs": []
   },
   {
     "type": "error",

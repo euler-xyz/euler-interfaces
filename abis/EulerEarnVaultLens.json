@@ -149,7 +149,7 @@
             "internalType": "address"
           },
           {
-            "name": "skimRecipient",
+            "name": "owner",
             "type": "address",
             "internalType": "address"
           },
@@ -212,11 +212,6 @@
                 "name": "removableAt",
                 "type": "uint256",
                 "internalType": "uint256"
-              },
-              {
-                "name": "enabled",
-                "type": "bool",
-                "internalType": "bool"
               },
               {
                 "name": "info",
