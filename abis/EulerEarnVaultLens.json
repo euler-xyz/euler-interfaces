@@ -139,6 +139,11 @@
             "internalType": "uint256"
           },
           {
+            "name": "timelock",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
             "name": "performanceFee",
             "type": "uint256",
             "internalType": "uint256"
@@ -177,6 +182,31 @@
             "name": "permit2",
             "type": "address",
             "internalType": "address"
+          },
+          {
+            "name": "pendingTimelock",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "pendingTimelockValidAt",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "pendingGuardian",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "pendingGuardianValidAt",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "supplyQueue",
+            "type": "address[]",
+            "internalType": "address[]"
           },
           {
             "name": "strategies",

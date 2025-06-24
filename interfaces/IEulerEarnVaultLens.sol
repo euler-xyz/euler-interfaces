@@ -15,6 +15,7 @@ interface IEulerEarnVaultLens {
         uint256 totalShares;
         uint256 totalAssets;
         uint256 lostAssets;
+        uint256 timelock;
         uint256 performanceFee;
         address feeReceiver;
         address owner;
@@ -23,6 +24,11 @@ interface IEulerEarnVaultLens {
         address guardian;
         address evc;
         address permit2;
+        uint256 pendingTimelock;
+        uint256 pendingTimelockValidAt;
+        address pendingGuardian;
+        uint256 pendingGuardianValidAt;
+        address[] supplyQueue;
         EulerEarnVaultStrategyInfo[] strategies;
     }
 
