@@ -61,6 +61,14 @@ interface IEulerEarnVaultLens {
     function TTL_INFINITY() external view returns (int256);
     function TTL_LIQUIDATION() external view returns (int256);
     function TTL_MORE_THAN_ONE_YEAR() external view returns (int256);
+    function getStrategiesInfo(address vault, address[] memory strategies)
+        external
+        view
+        returns (EulerEarnVaultStrategyInfo[] memory);
+    function getStrategyInfo(address _vault, address _strategy)
+        external
+        view
+        returns (EulerEarnVaultStrategyInfo memory);
     function getVaultInfoFull(address vault) external view returns (EulerEarnVaultInfoFull memory);
     function utilsLens() external view returns (address);
 }
