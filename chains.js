@@ -87,7 +87,7 @@ let chains = [
     chainId: 239,
     name: 'TAC',
     viemName: 'tac',
-    safeBaseUrl: 'https://app.safe.tac.build',
+    safeBaseUrl: 'https://safe.tac.build',
     safeAddressPrefix: 'tac',
     status: 'production',
   },
