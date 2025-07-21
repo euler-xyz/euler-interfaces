@@ -89,7 +89,12 @@
             "internalType": "address"
           },
           {
-            "name": "assetsAllocated",
+            "name": "allocatedAssets",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "availableAssets",
             "type": "uint256",
             "internalType": "uint256"
           },
@@ -212,7 +217,12 @@
             "internalType": "address"
           },
           {
-            "name": "assetsAllocated",
+            "name": "allocatedAssets",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "availableAssets",
             "type": "uint256",
             "internalType": "uint256"
           },
@@ -385,6 +395,11 @@
             "internalType": "uint256"
           },
           {
+            "name": "availableAssets",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
             "name": "timelock",
             "type": "uint256",
             "internalType": "uint256"
@@ -465,7 +480,12 @@
                 "internalType": "address"
               },
               {
-                "name": "assetsAllocated",
+                "name": "allocatedAssets",
+                "type": "uint256",
+                "internalType": "uint256"
+              },
+              {
+                "name": "availableAssets",
                 "type": "uint256",
                 "internalType": "uint256"
               },

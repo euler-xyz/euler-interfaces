@@ -8,7 +8,6 @@ interface IEulerEarn {
     }
 
     error AboveMaxTimelock();
-    error AddressEmptyCode(address target);
     error AllCapsReached();
     error AlreadyPending();
     error AlreadySet();
@@ -27,7 +26,6 @@ interface IEulerEarn {
     error ERC4626ExceededMaxRedeem(address owner, uint256 shares, uint256 max);
     error ERC4626ExceededMaxWithdraw(address owner, uint256 assets, uint256 max);
     error EVC_InvalidAddress();
-    error FailedCall();
     error InconsistentAsset(address id);
     error InconsistentReallocation();
     error InvalidMarketRemovalNonZeroCap(address id);
@@ -54,7 +52,9 @@ interface IEulerEarn {
     error SupplyCapExceeded(address id);
     error TimelockNotElapsed();
     error UnauthorizedMarket(address id);
+    error ZeroAssets();
     error ZeroFeeRecipient();
+    error ZeroShares();
 
     event AccrueInterest(uint256 newTotalAssets, uint256 feeShares);
     event Approval(address indexed owner, address indexed spender, uint256 value);
@@ -100,7 +100,7 @@ interface IEulerEarn {
     function approve(address spender, uint256 value) external returns (bool);
     function asset() external view returns (address);
     function balanceOf(address account) external view returns (uint256);
-    function config(address) external view returns (uint184 cap, bool enabled, uint64 removableAt);
+    function config(address) external view returns (uint112 balance, uint136 cap, bool enabled, uint64 removableAt);
     function convertToAssets(uint256 shares) external view returns (uint256);
     function convertToShares(uint256 assets) external view returns (uint256);
     function creator() external view returns (address);
@@ -118,13 +118,12 @@ interface IEulerEarn {
     function maxRedeem(address owner) external view returns (uint256);
     function maxWithdraw(address owner) external view returns (uint256 assets);
     function mint(uint256 shares, address receiver) external returns (uint256 assets);
-    function multicall(bytes[] memory data) external returns (bytes[] memory results);
     function name() external view returns (string memory);
     function owner() external view returns (address);
-    function pendingCap(address) external view returns (uint192 value, uint64 validAt);
+    function pendingCap(address) external view returns (uint136 value, uint64 validAt);
     function pendingGuardian() external view returns (address value, uint64 validAt);
     function pendingOwner() external view returns (address);
-    function pendingTimelock() external view returns (uint192 value, uint64 validAt);
+    function pendingTimelock() external view returns (uint136 value, uint64 validAt);
     function permit2Address() external view returns (address);
     function previewDeposit(uint256 assets) external view returns (uint256);
     function previewMint(uint256 shares) external view returns (uint256);

@@ -179,9 +179,14 @@
     ],
     "outputs": [
       {
+        "name": "balance",
+        "type": "uint112",
+        "internalType": "uint112"
+      },
+      {
         "name": "cap",
-        "type": "uint184",
-        "internalType": "uint184"
+        "type": "uint136",
+        "internalType": "uint136"
       },
       {
         "name": "enabled",
@@ -483,25 +488,6 @@
   },
   {
     "type": "function",
-    "name": "multicall",
-    "inputs": [
-      {
-        "name": "data",
-        "type": "bytes[]",
-        "internalType": "bytes[]"
-      }
-    ],
-    "outputs": [
-      {
-        "name": "results",
-        "type": "bytes[]",
-        "internalType": "bytes[]"
-      }
-    ],
-    "stateMutability": "nonpayable"
-  },
-  {
-    "type": "function",
     "name": "name",
     "inputs": [],
     "outputs": [
@@ -539,8 +525,8 @@
     "outputs": [
       {
         "name": "value",
-        "type": "uint192",
-        "internalType": "uint192"
+        "type": "uint136",
+        "internalType": "uint136"
       },
       {
         "name": "validAt",
@@ -588,8 +574,8 @@
     "outputs": [
       {
         "name": "value",
-        "type": "uint192",
-        "internalType": "uint192"
+        "type": "uint136",
+        "internalType": "uint136"
       },
       {
         "name": "validAt",
@@ -1761,17 +1747,6 @@
   },
   {
     "type": "error",
-    "name": "AddressEmptyCode",
-    "inputs": [
-      {
-        "name": "target",
-        "type": "address",
-        "internalType": "address"
-      }
-    ]
-  },
-  {
-    "type": "error",
     "name": "AllCapsReached",
     "inputs": []
   },
@@ -1988,11 +1963,6 @@
   },
   {
     "type": "error",
-    "name": "FailedCall",
-    "inputs": []
-  },
-  {
-    "type": "error",
     "name": "InconsistentAsset",
     "inputs": [
       {
@@ -2200,7 +2170,17 @@
   },
   {
     "type": "error",
+    "name": "ZeroAssets",
+    "inputs": []
+  },
+  {
+    "type": "error",
     "name": "ZeroFeeRecipient",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "ZeroShares",
     "inputs": []
   }
 ]
