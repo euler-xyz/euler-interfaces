@@ -18,6 +18,7 @@ contracts=(
   "ProtocolConfig"
   "SequenceRegistry"
   "BasePerspective"
+  "EscrowedCollateralPerspective"
   "SnapshotRegistry"
   "FeeFlowController"
   "EulerKinkIRMFactory"
