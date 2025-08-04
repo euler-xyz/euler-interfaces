@@ -92,6 +92,13 @@ let chains = [
     status: 'production',
   },
 
+  {
+    chainId: 59144,
+    name: 'linea',
+    safeBaseUrl: 'https://app.safe.global',
+    safeAddressPrefix: 'linea',
+    status: 'production',
+  },
 
   //// BETA
 
@@ -158,14 +165,6 @@ let chains = [
     name: 'hyperevm',
     safeBaseUrl: 'https://safe.onchainden.com',
     safeAddressPrefix: 'hyperevm',
-    status: 'testing',
-  },
-
-  {
-    chainId: 59144,
-    name: 'linea',
-    safeBaseUrl: 'https://app.safe.global',
-    safeAddressPrefix: 'linea',
     status: 'testing',
   },
 ];
