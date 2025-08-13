@@ -1,60 +1,20 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-library Checkpoints {
-    struct Checkpoint208 {
-        uint48 _key;
-        uint208 _value;
-    }
-}
-
-library Shared {
-    struct IntegrationsParams {
-        address evc;
-        address balanceTracker;
-        address permit2;
-        bool isHarvestCoolDownCheckOn;
-    }
-}
-
 interface IEulerEarn {
-    type StrategyStatus is uint8;
-    type AmountCap is uint16;
-
-    struct DeploymentParams {
-        address eulerEarnVaultModule;
-        address rewardsModule;
-        address hooksModule;
-        address feeModule;
-        address strategyModule;
-        address withdrawalQueueModule;
+    struct MarketAllocation {
+        address id;
+        uint256 assets;
     }
 
-    struct InitParams {
-        address eulerEarnVaultOwner;
-        address asset;
-        string name;
-        string symbol;
-        uint256 initialCashAllocationPoints;
-        uint24 smearingPeriod;
-    }
-
-    struct Strategy {
-        uint120 allocated;
-        uint96 allocationPoints;
-        AmountCap cap;
-        StrategyStatus status;
-    }
-
-    error AccessControlBadConfirmation();
-    error AccessControlUnauthorizedAccount(address account, bytes32 neededRole);
-    error CheckpointUnorderedInsertion();
+    error AboveMaxTimelock();
+    error AllCapsReached();
+    error AlreadyPending();
+    error AlreadySet();
+    error BadAssetReceiver();
+    error BelowMinTimelock();
     error ControllerDisabled();
-    error ECDSAInvalidSignature();
-    error ECDSAInvalidSignatureLength(uint256 length);
-    error ECDSAInvalidSignatureS(bytes32 s);
-    error ERC20ExceededSafeSupply(uint256 increasedSupply, uint256 cap);
-    error ERC20ExceededSafeSupply(uint256 increasedSupply, uint256 cap);
+    error DuplicateMarket(address id);
     error ERC20InsufficientAllowance(address spender, uint256 allowance, uint256 needed);
     error ERC20InsufficientBalance(address sender, uint256 balance, uint256 needed);
     error ERC20InvalidApprover(address approver);
@@ -65,137 +25,140 @@ interface IEulerEarn {
     error ERC4626ExceededMaxMint(address receiver, uint256 shares, uint256 max);
     error ERC4626ExceededMaxRedeem(address owner, uint256 shares, uint256 max);
     error ERC4626ExceededMaxWithdraw(address owner, uint256 assets, uint256 max);
-    error ERC5805FutureLookup(uint256 timepoint, uint48 clock);
-    error ERC6372InconsistentClock();
     error EVC_InvalidAddress();
-    error InitialAllocationPointsZero();
-    error InvalidAccountNonce(address account, uint256 currentNonce);
-    error InvalidAssetAddress();
-    error InvalidInitialization();
-    error InvalidSmearingPeriod();
+    error InconsistentAsset(address id);
+    error InconsistentReallocation();
+    error InvalidMarketRemovalNonZeroCap(address id);
+    error InvalidMarketRemovalNonZeroSupply(address id);
+    error InvalidMarketRemovalTimelockNotElapsed(address id);
+    error MarketNotEnabled(address id);
+    error MaxFeeExceeded();
+    error MaxQueueLengthExceeded();
+    error NoPendingValue();
+    error NonZeroCap();
+    error NotAllocatorRole();
     error NotAuthorized();
-    error NotInitializing();
+    error NotCuratorNorGuardianRole();
+    error NotCuratorRole();
+    error NotEnoughLiquidity();
+    error NotGuardianRole();
+    error OwnableInvalidOwner(address owner);
+    error OwnableUnauthorizedAccount(address account);
+    error PendingCap(address id);
+    error PendingRemoval();
+    error ReentrancyGuardReentrantCall();
     error SafeCastOverflowedUintDowncast(uint8 bits, uint256 value);
-    error ViewReentrancy();
-    error VotesExpiredSignature(uint256 expiry);
+    error SafeERC20FailedOperation(address token);
+    error SupplyCapExceeded(address id);
+    error TimelockNotElapsed();
+    error UnauthorizedMarket(address id);
+    error ZeroFeeRecipient();
+    error ZeroShares();
 
+    event AccrueInterest(uint256 newTotalAssets, uint256 feeShares);
     event Approval(address indexed owner, address indexed spender, uint256 value);
-    event DelegateChanged(address indexed delegator, address indexed fromDelegate, address indexed toDelegate);
-    event DelegateVotesChanged(address indexed delegate, uint256 previousVotes, uint256 newVotes);
     event Deposit(address indexed sender, address indexed owner, uint256 assets, uint256 shares);
-    event EIP712DomainChanged();
-    event Initialized(uint64 version);
-    event RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole);
-    event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender);
-    event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender);
+    event OwnershipTransferStarted(address indexed previousOwner, address indexed newOwner);
+    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+    event ReallocateSupply(address indexed caller, address indexed id, uint256 suppliedAssets, uint256 suppliedShares);
+    event ReallocateWithdraw(
+        address indexed caller, address indexed id, uint256 withdrawnAssets, uint256 withdrawnShares
+    );
+    event RevokePendingCap(address indexed caller, address indexed id);
+    event RevokePendingGuardian(address indexed caller);
+    event RevokePendingMarketRemoval(address indexed caller, address indexed id);
+    event RevokePendingTimelock(address indexed caller);
+    event SetCap(address indexed caller, address indexed id, uint256 cap);
+    event SetCurator(address indexed newCurator);
+    event SetFee(address indexed caller, uint256 newFee);
+    event SetFeeRecipient(address indexed newFeeRecipient);
+    event SetGuardian(address indexed caller, address indexed guardian);
+    event SetIsAllocator(address indexed allocator, bool isAllocator);
+    event SetName(string name);
+    event SetSupplyQueue(address indexed caller, address[] newSupplyQueue);
+    event SetSymbol(string symbol);
+    event SetTimelock(address indexed caller, uint256 newTimelock);
+    event SetWithdrawQueue(address indexed caller, address[] newWithdrawQueue);
+    event SubmitCap(address indexed caller, address indexed id, uint256 cap);
+    event SubmitGuardian(address indexed newGuardian);
+    event SubmitMarketRemoval(address indexed caller, address indexed id);
+    event SubmitTimelock(uint256 newTimelock);
     event Transfer(address indexed from, address indexed to, uint256 value);
+    event UpdateLastTotalAssets(uint256 updatedTotalAssets);
+    event UpdateLostAssets(uint256 newLostAssets);
     event Withdraw(
         address indexed sender, address indexed receiver, address indexed owner, uint256 assets, uint256 shares
     );
 
-    function CLOCK_MODE() external view returns (string memory);
-    function DEFAULT_ADMIN_ROLE() external view returns (bytes32);
     function EVC() external view returns (address);
-    function addStrategy(address _strategy, uint256 _allocationPoints) external;
-    function adjustAllocationPoints(address _strategy, uint256 _newPoints) external;
-    function allowance(address _owner, address _spender) external view returns (uint256);
-    function approve(address _spender, uint256 _value) external returns (bool);
+    function acceptCap(address id) external;
+    function acceptGuardian() external;
+    function acceptOwnership() external;
+    function acceptTimelock() external;
+    function allowance(address owner, address spender) external view returns (uint256);
+    function approve(address spender, uint256 value) external returns (bool);
     function asset() external view returns (address);
-    function balanceForwarderEnabled(address _account) external view returns (bool);
-    function balanceOf(address _account) external view returns (uint256);
-    function balanceTrackerAddress() external view returns (address);
-    function checkpoints(address _account, uint32 _pos) external view returns (Checkpoints.Checkpoint208 memory);
-    function claimStrategyReward(address _strategy, address _reward, address _recipient, bool _forfeitRecentReward)
-        external;
-    function clock() external view returns (uint48);
-    function convertToAssets(uint256 _shares) external view returns (uint256);
-    function convertToShares(uint256 _assets) external view returns (uint256);
+    function balanceOf(address account) external view returns (uint256);
+    function config(address) external view returns (uint112 balance, uint136 cap, bool enabled, uint64 removableAt);
+    function convertToAssets(uint256 shares) external view returns (uint256);
+    function convertToShares(uint256 assets) external view returns (uint256);
+    function creator() external view returns (address);
+    function curator() external view returns (address);
     function decimals() external view returns (uint8);
-    function delegate(address _delegatee) external;
-    function delegateBySig(address _delegatee, uint256 _nonce, uint256 _expiry, uint8 _v, bytes32 _r, bytes32 _s)
-        external;
-    function delegates(address _account) external view returns (address);
-    function deposit(uint256 _assets, address _receiver) external returns (uint256);
-    function disableBalanceForwarder() external;
-    function disableRewardForStrategy(address _strategy, address _reward, bool _forfeitRecentReward) external;
-    function eip712Domain()
-        external
-        view
-        returns (
-            bytes1 fields,
-            string memory name,
-            string memory version,
-            uint256 chainId,
-            address verifyingContract,
-            bytes32 salt,
-            uint256[] memory extensions
-        );
-    function enableBalanceForwarder() external;
-    function enableRewardForStrategy(address _strategy, address _reward) external;
-    function eulerEarnVaultModule() external view returns (address);
-    function feeModule() external view returns (address);
-    function getEulerEarnSavingRate() external view returns (uint40, uint40, uint168);
-    function getHooksConfig() external view returns (address, uint32);
-    function getPastTotalSupply(uint256 _timepoint) external view returns (uint256);
-    function getPastVotes(address _account, uint256 _timepoint) external view returns (uint256);
-    function getRoleAdmin(bytes32 role) external view returns (bytes32);
-    function getRoleMember(bytes32 role, uint256 index) external view returns (address);
-    function getRoleMemberCount(bytes32 role) external view returns (uint256);
-    function getRoleMembers(bytes32 role) external view returns (address[] memory);
-    function getStrategy(address _strategy) external view returns (Strategy memory);
-    function getVotes(address _account) external view returns (uint256);
-    function grantRole(bytes32 _role, address _account) external;
-    function gulp() external;
-    function harvest() external;
-    function hasRole(bytes32 role, address account) external view returns (bool);
-    function hooksModule() external view returns (address);
-    function init(InitParams memory _initParams) external;
-    function interestAccrued() external view returns (uint256);
-    function interestSmearingPeriod() external view returns (uint256);
-    function isCheckingHarvestCoolDown() external view returns (bool);
-    function lastHarvestTimestamp() external view returns (uint256);
-    function maxDeposit(address _owner) external view returns (uint256);
-    function maxMint(address _owner) external view returns (uint256);
-    function maxRedeem(address _owner) external view returns (uint256);
-    function maxWithdraw(address _owner) external view returns (uint256);
-    function mint(uint256 _shares, address _receiver) external returns (uint256);
+    function deposit(uint256 assets, address receiver) external returns (uint256 shares);
+    function expectedSupplyAssets(address id) external view returns (uint256);
+    function fee() external view returns (uint96);
+    function feeRecipient() external view returns (address);
+    function guardian() external view returns (address);
+    function isAllocator(address) external view returns (bool);
+    function lastTotalAssets() external view returns (uint256);
+    function lostAssets() external view returns (uint256);
+    function maxDeposit(address) external view returns (uint256);
+    function maxMint(address) external view returns (uint256);
+    function maxRedeem(address owner) external view returns (uint256);
+    function maxWithdraw(address owner) external view returns (uint256 assets);
+    function maxWithdrawFromStrategy(address id) external view returns (uint256);
+    function mint(uint256 shares, address receiver) external returns (uint256 assets);
     function name() external view returns (string memory);
-    function nonces(address owner) external view returns (uint256);
-    function numCheckpoints(address _account) external view returns (uint32);
-    function optInStrategyRewards(address _strategy) external;
-    function optOutStrategyRewards(address _strategy) external;
-    function performanceFeeConfig() external view returns (address, uint96);
+    function owner() external view returns (address);
+    function pendingCap(address) external view returns (uint136 value, uint64 validAt);
+    function pendingGuardian() external view returns (address value, uint64 validAt);
+    function pendingOwner() external view returns (address);
+    function pendingTimelock() external view returns (uint136 value, uint64 validAt);
     function permit2Address() external view returns (address);
-    function previewDeposit(uint256 _assets) external view returns (uint256);
-    function previewMint(uint256 _shares) external view returns (uint256);
-    function previewRedeem(uint256 _shares) external view returns (uint256);
-    function previewWithdraw(uint256 _assets) external view returns (uint256);
-    function rebalance(address[] memory _strategies) external;
-    function redeem(uint256 _shares, address _receiver, address _owner) external returns (uint256 assets);
-    function removeStrategy(address _strategy) external;
-    function renounceRole(bytes32 _role, address _callerConfirmation) external;
-    function reorderWithdrawalQueue(uint8 _index1, uint8 _index2) external;
-    function revokeRole(bytes32 _role, address _account) external;
-    function rewardsModule() external view returns (address);
-    function setFeeRecipient(address _newFeeRecipient) external;
-    function setHooksConfig(address _hooksTarget, uint32 _hookedFns) external;
-    function setPerformanceFee(uint96 _newFee) external;
-    function setStrategyCap(address _strategy, uint16 _cap) external;
-    function skim(address _token, address _recipient) external;
-    function strategyModule() external view returns (address);
-    function supportsInterface(bytes4 interfaceId) external view returns (bool);
+    function previewDeposit(uint256 assets) external view returns (uint256);
+    function previewMint(uint256 shares) external view returns (uint256);
+    function previewRedeem(uint256 shares) external view returns (uint256);
+    function previewWithdraw(uint256 assets) external view returns (uint256);
+    function reallocate(MarketAllocation[] memory allocations) external;
+    function redeem(uint256 shares, address receiver, address owner) external returns (uint256 assets);
+    function renounceOwnership() external;
+    function revokePendingCap(address id) external;
+    function revokePendingGuardian() external;
+    function revokePendingMarketRemoval(address id) external;
+    function revokePendingTimelock() external;
+    function setCurator(address newCurator) external;
+    function setFee(uint256 newFee) external;
+    function setFeeRecipient(address newFeeRecipient) external;
+    function setIsAllocator(address newAllocator, bool newIsAllocator) external;
+    function setName(string memory newName) external;
+    function setSupplyQueue(address[] memory newSupplyQueue) external;
+    function setSymbol(string memory newSymbol) external;
+    function submitCap(address id, uint256 newSupplyCap) external;
+    function submitGuardian(address newGuardian) external;
+    function submitMarketRemoval(address id) external;
+    function submitTimelock(uint256 newTimelock) external;
+    function supplyQueue(uint256) external view returns (address);
+    function supplyQueueLength() external view returns (uint256);
     function symbol() external view returns (string memory);
-    function toggleStrategyEmergencyStatus(address _strategy) external;
-    function totalAllocated() external view returns (uint256);
-    function totalAllocationPoints() external view returns (uint256);
+    function timelock() external view returns (uint256);
     function totalAssets() external view returns (uint256);
-    function totalAssetsAllocatable() external view returns (uint256);
-    function totalAssetsDeposited() external view returns (uint256);
     function totalSupply() external view returns (uint256);
-    function transfer(address _to, uint256 _value) external returns (bool);
-    function transferFrom(address _from, address _to, uint256 _value) external returns (bool);
-    function updateInterestAccrued() external;
-    function withdraw(uint256 _assets, address _receiver, address _owner) external returns (uint256 shares);
-    function withdrawalQueue() external view returns (address[] memory);
-    function withdrawalQueueModule() external view returns (address);
+    function transfer(address to, uint256 value) external returns (bool);
+    function transferFrom(address from, address to, uint256 value) external returns (bool);
+    function transferOwnership(address newOwner) external;
+    function updateWithdrawQueue(uint256[] memory indexes) external;
+    function withdraw(uint256 assets, address receiver, address owner) external returns (uint256 shares);
+    function withdrawQueue(uint256) external view returns (address);
+    function withdrawQueueLength() external view returns (uint256);
 }
