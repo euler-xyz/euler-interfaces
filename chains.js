@@ -36,7 +36,7 @@ let chains = [
 
   {
     chainId: 60808,
-    name: 'bob',
+    name: 'BOB',
     safeBaseUrl: 'https://safe.gobob.xyz',
     safeAddressPrefix: 'bob',
     status: 'production',
@@ -60,7 +60,7 @@ let chains = [
 
   {
     chainId: 56,
-    name: 'bsc',
+    name: 'BSC',
     viemName: 'bsc',
     safeBaseUrl: 'https://app.safe.global',
     safeAddressPrefix: 'bnb',
