@@ -3,7 +3,7 @@ let chains = [
 
   {
     chainId: 1,
-    name: 'mainnet',
+    name: 'ethereum',
     safeBaseUrl: 'https://app.safe.global',
     safeAddressPrefix: 'eth',
     status: 'production',
@@ -60,7 +60,7 @@ let chains = [
 
   {
     chainId: 56,
-    name: 'bnb',
+    name: 'bsc',
     viemName: 'bsc',
     safeBaseUrl: 'https://app.safe.global',
     safeAddressPrefix: 'bnb',
