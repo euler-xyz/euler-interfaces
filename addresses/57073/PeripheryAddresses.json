@@ -6,6 +6,7 @@
   "escrowedCollateralPerspective": "0x32a55323402dd6A03eAF5f154d0A93812E9ce4bb",
   "eulerEarnFactoryPerspective": "0x0000000000000000000000000000000000000000",
   "eulerEarnGovernedPerspective": "0x0000000000000000000000000000000000000000",
+  "eulerEarnPublicAllocator": "0x0000000000000000000000000000000000000000",
   "eulerUngoverned0xPerspective": "0x4C5602F765f4e390e581E668cA26D1b73DedfFf1",
   "eulerUngovernedNzxPerspective": "0x8d0737c74b86A5C4BC18A51a75f59Ce41338687c",
   "evkFactoryPerspective": "0xd99365A1014AC2DA2067D0353C39d44933593212",

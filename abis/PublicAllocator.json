@@ -1,0 +1,551 @@
+[
+  {
+    "type": "constructor",
+    "inputs": [
+      {
+        "name": "evc",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "EVC",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "accruedFee",
+    "inputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "admin",
+    "inputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "fee",
+    "inputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "flowCaps",
+    "inputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "contract IERC4626"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "maxIn",
+        "type": "uint128",
+        "internalType": "uint128"
+      },
+      {
+        "name": "maxOut",
+        "type": "uint128",
+        "internalType": "uint128"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "reallocateTo",
+    "inputs": [
+      {
+        "name": "vault",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "withdrawals",
+        "type": "tuple[]",
+        "internalType": "struct Withdrawal[]",
+        "components": [
+          {
+            "name": "id",
+            "type": "address",
+            "internalType": "contract IERC4626"
+          },
+          {
+            "name": "amount",
+            "type": "uint128",
+            "internalType": "uint128"
+          }
+        ]
+      },
+      {
+        "name": "supplyId",
+        "type": "address",
+        "internalType": "contract IERC4626"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "payable"
+  },
+  {
+    "type": "function",
+    "name": "setAdmin",
+    "inputs": [
+      {
+        "name": "vault",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "newAdmin",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "setFee",
+    "inputs": [
+      {
+        "name": "vault",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "newFee",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "setFlowCaps",
+    "inputs": [
+      {
+        "name": "vault",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "config",
+        "type": "tuple[]",
+        "internalType": "struct FlowCapsConfig[]",
+        "components": [
+          {
+            "name": "id",
+            "type": "address",
+            "internalType": "contract IERC4626"
+          },
+          {
+            "name": "caps",
+            "type": "tuple",
+            "internalType": "struct FlowCaps",
+            "components": [
+              {
+                "name": "maxIn",
+                "type": "uint128",
+                "internalType": "uint128"
+              },
+              {
+                "name": "maxOut",
+                "type": "uint128",
+                "internalType": "uint128"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "transferFee",
+    "inputs": [
+      {
+        "name": "vault",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "feeRecipient",
+        "type": "address",
+        "internalType": "address payable"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "event",
+    "name": "PublicReallocateTo",
+    "inputs": [
+      {
+        "name": "sender",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "vault",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "supplyId",
+        "type": "address",
+        "indexed": true,
+        "internalType": "contract IERC4626"
+      },
+      {
+        "name": "suppliedAssets",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "PublicWithdrawal",
+    "inputs": [
+      {
+        "name": "sender",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "vault",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "id",
+        "type": "address",
+        "indexed": true,
+        "internalType": "contract IERC4626"
+      },
+      {
+        "name": "withdrawnAssets",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "SetAdmin",
+    "inputs": [
+      {
+        "name": "sender",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "vault",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "admin",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "SetAllocationFee",
+    "inputs": [
+      {
+        "name": "sender",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "vault",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "fee",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "SetFlowCaps",
+    "inputs": [
+      {
+        "name": "sender",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "vault",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "config",
+        "type": "tuple[]",
+        "indexed": false,
+        "internalType": "struct FlowCapsConfig[]",
+        "components": [
+          {
+            "name": "id",
+            "type": "address",
+            "internalType": "contract IERC4626"
+          },
+          {
+            "name": "caps",
+            "type": "tuple",
+            "internalType": "struct FlowCaps",
+            "components": [
+              {
+                "name": "maxIn",
+                "type": "uint128",
+                "internalType": "uint128"
+              },
+              {
+                "name": "maxOut",
+                "type": "uint128",
+                "internalType": "uint128"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "TransferAllocationFee",
+    "inputs": [
+      {
+        "name": "sender",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "vault",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "feeRecipient",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "error",
+    "name": "AlreadySet",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "ControllerDisabled",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "DepositMarketInWithdrawals",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "EVC_InvalidAddress",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "EmptyWithdrawals",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "FeeTransferFailed",
+    "inputs": [
+      {
+        "name": "feeRecipient",
+        "type": "address",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "InconsistentWithdrawals",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "IncorrectFee",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "MarketNotEnabled",
+    "inputs": [
+      {
+        "name": "id",
+        "type": "address",
+        "internalType": "contract IERC4626"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "MaxInflowExceeded",
+    "inputs": [
+      {
+        "name": "id",
+        "type": "address",
+        "internalType": "contract IERC4626"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "MaxOutflowExceeded",
+    "inputs": [
+      {
+        "name": "id",
+        "type": "address",
+        "internalType": "contract IERC4626"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "MaxSettableFlowCapExceeded",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "NotAdminNorVaultOwner",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "NotAuthorized",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "NotEnoughSupply",
+    "inputs": [
+      {
+        "name": "id",
+        "type": "address",
+        "internalType": "contract IERC4626"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "WithdrawZero",
+    "inputs": [
+      {
+        "name": "id",
+        "type": "address",
+        "internalType": "contract IERC4626"
+      }
+    ]
+  }
+]
