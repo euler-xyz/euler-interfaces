@@ -21,5 +21,6 @@
   "oracleRouterFactory": "0x0512F7cbc4Fd9d8BC47FfFa3aA0372bA2375158E",
   "swapVerifier": "0x5a8610DB17CfF800C8abEb6Da31B9bB1fF51843f",
   "swapper": "0x5ff07e50D83769861db40C5087753124D389c1c0",
-  "termsOfUseSigner": "0x03C4A1b8b860Dd98fB3fc03c8D693EAbABC667c5"
+  "termsOfUseSigner": "0x03C4A1b8b860Dd98fB3fc03c8D693EAbABC667c5",
+  "eulerEarnPublicAllocator": "0x4873ff8a70aA92443321Edb34a48f6aBfA7feB96"
 }

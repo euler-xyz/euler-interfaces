@@ -45,6 +45,7 @@ done
 contracts=(
   "EulerEarn"
   "EulerEarnFactory"
+  "PublicAllocator"
 )
 
 for contract in "${contracts[@]}"; do
