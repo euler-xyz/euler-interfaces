@@ -15,6 +15,8 @@ interface IIRMLens {
     function TTL_LIQUIDATION() external view returns (int256);
     function TTL_MORE_THAN_ONE_YEAR() external view returns (int256);
     function adaptiveCurveIRMFactory() external view returns (address);
+    function fixedCyclicalBinaryIRMFactory() external view returns (address);
     function getInterestRateModelInfo(address irm) external view returns (InterestRateModelDetailedInfo memory);
     function kinkIRMFactory() external view returns (address);
+    function kinkyIRMFactory() external view returns (address);
 }

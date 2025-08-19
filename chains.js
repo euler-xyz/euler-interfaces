@@ -3,7 +3,7 @@ let chains = [
 
   {
     chainId: 1,
-    name: 'mainnet',
+    name: 'ethereum',
     safeBaseUrl: 'https://app.safe.global',
     safeAddressPrefix: 'eth',
     status: 'production',
@@ -36,7 +36,7 @@ let chains = [
 
   {
     chainId: 60808,
-    name: 'bob',
+    name: 'BOB',
     safeBaseUrl: 'https://safe.gobob.xyz',
     safeAddressPrefix: 'bob',
     status: 'production',
@@ -60,7 +60,7 @@ let chains = [
 
   {
     chainId: 56,
-    name: 'bnb',
+    name: 'BSC',
     viemName: 'bsc',
     safeBaseUrl: 'https://app.safe.global',
     safeAddressPrefix: 'bnb',
@@ -92,6 +92,13 @@ let chains = [
     status: 'production',
   },
 
+  {
+    chainId: 59144,
+    name: 'linea',
+    safeBaseUrl: 'https://app.safe.global',
+    safeAddressPrefix: 'linea',
+    status: 'production',
+  },
 
   //// BETA
 
@@ -158,14 +165,6 @@ let chains = [
     name: 'hyperevm',
     safeBaseUrl: 'https://safe.onchainden.com',
     safeAddressPrefix: 'hyperevm',
-    status: 'testing',
-  },
-
-  {
-    chainId: 59144,
-    name: 'linea',
-    safeBaseUrl: 'https://app.safe.global',
-    safeAddressPrefix: 'linea',
     status: 'testing',
   },
 ];
