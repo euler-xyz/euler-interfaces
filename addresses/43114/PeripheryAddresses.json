@@ -6,6 +6,7 @@
   "escrowedCollateralPerspective": "0x19747Fb40074F8cC32fd24445fAce1fCe11BD281",
   "eulerEarnFactoryPerspective": "0x068f7C1f56B3963Beeb1ef4474bca4dfe83FDc37",
   "eulerEarnGovernedPerspective": "0x23559eF969252b81d8DA2b86a76D85fb602860Ad",
+  "eulerEarnPublicAllocator": "0x2524762ddb853AB1e572B81E5E6377a8a1536aA5",
   "eulerUngoverned0xPerspective": "0x299f86BbB552F74Be79A687c565aC52452C0a02d",
   "eulerUngovernedNzxPerspective": "0xC2675790c775D385425D72652ded5f299Fbb2868",
   "evkFactoryPerspective": "0x4247432b4f9c32e99ecC2Ff7bAdd98783EecFA6F",
@@ -21,6 +22,5 @@
   "oracleRouterFactory": "0x80528F014E84658e85D3C6D4896A29Fa933Be696",
   "swapVerifier": "0x0d7938D9c31Cd7dD693752074284af133c1142de",
   "swapper": "0x6E1C286e888Ab5911ca37aCeD81365d57eC29a06",
-  "termsOfUseSigner": "0xB1F64129ba3115DACaf294B07bCBF13CFFbBF1Af",
-  "eulerEarnPublicAllocator": "0x2524762ddb853AB1e572B81E5E6377a8a1536aA5"
+  "termsOfUseSigner": "0xB1F64129ba3115DACaf294B07bCBF13CFFbBF1Af"
 }
