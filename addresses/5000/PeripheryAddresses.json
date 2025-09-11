@@ -12,6 +12,7 @@
   "evkFactoryPerspective": "0xB2c41058f441383EfA8f26F3dcff471205599361",
   "externalVaultRegistry": "0x264fF8BC0b816990aCf481be908c114b60df5Ef2",
   "feeFlowController": "0x2fed03714ff6b27Da94e1778a6F4Fac9b38a5108",
+  "feeFlowControllerUtil": "0xaE6B9D0f199cd81EeAbf0Cd0403228Ba18368520",
   "fixedCyclicalBinaryIRMFactory": "0x67955D12d223DC0EFb9b2A887f2Bd296a6Db1147",
   "governedPerspective": "0x8c86880D18a4E157EaDE61BdaA8a38c94C0d2Bd9",
   "governorAccessControlEmergencyFactory": "0xd3159d6edd291b02fA6bf7c75f76659D633E46bf",

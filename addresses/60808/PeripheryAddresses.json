@@ -6,11 +6,13 @@
   "escrowedCollateralPerspective": "0x44dcB151f7b091eA6C9090Ba7ad94C3e479bFE63",
   "eulerEarnFactoryPerspective": "0x1224ae61765090784731c8b36CEB2f7946eBE308",
   "eulerEarnGovernedPerspective": "0x7b4065698dF1dd0DF7ad4876A5050657295f836a",
+  "eulerEarnPublicAllocator": "0xB5Daee4a8AD1388B3D72C1367b8BA63DfB4AAbf5",
   "eulerUngoverned0xPerspective": "0x878343fc7AA3F3eC841D6C6A0e942B7209EF0D30",
   "eulerUngovernedNzxPerspective": "0x6853213a8c0b66b7148B87E8D5cCfc580F60c077",
   "evkFactoryPerspective": "0x05B98f64A31A33666cC9D2B32046a6Ca42699823",
   "externalVaultRegistry": "0x28029B4De813866A4F7F03AeE4445732F02B3B09",
   "feeFlowController": "0xcb3c0D131C64265099868F847face425499785A8",
+  "feeFlowControllerUtil": "0x4DB5a802E5dc5BA51162393Ebb79CD814F48B7aD",
   "fixedCyclicalBinaryIRMFactory": "0xb6b61828bf5E28193E58837174Af037848dEa6d5",
   "governedPerspective": "0xed62ebA9552dF86b5F7d995eD00C06494bBbB638",
   "governorAccessControlEmergencyFactory": "0xD9FA1867066C3cDc50aC877FeDf505Eb2FC64dd7",
@@ -21,6 +23,5 @@
   "oracleRouterFactory": "0xEFCF1F2f09163e3813f5C16346A9F2Aa21ABA74d",
   "swapVerifier": "0x296041DbdBC92171293F23c0a31e1574b791060d",
   "swapper": "0x697Ca30D765c1603890D88AAffBa3BeCCe72059d",
-  "termsOfUseSigner": "0x39cf8D253802cAD922bBfd2b695a83B8086D1F5f",
-  "eulerEarnPublicAllocator": "0xB5Daee4a8AD1388B3D72C1367b8BA63DfB4AAbf5"
+  "termsOfUseSigner": "0x39cf8D253802cAD922bBfd2b695a83B8086D1F5f"
 }
