@@ -108,6 +108,14 @@ let chains = [
     status: 'production',
   },
 
+  {
+    chainId: 9745,
+    name: 'plasma',
+    safeBaseUrl: 'https://app.stage.safe.protofire.io',
+    safeAddressPrefix: 'xpl',
+    status: 'production',
+  },
+
   //// BETA
 
   //// TESTING
@@ -176,13 +184,6 @@ let chains = [
     status: 'testing',
   },
 
-  {
-    chainId: 9745,
-    name: 'plasma',
-    safeBaseUrl: 'https://app.stage.safe.protofire.io',
-    safeAddressPrefix: 'xpl',
-    status: 'testing',
-  },
 ];
 
 
