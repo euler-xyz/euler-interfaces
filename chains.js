@@ -111,8 +111,8 @@ let chains = [
   {
     chainId: 9745,
     name: 'plasma',
-    safeBaseUrl: 'https://app.stage.safe.protofire.io',
-    safeAddressPrefix: 'xpl',
+    safeBaseUrl: 'https://app.safe.global',
+    safeAddressPrefix: 'plasma',
     status: 'production',
   },
 
