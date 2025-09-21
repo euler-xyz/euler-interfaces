@@ -100,6 +100,22 @@ let chains = [
     status: 'production',
   },
 
+  {
+    chainId: 999,
+    name: 'hyperEVM',
+    safeBaseUrl: 'https://safe.onchainden.com',
+    safeAddressPrefix: 'hyperevm',
+    status: 'production',
+  },
+
+  {
+    chainId: 9745,
+    name: 'plasma',
+    safeBaseUrl: 'https://app.safe.global',
+    safeAddressPrefix: 'plasma',
+    status: 'production',
+  },
+
   //// BETA
 
   //// TESTING
@@ -153,6 +169,14 @@ let chains = [
   },
 
   {
+    chainId: 5000,
+    name: 'mantle',
+    safeBaseUrl: 'https://app.safe.global',
+    safeAddressPrefix: 'mnt',
+    status: 'testing',
+  },
+
+  {
     chainId: 57073,
     name: 'ink',
     safeBaseUrl: 'https://app.safe.global',
@@ -160,13 +184,6 @@ let chains = [
     status: 'testing',
   },
 
-  {
-    chainId: 999,
-    name: 'hyperevm',
-    safeBaseUrl: 'https://safe.onchainden.com',
-    safeAddressPrefix: 'hyperevm',
-    status: 'testing',
-  },
 ];
 
 
