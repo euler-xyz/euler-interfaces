@@ -4,6 +4,7 @@ let chains = [
   {
     chainId: 1,
     name: 'ethereum',
+    viemName: 'mainnet',
     safeBaseUrl: 'https://app.safe.global',
     safeAddressPrefix: 'eth',
     status: 'production',
@@ -37,6 +38,7 @@ let chains = [
   {
     chainId: 60808,
     name: 'BOB',
+    viemName: 'bob',
     safeBaseUrl: 'https://safe.gobob.xyz',
     safeAddressPrefix: 'bob',
     status: 'production',
