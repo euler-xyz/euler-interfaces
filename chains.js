@@ -118,6 +118,14 @@ let chains = [
     status: 'production',
   },
 
+  {
+    chainId: 143,
+    name: 'monad',
+    safeBaseUrl: 'https://app.safe.global',
+    safeAddressPrefix: 'monad',
+    status: 'production',
+  },
+
   //// BETA
 
   //// TESTING
