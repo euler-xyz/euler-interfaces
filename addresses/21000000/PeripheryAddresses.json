@@ -11,6 +11,7 @@
   "eulerUngovernedNzxPerspective": "0x9dD3375EC412f3d0C68dB1Fe30a295167D22cFDc",
   "evkFactoryPerspective": "0x764A10815a36bFa15Bdc67fBddDa8109EfE9594e",
   "externalVaultRegistry": "0x3064E4eC1360f8d4361141962e3c59B37Df984a2",
+  "feeCollector": "0x0000000000000000000000000000000000000000",
   "feeFlowController": "0xEf9c37F8fA3B69ADEe4491C2A3b1DB28c181e067",
   "fixedCyclicalBinaryIRMFactory": "0x0000000000000000000000000000000000000000",
   "governedPerspective": "0xeF419505deE04e5F17dc0fb744612DefDcdEfBef",

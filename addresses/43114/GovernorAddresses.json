@@ -3,6 +3,7 @@
   "accessControlEmergencyGovernorAdminTimelockController": "0xc968779bbfD25dc6a39D55b68B80D71Cd7A69F53",
   "accessControlEmergencyGovernorWildcardTimelockController": "0x743144eeC2924967B437B6E8f8C203a1785d0802",
   "capRiskSteward": "0x0000000000000000000000000000000000000000",
+  "eUSDAdminTimelockController": "0x0000000000000000000000000000000000000000",
   "eVaultFactoryGovernor": "0x77AB5aF7CA872412DF719cB87c8fAA7831eE2226",
   "eVaultFactoryTimelockController": "0x927AA71b4bDBea5472eE1BB8fD5227D5eBdB971c"
 }
