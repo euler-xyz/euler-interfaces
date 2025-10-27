@@ -11,14 +11,19 @@ interface IAccountLens {
     struct AccountLiquidityInfo {
         bool queryFailure;
         bytes queryFailureReason;
+        address account;
+        address vault;
+        address unitOfAccount;
         int256 timeToLiquidation;
-        uint256 liabilityValue;
+        uint256 liabilityValueBorrowing;
+        uint256 liabilityValueLiquidation;
         uint256 collateralValueBorrowing;
         uint256 collateralValueLiquidation;
         uint256 collateralValueRaw;
-        CollateralLiquidityInfo[] collateralLiquidityBorrowingInfo;
-        CollateralLiquidityInfo[] collateralLiquidityLiquidationInfo;
-        CollateralLiquidityInfo[] collateralLiquidityRawInfo;
+        address[] collaterals;
+        uint256[] collateralValuesBorrowing;
+        uint256[] collateralValuesLiquidation;
+        uint256[] collateralValuesRaw;
     }
 
     struct AccountMultipleVaultsInfo {
@@ -35,11 +40,6 @@ interface IAccountLens {
         bool balanceForwarderEnabled;
         uint256 balance;
         EnabledRewardInfo[] enabledRewardsInfo;
-    }
-
-    struct CollateralLiquidityInfo {
-        address collateral;
-        uint256 collateralValue;
     }
 
     struct EVCAccountInfo {
@@ -89,6 +89,14 @@ interface IAccountLens {
         view
         returns (AccountMultipleVaultsInfo memory);
     function getAccountInfo(address account, address vault) external view returns (AccountInfo memory);
+    function getAccountLiquidityInfo(address account, address vault)
+        external
+        view
+        returns (AccountLiquidityInfo memory);
+    function getAccountLiquidityInfoNoValidation(address account, address vault)
+        external
+        view
+        returns (AccountLiquidityInfo memory);
     function getEVCAccountInfo(address evc, address account) external view returns (EVCAccountInfo memory);
     function getRewardAccountInfo(address account, address vault) external view returns (AccountRewardInfo memory);
     function getTimeToLiquidation(address account, address vault) external view returns (int256);

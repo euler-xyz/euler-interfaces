@@ -225,12 +225,32 @@
                     "internalType": "bytes"
                   },
                   {
+                    "name": "account",
+                    "type": "address",
+                    "internalType": "address"
+                  },
+                  {
+                    "name": "vault",
+                    "type": "address",
+                    "internalType": "address"
+                  },
+                  {
+                    "name": "unitOfAccount",
+                    "type": "address",
+                    "internalType": "address"
+                  },
+                  {
                     "name": "timeToLiquidation",
                     "type": "int256",
                     "internalType": "int256"
                   },
                   {
-                    "name": "liabilityValue",
+                    "name": "liabilityValueBorrowing",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                  },
+                  {
+                    "name": "liabilityValueLiquidation",
                     "type": "uint256",
                     "internalType": "uint256"
                   },
@@ -250,55 +270,24 @@
                     "internalType": "uint256"
                   },
                   {
-                    "name": "collateralLiquidityBorrowingInfo",
-                    "type": "tuple[]",
-                    "internalType": "struct CollateralLiquidityInfo[]",
-                    "components": [
-                      {
-                        "name": "collateral",
-                        "type": "address",
-                        "internalType": "address"
-                      },
-                      {
-                        "name": "collateralValue",
-                        "type": "uint256",
-                        "internalType": "uint256"
-                      }
-                    ]
+                    "name": "collaterals",
+                    "type": "address[]",
+                    "internalType": "address[]"
                   },
                   {
-                    "name": "collateralLiquidityLiquidationInfo",
-                    "type": "tuple[]",
-                    "internalType": "struct CollateralLiquidityInfo[]",
-                    "components": [
-                      {
-                        "name": "collateral",
-                        "type": "address",
-                        "internalType": "address"
-                      },
-                      {
-                        "name": "collateralValue",
-                        "type": "uint256",
-                        "internalType": "uint256"
-                      }
-                    ]
+                    "name": "collateralValuesBorrowing",
+                    "type": "uint256[]",
+                    "internalType": "uint256[]"
                   },
                   {
-                    "name": "collateralLiquidityRawInfo",
-                    "type": "tuple[]",
-                    "internalType": "struct CollateralLiquidityInfo[]",
-                    "components": [
-                      {
-                        "name": "collateral",
-                        "type": "address",
-                        "internalType": "address"
-                      },
-                      {
-                        "name": "collateralValue",
-                        "type": "uint256",
-                        "internalType": "uint256"
-                      }
-                    ]
+                    "name": "collateralValuesLiquidation",
+                    "type": "uint256[]",
+                    "internalType": "uint256[]"
+                  },
+                  {
+                    "name": "collateralValuesRaw",
+                    "type": "uint256[]",
+                    "internalType": "uint256[]"
                   }
                 ]
               }
@@ -542,12 +531,32 @@
                     "internalType": "bytes"
                   },
                   {
+                    "name": "account",
+                    "type": "address",
+                    "internalType": "address"
+                  },
+                  {
+                    "name": "vault",
+                    "type": "address",
+                    "internalType": "address"
+                  },
+                  {
+                    "name": "unitOfAccount",
+                    "type": "address",
+                    "internalType": "address"
+                  },
+                  {
                     "name": "timeToLiquidation",
                     "type": "int256",
                     "internalType": "int256"
                   },
                   {
-                    "name": "liabilityValue",
+                    "name": "liabilityValueBorrowing",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                  },
+                  {
+                    "name": "liabilityValueLiquidation",
                     "type": "uint256",
                     "internalType": "uint256"
                   },
@@ -567,55 +576,24 @@
                     "internalType": "uint256"
                   },
                   {
-                    "name": "collateralLiquidityBorrowingInfo",
-                    "type": "tuple[]",
-                    "internalType": "struct CollateralLiquidityInfo[]",
-                    "components": [
-                      {
-                        "name": "collateral",
-                        "type": "address",
-                        "internalType": "address"
-                      },
-                      {
-                        "name": "collateralValue",
-                        "type": "uint256",
-                        "internalType": "uint256"
-                      }
-                    ]
+                    "name": "collaterals",
+                    "type": "address[]",
+                    "internalType": "address[]"
                   },
                   {
-                    "name": "collateralLiquidityLiquidationInfo",
-                    "type": "tuple[]",
-                    "internalType": "struct CollateralLiquidityInfo[]",
-                    "components": [
-                      {
-                        "name": "collateral",
-                        "type": "address",
-                        "internalType": "address"
-                      },
-                      {
-                        "name": "collateralValue",
-                        "type": "uint256",
-                        "internalType": "uint256"
-                      }
-                    ]
+                    "name": "collateralValuesBorrowing",
+                    "type": "uint256[]",
+                    "internalType": "uint256[]"
                   },
                   {
-                    "name": "collateralLiquidityRawInfo",
-                    "type": "tuple[]",
-                    "internalType": "struct CollateralLiquidityInfo[]",
-                    "components": [
-                      {
-                        "name": "collateral",
-                        "type": "address",
-                        "internalType": "address"
-                      },
-                      {
-                        "name": "collateralValue",
-                        "type": "uint256",
-                        "internalType": "uint256"
-                      }
-                    ]
+                    "name": "collateralValuesLiquidation",
+                    "type": "uint256[]",
+                    "internalType": "uint256[]"
+                  },
+                  {
+                    "name": "collateralValuesRaw",
+                    "type": "uint256[]",
+                    "internalType": "uint256[]"
                   }
                 ]
               }
@@ -679,6 +657,208 @@
                 ]
               }
             ]
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getAccountLiquidityInfo",
+    "inputs": [
+      {
+        "name": "account",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "vault",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "internalType": "struct AccountLiquidityInfo",
+        "components": [
+          {
+            "name": "queryFailure",
+            "type": "bool",
+            "internalType": "bool"
+          },
+          {
+            "name": "queryFailureReason",
+            "type": "bytes",
+            "internalType": "bytes"
+          },
+          {
+            "name": "account",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "vault",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "unitOfAccount",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "timeToLiquidation",
+            "type": "int256",
+            "internalType": "int256"
+          },
+          {
+            "name": "liabilityValueBorrowing",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "liabilityValueLiquidation",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "collateralValueBorrowing",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "collateralValueLiquidation",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "collateralValueRaw",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "collaterals",
+            "type": "address[]",
+            "internalType": "address[]"
+          },
+          {
+            "name": "collateralValuesBorrowing",
+            "type": "uint256[]",
+            "internalType": "uint256[]"
+          },
+          {
+            "name": "collateralValuesLiquidation",
+            "type": "uint256[]",
+            "internalType": "uint256[]"
+          },
+          {
+            "name": "collateralValuesRaw",
+            "type": "uint256[]",
+            "internalType": "uint256[]"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getAccountLiquidityInfoNoValidation",
+    "inputs": [
+      {
+        "name": "account",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "vault",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "internalType": "struct AccountLiquidityInfo",
+        "components": [
+          {
+            "name": "queryFailure",
+            "type": "bool",
+            "internalType": "bool"
+          },
+          {
+            "name": "queryFailureReason",
+            "type": "bytes",
+            "internalType": "bytes"
+          },
+          {
+            "name": "account",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "vault",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "unitOfAccount",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "timeToLiquidation",
+            "type": "int256",
+            "internalType": "int256"
+          },
+          {
+            "name": "liabilityValueBorrowing",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "liabilityValueLiquidation",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "collateralValueBorrowing",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "collateralValueLiquidation",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "collateralValueRaw",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "collaterals",
+            "type": "address[]",
+            "internalType": "address[]"
+          },
+          {
+            "name": "collateralValuesBorrowing",
+            "type": "uint256[]",
+            "internalType": "uint256[]"
+          },
+          {
+            "name": "collateralValuesLiquidation",
+            "type": "uint256[]",
+            "internalType": "uint256[]"
+          },
+          {
+            "name": "collateralValuesRaw",
+            "type": "uint256[]",
+            "internalType": "uint256[]"
           }
         ]
       }
@@ -975,12 +1155,32 @@
                 "internalType": "bytes"
               },
               {
+                "name": "account",
+                "type": "address",
+                "internalType": "address"
+              },
+              {
+                "name": "vault",
+                "type": "address",
+                "internalType": "address"
+              },
+              {
+                "name": "unitOfAccount",
+                "type": "address",
+                "internalType": "address"
+              },
+              {
                 "name": "timeToLiquidation",
                 "type": "int256",
                 "internalType": "int256"
               },
               {
-                "name": "liabilityValue",
+                "name": "liabilityValueBorrowing",
+                "type": "uint256",
+                "internalType": "uint256"
+              },
+              {
+                "name": "liabilityValueLiquidation",
                 "type": "uint256",
                 "internalType": "uint256"
               },
@@ -1000,55 +1200,24 @@
                 "internalType": "uint256"
               },
               {
-                "name": "collateralLiquidityBorrowingInfo",
-                "type": "tuple[]",
-                "internalType": "struct CollateralLiquidityInfo[]",
-                "components": [
-                  {
-                    "name": "collateral",
-                    "type": "address",
-                    "internalType": "address"
-                  },
-                  {
-                    "name": "collateralValue",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                  }
-                ]
+                "name": "collaterals",
+                "type": "address[]",
+                "internalType": "address[]"
               },
               {
-                "name": "collateralLiquidityLiquidationInfo",
-                "type": "tuple[]",
-                "internalType": "struct CollateralLiquidityInfo[]",
-                "components": [
-                  {
-                    "name": "collateral",
-                    "type": "address",
-                    "internalType": "address"
-                  },
-                  {
-                    "name": "collateralValue",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                  }
-                ]
+                "name": "collateralValuesBorrowing",
+                "type": "uint256[]",
+                "internalType": "uint256[]"
               },
               {
-                "name": "collateralLiquidityRawInfo",
-                "type": "tuple[]",
-                "internalType": "struct CollateralLiquidityInfo[]",
-                "components": [
-                  {
-                    "name": "collateral",
-                    "type": "address",
-                    "internalType": "address"
-                  },
-                  {
-                    "name": "collateralValue",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                  }
-                ]
+                "name": "collateralValuesLiquidation",
+                "type": "uint256[]",
+                "internalType": "uint256[]"
+              },
+              {
+                "name": "collateralValuesRaw",
+                "type": "uint256[]",
+                "internalType": "uint256[]"
               }
             ]
           }
