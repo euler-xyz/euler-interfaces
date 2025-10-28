@@ -13,6 +13,7 @@
   "externalVaultRegistry": "0x73313Bc5aF05187466f42c53eaF4851816bd76CD",
   "feeCollector": "0x0000000000000000000000000000000000000000",
   "feeFlowController": "0x5EAe58dc72E4E374F32eCA2751cC38b573dd82c9",
+  "feeFlowControllerUtil": "0x3DB06879907a3311c4b95A19fDb80ead78Bd940d",
   "fixedCyclicalBinaryIRMFactory": "0x664a67B5D4e53B8A0eab1421EEe2b7097a5523d1",
   "governedPerspective": "0xAE06ad3a165acA82AC4eFEcdE2D3875414C419b2",
   "governorAccessControlEmergencyFactory": "0x3e3eD6B48B7fBD2518019CE53bbB02048E56f265",
