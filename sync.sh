@@ -55,6 +55,8 @@ done
 contracts=(
   "EulerSwap"
   "EulerSwapFactory"
+  "EulerSwapRegistry"
+  "EulerSwapProtocolFeeConfig"
 )
 
 for contract in "${contracts[@]}"; do
