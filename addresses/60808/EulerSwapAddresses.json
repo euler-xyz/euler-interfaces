@@ -1,5 +1,10 @@
 {
   "eulerSwapV1Factory": "0xE25B3cdA6fccAcbD794aEA64eE1B496d7b441644",
   "eulerSwapV1Implementation": "0x334eac29ffAc27E6BC3484A738DAf520359698F0",
-  "eulerSwapV1Periphery": "0x199cC7C8606088bc22D82CDae2D7EE7F5F99ec9F"
+  "eulerSwapV1Periphery": "0x199cC7C8606088bc22D82CDae2D7EE7F5F99ec9F",
+  "eulerSwapV2Factory": "0xa077991e2929d97f29fE39372E736FC118a4FAd3",
+  "eulerSwapV2Implementation": "0x90bd38E89726BdCf42E07D88B23c2A493cb3877a",
+  "eulerSwapV2Periphery": "0xaEAab95eE90196E20fD2a5348643cCa0EF2b038e",
+  "eulerSwapV2ProtocolFeeConfig": "0x6e5dF960eccD2Bf8818526A88f6E7da99a5379d7",
+  "eulerSwapV2Registry": "0xf33F4e20905801D55531b38749727954D0152d3D"
 }

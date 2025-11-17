@@ -40,24 +40,25 @@ interface IEulerSwap {
     type BeforeSwapDelta is int256;
     type Currency is address;
 
-    struct InitialState {
-        uint112 currReserve0;
-        uint112 currReserve1;
-    }
-
-    struct Params {
-        address vault0;
-        address vault1;
-        address eulerAccount;
+    struct DynamicParams {
         uint112 equilibriumReserve0;
         uint112 equilibriumReserve1;
-        uint256 priceX;
-        uint256 priceY;
-        uint256 concentrationX;
-        uint256 concentrationY;
-        uint256 fee;
-        uint256 protocolFee;
-        address protocolFeeRecipient;
+        uint112 minReserve0;
+        uint112 minReserve1;
+        uint80 priceX;
+        uint80 priceY;
+        uint64 concentrationX;
+        uint64 concentrationY;
+        uint64 fee0;
+        uint64 fee1;
+        uint40 expiration;
+        uint8 swapHookedOperations;
+        address swapHook;
+    }
+
+    struct InitialState {
+        uint112 reserve0;
+        uint112 reserve1;
     }
 
     struct PoolKey {
@@ -68,40 +69,48 @@ interface IEulerSwap {
         address hooks;
     }
 
-    error AlreadyActivated();
+    struct StaticParams {
+        address supplyVault0;
+        address supplyVault1;
+        address borrowVault0;
+        address borrowVault1;
+        address eulerAccount;
+        address feeRecipient;
+    }
+
     error AmountTooBig();
-    error AssetsOutOfOrderOrEqual();
-    error BadParam();
     error ControllerDisabled();
     error CurveViolation();
     error DepositFailure(bytes reason);
     error EVC_InvalidAddress();
+    error Expired();
+    error HookError(uint8 hookFlag, bytes wrappedError);
     error HookNotImplemented();
     error InsufficientCalldata();
     error Locked();
-    error LockedHook();
     error NotAuthorized();
     error NotPoolManager();
     error OperatorNotInstalled();
-    error Overflow();
     error SafeERC20FailedOperation(address token);
     error SwapLimitExceeded();
+    error SwapRejected();
     error UnsupportedPair();
 
-    event EulerSwapActivated(address indexed asset0, address indexed asset1);
     event Swap(
         address indexed sender,
         uint256 amount0In,
         uint256 amount1In,
         uint256 amount0Out,
         uint256 amount1Out,
+        uint256 fee0,
+        uint256 fee1,
         uint112 reserve0,
         uint112 reserve1,
         address indexed to
     );
 
     function EVC() external view returns (address);
-    function activate(InitialState memory initialState) external;
+    function activate(DynamicParams memory, InitialState memory) external;
     function afterAddLiquidity(
         address sender,
         PoolKey memory key,
@@ -159,11 +168,18 @@ interface IEulerSwap {
         returns (uint256);
     function curve() external view returns (bytes32);
     function getAssets() external view returns (address asset0, address asset1);
+    function getDynamicParams() external pure returns (DynamicParams memory);
     function getHookPermissions() external pure returns (Hooks.Permissions memory);
-    function getLimits(address tokenIn, address tokenOut) external view returns (uint256, uint256);
-    function getParams() external pure returns (Params memory);
+    function getLimits(address tokenIn, address tokenOut) external view returns (uint256 inLimit, uint256 outLimit);
     function getReserves() external view returns (uint112, uint112, uint32);
+    function getStaticParams() external pure returns (StaticParams memory);
+    function isInstalled() external view returns (bool);
+    function managementImpl() external view returns (address);
+    function managers(address manager) external view returns (bool installed);
     function poolKey() external view returns (PoolKey memory);
     function poolManager() external view returns (address);
+    function protocolFeeConfig() external view returns (address);
+    function reconfigure(DynamicParams memory, InitialState memory) external;
+    function setManager(address, bool) external;
     function swap(uint256 amount0Out, uint256 amount1Out, address to, bytes memory data) external;
 }
