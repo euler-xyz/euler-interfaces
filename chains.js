@@ -105,8 +105,8 @@ let chains = [
   {
     chainId: 999,
     name: 'hyperEVM',
-    safeBaseUrl: 'https://safe.onchainden.com',
-    safeAddressPrefix: 'hyperevm',
+    safeBaseUrl: 'https://app.safe.global',
+    safeAddressPrefix: 'hyper-evm',
     status: 'production',
   },
 
