@@ -50,7 +50,7 @@ jobs:
 
       - name: Install dependencies
         working-directory: /tmp/euler-verifier
-        run: uv sync
+        run: uv sync --no-install-project
 
       - name: Symlink euler-interfaces into verifier
         run: |
