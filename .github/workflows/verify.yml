@@ -1,0 +1,108 @@
+name: Contract Verification
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'addresses/**'
+  workflow_dispatch:
+    inputs:
+      network:
+        description: 'Network name or chain ID to verify (leave empty to verify changed chains)'
+        required: false
+        type: string
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout euler-interfaces
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Detect changed chains
+        id: detect
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            CHAINS=$(git diff --name-only HEAD~1 HEAD -- addresses/ | grep -oP 'addresses/\K[0-9]+' | sort -u | tr '\n' ' ')
+          elif [ -n "${{ inputs.network }}" ]; then
+            CHAINS="${{ inputs.network }}"
+          else
+            # Manual trigger with no input: discover all chains
+            CHAINS="discover"
+          fi
+          echo "chains=$CHAINS" >> "$GITHUB_OUTPUT"
+          echo "Chains to verify: $CHAINS"
+
+      - name: Clone euler-verifier
+        run: git clone --depth 1 https://github.com/euler-xyz/euler-verifier.git /tmp/euler-verifier
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install uv
+        run: pip install uv
+
+      - name: Install dependencies
+        run: cd /tmp/euler-verifier && uv sync
+
+      - name: Symlink euler-interfaces into verifier
+        run: |
+          rm -rf /tmp/euler-verifier/euler-interfaces
+          ln -s "$GITHUB_WORKSPACE" /tmp/euler-verifier/euler-interfaces
+
+      - name: Setup source repositories
+        run: |
+          mkdir -p /tmp/euler-verifier/repos
+
+          echo "Cloning evk-periphery..."
+          git clone --depth 50 https://github.com/euler-xyz/evk-periphery /tmp/euler-verifier/repos/evk-periphery
+          cd /tmp/euler-verifier/repos/evk-periphery
+          git fetch --tags
+          git submodule update --init --recursive
+          cd /tmp/euler-verifier
+
+          echo "Cloning euler-earn..."
+          git clone --depth 50 https://github.com/euler-xyz/euler-earn /tmp/euler-verifier/repos/euler-earn-standalone
+          cd /tmp/euler-verifier/repos/euler-earn-standalone
+          git fetch --tags --all
+          cd /tmp/euler-verifier
+
+          echo "Cloning euler-swap..."
+          git clone --depth 50 https://github.com/euler-xyz/euler-swap /tmp/euler-verifier/repos/euler-swap-standalone
+          cd /tmp/euler-verifier/repos/euler-swap-standalone
+          git fetch --tags --all
+          cd /tmp/euler-verifier
+
+          echo "Done setting up repositories"
+
+      - name: Run verification
+        env:
+          ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
+        run: |
+          cd /tmp/euler-verifier
+          CHAINS="${{ steps.detect.outputs.chains }}"
+
+          if [ "$CHAINS" = "discover" ]; then
+            uv run python verify.py --discover || true
+          else
+            for CHAIN_ID in $CHAINS; do
+              echo "=========================================="
+              echo "Verifying chain: $CHAIN_ID"
+              echo "=========================================="
+              uv run python verify.py "$CHAIN_ID" || true
+            done
+          fi
+
+      - name: Upload verification reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: verification-reports
+          path: /tmp/euler-verifier/results/
+          retention-days: 30
