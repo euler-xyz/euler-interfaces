@@ -38,7 +38,7 @@ jobs:
           echo "Chains to verify: $CHAINS"
 
       - name: Clone euler-verifier
-        run: git clone --depth 1 https://github.com/euler-xyz/euler-verifier.git /tmp/euler-verifier
+        run: git clone --depth 1 https://x-access-token:${{ secrets.EULER_TOKEN }}@github.com/euler-xyz/euler-verifier.git /tmp/euler-verifier
 
       - name: Setup Python
         uses: actions/setup-python@v5
