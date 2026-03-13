@@ -78,6 +78,7 @@ jobs:
           git clone --depth 50 https://github.com/euler-xyz/euler-swap /tmp/euler-verifier/repos/euler-swap-standalone
           cd /tmp/euler-verifier/repos/euler-swap-standalone
           git fetch --tags --all
+          git fetch --depth=1 origin tag eulerswap-1.0
           cd /tmp/euler-verifier
 
           echo "Done setting up repositories"
