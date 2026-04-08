@@ -126,6 +126,14 @@ let chains = [
     status: 'production',
   },
 
+  {
+    chainId: 2818,
+    name: 'morph',
+    safeBaseUrl: 'https://safe.morphl2.io/',
+    safeAddressPrefix: 'morph',
+    status: 'production',
+  },
+
   //// BETA
 
   //// TESTING
@@ -159,14 +167,6 @@ let chains = [
     name: 'corn',
     safeBaseUrl: 'https://safe.usecorn.com',
     safeAddressPrefix: 'corn',
-    status: 'testing',
-  },
-
-  {
-    chainId: 2818,
-    name: 'morph',
-    safeBaseUrl: 'https://safe.morphl2.io/',
-    safeAddressPrefix: 'morph',
     status: 'testing',
   },
 
