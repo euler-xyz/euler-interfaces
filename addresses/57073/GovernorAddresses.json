@@ -1,9 +1,0 @@
-{
-  "accessControlEmergencyGovernor": "0x4e56559301BD83A96eCd9958973eFc183116823c",
-  "accessControlEmergencyGovernorAdminTimelockController": "0xcf27B67f01e529D57f4419Fe5edC1F4352124fCf",
-  "accessControlEmergencyGovernorWildcardTimelockController": "0x397a34000cCfea4f9d60f965Eb75CdF9fCa20476",
-  "capRiskSteward": "0x0000000000000000000000000000000000000000",
-  "eUSDAdminTimelockController": "0x0000000000000000000000000000000000000000",
-  "eVaultFactoryGovernor": "0x97AA04A97aDc649A63718a255373f1F154aE4486",
-  "eVaultFactoryTimelockController": "0x4D4f319cCDF82111F62fD3D36d5ad890AC0737fa"
-}
