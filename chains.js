@@ -138,62 +138,6 @@ let chains = [
 
   //// TESTING
 
-  {
-    chainId: 10,
-    name: 'optimism',
-    safeBaseUrl: 'https://app.safe.global',
-    safeAddressPrefix: 'oeth',
-    status: 'testing',
-  },
-
-  {
-    chainId: 100,
-    name: 'gnosis',
-    safeBaseUrl: 'https://app.safe.global',
-    safeAddressPrefix: 'gno',
-    status: 'testing',
-  },
-
-  {
-    chainId: 137,
-    name: 'polygon',
-    safeBaseUrl: 'https://app.safe.global',
-    safeAddressPrefix: 'matic',
-    status: 'testing',
-  },
-
-  {
-    chainId: 21000000,
-    name: 'corn',
-    safeBaseUrl: 'https://safe.usecorn.com',
-    safeAddressPrefix: 'corn',
-    status: 'testing',
-  },
-
-  {
-    chainId: 480,
-    name: 'worldchain',
-    safeBaseUrl: 'https://app.safe.global',
-    safeAddressPrefix: 'wc',
-    status: 'testing',
-  },
-
-  {
-    chainId: 5000,
-    name: 'mantle',
-    safeBaseUrl: 'https://app.safe.global',
-    safeAddressPrefix: 'mnt',
-    status: 'testing',
-  },
-
-  {
-    chainId: 57073,
-    name: 'ink',
-    safeBaseUrl: 'https://app.safe.global',
-    safeAddressPrefix: 'ink',
-    status: 'testing',
-  },
-
 ];
 
 
