@@ -134,6 +134,14 @@ let chains = [
     status: 'production',
   },
 
+  {
+    chainId: 137,
+    name: 'polygon',
+    safeBaseUrl: 'https://app.safe.global',
+    safeAddressPrefix: 'matic',
+    status: 'production',
+  },
+
   //// BETA
 
   //// TESTING
