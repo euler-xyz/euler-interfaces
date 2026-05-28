@@ -142,6 +142,14 @@ let chains = [
     status: 'production',
   },
 
+  {
+    chainId: 177,
+    name: 'hashkey',
+    safeBaseUrl: 'https://multisig.hashkeychain.net',
+    safeAddressPrefix: 'hsk',
+    status: 'production',
+  },
+
   //// BETA
 
   //// TESTING
