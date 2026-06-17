@@ -108,3 +108,19 @@ jobs:
           name: verification-reports
           path: /tmp/euler-verifier/results/
           retention-days: 30
+
+      - name: Commit reports to verify/
+        run: |
+          cp /tmp/euler-verifier/results/*.md verify/ 2>/dev/null || true
+          rm -f verify/*_test.md
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add verify/
+          if git diff --staged --quiet; then
+            echo "No changes to verification reports"
+          else
+            git commit -m "Update verification reports [skip ci]"
+            git push
+          fi
