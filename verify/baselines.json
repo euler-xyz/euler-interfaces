@@ -1,5 +1,5 @@
 {
- "$comment": "Component audit baselines. ONE baseline per component: the fixes-included state of the component's LAST audit \u2014 derived by tracing post-review fix commits (fix commits are usually not stated in reports). Every deployed pin is diffed against this single baseline, restricted to componentPaths. Pins that predate the baseline carry a naturalBaseline: the audit whose fixes-included state the deployed code actually matches, plus the audits that reviewed the pin\u2192baseline delta. Derivations reference PRs/commits/tags verifiable in the public repos.",
+ "$comment": "Component audit baselines. ONE baseline per component: the fixes-included state of the component's LAST audit \u2014 derived by tracing post-review fix commits (fix commits are usually not stated in reports). Every deployed pin is diffed against this single baseline, restricted to componentPaths \u2014 git pathspecs, where :(exclude) entries scope out source files that are not part of any deployed contract's compilation unit. Pins that predate the baseline carry a naturalBaseline: the audit whose fixes-included state the deployed code actually matches, plus the audits that reviewed the pin\u2192baseline delta. Derivations reference PRs/commits/tags verifiable in the public repos.",
  "generated": "2026-07-25",
  "components": [
   {
@@ -9,7 +9,8 @@
     "evc"
    ],
    "componentPaths": [
-    "src/"
+    "src/",
+    ":(exclude)src/utils/EVCUtil.sol"
    ],
    "lastAudit": {
     "id": "yaudit-evc-2024-comp-fixes",
@@ -27,12 +28,12 @@
      "summary": "Equals the baseline \u2014 the mainnet EVC deployment IS the audited fixes-included commit."
     },
     "a7d3c29ef7e4964736e47675e0588630d6afbfd7": {
-     "summary": "Descendant of the baseline and the last commit ever to touch src/ on origin/master \u2014 the 14-chain EVC equals current master source. Delta vs baseline: the EVCUtil onlyEVCAccountOwner enhancement (PRs #175/#177; pre-reviewed 'no issues spotted' in the comp-fixes report, and not part of the deployed EVC singleton's own runtime) and the PR #178/#179 isSignerValid exclusions (EIP-7587 precompile + 0x42 predeploy address space barred from being message signers \u2014 proactive hardening ahead of the Nov-2024 multichain deployment, mapped to no audit finding).",
-     "label": "EVCUtil helper + signer-exclusion hardening"
+     "summary": "Descendant of the baseline and the last commit ever to touch src/ on origin/master \u2014 the 14-chain EVC equals current master source. Delta vs baseline: the PR #178/#179 isSignerValid exclusions \u2014 the EIP-7587 precompile range and the 0x42 predeploy address space barred from being message signers. Proactive, restrictive-only hardening added ahead of the Nov-2024 multichain deployment; it maps to no audit finding.",
+     "label": "signer-exclusion hardening"
     },
     "912b301f51301e586e5a7f09e48cf52bd52e9a0e": {
-     "summary": "Polygon-only deployment: the yaudit-evc-2026-setsize state (SET_MAX_ELEMENTS 10\u2192100 for the Gondor/Polymarket integration; 0 C/H/M/L findings, informational fixes included via PR #203). Descendant of the baseline; its delta = the 14-chain pin's delta plus exactly the set-size audit scope. The branch remains unmerged to master by design.",
-     "label": "set-size 10\u2192100 (audited) + hardening"
+     "summary": "Polygon-only deployment: the yaudit-evc-2026-setsize state (SET_MAX_ELEMENTS 10\u2192100 for the Gondor/Polymarket integration; 0 C/H/M/L findings, informational fixes included via PR #203). Descendant of the baseline; its delta = the 14-chain pin's signer-exclusion hardening plus exactly the set-size audit scope. The branch remains unmerged to master by design.",
+     "label": "set-size 10\u2192100 (audited) + signer hardening"
     },
     "7b2f05f8f2fc093f679463209dea202e9af3b120": {
      "summary": "Morph deployment: tip of the public origin/deployment-morph branch (\u201cfacilitate Morph deployment\u201d, 2025-02-13); descendant of the baseline, compiled at 0.8.24/runs 20000/cancun.",
@@ -51,7 +52,8 @@
    ],
    "coversModules": true,
    "componentPaths": [
-    "src/"
+    "src/",
+    ":(exclude)src/Synths/"
    ],
    "lastAudit": {
     "id": "yaudit-evk-2024-comp-fixes",
@@ -70,7 +72,7 @@
      "label": "one fee-share default parameter"
     },
     "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2": {
-     "summary": "The 15-chain deployment; descendant of the baseline, shipping WITH the setLTV patch. Delta vs baseline: the Governance.sol setLTV change (PR #288) \u2014 reviewed in full by both m4rio-evk-2025-setltv and electisec-evk-2025-setltv \u2014 plus the same one-line parameter default and the ESynth onlyEVCAccountOwner guards (PR #273; a src/ file outside the deployed contract set). Zero src/ changes exist after this pin: it equals origin/master's contract tree.",
+     "summary": "The 15-chain deployment; descendant of the baseline, shipping WITH the setLTV patch. Delta vs baseline: the Governance.sol setLTV change (PR #288) \u2014 reviewed in full by both m4rio-evk-2025-setltv and electisec-evk-2025-setltv \u2014 plus the same one-line parameter default. Zero src/ changes exist after this pin: it equals origin/master's contract tree.",
      "label": "setLTV patch (audited \u00d72) + param"
     }
    }
@@ -82,7 +84,8 @@
     "balanceTracker"
    ],
    "componentPaths": [
-    "src/"
+    "src/",
+    ":(exclude)src/StakingRewardStreams.sol"
    ],
    "lastAudit": {
     "id": "cantina-reward-streams-2024",
