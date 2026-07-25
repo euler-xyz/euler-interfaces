@@ -1519,7 +1519,7 @@
    "src/IRM/IRMBasePremium.sol",
    "src/IRM/IIRMBasePremium.sol"
   ],
-  "report": "https://github.com/euler-xyz/evk-periphery/blob/3d3b4b96109c8468198ac70a71dc73d027467927/audits/Spearbit%20ERC20Synth%20and%20auxiliary%20contracts.pdf",
+  "report": "https://github.com/euler-xyz/evk-periphery/blob/1f83f782c91552d496232036667be81e5e046791/audits/Cantina%20Crosschain%20Fee%20Flow%20and%20Auxiliary%20Contracts.pdf",
   "confidence": "medium",
   "evidence": "PDF pages 1-10 (DRAFT): 'From Oct 10th to Oct 12th the Cantina team conducted a review of evk-periphery on commit hash 642602f8'; holistic re-review at 4711a8ad. Both verified in evk-periphery. WARNING: the PDF filename says 'Spearbit ERC20Synth' but the content is a Cantina Managed DRAFT titled 'Euler EVK Periphery PR 361' (FeeFlow/OFT/IRM), not Spearbit and not ERC20Synth-titled.",
   "signed_off": true,
