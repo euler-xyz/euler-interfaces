@@ -1,0 +1,61 @@
+name: verify
+
+on:
+  pull_request:
+    paths:
+      - 'addresses/**'
+      - 'verify/**'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/checkout@v4
+        with:
+          repository: euler-xyz/euler-verifier
+          # Engine pinned by commit SHA; bump deliberately via PR.
+          ref: 51e0a62001fa7b417e6a55da53349c66a0283291
+          path: .verifier
+
+      - uses: pnpm/action-setup@v4
+        with:
+          package_json_file: .verifier/package.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: .verifier/pnpm-lock.yaml
+      - uses: foundry-rs/foundry-toolchain@v1
+
+      - run: pnpm install --frozen-lockfile
+        working-directory: .verifier
+
+      - name: Validate manifests (schema, SHA-only pins, audits integrity)
+        run: pnpm tsx src/validate-manifests.ts --manifest $GITHUB_WORKSPACE/verify/manifest.json --audits $GITHUB_WORKSPACE/verify/audits.json
+        working-directory: .verifier
+
+      - name: Completeness (every deployed address has a manifest entry)
+        run: pnpm tsx src/check-completeness.ts --manifest $GITHUB_WORKSPACE/verify/manifest.json --addresses $GITHUB_WORKSPACE/addresses
+        working-directory: .verifier
+
+      - name: Determine changed entries
+        id: changed
+        run: |
+          git fetch --no-tags --depth=1 origin $GITHUB_BASE_REF
+          CHAINS=$(git diff --name-only origin/$GITHUB_BASE_REF...HEAD -- addresses verify/manifest.json | grep -oE 'addresses/[0-9]+' | grep -oE '[0-9]+' | sort -u | paste -sd, -)
+          echo "chains=$CHAINS" >> $GITHUB_OUTPUT
+          echo "changed chains: ${CHAINS:-none}"
+
+      - name: Bytecode-verify changed chains
+        if: steps.changed.outputs.chains != ''
+        env:
+          CHAINS: ${{ steps.changed.outputs.chains }}
+        run: |
+          set -e
+          for c in ${CHAINS//,/ }; do
+            pnpm verify --manifest $GITHUB_WORKSPACE/verify/manifest.json --addresses $GITHUB_WORKSPACE/addresses --chain "$c" --no-explorer
+          done
+        working-directory: .verifier
