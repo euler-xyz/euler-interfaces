@@ -1,0 +1,424 @@
+{
+ "$comment": "Component audit baselines. ONE baseline per component: the fixes-included state of the component's LAST audit \u2014 derived by tracing post-review fix commits (fix commits are usually not stated in reports). Every deployed pin is diffed against this single baseline, restricted to componentPaths. Pins that predate the baseline carry a naturalBaseline: the audit whose fixes-included state the deployed code actually matches, plus the audits that reviewed the pin\u2192baseline delta. Derivations reference PRs/commits/tags verifiable in the public repos.",
+ "generated": "2026-07-25",
+ "components": [
+  {
+   "component": "evc",
+   "repo": "euler-xyz/ethereum-vault-connector",
+   "keys": [
+    "evc"
+   ],
+   "componentPaths": [
+    "src/"
+   ],
+   "lastAudit": {
+    "id": "yaudit-evc-2024-comp-fixes",
+    "date": "2024-07-31",
+    "finalReviewedCommit": "084b32284ba643921f8d21bff3ddaf0c4e08d754"
+   },
+   "baseline": {
+    "commit": "084b32284ba643921f8d21bff3ddaf0c4e08d754",
+    "date": "2024-08-12",
+    "derivation": "Last full-scope audit of the broadly-deployed EVC lineage: yAudit's combined Cantina-competition fixes review, whose final IS the merge of PR #169 cantina-fixes with every EVC fix verified 'Fix OK' (including the operator-bypass fix a4dcf9e) \u2014 no further fixes required, so baseline = final. Registry entries dated later do not displace it: cantina-evc-2024 is the competition report whose reviewed revision (tag cantina-contest, 2024-05-20) PREDATES these fixes, and yaudit-evc-2026-setsize is a feature review (SET_MAX_ELEMENTS 10\u2192100) commissioned for the Gondor/Polymarket integration and deployed only on Polygon \u2014 it covers that pin's delta rather than anchoring the component.",
+    "confidence": "high"
+   },
+   "pinNotes": {
+    "084b32284ba643921f8d21bff3ddaf0c4e08d754": {
+     "summary": "Equals the baseline \u2014 the mainnet EVC deployment IS the audited fixes-included commit."
+    },
+    "a7d3c29ef7e4964736e47675e0588630d6afbfd7": {
+     "summary": "Descendant of the baseline and the last commit ever to touch src/ on origin/master \u2014 the 14-chain EVC equals current master source. Delta vs baseline: the EVCUtil onlyEVCAccountOwner enhancement (PRs #175/#177; pre-reviewed 'no issues spotted' in the comp-fixes report, and not part of the deployed EVC singleton's own runtime) and the PR #178/#179 isSignerValid exclusions (EIP-7587 precompile + 0x42 predeploy address space barred from being message signers \u2014 proactive hardening ahead of the Nov-2024 multichain deployment, mapped to no audit finding).",
+     "label": "EVCUtil helper + signer-exclusion hardening"
+    },
+    "912b301f51301e586e5a7f09e48cf52bd52e9a0e": {
+     "summary": "Polygon-only deployment: the yaudit-evc-2026-setsize state (SET_MAX_ELEMENTS 10\u2192100 for the Gondor/Polymarket integration; 0 C/H/M/L findings, informational fixes included via PR #203). Descendant of the baseline; its delta = the 14-chain pin's delta plus exactly the set-size audit scope. The branch remains unmerged to master by design.",
+     "label": "set-size 10\u2192100 (audited) + hardening"
+    },
+    "7b2f05f8f2fc093f679463209dea202e9af3b120": {
+     "summary": "Morph deployment: tip of the public origin/deployment-morph branch (\u201cfacilitate Morph deployment\u201d, 2025-02-13); descendant of the baseline, compiled at 0.8.24/runs 20000/cancun.",
+     "label": "Morph deployment-branch additions"
+    }
+   }
+  },
+  {
+   "component": "evk",
+   "repo": "euler-xyz/euler-vault-kit",
+   "keys": [
+    "eVaultFactory",
+    "eVaultImplementation",
+    "protocolConfig",
+    "sequenceRegistry"
+   ],
+   "coversModules": true,
+   "componentPaths": [
+    "src/"
+   ],
+   "lastAudit": {
+    "id": "yaudit-evk-2024-comp-fixes",
+    "date": "2024-07-31",
+    "finalReviewedCommit": "1dad88bd75b40cbce1103860f616a27c2aed314c"
+   },
+   "baseline": {
+    "commit": "1dad88bd75b40cbce1103860f616a27c2aed314c",
+    "date": "2024-08-12",
+    "derivation": "Last full-scope audited state of EVK: yAudit's combined Cantina-competition fixes review, whose final IS the merge of PR #262 cantina-contest-fixes with every competition fix verified \u2014 no further fixes required, so baseline = final. The 2025 M4rio/Electisec engagements were patch reviews scoped to the setLTV change (PR #288) only; they cover the descendants' delta rather than anchoring the component. Note cantina-evk-2024's registry date (2024-11-13) is the report publication date \u2014 its reviewed revision (2024-05-20) predates these fixes.",
+    "confidence": "high"
+   },
+   "pinNotes": {
+    "9e3c760e051f5d769f7c6edb9be30198a55117d4": {
+     "summary": "Ethereum/Base deployment; descendant of the baseline. Entire src/ delta: one default-parameter line (ProtocolConfig protocolFeeShare 0.1e4\u21920.5e4, PR #264) \u2014 the pin merge itself is an EVC submodule refresh (PR #271). Effectively the audited fixes-included state.",
+     "label": "one fee-share default parameter"
+    },
+    "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2": {
+     "summary": "The 15-chain deployment; descendant of the baseline, shipping WITH the setLTV patch. Delta vs baseline: the Governance.sol setLTV change (PR #288) \u2014 reviewed in full by both m4rio-evk-2025-setltv and electisec-evk-2025-setltv \u2014 plus the same one-line parameter default and the ESynth onlyEVCAccountOwner guards (PR #273; a src/ file outside the deployed contract set). Zero src/ changes exist after this pin: it equals origin/master's contract tree.",
+     "label": "setLTV patch (audited \u00d72) + param"
+    }
+   }
+  },
+  {
+   "component": "reward-streams",
+   "repo": "euler-xyz/reward-streams",
+   "keys": [
+    "balanceTracker"
+   ],
+   "componentPaths": [
+    "src/"
+   ],
+   "lastAudit": {
+    "id": "cantina-reward-streams-2024",
+    "date": "2024-11-13",
+    "finalReviewedCommit": "4f63aea41dae996b59d0ba453326b6e97f44f680"
+   },
+   "baseline": {
+    "commit": "d124216a23fe042963a4bcc15e65b40d41a32b25",
+    "date": "2024-07-15",
+    "derivation": "Cantina competition (reviewed commit 4f63aea4, 2024-05-18; 9 reward-streams findings, all Low/Info) was remediated on branch cantina-fixes ('fix: cantina NNN' commits via PRs #1\u2013#9, plus the DistributionStorage refactor PR #10); yaudit-reward-streams-2024-comp-fixes then verified this exact fix set at d124216a \u2014 every fix 'Fix OK'. d124216a is the earliest audit-verified state containing all fixes (branch merged to master via PR #25). Note the registry report dates invert the reviewed-commit chronology: by reviewed code, cantina precedes the July yAudit fixes review.",
+    "confidence": "high"
+   },
+   "pinNotes": {
+    "9eb7b8a7fa31c275d688063c4abd07165b50b89f": {
+     "summary": "Descendant of the baseline; deployed src equals current origin/master. The only src delta vs the baseline is PR #26 (2024-08-06): enableReward/disableReward return bool, updateReward/claimReward return the claimed amount, new isRewardEnabled view \u2014 interface/return plumbing with no accounting change, post-dating every registry audit's reviewed commit. Also bumps the EVC submodule to v1.0.0 (the cantina-fixed EVC release), which affects compiled bytecode via inherited EVCUtil.",
+     "label": "claim return values + isRewardEnabled view"
+    }
+   }
+  },
+  {
+   "component": "euler-earn",
+   "repo": "euler-xyz/euler-earn",
+   "keys": [
+    "eulerEarnFactory",
+    "eulerEarnPublicAllocator"
+   ],
+   "componentPaths": [
+    "src/"
+   ],
+   "lastAudit": {
+    "id": "pashov-euler-earn-2025",
+    "date": "2025-07-30",
+    "finalReviewedCommit": "b95775f4235fe4ea738dde226524d25f317d987c"
+   },
+   "baseline": {
+    "commit": "8c768bd8c0f1456e70ebb6997250d2984001d150",
+    "date": "2025-08-31",
+    "derivation": "Post-Pashov fix window on master: PR #22 'pag-audit-fixes' (db821fa \u2014 max-deposit for zero-shares error handling) followed by the closing fix 8c768bd 'add max mint values' (2025-08-31); the only src commits after the final reviewed revision. Validated empirically: the 5-chain pin 773453b diffs EMPTY against this baseline; the 8-chain pin b2fd6e69 differs by \u00b118 lines of import-path cosmetics only.",
+    "confidence": "high"
+   },
+   "pinNotes": {
+    "773453b1f4a6f1d27a1cd0c6d8f6ada572503b23": {
+     "summary": "src/ identical to the baseline (empty diff)."
+    },
+    "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345": {
+     "summary": "\u00b118 lines vs baseline, import-path cosmetics only (no code change).",
+     "label": "import-path style only"
+    },
+    "ba581a71245ad004d35241918946b08ba63552cd": {
+     "summary": "Linea 24kB size-fit variant (commit on the euler-earn deployment-linea branch, reconstructed from the Lineascan-verified source and bytecode-proven): equals 773453b1 \u2014 itself src-identical to the audited baseline \u2014 with setName/setSymbol commented out (\u201ccommented out not to exceed 24kB limit\u201d) in EulerEarn.sol and IEulerEarn.sol. Deploy-time compile: solc 0.8.26, optimizer_runs 200, evm london, via_ir.",
+     "label": "24kB fit: setName/setSymbol commented out"
+    },
+    "bece7172a87551e6943a52b08c9a0117eb02c6c3": {
+     "summary": "Monad/Morph deployments: public euler-earn master commit (\u201cfix: absolute import paths\u201d, 2025-10-14); descendant of the baseline with import-path-style deltas only. Compiled at the repo profile (0.8.26, runs 200, via_ir) with the deploy workspace\u2019s OpenZeppelin v5.1.0.",
+     "label": "import-path style only"
+    }
+   }
+  },
+  {
+   "component": "euler-swap-v1",
+   "repo": "euler-xyz/euler-swap",
+   "keys": [
+    "eulerSwapV1Factory",
+    "eulerSwapV1Implementation",
+    "eulerSwapV1Periphery"
+   ],
+   "componentPaths": [
+    "src/"
+   ],
+   "lastAudit": {
+    "id": "cyfrin-euler-swap-2025",
+    "date": "2025-05-26",
+    "finalReviewedCommit": "c1c375f9b5b611e7e2cd722eda197750d1b13bc2"
+   },
+   "baseline": {
+    "commit": "207524c5f322df9326227bda6677580883e65531",
+    "date": "2025-05-23",
+    "derivation": "Cyfrin v2.0 report: 7 findings (0 C/H/M), the two Resolved ones carry named, Cyfrin-verified fix commits \u2014 6109f53 (unused imports, PR #96) and 05a9148 (ProtocolFee events, PR #97); the rest Acknowledged. 207524c5 (merge of PR #97, 2025-05-23) is the earliest commit containing both fixes. The registry final c1c375f9 (2025-05-14) predates the fix commits; Cyfrin's final report then verified them.",
+    "confidence": "high"
+   },
+   "pinNotes": {
+    "b948f4052d7ab3116235ec754368b7125dbd5082": {
+     "summary": "Tag eulerswap-1.0 (official V1 release), descendant of the baseline. src delta: SPDX headers UNLICENSED\u2192GPL (14 files) + PR #99 event hoisting (new Events.sol; hook emits Swap with sender). No state-machine or math changes. foundry optimizer_runs raised 10000\u21921000000 post-audit, pre-deployment.",
+     "label": "SPDX licenses + event hoisting"
+    },
+    "5d270c764204b896770e967c22c7b95959bf6660": {
+     "summary": "Monad factory/implementation pin; descendant of eulerswap-1.0 on linear master. Adds natspec-only named returns + a solmate import-path remapping fix. Zero semantic change.",
+     "label": "licenses/events + natspec, import fix"
+    },
+    "98c05c56f7722887d293ef231accd689c2ea2493": {
+     "summary": "Monad periphery pin; descendant of 5d270c76. Adds one forge-fmt line-wrap. Zero semantic change.",
+     "label": "licenses/events + natspec/formatting"
+    },
+    "c7da2f330dff3efb98b0b4e998f9b9f498b37c30": {
+     "summary": "Avalanche deployment: public branch fix/solmate-remapping \u2014 the eulerswap-1.0 release pin b948f405 plus one commit correcting the solmate import path in utils/ProtocolFee.sol (no code change). Compiled standalone at the repo profile (0.8.27, runs 1000000, shanghai).",
+     "label": "licenses/events + solmate import fix"
+    }
+   }
+  },
+  {
+   "component": "euler-swap-v2",
+   "repo": "euler-xyz/euler-swap",
+   "keys": [
+    "eulerSwapV2Factory",
+    "eulerSwapV2Implementation",
+    "eulerSwapV2Periphery",
+    "eulerSwapV2ProtocolFeeConfig",
+    "eulerSwapV2Registry"
+   ],
+   "componentPaths": [
+    "src/"
+   ],
+   "lastAudit": {
+    "id": "cantina-euler-swap-v2-2025-09",
+    "date": "2025-09-18",
+    "finalReviewedCommit": "22bb23aa456a72ae4bde1517e73d9a54da19ac28"
+   },
+   "baseline": {
+    "commit": "22bb23aa456a72ae4bde1517e73d9a54da19ac28",
+    "date": "2025-09-12",
+    "derivation": "Baseline = final reviewed commit. Cantina managed review (of tag eulerswap2-cantina-audit = 6f5bde45): 17 findings, 13 Fixed with every fix commit named in the report and verified as ancestors of 22bb23aa (which is itself the last fix commit), 4 Acknowledged. Repo tag eulerswap2-cantina-audit-fixes points exactly at this commit.",
+    "confidence": "high"
+   },
+   "pinNotes": {
+    "81cf6dc988468fd56f690e6bc0e338a5be02d034": {
+     "summary": "Tag eulerswap-2.0 (the deployed release), descendant of the baseline with a substantive post-audit delta (+444/\u2212267 in src/): (1) the protocol-fee mechanism replacement \u2014 new EulerSwapProtocolFeeConfig singleton queried live at swap time, replacing the audited burned-in-at-install ProtocolFee model (see attention note); (2) an EIP-170 code-size refactor splitting EulerSwapManagement (delegatecall implementation) and EulerSwapBase out of EulerSwap; (3) ZeroShares handling for EulerEarn-style vaults; (4) hardening commits included at the release merge (pool locked during activate, fee-recipient/admin may not be EVC sub-accounts, fee-config events). No follow-up external review of this delta is recorded in the repository.",
+     "label": "fee-config redesign + code-size refactor"
+    }
+   }
+  },
+  {
+   "component": "rEUL",
+   "repo": "euler-xyz/evk-periphery",
+   "keys": [
+    "rEUL"
+   ],
+   "componentPaths": [
+    "src/ERC20/deployed/RewardToken.sol",
+    "src/ERC20/implementation/ERC20WrapperLocked.sol"
+   ],
+   "lastAudit": {
+    "id": "cdsecurity-erc20wrapperlocked-2024",
+    "date": "2024-10-28",
+    "finalReviewedCommit": "f81de18be410e77176e2da247d8402576e99c40b"
+   },
+   "baseline": {
+    "commit": "20df7d772dfa64bcb92909743a67c144c3e7460a",
+    "date": "2024-10-30",
+    "derivation": "CDSecurity's PDF states its reviewed commit is f81de18b (2024-10-28, the PR #141 double-tiered-whitelist state, which already contains all yAudit fixes from PR #110) \u2014 making CDSecurity, not yAudit, the last dedicated review despite the registry's 2024-10-01 date. Its 5 Fixed findings map 1:1 to the PR #147 'reul-fixes' commits, merged to master as 20df7d77. No later change to either component file exists anywhere on master (byte-identical through today's tip).",
+    "confidence": "high"
+   },
+   "pinNotes": {
+    "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8": {
+     "summary": "Component files byte-identical to the baseline."
+    },
+    "8c946bb15574c764bee054de79758b958d0130d4": {
+     "summary": "Component files byte-identical to the baseline (pin = current origin/master tip)."
+    },
+    "21a169d7830f71fcfbee6f7ced12bf089f4fba20": {
+     "summary": "Component files byte-identical to the baseline (deployment-linea branch tip)."
+    },
+    "7a23305815ccb4198c117c2d6fcfe8421fe336e3": {
+     "summary": "Mainnet deployment (commit on the evk-periphery deployment-mainnet-reul branch): source byte-identical to the public 2024-10-30 post-fixes state f61809fd \u2014 component files identical to the audited baseline \u2014 narrowed to the RewardToken compile unit with a no-longer-resolvable submodule reference removed. Compiled at the repo profile (0.8.24, runs 20000, cancun)."
+    }
+   }
+  },
+  {
+   "component": "oracleRouterFactory",
+   "repo": "euler-xyz/evk-periphery",
+   "keys": [
+    "oracleRouterFactory"
+   ],
+   "componentPaths": [
+    "src/EulerRouterFactory/",
+    "src/OracleFactory/EulerRouterFactory.sol",
+    "src/OracleFactory/interfaces/IEulerRouterFactory.sol"
+   ],
+   "lastAudit": {
+    "id": "yaudit-evk-periphery-2024",
+    "date": "2024-06-26",
+    "finalReviewedCommit": "090cbba2870f7ddbbbd6d360ee35a69475ab6ff8"
+   },
+   "baseline": {
+    "commit": "11637ffe47c2663c4dc337b28cd02aa8b4c87379",
+    "date": "2024-06-24",
+    "derivation": "yAudit's EVK Periphery review scope explicitly lists src/OracleFactory/ (the factory's pre-rename path). Its single factory finding (Low-1, router deployments not recorded) carries 'Fixed: 11637ff' in the report itself \u2014 baseline = that fix commit (exactly +1 line over the reviewed revision). No later periphery audit re-covered the factory shell (Cantina PR361 = eUSD stack; BailSec 2026 = oracle/hook/SwapVerifier).",
+    "confidence": "high"
+   },
+   "pinNotes": {
+    "05b0acb8bfb64e663293ab8b236c72c6b3df86ae": {
+     "summary": "Factory blobs identical across all four deployed pins. Delta vs baseline: the src/OracleFactory\u2192src/EulerRouterFactory rename (content-neutral) and +10/\u22121 in EulerRouterFactory.sol \u2014 commit 59243614 threading the EVC address through the factory constructor into the embedded EulerRouter. That pass-through mirrors the router's EVC integration, which WAS audited on the oracle side (Cantina finding 443 fix + onlyEVCAccountOwner enhancement, approved by yaudit-oracle-2024-comp-fixes); the factory shell itself was not re-reviewed after this change.",
+     "label": "EVC constructor pass-through"
+    },
+    "96b83f80ded9ac3f28bfce871b55917e360b9159": {
+     "summary": "Identical factory delta to the mainnet pin (same blobs).",
+     "label": "EVC constructor pass-through"
+    },
+    "edaf96e32ebe6cb96ae30add934d74fa1d092ff6": {
+     "summary": "Identical factory delta to the mainnet pin (same blobs).",
+     "label": "EVC constructor pass-through"
+    },
+    "21a169d7830f71fcfbee6f7ced12bf089f4fba20": {
+     "summary": "Identical factory delta to the mainnet pin (same blobs).",
+     "label": "EVC constructor pass-through"
+    }
+   },
+   "libComponents": [
+    {
+     "repo": "euler-xyz/euler-price-oracle",
+     "gitlinkPath": "lib/euler-price-oracle",
+     "componentPaths": [
+      "src/EulerRouter.sol",
+      "src/lib/Governable.sol",
+      "src/lib/Errors.sol",
+      "src/interfaces/IPriceOracle.sol"
+     ],
+     "lastAudit": {
+      "id": "yaudit-oracle-2024-comp-fixes",
+      "date": "2024-07-31",
+      "finalReviewedCommit": "47296ad7e479da98ede31936d05398cbf1fc330e"
+     },
+     "baseline": {
+      "commit": "47296ad7e479da98ede31936d05398cbf1fc330e",
+      "date": "2024-07-30",
+      "derivation": "The factory embeds EulerRouter creation code from this submodule. Last audit covering EulerRouter.sol is yaudit-oracle-2024-comp-fixes: its final contains the Cantina-443 router fix (EVC-aware constructor + onlyEVCAccountOwner on governance functions) marked 'Fix OK' with no further fixes, so baseline = final. Every later oracle-repo audit (oracleupdate, Pendle, Electisec 2025, BailSec 2026) is adapters-only. EulerRouter.sol has been frozen since 2024-08-16; all three distinct deployed gitlinks share an identical router blob, differing from the baseline only by a relative-imports cleanup (#57).",
+      "confidence": "high"
+     }
+    }
+   ]
+  },
+  {
+   "component": "eulOFTAdapter",
+   "repo": "euler-xyz/evk-periphery",
+   "keys": [
+    "eulOFTAdapter"
+   ],
+   "componentPaths": [
+    "src/OFT/MintBurnOFTAdapter.sol",
+    "src/OFT/OFTAdapterUpgradeable.sol"
+   ],
+   "lastAudit": {
+    "id": "paladin-layerzero-adapters-2025",
+    "date": "2025-01-23",
+    "finalReviewedCommit": "e3699ffb644bb96bfcff4fb6f0f35d11d23f6503"
+   },
+   "baseline": {
+    "commit": "e3699ffb644bb96bfcff4fb6f0f35d11d23f6503",
+    "date": "2025-01-25",
+    "derivation": "Paladin Blockchain Security's LayerZero-adapters assessment (audits/Paladin LayerZero Adapters.pdf) reviewed MintBurnOFTAdapter + OFTAdapterUpgradeable (+ ERC20BurnableMintable) at 70b26235 with two informationals: #01 acknowledged, #02 resolved by e3699ffb ('fix: Paladin audit Issue #02', _disableInitializers on the upgradeable implementation). Baseline = that resolution commit. Neither adapter file has been modified since (verified through origin/master).",
+    "confidence": "high"
+   },
+   "pinNotes": {
+    "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8": {
+     "summary": "Adapter files blob-identical to the baseline."
+    },
+    "21a169d7830f71fcfbee6f7ced12bf089f4fba20": {
+     "summary": "Adapter files blob-identical to the baseline (deployment-linea tip)."
+    },
+    "ccd2debce48ed857c7766bb1955591cfac996d91": {
+     "summary": "Adapter files blob-identical to the baseline; as the mainnet proxy implementation it carries the Paladin #02 fix (_disableInitializers). The Oct-2025 OFT fee-collector workstream around this commit touched only OFTFeeCollector/OFTGulper, not the adapters."
+    }
+   }
+  },
+  {
+   "component": "EUL-bridged",
+   "repo": "euler-xyz/evk-periphery",
+   "keys": [
+    "EUL"
+   ],
+   "componentPaths": [
+    "src/ERC20/deployed/ERC20BurnableMintable.sol"
+   ],
+   "lastAudit": {
+    "id": "paladin-layerzero-adapters-2025",
+    "date": "2025-01-23",
+    "finalReviewedCommit": "e3699ffb644bb96bfcff4fb6f0f35d11d23f6503"
+   },
+   "baseline": {
+    "commit": "e3699ffb644bb96bfcff4fb6f0f35d11d23f6503",
+    "date": "2025-01-25",
+    "derivation": "ERC20BurnableMintable (the bridged EUL) was in Paladin's assessed-contracts list with 'no issues found', making Paladin \u2014 not the Dec-2024 BailSec single-file audit (one acknowledged governance/centralization finding, no change) \u2014 the last covering audit; baseline = Paladin's resolution commit. Only three source revisions of the file have ever existed: the BailSec-reviewed original (b3ac5f12), a natspec-only revision (the Paladin-audited state), and a 2025-09-29 revision adding 'virtual' to mint() for ERC20Synth overriding \u2014 no behavior change to this contract.",
+    "confidence": "high"
+   },
+   "pinNotes": {
+    "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8": {
+     "summary": "Carries the Paladin-audited source revision (natspec blob) \u2014 byte-identical to the baseline."
+    },
+    "8c946bb15574c764bee054de79758b958d0130d4": {
+     "summary": "Post-2025-09 revision: delta vs baseline is the 'virtual' keyword on mint() (ERC20Synth enablement) \u2014 no behavior change.",
+     "label": "mint() gains 'virtual' (no behavior change)"
+    },
+    "21a169d7830f71fcfbee6f7ced12bf089f4fba20": {
+     "summary": "Post-2025-09 revision: same single-keyword delta as above.",
+     "label": "mint() gains 'virtual' (no behavior change)"
+    }
+   }
+  },
+  {
+   "component": "swapVerifier",
+   "repo": "euler-xyz/evk-periphery",
+   "keys": [
+    "swapVerifier"
+   ],
+   "componentPaths": [
+    "src/Swaps/SwapVerifier.sol",
+    "src/Swaps/MigrationHelper.sol",
+    "src/Swaps/TransferFromSender.sol"
+   ],
+   "lastAudit": {
+    "id": "enigma-dark-swapverifier-update-2026",
+    "date": "2026-07-01",
+    "finalReviewedCommit": "469d9cfefc08b7a5e5acefb572f840864a19a8d5"
+   },
+   "baseline": {
+    "commit": "469d9cfefc08b7a5e5acefb572f840864a19a8d5",
+    "date": "2026-07-07",
+    "derivation": "Baseline = final reviewed commit. Enigma Dark reviewed exactly the PR #423 diff (MigrationHelper + SwapVerifier re-parenting) with ZERO findings at every severity, so no fix window exists. Only non-semantic commits touch src/Swaps afterwards (forge-fmt). The repository mainline is the development branch.",
+    "confidence": "high"
+   },
+   "pinNotes": {
+    "eae25d382bb58aaaaa9f1a3a55567af993ce32be": {
+     "naturalBaseline": {
+      "auditId": "bailsec-evk-periphery-auxiliary-2026",
+      "justification": "BailSec's March-2026 scope table pins SwapVerifier.sol at EXACTLY this commit (sole SwapVerifier finding: one acknowledged informational). The pin also contains the yaudit-swapverifier-update-2026 fix (b6046f44, cited verbatim in that report), so it is a doubly audit-pinned state. The pin\u2192baseline delta is precisely the Enigma-Dark-reviewed refactor: TransferFromSender folded into the new MigrationHelper parent, with no logic change to the verify functions."
+     },
+     "label": "pre-refactor state (audit-pinned)"
+    },
+    "edaf96e32ebe6cb96ae30add934d74fa1d092ff6": {
+     "summary": "Descendant of the baseline by 3 days (the merge adding the Enigma report PDF). src/Swaps delta is 100% non-semantic forge-fmt re-wrapping. This IS the Enigma-fixes-included state as deployed on 13 chains.",
+     "label": "formatting only"
+    },
+    "e7337a33cb2339de7bf19d41a765c426cfe71be2": {
+     "summary": "Linea deployment (commit on the evk-periphery deployment-linea-periphery branch, reconstructed from the Lineascan compiler input and bytecode-proven): source byte-identical to edaf96e3 \u2014 the Enigma-fixes state \u2014 restricted to the SwapVerifier/MigrationHelper compile unit with the deploy settings (0.8.24, runs 10000, london).",
+     "label": "formatting only"
+    }
+   }
+  }
+ ]
+}

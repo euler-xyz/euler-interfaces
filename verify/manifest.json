@@ -1,0 +1,6299 @@
+{
+ "1": {
+  "EUL": {
+   "note": "Canonical EUL governance token: contract Eul (contracts/governance/Eul.sol) in euler-xyz/euler-governance \u2014 an OpenZeppelin-based ERC20 with Votes/Permit and AccessControl, plus a treasury mint restricted to at most 2.718% of supply per year. Deployed at the end of 2021 (last source change 2021-12-30, commit 1249ea8b) and in continuous use since; documented here as provenance context rather than re-proven from a commit pin. BailSec performed a retrospective re-audit of exactly the deployed revision in June 2025 (bailsec-eul-erc20-2025: 4 informational findings, all acknowledged \u2014 the deployed contract is immutable). This token is the lock/unlock asset held by the mainnet OFT adapter; the bridged EUL on all other chains is the separate ERC20BurnableMintable, bytecode-proven in those chains\u2019 reports.",
+   "repo": "euler-xyz/euler-governance",
+   "verified": "canonical"
+  },
+  "balanceTracker": {
+   "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
+   "contractName": "TrackingRewardStreams",
+   "evidence": {
+    "codeSize": 12330,
+    "origin": "hint+explorer",
+    "strippedSha256": "48762e01048ffb0f0ecdbe25a09b46310fa8252a9b7eaaad17e002ca62dbb6d8"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/reward-streams",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultFactory": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "GenericFactory",
+   "evidence": {
+    "codeSize": 5631,
+    "origin": "hint+explorer",
+    "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultImplementation": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "EVault",
+   "evidence": {
+    "codeSize": 23147,
+    "origin": "hint+explorer",
+    "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulOFTAdapter": {
+   "commit": "ccd2debce48ed857c7766bb1955591cfac996d91",
+   "contractName": "OFTAdapterUpgradeable",
+   "evidence": {
+    "codeSize": 13374,
+    "origin": "hist+native",
+    "strippedSha256": "e74a0c71c8e108ad4297b039a9e1ea9a20724761df6e1d9fdc7f8a9775f515f1"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "proxy": {
+    "address": "0x4d7e09f73843Bd4735AaF7A74b6d877bac75a531",
+    "implementation": "0x3Bf1bD5DB4457d22A85d45791B6291b98D0fC5b5",
+    "note": "addresses/1/BridgeAddresses.json points at the proxy; the verified bytecode is the OFTAdapterUpgradeable implementation behind it. Upgradeability governed by the proxy admin.",
+    "type": "TransparentUpgradeableProxy (EIP-1967)"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnFactory": {
+   "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
+   "contractName": "EulerEarnFactory",
+   "evidence": {
+    "codeSize": 24408,
+    "origin": "hint+explorer",
+    "strippedSha256": "c9ee150eb7d0223886b2ba10217238e3947c9bdef1cbe97ba978e6ebf77355c3"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnPublicAllocator": {
+   "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
+   "contractName": "PublicAllocator",
+   "evidence": {
+    "codeSize": 5168,
+    "origin": "hint+explorer",
+    "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Factory": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 8305,
+    "origin": "hint+native",
+    "strippedSha256": "7c9a247e972a8a3c9fcdeacc4716b1614d613dc969016a2bae4e142396e082bf"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Implementation": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 24313,
+    "origin": "hint+native",
+    "strippedSha256": "20cae9a429cf62fe9cbbc90acc8fa4529a2e08f8ff0b9c34413015bdd9215ce6"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Periphery": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2422,
+    "origin": "hint+native",
+    "strippedSha256": "703cfc72cd6c5fcfe53371822c5670cc72bce7aa91a5976ee254292b5e3f3b24"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Factory": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 3872,
+    "origin": "hint+native",
+    "strippedSha256": "4bdd5d473028a3dc1c724eec0c1c60f2dc20e0d341f25dce5267305934d39e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Implementation": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 23365,
+    "origin": "hint+native",
+    "strippedSha256": "408124d9963c57097485489405479fd6df2a8e413f32e31492eb1dd5e8895aa6"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Periphery": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2534,
+    "origin": "hint+native",
+    "strippedSha256": "f98bd760c3818f32272f4c5bc9485b83d34e9a557d0443dca200e52eb2cdadaa"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2ProtocolFeeConfig": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapProtocolFeeConfig",
+   "evidence": {
+    "codeSize": 3599,
+    "origin": "hint+native",
+    "strippedSha256": "83e2e2c4d440ed1073480505822963a4600d98c878a9b65cf90a81ecdd9984bf"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Registry": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapRegistry",
+   "evidence": {
+    "codeSize": 9419,
+    "origin": "hint+native",
+    "strippedSha256": "42c58b74bd40be0268f5ea0b37691df2a74b60d9ac3124a2148a08ad7d4c9eb4"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "evc": {
+   "commit": "084b32284ba643921f8d21bff3ddaf0c4e08d754",
+   "contractName": "EthereumVaultConnector",
+   "evidence": {
+    "codeSize": 21989,
+    "origin": "hint+explorer",
+    "strippedSha256": "5b4709069f7cb9c6e59f56f3cc9b06ba0fef54680d2d783242826d6ff9b0f0fd"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/ethereum-vault-connector",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "oracleRouterFactory": {
+   "commit": "05b0acb8bfb64e663293ab8b236c72c6b3df86ae",
+   "contractName": "EulerRouterFactory",
+   "evidence": {
+    "codeSize": 6800,
+    "origin": "gitlink-bump",
+    "strippedSha256": "fd6ae5667a6512931642e60dda5a0f48f6e4828bcb61b53aed57e1947b1181d0"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "protocolConfig": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "ProtocolConfig",
+   "evidence": {
+    "codeSize": 3953,
+    "origin": "hint+explorer",
+    "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "rEUL": {
+   "commit": "7a23305815ccb4198c117c2d6fcfe8421fe336e3",
+   "contractName": "RewardToken",
+   "evidence": {
+    "codeSize": 11181,
+    "origin": "mainnet-explorer-input-reconstructed-unit-on-f61809fd",
+    "strippedSha256": "8d4a505819ca1d05e1a1526bf0195a8a1d20e4aac24cd8bc5e7cdeda3df8f8cf"
+   },
+   "profile": {
+    "context": "explorer-settings",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "sequenceRegistry": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "SequenceRegistry",
+   "evidence": {
+    "codeSize": 867,
+    "origin": "hint+explorer",
+    "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "swapVerifier": {
+   "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
+   "contractName": "SwapVerifier",
+   "evidence": {
+    "codeSize": 5586,
+    "origin": "hint+native",
+    "strippedSha256": "2fc2cdd1b6e45a1d03326395d392a7418aa02fd05c71dbf5d845bcc7154354eb"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  }
+ },
+ "130": {
+  "EUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "ERC20BurnableMintable",
+   "evidence": {
+    "codeSize": 7768,
+    "origin": "sibling",
+    "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "balanceTracker": {
+   "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
+   "contractName": "TrackingRewardStreams",
+   "evidence": {
+    "codeSize": 11981,
+    "origin": "ovr:dc3be15-v5.1.0",
+    "strippedSha256": "47294620c90c9199e0f7a39434092ca19f03307bc7b3e28dd32f37d839ae16db",
+    "submoduleOverrides": [
+     {
+      "path": "lib/ethereum-vault-connector",
+      "ref": "dc3be15"
+     },
+     {
+      "path": "lib/openzeppelin-contracts",
+      "ref": "v5.1.0"
+     }
+    ]
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 100000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/reward-streams",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultFactory": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "GenericFactory",
+   "evidence": {
+    "codeSize": 5631,
+    "origin": "hint+era",
+    "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultImplementation": {
+   "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
+   "contractName": "EVault",
+   "evidence": {
+    "codeSize": 23147,
+    "origin": "hint+era",
+    "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulOFTAdapter": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "MintBurnOFTAdapter",
+   "evidence": {
+    "codeSize": 12615,
+    "origin": "hint+native",
+    "strippedSha256": "1036d1c0fbc36f8f16e64f9c1d9afdad98eab38cb9a0d678ebc1abcbe11f4baa"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnFactory": {
+   "commit": "773453b1f4a6f1d27a1cd0c6d8f6ada572503b23",
+   "contractName": "EulerEarnFactory",
+   "evidence": {
+    "codeSize": 24408,
+    "origin": "hint+native",
+    "strippedSha256": "c9ee150eb7d0223886b2ba10217238e3947c9bdef1cbe97ba978e6ebf77355c3"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnPublicAllocator": {
+   "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
+   "contractName": "PublicAllocator",
+   "evidence": {
+    "codeSize": 5168,
+    "origin": "hint+native",
+    "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Factory": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 8305,
+    "origin": "hint+native",
+    "strippedSha256": "7c9a247e972a8a3c9fcdeacc4716b1614d613dc969016a2bae4e142396e082bf"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Implementation": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 24313,
+    "origin": "hint+native",
+    "strippedSha256": "20cae9a429cf62fe9cbbc90acc8fa4529a2e08f8ff0b9c34413015bdd9215ce6"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Periphery": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2422,
+    "origin": "hint+native",
+    "strippedSha256": "703cfc72cd6c5fcfe53371822c5670cc72bce7aa91a5976ee254292b5e3f3b24"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Factory": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 3872,
+    "origin": "hint+native",
+    "strippedSha256": "4bdd5d473028a3dc1c724eec0c1c60f2dc20e0d341f25dce5267305934d39e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Implementation": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 23365,
+    "origin": "hint+native",
+    "strippedSha256": "408124d9963c57097485489405479fd6df2a8e413f32e31492eb1dd5e8895aa6"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Periphery": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2534,
+    "origin": "hint+native",
+    "strippedSha256": "f98bd760c3818f32272f4c5bc9485b83d34e9a557d0443dca200e52eb2cdadaa"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2ProtocolFeeConfig": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapProtocolFeeConfig",
+   "evidence": {
+    "codeSize": 3599,
+    "origin": "hint+native",
+    "strippedSha256": "83e2e2c4d440ed1073480505822963a4600d98c878a9b65cf90a81ecdd9984bf"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Registry": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapRegistry",
+   "evidence": {
+    "codeSize": 9419,
+    "origin": "hint+native",
+    "strippedSha256": "42c58b74bd40be0268f5ea0b37691df2a74b60d9ac3124a2148a08ad7d4c9eb4"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "evc": {
+   "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
+   "contractName": "EthereumVaultConnector",
+   "evidence": {
+    "codeSize": 22050,
+    "origin": "hint+era",
+    "strippedSha256": "b12f6d72b8c5547a8a77595732e64e7b3e7f432357252ce4b13015605877c936"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/ethereum-vault-connector",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "oracleRouterFactory": {
+   "commit": "96b83f80ded9ac3f28bfce871b55917e360b9159",
+   "contractName": "EulerRouterFactory",
+   "evidence": {
+    "codeSize": 6826,
+    "origin": "gitlink-bump",
+    "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "protocolConfig": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "ProtocolConfig",
+   "evidence": {
+    "codeSize": 3953,
+    "origin": "hint+native",
+    "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "shanghai",
+    "optimizer_runs": 20000,
+    "solc": "0.8.23"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "rEUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "RewardToken",
+   "evidence": {
+    "codeSize": 10735,
+    "origin": "hint+native",
+    "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "sequenceRegistry": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "SequenceRegistry",
+   "evidence": {
+    "codeSize": 867,
+    "origin": "hint+native",
+    "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "shanghai",
+    "optimizer_runs": 20000,
+    "solc": "0.8.23"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "swapVerifier": {
+   "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
+   "contractName": "SwapVerifier",
+   "evidence": {
+    "codeSize": 5586,
+    "origin": "hint+native",
+    "strippedSha256": "2fc2cdd1b6e45a1d03326395d392a7418aa02fd05c71dbf5d845bcc7154354eb"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  }
+ },
+ "137": {
+  "EUL": {
+   "commit": "8c946bb15574c764bee054de79758b958d0130d4",
+   "contractName": "ERC20BurnableMintable",
+   "evidence": {
+    "codeSize": 7768,
+    "origin": "sibling",
+    "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "balanceTracker": {
+   "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
+   "contractName": "TrackingRewardStreams",
+   "evidence": {
+    "codeSize": 11981,
+    "origin": "polygon-explorer-input-src-9eb7b8a7-deps-blob-matched",
+    "strippedSha256": "da5a2a717f625b7bae655da586c5abce54ad0e718d693aea8001e24ba5bfba64",
+    "submoduleOverrides": [
+     {
+      "path": "lib/ethereum-vault-connector",
+      "ref": "dce4f7e9817b4c770cb5a4831c7094d32dbc1621"
+     },
+     {
+      "path": "lib/openzeppelin-contracts",
+      "ref": "69c8def5f222ff96f2b5beff05dfba996368aa79"
+     }
+    ]
+   },
+   "profile": {
+    "context": "explorer-settings",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/reward-streams",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultFactory": {
+   "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
+   "contractName": "GenericFactory",
+   "evidence": {
+    "codeSize": 5631,
+    "origin": "hint+explorer",
+    "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultImplementation": {
+   "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
+   "contractName": "EVault",
+   "evidence": {
+    "codeSize": 23147,
+    "origin": "hint+explorer",
+    "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "evc": {
+   "commit": "912b301f51301e586e5a7f09e48cf52bd52e9a0e",
+   "contractName": "EthereumVaultConnector",
+   "evidence": {
+    "codeSize": 22050,
+    "origin": "setsize-branch+cancun",
+    "strippedSha256": "f4ec720343119658712ff6b94485810b002df7c7e1fa53d1d51c2e42b136b5c9"
+   },
+   "profile": {
+    "context": "ethereum-vault-connector",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/ethereum-vault-connector",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "oracleRouterFactory": {
+   "commit": "96b83f80ded9ac3f28bfce871b55917e360b9159",
+   "contractName": "EulerRouterFactory",
+   "evidence": {
+    "codeSize": 6826,
+    "origin": "gitlink-bump",
+    "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "protocolConfig": {
+   "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
+   "contractName": "ProtocolConfig",
+   "evidence": {
+    "codeSize": 3953,
+    "origin": "hint+explorer",
+    "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "rEUL": {
+   "commit": "8c946bb15574c764bee054de79758b958d0130d4",
+   "contractName": "RewardToken",
+   "evidence": {
+    "codeSize": 10735,
+    "origin": "hint+native",
+    "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "sequenceRegistry": {
+   "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
+   "contractName": "SequenceRegistry",
+   "evidence": {
+    "codeSize": 867,
+    "origin": "hint+explorer",
+    "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "swapVerifier": {
+   "commit": "eae25d382bb58aaaaa9f1a3a55567af993ce32be",
+   "contractName": "SwapVerifier",
+   "evidence": {
+    "codeSize": 3882,
+    "origin": "hist+native",
+    "strippedSha256": "9469decdb8d2280ac3dee6e320c52d16bcd164d10bf25d0add3000bd5be673b7"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  }
+ },
+ "143": {
+  "EUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "ERC20BurnableMintable",
+   "evidence": {
+    "codeSize": 7768,
+    "origin": "sibling",
+    "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "balanceTracker": {
+   "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
+   "contractName": "TrackingRewardStreams",
+   "evidence": {
+    "codeSize": 11981,
+    "origin": "ovr:dc3be15-v5.1.0",
+    "strippedSha256": "47294620c90c9199e0f7a39434092ca19f03307bc7b3e28dd32f37d839ae16db",
+    "submoduleOverrides": [
+     {
+      "path": "lib/ethereum-vault-connector",
+      "ref": "dc3be15"
+     },
+     {
+      "path": "lib/openzeppelin-contracts",
+      "ref": "v5.1.0"
+     }
+    ]
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 100000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/reward-streams",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultFactory": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "GenericFactory",
+   "evidence": {
+    "codeSize": 5631,
+    "origin": "hint+era",
+    "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultImplementation": {
+   "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
+   "contractName": "EVault",
+   "evidence": {
+    "codeSize": 23147,
+    "origin": "hint+era",
+    "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulOFTAdapter": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "MintBurnOFTAdapter",
+   "evidence": {
+    "codeSize": 12615,
+    "origin": "hint+native",
+    "strippedSha256": "1036d1c0fbc36f8f16e64f9c1d9afdad98eab38cb9a0d678ebc1abcbe11f4baa"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnFactory": {
+   "commit": "bece7172a87551e6943a52b08c9a0117eb02c6c3",
+   "contractName": "EulerEarnFactory",
+   "evidence": {
+    "codeSize": 24397,
+    "origin": "monad-explorer-input-src-bece7172-oz-v5.1.0",
+    "strippedSha256": "c65c6dcf454964007e86648e08ee776371297fa604e88fdc17e940f809536a5e",
+    "submoduleOverrides": [
+     {
+      "path": "lib/openzeppelin-contracts",
+      "ref": "69c8def5f222ff96f2b5beff05dfba996368aa79"
+     }
+    ]
+   },
+   "profile": {
+    "context": "explorer-settings",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnPublicAllocator": {
+   "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
+   "contractName": "PublicAllocator",
+   "evidence": {
+    "codeSize": 5168,
+    "origin": "pool(n=6)",
+    "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Factory": {
+   "commit": "5d270c764204b896770e967c22c7b95959bf6660",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 8305,
+    "origin": "hint+native",
+    "strippedSha256": "7c9a247e972a8a3c9fcdeacc4716b1614d613dc969016a2bae4e142396e082bf"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Implementation": {
+   "commit": "5d270c764204b896770e967c22c7b95959bf6660",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 24313,
+    "origin": "hint+native",
+    "strippedSha256": "20cae9a429cf62fe9cbbc90acc8fa4529a2e08f8ff0b9c34413015bdd9215ce6"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Periphery": {
+   "commit": "98c05c56f7722887d293ef231accd689c2ea2493",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2422,
+    "origin": "hint+native",
+    "strippedSha256": "703cfc72cd6c5fcfe53371822c5670cc72bce7aa91a5976ee254292b5e3f3b24"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "evc": {
+   "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
+   "contractName": "EthereumVaultConnector",
+   "evidence": {
+    "codeSize": 22050,
+    "origin": "hint+era",
+    "strippedSha256": "b12f6d72b8c5547a8a77595732e64e7b3e7f432357252ce4b13015605877c936"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/ethereum-vault-connector",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "oracleRouterFactory": {
+   "commit": "96b83f80ded9ac3f28bfce871b55917e360b9159",
+   "contractName": "EulerRouterFactory",
+   "evidence": {
+    "codeSize": 6826,
+    "origin": "gitlink-bump",
+    "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "protocolConfig": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "ProtocolConfig",
+   "evidence": {
+    "codeSize": 3953,
+    "origin": "hint+native",
+    "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "shanghai",
+    "optimizer_runs": 20000,
+    "solc": "0.8.23"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "rEUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "RewardToken",
+   "evidence": {
+    "codeSize": 10735,
+    "origin": "hint+native",
+    "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "sequenceRegistry": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "SequenceRegistry",
+   "evidence": {
+    "codeSize": 867,
+    "origin": "hint+native",
+    "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "shanghai",
+    "optimizer_runs": 20000,
+    "solc": "0.8.23"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "swapVerifier": {
+   "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
+   "contractName": "SwapVerifier",
+   "evidence": {
+    "codeSize": 5586,
+    "origin": "hint+native",
+    "strippedSha256": "2fc2cdd1b6e45a1d03326395d392a7418aa02fd05c71dbf5d845bcc7154354eb"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  }
+ },
+ "146": {
+  "EUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "ERC20BurnableMintable",
+   "evidence": {
+    "codeSize": 7768,
+    "origin": "sibling",
+    "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "balanceTracker": {
+   "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
+   "contractName": "TrackingRewardStreams",
+   "evidence": {
+    "codeSize": 11981,
+    "origin": "ovr:dc3be15-v5.1.0",
+    "strippedSha256": "47294620c90c9199e0f7a39434092ca19f03307bc7b3e28dd32f37d839ae16db",
+    "submoduleOverrides": [
+     {
+      "path": "lib/ethereum-vault-connector",
+      "ref": "dc3be15"
+     },
+     {
+      "path": "lib/openzeppelin-contracts",
+      "ref": "v5.1.0"
+     }
+    ]
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 100000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/reward-streams",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultFactory": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "GenericFactory",
+   "evidence": {
+    "codeSize": 5631,
+    "origin": "hint+explorer",
+    "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultImplementation": {
+   "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
+   "contractName": "EVault",
+   "evidence": {
+    "codeSize": 23147,
+    "origin": "hint+explorer",
+    "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulOFTAdapter": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "MintBurnOFTAdapter",
+   "evidence": {
+    "codeSize": 12615,
+    "origin": "hint+native",
+    "strippedSha256": "1036d1c0fbc36f8f16e64f9c1d9afdad98eab38cb9a0d678ebc1abcbe11f4baa"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnFactory": {
+   "commit": "773453b1f4a6f1d27a1cd0c6d8f6ada572503b23",
+   "contractName": "EulerEarnFactory",
+   "evidence": {
+    "codeSize": 24408,
+    "origin": "hint+explorer",
+    "strippedSha256": "c9ee150eb7d0223886b2ba10217238e3947c9bdef1cbe97ba978e6ebf77355c3"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnPublicAllocator": {
+   "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
+   "contractName": "PublicAllocator",
+   "evidence": {
+    "codeSize": 5168,
+    "origin": "hint+explorer",
+    "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Factory": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 8305,
+    "origin": "hint+native",
+    "strippedSha256": "7c9a247e972a8a3c9fcdeacc4716b1614d613dc969016a2bae4e142396e082bf"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Implementation": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 24313,
+    "origin": "hint+native",
+    "strippedSha256": "20cae9a429cf62fe9cbbc90acc8fa4529a2e08f8ff0b9c34413015bdd9215ce6"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Periphery": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2422,
+    "origin": "hint+native",
+    "strippedSha256": "703cfc72cd6c5fcfe53371822c5670cc72bce7aa91a5976ee254292b5e3f3b24"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Factory": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 3872,
+    "origin": "hint+native",
+    "strippedSha256": "4bdd5d473028a3dc1c724eec0c1c60f2dc20e0d341f25dce5267305934d39e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Implementation": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 23365,
+    "origin": "hint+native",
+    "strippedSha256": "408124d9963c57097485489405479fd6df2a8e413f32e31492eb1dd5e8895aa6"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Periphery": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2534,
+    "origin": "hint+native",
+    "strippedSha256": "f98bd760c3818f32272f4c5bc9485b83d34e9a557d0443dca200e52eb2cdadaa"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2ProtocolFeeConfig": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapProtocolFeeConfig",
+   "evidence": {
+    "codeSize": 3599,
+    "origin": "hint+native",
+    "strippedSha256": "83e2e2c4d440ed1073480505822963a4600d98c878a9b65cf90a81ecdd9984bf"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Registry": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapRegistry",
+   "evidence": {
+    "codeSize": 9419,
+    "origin": "hint+native",
+    "strippedSha256": "42c58b74bd40be0268f5ea0b37691df2a74b60d9ac3124a2148a08ad7d4c9eb4"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "evc": {
+   "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
+   "contractName": "EthereumVaultConnector",
+   "evidence": {
+    "codeSize": 22050,
+    "origin": "hint+explorer",
+    "strippedSha256": "b12f6d72b8c5547a8a77595732e64e7b3e7f432357252ce4b13015605877c936"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/ethereum-vault-connector",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "oracleRouterFactory": {
+   "commit": "96b83f80ded9ac3f28bfce871b55917e360b9159",
+   "contractName": "EulerRouterFactory",
+   "evidence": {
+    "codeSize": 6826,
+    "origin": "gitlink-bump",
+    "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "protocolConfig": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "ProtocolConfig",
+   "evidence": {
+    "codeSize": 3953,
+    "origin": "hint+explorer",
+    "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "rEUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "RewardToken",
+   "evidence": {
+    "codeSize": 10735,
+    "origin": "hint+native",
+    "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "sequenceRegistry": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "SequenceRegistry",
+   "evidence": {
+    "codeSize": 867,
+    "origin": "hint+explorer",
+    "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "swapVerifier": {
+   "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
+   "contractName": "SwapVerifier",
+   "evidence": {
+    "codeSize": 5586,
+    "origin": "hint+native",
+    "strippedSha256": "2fc2cdd1b6e45a1d03326395d392a7418aa02fd05c71dbf5d845bcc7154354eb"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  }
+ },
+ "1923": {
+  "EUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "ERC20BurnableMintable",
+   "evidence": {
+    "codeSize": 7768,
+    "origin": "sibling",
+    "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "balanceTracker": {
+   "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
+   "contractName": "TrackingRewardStreams",
+   "evidence": {
+    "codeSize": 12330,
+    "origin": "hint+native",
+    "strippedSha256": "48762e01048ffb0f0ecdbe25a09b46310fa8252a9b7eaaad17e002ca62dbb6d8"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 100000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/reward-streams",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultFactory": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "GenericFactory",
+   "evidence": {
+    "codeSize": 5631,
+    "origin": "hint+era",
+    "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultImplementation": {
+   "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
+   "contractName": "EVault",
+   "evidence": {
+    "codeSize": 23147,
+    "origin": "hint+era",
+    "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulOFTAdapter": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "MintBurnOFTAdapter",
+   "evidence": {
+    "codeSize": 12615,
+    "origin": "hint+native",
+    "strippedSha256": "1036d1c0fbc36f8f16e64f9c1d9afdad98eab38cb9a0d678ebc1abcbe11f4baa"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnFactory": {
+   "commit": "773453b1f4a6f1d27a1cd0c6d8f6ada572503b23",
+   "contractName": "EulerEarnFactory",
+   "evidence": {
+    "codeSize": 24408,
+    "origin": "hint+native",
+    "strippedSha256": "c9ee150eb7d0223886b2ba10217238e3947c9bdef1cbe97ba978e6ebf77355c3"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnPublicAllocator": {
+   "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
+   "contractName": "PublicAllocator",
+   "evidence": {
+    "codeSize": 5168,
+    "origin": "hint+native",
+    "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Factory": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 8305,
+    "origin": "hint+native",
+    "strippedSha256": "7c9a247e972a8a3c9fcdeacc4716b1614d613dc969016a2bae4e142396e082bf"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Implementation": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 24313,
+    "origin": "hint+native",
+    "strippedSha256": "20cae9a429cf62fe9cbbc90acc8fa4529a2e08f8ff0b9c34413015bdd9215ce6"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Periphery": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2422,
+    "origin": "hint+native",
+    "strippedSha256": "703cfc72cd6c5fcfe53371822c5670cc72bce7aa91a5976ee254292b5e3f3b24"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Factory": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 3872,
+    "origin": "hint+native",
+    "strippedSha256": "4bdd5d473028a3dc1c724eec0c1c60f2dc20e0d341f25dce5267305934d39e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Implementation": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 23365,
+    "origin": "hint+native",
+    "strippedSha256": "408124d9963c57097485489405479fd6df2a8e413f32e31492eb1dd5e8895aa6"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Periphery": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2534,
+    "origin": "hint+native",
+    "strippedSha256": "f98bd760c3818f32272f4c5bc9485b83d34e9a557d0443dca200e52eb2cdadaa"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2ProtocolFeeConfig": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapProtocolFeeConfig",
+   "evidence": {
+    "codeSize": 3599,
+    "origin": "hint+native",
+    "strippedSha256": "83e2e2c4d440ed1073480505822963a4600d98c878a9b65cf90a81ecdd9984bf"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Registry": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapRegistry",
+   "evidence": {
+    "codeSize": 9419,
+    "origin": "hint+native",
+    "strippedSha256": "42c58b74bd40be0268f5ea0b37691df2a74b60d9ac3124a2148a08ad7d4c9eb4"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "evc": {
+   "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
+   "contractName": "EthereumVaultConnector",
+   "evidence": {
+    "codeSize": 22050,
+    "origin": "hint+era",
+    "strippedSha256": "b12f6d72b8c5547a8a77595732e64e7b3e7f432357252ce4b13015605877c936"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/ethereum-vault-connector",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "oracleRouterFactory": {
+   "commit": "96b83f80ded9ac3f28bfce871b55917e360b9159",
+   "contractName": "EulerRouterFactory",
+   "evidence": {
+    "codeSize": 6826,
+    "origin": "gitlink-bump",
+    "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "protocolConfig": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "ProtocolConfig",
+   "evidence": {
+    "codeSize": 3953,
+    "origin": "hint+native",
+    "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "shanghai",
+    "optimizer_runs": 20000,
+    "solc": "0.8.23"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "rEUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "RewardToken",
+   "evidence": {
+    "codeSize": 10735,
+    "origin": "hint+native",
+    "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "sequenceRegistry": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "SequenceRegistry",
+   "evidence": {
+    "codeSize": 867,
+    "origin": "hint+native",
+    "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "shanghai",
+    "optimizer_runs": 20000,
+    "solc": "0.8.23"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "swapVerifier": {
+   "commit": "eae25d382bb58aaaaa9f1a3a55567af993ce32be",
+   "contractName": "SwapVerifier",
+   "evidence": {
+    "codeSize": 3882,
+    "origin": "hist+native",
+    "strippedSha256": "9469decdb8d2280ac3dee6e320c52d16bcd164d10bf25d0add3000bd5be673b7"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  }
+ },
+ "239": {
+  "EUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "ERC20BurnableMintable",
+   "evidence": {
+    "codeSize": 7768,
+    "origin": "sibling",
+    "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "balanceTracker": {
+   "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
+   "contractName": "TrackingRewardStreams",
+   "evidence": {
+    "codeSize": 11981,
+    "origin": "ovr:dc3be15-v5.1.0",
+    "strippedSha256": "47294620c90c9199e0f7a39434092ca19f03307bc7b3e28dd32f37d839ae16db",
+    "submoduleOverrides": [
+     {
+      "path": "lib/ethereum-vault-connector",
+      "ref": "dc3be15"
+     },
+     {
+      "path": "lib/openzeppelin-contracts",
+      "ref": "v5.1.0"
+     }
+    ]
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 100000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/reward-streams",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultFactory": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "GenericFactory",
+   "evidence": {
+    "codeSize": 5631,
+    "origin": "hint+era",
+    "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultImplementation": {
+   "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
+   "contractName": "EVault",
+   "evidence": {
+    "codeSize": 23147,
+    "origin": "hint+era",
+    "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulOFTAdapter": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "MintBurnOFTAdapter",
+   "evidence": {
+    "codeSize": 12615,
+    "origin": "hint+native",
+    "strippedSha256": "1036d1c0fbc36f8f16e64f9c1d9afdad98eab38cb9a0d678ebc1abcbe11f4baa"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnFactory": {
+   "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
+   "contractName": "EulerEarnFactory",
+   "evidence": {
+    "codeSize": 24408,
+    "origin": "hint+native",
+    "strippedSha256": "c9ee150eb7d0223886b2ba10217238e3947c9bdef1cbe97ba978e6ebf77355c3"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnPublicAllocator": {
+   "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
+   "contractName": "PublicAllocator",
+   "evidence": {
+    "codeSize": 5168,
+    "origin": "hint+native",
+    "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Factory": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 8305,
+    "origin": "hint+native",
+    "strippedSha256": "7c9a247e972a8a3c9fcdeacc4716b1614d613dc969016a2bae4e142396e082bf"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Implementation": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 24313,
+    "origin": "hint+native",
+    "strippedSha256": "20cae9a429cf62fe9cbbc90acc8fa4529a2e08f8ff0b9c34413015bdd9215ce6"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Periphery": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2422,
+    "origin": "hint+native",
+    "strippedSha256": "703cfc72cd6c5fcfe53371822c5670cc72bce7aa91a5976ee254292b5e3f3b24"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Factory": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 3872,
+    "origin": "hint+native",
+    "strippedSha256": "4bdd5d473028a3dc1c724eec0c1c60f2dc20e0d341f25dce5267305934d39e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Implementation": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 23365,
+    "origin": "hint+native",
+    "strippedSha256": "408124d9963c57097485489405479fd6df2a8e413f32e31492eb1dd5e8895aa6"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Periphery": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2534,
+    "origin": "hint+native",
+    "strippedSha256": "f98bd760c3818f32272f4c5bc9485b83d34e9a557d0443dca200e52eb2cdadaa"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2ProtocolFeeConfig": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapProtocolFeeConfig",
+   "evidence": {
+    "codeSize": 3599,
+    "origin": "hint+native",
+    "strippedSha256": "83e2e2c4d440ed1073480505822963a4600d98c878a9b65cf90a81ecdd9984bf"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Registry": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapRegistry",
+   "evidence": {
+    "codeSize": 9419,
+    "origin": "hint+native",
+    "strippedSha256": "42c58b74bd40be0268f5ea0b37691df2a74b60d9ac3124a2148a08ad7d4c9eb4"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "evc": {
+   "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
+   "contractName": "EthereumVaultConnector",
+   "evidence": {
+    "codeSize": 22050,
+    "origin": "hint+era",
+    "strippedSha256": "b12f6d72b8c5547a8a77595732e64e7b3e7f432357252ce4b13015605877c936"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/ethereum-vault-connector",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "oracleRouterFactory": {
+   "commit": "96b83f80ded9ac3f28bfce871b55917e360b9159",
+   "contractName": "EulerRouterFactory",
+   "evidence": {
+    "codeSize": 6826,
+    "origin": "gitlink-bump",
+    "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "protocolConfig": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "ProtocolConfig",
+   "evidence": {
+    "codeSize": 3953,
+    "origin": "hint+native",
+    "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "shanghai",
+    "optimizer_runs": 20000,
+    "solc": "0.8.23"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "rEUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "RewardToken",
+   "evidence": {
+    "codeSize": 10735,
+    "origin": "hint+native",
+    "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "sequenceRegistry": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "SequenceRegistry",
+   "evidence": {
+    "codeSize": 867,
+    "origin": "hint+native",
+    "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "shanghai",
+    "optimizer_runs": 20000,
+    "solc": "0.8.23"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "swapVerifier": {
+   "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
+   "contractName": "SwapVerifier",
+   "evidence": {
+    "codeSize": 5586,
+    "origin": "hint+native",
+    "strippedSha256": "2fc2cdd1b6e45a1d03326395d392a7418aa02fd05c71dbf5d845bcc7154354eb"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  }
+ },
+ "2818": {
+  "EUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "ERC20BurnableMintable",
+   "evidence": {
+    "codeSize": 7768,
+    "origin": "sibling",
+    "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "balanceTracker": {
+   "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
+   "contractName": "TrackingRewardStreams",
+   "evidence": {
+    "codeSize": 11981,
+    "origin": "ovr:dc3be15-v5.1.0",
+    "strippedSha256": "47294620c90c9199e0f7a39434092ca19f03307bc7b3e28dd32f37d839ae16db",
+    "submoduleOverrides": [
+     {
+      "path": "lib/ethereum-vault-connector",
+      "ref": "dc3be15"
+     },
+     {
+      "path": "lib/openzeppelin-contracts",
+      "ref": "v5.1.0"
+     }
+    ]
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 100000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/reward-streams",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultFactory": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "GenericFactory",
+   "evidence": {
+    "codeSize": 5631,
+    "origin": "hint+era",
+    "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultImplementation": {
+   "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
+   "contractName": "EVault",
+   "evidence": {
+    "codeSize": 23147,
+    "origin": "hint+era",
+    "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulOFTAdapter": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "MintBurnOFTAdapter",
+   "evidence": {
+    "codeSize": 12615,
+    "origin": "hint+native",
+    "strippedSha256": "1036d1c0fbc36f8f16e64f9c1d9afdad98eab38cb9a0d678ebc1abcbe11f4baa"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnFactory": {
+   "commit": "bece7172a87551e6943a52b08c9a0117eb02c6c3",
+   "contractName": "EulerEarnFactory",
+   "evidence": {
+    "codeSize": 24397,
+    "origin": "morph-explorer-input-src-bece7172-oz-v5.1.0",
+    "strippedSha256": "c65c6dcf454964007e86648e08ee776371297fa604e88fdc17e940f809536a5e",
+    "submoduleOverrides": [
+     {
+      "path": "lib/openzeppelin-contracts",
+      "ref": "69c8def5f222ff96f2b5beff05dfba996368aa79"
+     }
+    ]
+   },
+   "profile": {
+    "context": "explorer-settings",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnPublicAllocator": {
+   "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
+   "contractName": "PublicAllocator",
+   "evidence": {
+    "codeSize": 5168,
+    "origin": "hint+native",
+    "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Factory": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 3872,
+    "origin": "hint+native",
+    "strippedSha256": "4bdd5d473028a3dc1c724eec0c1c60f2dc20e0d341f25dce5267305934d39e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Implementation": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 23365,
+    "origin": "hint+native",
+    "strippedSha256": "408124d9963c57097485489405479fd6df2a8e413f32e31492eb1dd5e8895aa6"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Periphery": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2534,
+    "origin": "hint+native",
+    "strippedSha256": "f98bd760c3818f32272f4c5bc9485b83d34e9a557d0443dca200e52eb2cdadaa"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2ProtocolFeeConfig": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapProtocolFeeConfig",
+   "evidence": {
+    "codeSize": 3599,
+    "origin": "hint+native",
+    "strippedSha256": "83e2e2c4d440ed1073480505822963a4600d98c878a9b65cf90a81ecdd9984bf"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Registry": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapRegistry",
+   "evidence": {
+    "codeSize": 9419,
+    "origin": "hint+native",
+    "strippedSha256": "42c58b74bd40be0268f5ea0b37691df2a74b60d9ac3124a2148a08ad7d4c9eb4"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "evc": {
+   "commit": "7b2f05f8f2fc093f679463209dea202e9af3b120",
+   "contractName": "EthereumVaultConnector",
+   "evidence": {
+    "codeSize": 22086,
+    "origin": "morph-explorer-input-matches-origin/deployment-morph-tip",
+    "strippedSha256": "58879ebab6910635dbdf1344ccc04cab815b8a26cb23502ba8e1b387a96ede7c"
+   },
+   "profile": {
+    "context": "explorer-settings",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/ethereum-vault-connector",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "oracleRouterFactory": {
+   "commit": "96b83f80ded9ac3f28bfce871b55917e360b9159",
+   "contractName": "EulerRouterFactory",
+   "evidence": {
+    "codeSize": 6826,
+    "origin": "gitlink-bump",
+    "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "protocolConfig": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "ProtocolConfig",
+   "evidence": {
+    "codeSize": 3953,
+    "origin": "hint+native",
+    "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "shanghai",
+    "optimizer_runs": 20000,
+    "solc": "0.8.23"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "rEUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "RewardToken",
+   "evidence": {
+    "codeSize": 10735,
+    "origin": "hint+native",
+    "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "sequenceRegistry": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "SequenceRegistry",
+   "evidence": {
+    "codeSize": 867,
+    "origin": "hint+native",
+    "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "shanghai",
+    "optimizer_runs": 20000,
+    "solc": "0.8.23"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "swapVerifier": {
+   "commit": "eae25d382bb58aaaaa9f1a3a55567af993ce32be",
+   "contractName": "SwapVerifier",
+   "evidence": {
+    "codeSize": 3882,
+    "origin": "hist+native",
+    "strippedSha256": "9469decdb8d2280ac3dee6e320c52d16bcd164d10bf25d0add3000bd5be673b7"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  }
+ },
+ "42161": {
+  "EUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "ERC20BurnableMintable",
+   "evidence": {
+    "codeSize": 7768,
+    "origin": "sibling",
+    "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "balanceTracker": {
+   "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
+   "contractName": "TrackingRewardStreams",
+   "evidence": {
+    "codeSize": 11981,
+    "origin": "ovr:dc3be15-v5.1.0",
+    "strippedSha256": "47294620c90c9199e0f7a39434092ca19f03307bc7b3e28dd32f37d839ae16db",
+    "submoduleOverrides": [
+     {
+      "path": "lib/ethereum-vault-connector",
+      "ref": "dc3be15"
+     },
+     {
+      "path": "lib/openzeppelin-contracts",
+      "ref": "v5.1.0"
+     }
+    ]
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 100000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/reward-streams",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultFactory": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "GenericFactory",
+   "evidence": {
+    "codeSize": 5631,
+    "origin": "hint+explorer",
+    "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultImplementation": {
+   "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
+   "contractName": "EVault",
+   "evidence": {
+    "codeSize": 23147,
+    "origin": "hint+explorer",
+    "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulOFTAdapter": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "MintBurnOFTAdapter",
+   "evidence": {
+    "codeSize": 12615,
+    "origin": "hint+native",
+    "strippedSha256": "1036d1c0fbc36f8f16e64f9c1d9afdad98eab38cb9a0d678ebc1abcbe11f4baa"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnFactory": {
+   "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
+   "contractName": "EulerEarnFactory",
+   "evidence": {
+    "codeSize": 24408,
+    "origin": "hint+explorer",
+    "strippedSha256": "c9ee150eb7d0223886b2ba10217238e3947c9bdef1cbe97ba978e6ebf77355c3"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnPublicAllocator": {
+   "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
+   "contractName": "PublicAllocator",
+   "evidence": {
+    "codeSize": 5168,
+    "origin": "hint+explorer",
+    "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Factory": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 8305,
+    "origin": "hint+native",
+    "strippedSha256": "7c9a247e972a8a3c9fcdeacc4716b1614d613dc969016a2bae4e142396e082bf"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Implementation": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 24313,
+    "origin": "hint+native",
+    "strippedSha256": "20cae9a429cf62fe9cbbc90acc8fa4529a2e08f8ff0b9c34413015bdd9215ce6"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Periphery": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2422,
+    "origin": "hint+native",
+    "strippedSha256": "703cfc72cd6c5fcfe53371822c5670cc72bce7aa91a5976ee254292b5e3f3b24"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Factory": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 3872,
+    "origin": "hint+native",
+    "strippedSha256": "4bdd5d473028a3dc1c724eec0c1c60f2dc20e0d341f25dce5267305934d39e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Implementation": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 23365,
+    "origin": "hint+native",
+    "strippedSha256": "408124d9963c57097485489405479fd6df2a8e413f32e31492eb1dd5e8895aa6"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Periphery": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2534,
+    "origin": "hint+native",
+    "strippedSha256": "f98bd760c3818f32272f4c5bc9485b83d34e9a557d0443dca200e52eb2cdadaa"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2ProtocolFeeConfig": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapProtocolFeeConfig",
+   "evidence": {
+    "codeSize": 3599,
+    "origin": "hint+native",
+    "strippedSha256": "83e2e2c4d440ed1073480505822963a4600d98c878a9b65cf90a81ecdd9984bf"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Registry": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapRegistry",
+   "evidence": {
+    "codeSize": 9419,
+    "origin": "hint+native",
+    "strippedSha256": "42c58b74bd40be0268f5ea0b37691df2a74b60d9ac3124a2148a08ad7d4c9eb4"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "evc": {
+   "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
+   "contractName": "EthereumVaultConnector",
+   "evidence": {
+    "codeSize": 22050,
+    "origin": "hint+explorer",
+    "strippedSha256": "b12f6d72b8c5547a8a77595732e64e7b3e7f432357252ce4b13015605877c936"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/ethereum-vault-connector",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "oracleRouterFactory": {
+   "commit": "96b83f80ded9ac3f28bfce871b55917e360b9159",
+   "contractName": "EulerRouterFactory",
+   "evidence": {
+    "codeSize": 6826,
+    "origin": "gitlink-bump",
+    "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "protocolConfig": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "ProtocolConfig",
+   "evidence": {
+    "codeSize": 3953,
+    "origin": "hint+explorer",
+    "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "rEUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "RewardToken",
+   "evidence": {
+    "codeSize": 10735,
+    "origin": "hint+native",
+    "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "sequenceRegistry": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "SequenceRegistry",
+   "evidence": {
+    "codeSize": 867,
+    "origin": "hint+explorer",
+    "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "swapVerifier": {
+   "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
+   "contractName": "SwapVerifier",
+   "evidence": {
+    "codeSize": 5586,
+    "origin": "hint+native",
+    "strippedSha256": "2fc2cdd1b6e45a1d03326395d392a7418aa02fd05c71dbf5d845bcc7154354eb"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  }
+ },
+ "43114": {
+  "EUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "ERC20BurnableMintable",
+   "evidence": {
+    "codeSize": 7768,
+    "origin": "sibling",
+    "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "balanceTracker": {
+   "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
+   "contractName": "TrackingRewardStreams",
+   "evidence": {
+    "codeSize": 11981,
+    "origin": "ovr:dc3be15-v5.1.0",
+    "strippedSha256": "47294620c90c9199e0f7a39434092ca19f03307bc7b3e28dd32f37d839ae16db",
+    "submoduleOverrides": [
+     {
+      "path": "lib/ethereum-vault-connector",
+      "ref": "dc3be15"
+     },
+     {
+      "path": "lib/openzeppelin-contracts",
+      "ref": "v5.1.0"
+     }
+    ]
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 100000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/reward-streams",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultFactory": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "GenericFactory",
+   "evidence": {
+    "codeSize": 5631,
+    "origin": "hint+era",
+    "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultImplementation": {
+   "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
+   "contractName": "EVault",
+   "evidence": {
+    "codeSize": 23147,
+    "origin": "hint+era",
+    "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulOFTAdapter": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "MintBurnOFTAdapter",
+   "evidence": {
+    "codeSize": 12615,
+    "origin": "hint+native",
+    "strippedSha256": "1036d1c0fbc36f8f16e64f9c1d9afdad98eab38cb9a0d678ebc1abcbe11f4baa"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnFactory": {
+   "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
+   "contractName": "EulerEarnFactory",
+   "evidence": {
+    "codeSize": 24408,
+    "origin": "hint+native",
+    "strippedSha256": "c9ee150eb7d0223886b2ba10217238e3947c9bdef1cbe97ba978e6ebf77355c3"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnPublicAllocator": {
+   "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
+   "contractName": "PublicAllocator",
+   "evidence": {
+    "codeSize": 5168,
+    "origin": "hint+native",
+    "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Factory": {
+   "commit": "c7da2f330dff3efb98b0b4e998f9b9f498b37c30",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 8327,
+    "origin": "avax-fix-solmate-remapping",
+    "strippedSha256": "f165204974081f9b04925ef7b664f5cd7006624813d3413ddcae4311e54b0d74"
+   },
+   "profile": {
+    "context": "euler-swap",
+    "evm_version": "shanghai",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Implementation": {
+   "commit": "c7da2f330dff3efb98b0b4e998f9b9f498b37c30",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 24332,
+    "origin": "avax-fix-solmate-remapping",
+    "strippedSha256": "222485e60ee4ebd2ea6f886359d760a4c95c5c006d82b7248588c32c449f2d56"
+   },
+   "profile": {
+    "context": "euler-swap",
+    "evm_version": "shanghai",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Periphery": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2422,
+    "origin": "hint+native",
+    "strippedSha256": "703cfc72cd6c5fcfe53371822c5670cc72bce7aa91a5976ee254292b5e3f3b24"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Factory": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 3872,
+    "origin": "hint+native",
+    "strippedSha256": "4bdd5d473028a3dc1c724eec0c1c60f2dc20e0d341f25dce5267305934d39e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Implementation": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 23365,
+    "origin": "hint+native",
+    "strippedSha256": "408124d9963c57097485489405479fd6df2a8e413f32e31492eb1dd5e8895aa6"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Periphery": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2534,
+    "origin": "hint+native",
+    "strippedSha256": "f98bd760c3818f32272f4c5bc9485b83d34e9a557d0443dca200e52eb2cdadaa"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2ProtocolFeeConfig": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapProtocolFeeConfig",
+   "evidence": {
+    "codeSize": 3599,
+    "origin": "hint+native",
+    "strippedSha256": "83e2e2c4d440ed1073480505822963a4600d98c878a9b65cf90a81ecdd9984bf"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Registry": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapRegistry",
+   "evidence": {
+    "codeSize": 9419,
+    "origin": "hint+native",
+    "strippedSha256": "42c58b74bd40be0268f5ea0b37691df2a74b60d9ac3124a2148a08ad7d4c9eb4"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "evc": {
+   "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
+   "contractName": "EthereumVaultConnector",
+   "evidence": {
+    "codeSize": 22050,
+    "origin": "hint+explorer",
+    "strippedSha256": "b12f6d72b8c5547a8a77595732e64e7b3e7f432357252ce4b13015605877c936"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "shanghai",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/ethereum-vault-connector",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "oracleRouterFactory": {
+   "commit": "96b83f80ded9ac3f28bfce871b55917e360b9159",
+   "contractName": "EulerRouterFactory",
+   "evidence": {
+    "codeSize": 6826,
+    "origin": "gitlink-bump",
+    "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "protocolConfig": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "ProtocolConfig",
+   "evidence": {
+    "codeSize": 3953,
+    "origin": "hint+native",
+    "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "shanghai",
+    "optimizer_runs": 20000,
+    "solc": "0.8.23"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "rEUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "RewardToken",
+   "evidence": {
+    "codeSize": 10735,
+    "origin": "hint+native",
+    "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "sequenceRegistry": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "SequenceRegistry",
+   "evidence": {
+    "codeSize": 867,
+    "origin": "hint+native",
+    "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "shanghai",
+    "optimizer_runs": 20000,
+    "solc": "0.8.23"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "swapVerifier": {
+   "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
+   "contractName": "SwapVerifier",
+   "evidence": {
+    "codeSize": 5586,
+    "origin": "hint+native",
+    "strippedSha256": "2fc2cdd1b6e45a1d03326395d392a7418aa02fd05c71dbf5d845bcc7154354eb"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  }
+ },
+ "56": {
+  "EUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "ERC20BurnableMintable",
+   "evidence": {
+    "codeSize": 7768,
+    "origin": "sibling",
+    "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "balanceTracker": {
+   "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
+   "contractName": "TrackingRewardStreams",
+   "evidence": {
+    "codeSize": 11981,
+    "origin": "ovr:dc3be15-v5.1.0",
+    "strippedSha256": "47294620c90c9199e0f7a39434092ca19f03307bc7b3e28dd32f37d839ae16db",
+    "submoduleOverrides": [
+     {
+      "path": "lib/ethereum-vault-connector",
+      "ref": "dc3be15"
+     },
+     {
+      "path": "lib/openzeppelin-contracts",
+      "ref": "v5.1.0"
+     }
+    ]
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 100000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/reward-streams",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultFactory": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "GenericFactory",
+   "evidence": {
+    "codeSize": 5631,
+    "origin": "hint+explorer",
+    "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultImplementation": {
+   "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
+   "contractName": "EVault",
+   "evidence": {
+    "codeSize": 23147,
+    "origin": "hint+explorer",
+    "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulOFTAdapter": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "MintBurnOFTAdapter",
+   "evidence": {
+    "codeSize": 12615,
+    "origin": "hint+native",
+    "strippedSha256": "1036d1c0fbc36f8f16e64f9c1d9afdad98eab38cb9a0d678ebc1abcbe11f4baa"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnFactory": {
+   "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
+   "contractName": "EulerEarnFactory",
+   "evidence": {
+    "codeSize": 24408,
+    "origin": "hint+explorer",
+    "strippedSha256": "c9ee150eb7d0223886b2ba10217238e3947c9bdef1cbe97ba978e6ebf77355c3"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnPublicAllocator": {
+   "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
+   "contractName": "PublicAllocator",
+   "evidence": {
+    "codeSize": 5168,
+    "origin": "hint+explorer",
+    "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Factory": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 8305,
+    "origin": "hint+native",
+    "strippedSha256": "7c9a247e972a8a3c9fcdeacc4716b1614d613dc969016a2bae4e142396e082bf"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Implementation": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 24313,
+    "origin": "hint+native",
+    "strippedSha256": "20cae9a429cf62fe9cbbc90acc8fa4529a2e08f8ff0b9c34413015bdd9215ce6"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Periphery": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2422,
+    "origin": "hint+native",
+    "strippedSha256": "703cfc72cd6c5fcfe53371822c5670cc72bce7aa91a5976ee254292b5e3f3b24"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Factory": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 3872,
+    "origin": "hint+native",
+    "strippedSha256": "4bdd5d473028a3dc1c724eec0c1c60f2dc20e0d341f25dce5267305934d39e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Implementation": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 23365,
+    "origin": "hint+native",
+    "strippedSha256": "408124d9963c57097485489405479fd6df2a8e413f32e31492eb1dd5e8895aa6"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Periphery": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2534,
+    "origin": "hint+native",
+    "strippedSha256": "f98bd760c3818f32272f4c5bc9485b83d34e9a557d0443dca200e52eb2cdadaa"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2ProtocolFeeConfig": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapProtocolFeeConfig",
+   "evidence": {
+    "codeSize": 3599,
+    "origin": "hint+native",
+    "strippedSha256": "83e2e2c4d440ed1073480505822963a4600d98c878a9b65cf90a81ecdd9984bf"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Registry": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapRegistry",
+   "evidence": {
+    "codeSize": 9419,
+    "origin": "hint+native",
+    "strippedSha256": "42c58b74bd40be0268f5ea0b37691df2a74b60d9ac3124a2148a08ad7d4c9eb4"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "evc": {
+   "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
+   "contractName": "EthereumVaultConnector",
+   "evidence": {
+    "codeSize": 22050,
+    "origin": "hint+explorer",
+    "strippedSha256": "b12f6d72b8c5547a8a77595732e64e7b3e7f432357252ce4b13015605877c936"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/ethereum-vault-connector",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "oracleRouterFactory": {
+   "commit": "96b83f80ded9ac3f28bfce871b55917e360b9159",
+   "contractName": "EulerRouterFactory",
+   "evidence": {
+    "codeSize": 6826,
+    "origin": "gitlink-bump",
+    "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "protocolConfig": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "ProtocolConfig",
+   "evidence": {
+    "codeSize": 3953,
+    "origin": "hint+explorer",
+    "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "rEUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "RewardToken",
+   "evidence": {
+    "codeSize": 10735,
+    "origin": "hint+native",
+    "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "sequenceRegistry": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "SequenceRegistry",
+   "evidence": {
+    "codeSize": 867,
+    "origin": "hint+explorer",
+    "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "swapVerifier": {
+   "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
+   "contractName": "SwapVerifier",
+   "evidence": {
+    "codeSize": 5586,
+    "origin": "pool(n=9)",
+    "strippedSha256": "2fc2cdd1b6e45a1d03326395d392a7418aa02fd05c71dbf5d845bcc7154354eb"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  }
+ },
+ "59144": {
+  "EUL": {
+   "commit": "21a169d7830f71fcfbee6f7ced12bf089f4fba20",
+   "contractName": "ERC20BurnableMintable",
+   "evidence": {
+    "codeSize": 7920,
+    "origin": "sibling",
+    "strippedSha256": "d6078fb22fa20b31c9375da81084e5e122563556cb846ac26158a6f32620255d"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "london",
+    "optimizer_runs": 10000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "balanceTracker": {
+   "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
+   "contractName": "TrackingRewardStreams",
+   "evidence": {
+    "codeSize": 11053,
+    "origin": "linea-explorer-input-deps-from-evk-periphery-edaf96e3-workspace",
+    "strippedSha256": "8a4340d846344094b9311f1deba04b5c73624a0630e182b579fcf96e5d0d3252",
+    "submoduleOverrides": [
+     {
+      "path": "lib/ethereum-vault-connector",
+      "ref": "b9d557a8ebcd3db1fbeef4aa60282aa4059a7bbf"
+     },
+     {
+      "path": "lib/openzeppelin-contracts",
+      "ref": "69c8def5f222ff96f2b5beff05dfba996368aa79"
+     }
+    ]
+   },
+   "profile": {
+    "context": "explorer-settings",
+    "evm_version": "london",
+    "optimizer_runs": 10000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/reward-streams",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultFactory": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "GenericFactory",
+   "evidence": {
+    "codeSize": 5740,
+    "origin": "hint+explorer",
+    "strippedSha256": "57b0108017b4b57583f5d13b8dd9562d953b8b1ce592329f88e9d93ed98ed463"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "london",
+    "optimizer_runs": 10000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultImplementation": {
+   "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
+   "contractName": "EVault",
+   "evidence": {
+    "codeSize": 21328,
+    "origin": "hint+explorer",
+    "strippedSha256": "86133ece4a9139f6f91a43167f110f1cb6f49bcfbfb7deed7ee80a6dc8639b51"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "london",
+    "optimizer_runs": 10000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulOFTAdapter": {
+   "commit": "21a169d7830f71fcfbee6f7ced12bf089f4fba20",
+   "contractName": "MintBurnOFTAdapter",
+   "evidence": {
+    "codeSize": 12696,
+    "origin": "deployment-linea",
+    "strippedSha256": "ee5f56610126fce27b460a3bb97c16b3280bac45fcc22aaca989765029df4862"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "london",
+    "optimizer_runs": 10000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnFactory": {
+   "commit": "ba581a71245ad004d35241918946b08ba63552cd",
+   "contractName": "EulerEarnFactory",
+   "evidence": {
+    "codeSize": 24038,
+    "origin": "deployment-linea-reconstructed+london",
+    "strippedSha256": "978dba086e9345e9ef0290495242cff08456d4b0ad52076195b0b673a41bfb3a"
+   },
+   "profile": {
+    "context": "euler-earn",
+    "evm_version": "london",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnPublicAllocator": {
+   "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
+   "contractName": "PublicAllocator",
+   "evidence": {
+    "codeSize": 5337,
+    "origin": "hint+explorer",
+    "strippedSha256": "055f4a97a877bf3a28e0929c84be43ec2f7440ff84304779d5b87f819050d860"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "london",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Factory": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 7817,
+    "origin": "linea-workspace-oz510",
+    "strippedSha256": "733771fc71b8cadcc00bc5513c1e75b8726853be7f296894fc6b1733e7c2c082",
+    "submoduleOverrides": [
+     {
+      "path": "lib/openzeppelin-contracts",
+      "ref": "69c8def5f222ff96f2b5beff05dfba996368aa79"
+     }
+    ]
+   },
+   "profile": {
+    "context": "euler-swap",
+    "evm_version": "london",
+    "optimizer_runs": 10000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Implementation": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 23166,
+    "origin": "linea-workspace-oz510",
+    "strippedSha256": "85a323795e717a5906347400be8899e27fa4c0ab7b04fc0cc49b5bd4ebbd7ea5",
+    "submoduleOverrides": [
+     {
+      "path": "lib/openzeppelin-contracts",
+      "ref": "69c8def5f222ff96f2b5beff05dfba996368aa79"
+     }
+    ]
+   },
+   "profile": {
+    "context": "euler-swap",
+    "evm_version": "london",
+    "optimizer_runs": 10000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Periphery": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2472,
+    "origin": "linea-workspace-oz510",
+    "strippedSha256": "9b00707ebcd7039ada1e50c131e632a3e6a7f63cd9bf7375e51d7a0e14a1e0c7",
+    "submoduleOverrides": [
+     {
+      "path": "lib/openzeppelin-contracts",
+      "ref": "69c8def5f222ff96f2b5beff05dfba996368aa79"
+     }
+    ]
+   },
+   "profile": {
+    "context": "euler-swap",
+    "evm_version": "london",
+    "optimizer_runs": 10000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Factory": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 3975,
+    "origin": "linea-workspace-oz510",
+    "strippedSha256": "0a646505ce6c4b4dbf511f4cfe6e374c7b3661373fc3507a2251d942a73425f0",
+    "submoduleOverrides": [
+     {
+      "path": "lib/openzeppelin-contracts",
+      "ref": "69c8def5f222ff96f2b5beff05dfba996368aa79"
+     }
+    ]
+   },
+   "profile": {
+    "context": "euler-swap",
+    "evm_version": "london",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Implementation": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 23854,
+    "origin": "linea-workspace-oz510",
+    "strippedSha256": "06ec2a313646e3da14651903d31f2bfd11aa47c04de4299c7ac077c42a120529",
+    "submoduleOverrides": [
+     {
+      "path": "lib/openzeppelin-contracts",
+      "ref": "69c8def5f222ff96f2b5beff05dfba996368aa79"
+     }
+    ]
+   },
+   "profile": {
+    "context": "euler-swap",
+    "evm_version": "london",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Periphery": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2591,
+    "origin": "linea-workspace-oz510",
+    "strippedSha256": "69ef138e27b659cf40dc93b424b75bcfd17615984c03192d0fe209bd96356b71",
+    "submoduleOverrides": [
+     {
+      "path": "lib/openzeppelin-contracts",
+      "ref": "69c8def5f222ff96f2b5beff05dfba996368aa79"
+     }
+    ]
+   },
+   "profile": {
+    "context": "euler-swap",
+    "evm_version": "london",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2ProtocolFeeConfig": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapProtocolFeeConfig",
+   "evidence": {
+    "codeSize": 3647,
+    "origin": "linea-workspace-oz510",
+    "strippedSha256": "e85194c7aa3ca0c668e0a5649b1cf02506a9af389a43106c06fd161633985895",
+    "submoduleOverrides": [
+     {
+      "path": "lib/openzeppelin-contracts",
+      "ref": "69c8def5f222ff96f2b5beff05dfba996368aa79"
+     }
+    ]
+   },
+   "profile": {
+    "context": "euler-swap",
+    "evm_version": "london",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Registry": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapRegistry",
+   "evidence": {
+    "codeSize": 9684,
+    "origin": "linea-workspace-oz510",
+    "strippedSha256": "507db7026ac86379bde411ec44e37f2d4091a7e12dc9d4377ff7308578820e8f",
+    "submoduleOverrides": [
+     {
+      "path": "lib/openzeppelin-contracts",
+      "ref": "69c8def5f222ff96f2b5beff05dfba996368aa79"
+     }
+    ]
+   },
+   "profile": {
+    "context": "euler-swap",
+    "evm_version": "london",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "evc": {
+   "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
+   "contractName": "EthereumVaultConnector",
+   "evidence": {
+    "codeSize": 21251,
+    "origin": "hint+explorer",
+    "strippedSha256": "d1bce236afcafd937b3a2b18363f41c46e9be0c545d7d0b4cef42a19cf1f0e3f"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "london",
+    "optimizer_runs": 10000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/ethereum-vault-connector",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "oracleRouterFactory": {
+   "commit": "21a169d7830f71fcfbee6f7ced12bf089f4fba20",
+   "contractName": "EulerRouterFactory",
+   "evidence": {
+    "codeSize": 6942,
+    "origin": "branch:origin/deployment-linea",
+    "strippedSha256": "dd195cf06e17d6f9de68ceccd3a607e79d65eb037cc6894522dcfa962d8592d3"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "london",
+    "optimizer_runs": 10000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "protocolConfig": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "ProtocolConfig",
+   "evidence": {
+    "codeSize": 3990,
+    "origin": "hint+explorer",
+    "strippedSha256": "ae8cce18e7b6f527333d2a9920ad78eabbedb3d788960a3f091a3615c1213f30"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "london",
+    "optimizer_runs": 10000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "rEUL": {
+   "commit": "21a169d7830f71fcfbee6f7ced12bf089f4fba20",
+   "contractName": "RewardToken",
+   "evidence": {
+    "codeSize": 9866,
+    "origin": "deployment-linea",
+    "strippedSha256": "2068798e559db28152cd9fc9309ed975b9007eb82cf82f3185c1d8103f7a0e89"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "london",
+    "optimizer_runs": 10000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "sequenceRegistry": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "SequenceRegistry",
+   "evidence": {
+    "codeSize": 893,
+    "origin": "hint+explorer",
+    "strippedSha256": "f8601f0f66ffbf0091022b7221611e59a747d2ffdde4c1f651fec2db4bebf73f"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "london",
+    "optimizer_runs": 10000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "swapVerifier": {
+   "commit": "e7337a33cb2339de7bf19d41a765c426cfe71be2",
+   "contractName": "SwapVerifier",
+   "evidence": {
+    "codeSize": 5693,
+    "origin": "linea-explorer-input-reconstructed-settings-on-edaf96e3",
+    "strippedSha256": "696584513d591e3f2db7db7f42c91bd08a1ed8a7b8f3b71a31f43e75603c3e0f"
+   },
+   "profile": {
+    "context": "explorer-settings",
+    "evm_version": "london",
+    "optimizer_runs": 10000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  }
+ },
+ "60808": {
+  "EUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "ERC20BurnableMintable",
+   "evidence": {
+    "codeSize": 7768,
+    "origin": "sibling",
+    "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "balanceTracker": {
+   "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
+   "contractName": "TrackingRewardStreams",
+   "evidence": {
+    "codeSize": 11981,
+    "origin": "ovr:dc3be15-v5.1.0",
+    "strippedSha256": "47294620c90c9199e0f7a39434092ca19f03307bc7b3e28dd32f37d839ae16db",
+    "submoduleOverrides": [
+     {
+      "path": "lib/ethereum-vault-connector",
+      "ref": "dc3be15"
+     },
+     {
+      "path": "lib/openzeppelin-contracts",
+      "ref": "v5.1.0"
+     }
+    ]
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 100000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/reward-streams",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultFactory": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "GenericFactory",
+   "evidence": {
+    "codeSize": 5631,
+    "origin": "hint+era",
+    "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultImplementation": {
+   "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
+   "contractName": "EVault",
+   "evidence": {
+    "codeSize": 23147,
+    "origin": "hint+era",
+    "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulOFTAdapter": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "MintBurnOFTAdapter",
+   "evidence": {
+    "codeSize": 12615,
+    "origin": "hint+native",
+    "strippedSha256": "1036d1c0fbc36f8f16e64f9c1d9afdad98eab38cb9a0d678ebc1abcbe11f4baa"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnFactory": {
+   "commit": "773453b1f4a6f1d27a1cd0c6d8f6ada572503b23",
+   "contractName": "EulerEarnFactory",
+   "evidence": {
+    "codeSize": 24408,
+    "origin": "hint+native",
+    "strippedSha256": "c9ee150eb7d0223886b2ba10217238e3947c9bdef1cbe97ba978e6ebf77355c3"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnPublicAllocator": {
+   "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
+   "contractName": "PublicAllocator",
+   "evidence": {
+    "codeSize": 5168,
+    "origin": "hint+native",
+    "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Factory": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 8305,
+    "origin": "hint+native",
+    "strippedSha256": "7c9a247e972a8a3c9fcdeacc4716b1614d613dc969016a2bae4e142396e082bf"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Implementation": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 24313,
+    "origin": "hint+native",
+    "strippedSha256": "20cae9a429cf62fe9cbbc90acc8fa4529a2e08f8ff0b9c34413015bdd9215ce6"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Periphery": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2422,
+    "origin": "hint+native",
+    "strippedSha256": "703cfc72cd6c5fcfe53371822c5670cc72bce7aa91a5976ee254292b5e3f3b24"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Factory": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 3872,
+    "origin": "hint+native",
+    "strippedSha256": "4bdd5d473028a3dc1c724eec0c1c60f2dc20e0d341f25dce5267305934d39e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Implementation": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 23365,
+    "origin": "hint+native",
+    "strippedSha256": "408124d9963c57097485489405479fd6df2a8e413f32e31492eb1dd5e8895aa6"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Periphery": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2534,
+    "origin": "hint+native",
+    "strippedSha256": "f98bd760c3818f32272f4c5bc9485b83d34e9a557d0443dca200e52eb2cdadaa"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2ProtocolFeeConfig": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapProtocolFeeConfig",
+   "evidence": {
+    "codeSize": 3599,
+    "origin": "hint+native",
+    "strippedSha256": "83e2e2c4d440ed1073480505822963a4600d98c878a9b65cf90a81ecdd9984bf"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Registry": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapRegistry",
+   "evidence": {
+    "codeSize": 9419,
+    "origin": "hint+native",
+    "strippedSha256": "42c58b74bd40be0268f5ea0b37691df2a74b60d9ac3124a2148a08ad7d4c9eb4"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "evc": {
+   "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
+   "contractName": "EthereumVaultConnector",
+   "evidence": {
+    "codeSize": 22050,
+    "origin": "hint+era",
+    "strippedSha256": "b12f6d72b8c5547a8a77595732e64e7b3e7f432357252ce4b13015605877c936"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/ethereum-vault-connector",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "oracleRouterFactory": {
+   "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
+   "contractName": "EulerRouterFactory",
+   "evidence": {
+    "codeSize": 6826,
+    "origin": "sibling-proven",
+    "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4",
+    "submoduleOverrides": [
+     {
+      "path": "lib/euler-price-oracle/lib/ethereum-vault-connector",
+      "ref": "dc3be15"
+     },
+     {
+      "path": "lib/euler-price-oracle/lib/forge-std",
+      "ref": "v1.9.4"
+     }
+    ]
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "protocolConfig": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "ProtocolConfig",
+   "evidence": {
+    "codeSize": 3953,
+    "origin": "hint+native",
+    "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "shanghai",
+    "optimizer_runs": 20000,
+    "solc": "0.8.23"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "rEUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "RewardToken",
+   "evidence": {
+    "codeSize": 10735,
+    "origin": "hint+native",
+    "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "sequenceRegistry": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "SequenceRegistry",
+   "evidence": {
+    "codeSize": 867,
+    "origin": "hint+native",
+    "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "shanghai",
+    "optimizer_runs": 20000,
+    "solc": "0.8.23"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "swapVerifier": {
+   "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
+   "contractName": "SwapVerifier",
+   "evidence": {
+    "codeSize": 5586,
+    "origin": "hint+native",
+    "strippedSha256": "2fc2cdd1b6e45a1d03326395d392a7418aa02fd05c71dbf5d845bcc7154354eb"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  }
+ },
+ "80094": {
+  "EUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "ERC20BurnableMintable",
+   "evidence": {
+    "codeSize": 7768,
+    "origin": "sibling",
+    "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "balanceTracker": {
+   "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
+   "contractName": "TrackingRewardStreams",
+   "evidence": {
+    "codeSize": 11981,
+    "origin": "ovr:dc3be15-v5.1.0",
+    "strippedSha256": "47294620c90c9199e0f7a39434092ca19f03307bc7b3e28dd32f37d839ae16db",
+    "submoduleOverrides": [
+     {
+      "path": "lib/ethereum-vault-connector",
+      "ref": "dc3be15"
+     },
+     {
+      "path": "lib/openzeppelin-contracts",
+      "ref": "v5.1.0"
+     }
+    ]
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 100000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/reward-streams",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultFactory": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "GenericFactory",
+   "evidence": {
+    "codeSize": 5631,
+    "origin": "hint+explorer",
+    "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultImplementation": {
+   "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
+   "contractName": "EVault",
+   "evidence": {
+    "codeSize": 23147,
+    "origin": "hint+explorer",
+    "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulOFTAdapter": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "MintBurnOFTAdapter",
+   "evidence": {
+    "codeSize": 12615,
+    "origin": "hint+native",
+    "strippedSha256": "1036d1c0fbc36f8f16e64f9c1d9afdad98eab38cb9a0d678ebc1abcbe11f4baa"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnFactory": {
+   "commit": "773453b1f4a6f1d27a1cd0c6d8f6ada572503b23",
+   "contractName": "EulerEarnFactory",
+   "evidence": {
+    "codeSize": 24408,
+    "origin": "hint+explorer",
+    "strippedSha256": "c9ee150eb7d0223886b2ba10217238e3947c9bdef1cbe97ba978e6ebf77355c3"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnPublicAllocator": {
+   "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
+   "contractName": "PublicAllocator",
+   "evidence": {
+    "codeSize": 5168,
+    "origin": "hint+explorer",
+    "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Factory": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 8305,
+    "origin": "hint+native",
+    "strippedSha256": "7c9a247e972a8a3c9fcdeacc4716b1614d613dc969016a2bae4e142396e082bf"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Implementation": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 24313,
+    "origin": "hint+native",
+    "strippedSha256": "20cae9a429cf62fe9cbbc90acc8fa4529a2e08f8ff0b9c34413015bdd9215ce6"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Periphery": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2422,
+    "origin": "hint+native",
+    "strippedSha256": "703cfc72cd6c5fcfe53371822c5670cc72bce7aa91a5976ee254292b5e3f3b24"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Factory": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 3872,
+    "origin": "hint+native",
+    "strippedSha256": "4bdd5d473028a3dc1c724eec0c1c60f2dc20e0d341f25dce5267305934d39e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Implementation": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 23365,
+    "origin": "hint+native",
+    "strippedSha256": "408124d9963c57097485489405479fd6df2a8e413f32e31492eb1dd5e8895aa6"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Periphery": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2534,
+    "origin": "hint+native",
+    "strippedSha256": "f98bd760c3818f32272f4c5bc9485b83d34e9a557d0443dca200e52eb2cdadaa"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2ProtocolFeeConfig": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapProtocolFeeConfig",
+   "evidence": {
+    "codeSize": 3599,
+    "origin": "hint+native",
+    "strippedSha256": "83e2e2c4d440ed1073480505822963a4600d98c878a9b65cf90a81ecdd9984bf"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Registry": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapRegistry",
+   "evidence": {
+    "codeSize": 9419,
+    "origin": "hint+native",
+    "strippedSha256": "42c58b74bd40be0268f5ea0b37691df2a74b60d9ac3124a2148a08ad7d4c9eb4"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "evc": {
+   "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
+   "contractName": "EthereumVaultConnector",
+   "evidence": {
+    "codeSize": 22050,
+    "origin": "hint+explorer",
+    "strippedSha256": "b12f6d72b8c5547a8a77595732e64e7b3e7f432357252ce4b13015605877c936"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/ethereum-vault-connector",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "oracleRouterFactory": {
+   "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
+   "contractName": "EulerRouterFactory",
+   "evidence": {
+    "codeSize": 6826,
+    "origin": "sibling-proven",
+    "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4",
+    "submoduleOverrides": [
+     {
+      "path": "lib/euler-price-oracle/lib/ethereum-vault-connector",
+      "ref": "dc3be15"
+     },
+     {
+      "path": "lib/euler-price-oracle/lib/forge-std",
+      "ref": "v1.9.4"
+     }
+    ]
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "protocolConfig": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "ProtocolConfig",
+   "evidence": {
+    "codeSize": 3953,
+    "origin": "hint+explorer",
+    "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "rEUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "RewardToken",
+   "evidence": {
+    "codeSize": 10735,
+    "origin": "hint+native",
+    "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "sequenceRegistry": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "SequenceRegistry",
+   "evidence": {
+    "codeSize": 867,
+    "origin": "hint+explorer",
+    "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "swapVerifier": {
+   "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
+   "contractName": "SwapVerifier",
+   "evidence": {
+    "codeSize": 5586,
+    "origin": "hint+native",
+    "strippedSha256": "2fc2cdd1b6e45a1d03326395d392a7418aa02fd05c71dbf5d845bcc7154354eb"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  }
+ },
+ "8453": {
+  "EUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "ERC20BurnableMintable",
+   "evidence": {
+    "codeSize": 7768,
+    "origin": "sibling",
+    "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "balanceTracker": {
+   "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
+   "contractName": "TrackingRewardStreams",
+   "evidence": {
+    "codeSize": 12330,
+    "origin": "hint+explorer",
+    "strippedSha256": "48762e01048ffb0f0ecdbe25a09b46310fa8252a9b7eaaad17e002ca62dbb6d8"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/reward-streams",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultFactory": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "GenericFactory",
+   "evidence": {
+    "codeSize": 5631,
+    "origin": "hint+explorer",
+    "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultImplementation": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "EVault",
+   "evidence": {
+    "codeSize": 23147,
+    "origin": "hint+explorer",
+    "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulOFTAdapter": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "MintBurnOFTAdapter",
+   "evidence": {
+    "codeSize": 12615,
+    "origin": "hint+native",
+    "strippedSha256": "1036d1c0fbc36f8f16e64f9c1d9afdad98eab38cb9a0d678ebc1abcbe11f4baa"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnFactory": {
+   "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
+   "contractName": "EulerEarnFactory",
+   "evidence": {
+    "codeSize": 24408,
+    "origin": "hint+explorer",
+    "strippedSha256": "c9ee150eb7d0223886b2ba10217238e3947c9bdef1cbe97ba978e6ebf77355c3"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnPublicAllocator": {
+   "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
+   "contractName": "PublicAllocator",
+   "evidence": {
+    "codeSize": 5168,
+    "origin": "hint+explorer",
+    "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Factory": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 8305,
+    "origin": "hint+native",
+    "strippedSha256": "7c9a247e972a8a3c9fcdeacc4716b1614d613dc969016a2bae4e142396e082bf"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Implementation": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 24313,
+    "origin": "hint+native",
+    "strippedSha256": "20cae9a429cf62fe9cbbc90acc8fa4529a2e08f8ff0b9c34413015bdd9215ce6"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Periphery": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2422,
+    "origin": "hint+native",
+    "strippedSha256": "703cfc72cd6c5fcfe53371822c5670cc72bce7aa91a5976ee254292b5e3f3b24"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Factory": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 3872,
+    "origin": "hint+native",
+    "strippedSha256": "4bdd5d473028a3dc1c724eec0c1c60f2dc20e0d341f25dce5267305934d39e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Implementation": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 23365,
+    "origin": "hint+native",
+    "strippedSha256": "408124d9963c57097485489405479fd6df2a8e413f32e31492eb1dd5e8895aa6"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Periphery": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2534,
+    "origin": "hint+native",
+    "strippedSha256": "f98bd760c3818f32272f4c5bc9485b83d34e9a557d0443dca200e52eb2cdadaa"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2ProtocolFeeConfig": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapProtocolFeeConfig",
+   "evidence": {
+    "codeSize": 3599,
+    "origin": "hint+native",
+    "strippedSha256": "83e2e2c4d440ed1073480505822963a4600d98c878a9b65cf90a81ecdd9984bf"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Registry": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapRegistry",
+   "evidence": {
+    "codeSize": 9419,
+    "origin": "hint+native",
+    "strippedSha256": "42c58b74bd40be0268f5ea0b37691df2a74b60d9ac3124a2148a08ad7d4c9eb4"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "evc": {
+   "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
+   "contractName": "EthereumVaultConnector",
+   "evidence": {
+    "codeSize": 22050,
+    "origin": "hint+explorer",
+    "strippedSha256": "b12f6d72b8c5547a8a77595732e64e7b3e7f432357252ce4b13015605877c936"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/ethereum-vault-connector",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "oracleRouterFactory": {
+   "commit": "96b83f80ded9ac3f28bfce871b55917e360b9159",
+   "contractName": "EulerRouterFactory",
+   "evidence": {
+    "codeSize": 6826,
+    "origin": "gitlink-bump",
+    "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "protocolConfig": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "ProtocolConfig",
+   "evidence": {
+    "codeSize": 3953,
+    "origin": "hint+explorer",
+    "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "rEUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "RewardToken",
+   "evidence": {
+    "codeSize": 10735,
+    "origin": "hint+native",
+    "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "sequenceRegistry": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "SequenceRegistry",
+   "evidence": {
+    "codeSize": 867,
+    "origin": "hint+explorer",
+    "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "swapVerifier": {
+   "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
+   "contractName": "SwapVerifier",
+   "evidence": {
+    "codeSize": 5586,
+    "origin": "pool(n=9)",
+    "strippedSha256": "2fc2cdd1b6e45a1d03326395d392a7418aa02fd05c71dbf5d845bcc7154354eb"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  }
+ },
+ "9745": {
+  "EUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "ERC20BurnableMintable",
+   "evidence": {
+    "codeSize": 7768,
+    "origin": "sibling",
+    "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "balanceTracker": {
+   "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
+   "contractName": "TrackingRewardStreams",
+   "evidence": {
+    "codeSize": 11981,
+    "origin": "ovr:dc3be15-v5.1.0",
+    "strippedSha256": "47294620c90c9199e0f7a39434092ca19f03307bc7b3e28dd32f37d839ae16db",
+    "submoduleOverrides": [
+     {
+      "path": "lib/ethereum-vault-connector",
+      "ref": "dc3be15"
+     },
+     {
+      "path": "lib/openzeppelin-contracts",
+      "ref": "v5.1.0"
+     }
+    ]
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 100000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/reward-streams",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultFactory": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "GenericFactory",
+   "evidence": {
+    "codeSize": 5631,
+    "origin": "hint+explorer",
+    "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultImplementation": {
+   "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
+   "contractName": "EVault",
+   "evidence": {
+    "codeSize": 23147,
+    "origin": "hint+explorer",
+    "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulOFTAdapter": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "MintBurnOFTAdapter",
+   "evidence": {
+    "codeSize": 12615,
+    "origin": "pool(n=12)",
+    "strippedSha256": "1036d1c0fbc36f8f16e64f9c1d9afdad98eab38cb9a0d678ebc1abcbe11f4baa"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnFactory": {
+   "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
+   "contractName": "EulerEarnFactory",
+   "evidence": {
+    "codeSize": 24408,
+    "origin": "pool(n=4)",
+    "strippedSha256": "c9ee150eb7d0223886b2ba10217238e3947c9bdef1cbe97ba978e6ebf77355c3"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnPublicAllocator": {
+   "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
+   "contractName": "PublicAllocator",
+   "evidence": {
+    "codeSize": 5168,
+    "origin": "pool(n=6)",
+    "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Factory": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 8305,
+    "origin": "pool(n=10)",
+    "strippedSha256": "7c9a247e972a8a3c9fcdeacc4716b1614d613dc969016a2bae4e142396e082bf"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Implementation": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 24313,
+    "origin": "pool(n=10)",
+    "strippedSha256": "20cae9a429cf62fe9cbbc90acc8fa4529a2e08f8ff0b9c34413015bdd9215ce6"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV1Periphery": {
+   "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2422,
+    "origin": "pool(n=11)",
+    "strippedSha256": "703cfc72cd6c5fcfe53371822c5670cc72bce7aa91a5976ee254292b5e3f3b24"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 1000000,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Factory": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 3872,
+    "origin": "pool(n=12)",
+    "strippedSha256": "4bdd5d473028a3dc1c724eec0c1c60f2dc20e0d341f25dce5267305934d39e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Implementation": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 23365,
+    "origin": "pool(n=12)",
+    "strippedSha256": "408124d9963c57097485489405479fd6df2a8e413f32e31492eb1dd5e8895aa6"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Periphery": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2534,
+    "origin": "pool(n=12)",
+    "strippedSha256": "f98bd760c3818f32272f4c5bc9485b83d34e9a557d0443dca200e52eb2cdadaa"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2ProtocolFeeConfig": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapProtocolFeeConfig",
+   "evidence": {
+    "codeSize": 3599,
+    "origin": "pool(n=12)",
+    "strippedSha256": "83e2e2c4d440ed1073480505822963a4600d98c878a9b65cf90a81ecdd9984bf"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Registry": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapRegistry",
+   "evidence": {
+    "codeSize": 9419,
+    "origin": "pool(n=12)",
+    "strippedSha256": "42c58b74bd40be0268f5ea0b37691df2a74b60d9ac3124a2148a08ad7d4c9eb4"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "evc": {
+   "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
+   "contractName": "EthereumVaultConnector",
+   "evidence": {
+    "codeSize": 22050,
+    "origin": "hint+explorer",
+    "strippedSha256": "b12f6d72b8c5547a8a77595732e64e7b3e7f432357252ce4b13015605877c936"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/ethereum-vault-connector",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "oracleRouterFactory": {
+   "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
+   "contractName": "EulerRouterFactory",
+   "evidence": {
+    "codeSize": 6826,
+    "origin": "ovr:epo-dc3be15-v1.9.4",
+    "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4",
+    "submoduleOverrides": [
+     {
+      "path": "lib/euler-price-oracle/lib/ethereum-vault-connector",
+      "ref": "dc3be15"
+     },
+     {
+      "path": "lib/euler-price-oracle/lib/forge-std",
+      "ref": "v1.9.4"
+     }
+    ]
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "protocolConfig": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "ProtocolConfig",
+   "evidence": {
+    "codeSize": 3953,
+    "origin": "pool(n=7)",
+    "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "shanghai",
+    "optimizer_runs": 20000,
+    "solc": "0.8.23"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "rEUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "RewardToken",
+   "evidence": {
+    "codeSize": 10735,
+    "origin": "pool(n=12)",
+    "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "sequenceRegistry": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "SequenceRegistry",
+   "evidence": {
+    "codeSize": 867,
+    "origin": "pool(n=7)",
+    "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "shanghai",
+    "optimizer_runs": 20000,
+    "solc": "0.8.23"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "swapVerifier": {
+   "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
+   "contractName": "SwapVerifier",
+   "evidence": {
+    "codeSize": 5586,
+    "origin": "pool(n=9)",
+    "strippedSha256": "2fc2cdd1b6e45a1d03326395d392a7418aa02fd05c71dbf5d845bcc7154354eb"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  }
+ },
+ "999": {
+  "EUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "ERC20BurnableMintable",
+   "evidence": {
+    "codeSize": 7768,
+    "origin": "sibling",
+    "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "balanceTracker": {
+   "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
+   "contractName": "TrackingRewardStreams",
+   "evidence": {
+    "codeSize": 11981,
+    "origin": "ovr:dc3be15-v5.1.0",
+    "strippedSha256": "47294620c90c9199e0f7a39434092ca19f03307bc7b3e28dd32f37d839ae16db",
+    "submoduleOverrides": [
+     {
+      "path": "lib/ethereum-vault-connector",
+      "ref": "dc3be15"
+     },
+     {
+      "path": "lib/openzeppelin-contracts",
+      "ref": "v5.1.0"
+     }
+    ]
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 100000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/reward-streams",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultFactory": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "GenericFactory",
+   "evidence": {
+    "codeSize": 5631,
+    "origin": "pool(n=14)",
+    "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultImplementation": {
+   "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
+   "contractName": "EVault",
+   "evidence": {
+    "codeSize": 23147,
+    "origin": "pool(n=13)",
+    "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulOFTAdapter": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "MintBurnOFTAdapter",
+   "evidence": {
+    "codeSize": 12615,
+    "origin": "pool(n=12)",
+    "strippedSha256": "1036d1c0fbc36f8f16e64f9c1d9afdad98eab38cb9a0d678ebc1abcbe11f4baa"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnFactory": {
+   "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
+   "contractName": "EulerEarnFactory",
+   "evidence": {
+    "codeSize": 24408,
+    "origin": "pool(n=4)",
+    "strippedSha256": "c9ee150eb7d0223886b2ba10217238e3947c9bdef1cbe97ba978e6ebf77355c3"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnPublicAllocator": {
+   "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
+   "contractName": "PublicAllocator",
+   "evidence": {
+    "codeSize": 5168,
+    "origin": "pool(n=6)",
+    "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 200,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Factory": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapFactory",
+   "evidence": {
+    "codeSize": 3872,
+    "origin": "pool(n=12)",
+    "strippedSha256": "4bdd5d473028a3dc1c724eec0c1c60f2dc20e0d341f25dce5267305934d39e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Implementation": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwap",
+   "evidence": {
+    "codeSize": 23365,
+    "origin": "pool(n=12)",
+    "strippedSha256": "408124d9963c57097485489405479fd6df2a8e413f32e31492eb1dd5e8895aa6"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Periphery": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapPeriphery",
+   "evidence": {
+    "codeSize": 2534,
+    "origin": "pool(n=12)",
+    "strippedSha256": "f98bd760c3818f32272f4c5bc9485b83d34e9a557d0443dca200e52eb2cdadaa"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2ProtocolFeeConfig": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapProtocolFeeConfig",
+   "evidence": {
+    "codeSize": 3599,
+    "origin": "pool(n=12)",
+    "strippedSha256": "83e2e2c4d440ed1073480505822963a4600d98c878a9b65cf90a81ecdd9984bf"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerSwapV2Registry": {
+   "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
+   "contractName": "EulerSwapRegistry",
+   "evidence": {
+    "codeSize": 9419,
+    "origin": "pool(n=12)",
+    "strippedSha256": "42c58b74bd40be0268f5ea0b37691df2a74b60d9ac3124a2148a08ad7d4c9eb4"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "prague",
+    "optimizer_runs": 2500,
+    "solc": "0.8.27"
+   },
+   "repo": "euler-xyz/euler-swap",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "evc": {
+   "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
+   "contractName": "EthereumVaultConnector",
+   "evidence": {
+    "codeSize": 22050,
+    "origin": "pool(n=11)",
+    "strippedSha256": "b12f6d72b8c5547a8a77595732e64e7b3e7f432357252ce4b13015605877c936"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/ethereum-vault-connector",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "oracleRouterFactory": {
+   "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
+   "contractName": "EulerRouterFactory",
+   "evidence": {
+    "codeSize": 6826,
+    "origin": "ovr:epo-dc3be15-v1.9.4",
+    "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4",
+    "submoduleOverrides": [
+     {
+      "path": "lib/euler-price-oracle/lib/ethereum-vault-connector",
+      "ref": "dc3be15"
+     },
+     {
+      "path": "lib/euler-price-oracle/lib/forge-std",
+      "ref": "v1.9.4"
+     }
+    ]
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "protocolConfig": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "ProtocolConfig",
+   "evidence": {
+    "codeSize": 3953,
+    "origin": "pool(n=7)",
+    "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "shanghai",
+    "optimizer_runs": 20000,
+    "solc": "0.8.23"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "rEUL": {
+   "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
+   "contractName": "RewardToken",
+   "evidence": {
+    "codeSize": 10735,
+    "origin": "pool(n=12)",
+    "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "sequenceRegistry": {
+   "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
+   "contractName": "SequenceRegistry",
+   "evidence": {
+    "codeSize": 867,
+    "origin": "pool(n=7)",
+    "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
+   },
+   "profile": {
+    "context": "native",
+    "evm_version": "shanghai",
+    "optimizer_runs": 20000,
+    "solc": "0.8.23"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "swapVerifier": {
+   "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
+   "contractName": "SwapVerifier",
+   "evidence": {
+    "codeSize": 5586,
+    "origin": "pool(n=9)",
+    "strippedSha256": "2fc2cdd1b6e45a1d03326395d392a7418aa02fd05c71dbf5d845bcc7154354eb"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  }
+ }
+}
