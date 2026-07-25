@@ -1,0 +1,1785 @@
+[
+ {
+  "id": "yaudit-evc-2023",
+  "repo": "euler-xyz/ethereum-vault-connector",
+  "firm": "yAudit",
+  "date": "2023-12-19",
+  "commits": {
+   "reviewed": "962722a69a275c424adaa89e595ca60107376b68",
+   "final": "c1288b02c2c028378bde4e7bec0dddc288dd51ce"
+  },
+  "scope": [
+   "src/interfaces/IERC1271.sol",
+   "src/interfaces/IEthereumVaultConnector.sol",
+   "src/interfaces/IVault.sol",
+   "src/Errors.sol",
+   "src/EthereumVaultConnector.sol",
+   "src/Events.sol",
+   "src/ExecutionContext.sol",
+   "src/Set.sol",
+   "src/TransientStorage.sol"
+  ],
+  "report": "https://github.com/euler-xyz/ethereum-vault-connector/blob/b9d557a8ebcd3db1fbeef4aa60282aa4059a7bbf/audits/Euler%20yAudit%20report%20%28EVC%29.pdf",
+  "confidence": "high",
+  "evidence": "p4 Review Summary states verbatim '962722a69...first review and c1288b02...second'; final == tag audit-yAudit-1",
+  "signed_off": true
+ },
+ {
+  "id": "certora-evc-2023",
+  "repo": "euler-xyz/ethereum-vault-connector",
+  "firm": "Certora",
+  "date": "2023-12-28",
+  "commits": {
+   "reviewed": "41e6ce7813ebf34bf1de46bb637eecbaa5ce1199",
+   "final": "027be10e1b9e5591cd38be2728530c5fd36dbcf6"
+  },
+  "scope": [
+   "src/EthereumVaultConnector.sol"
+  ],
+  "report": "https://github.com/euler-xyz/ethereum-vault-connector/blob/b9d557a8ebcd3db1fbeef4aa60282aa4059a7bbf/audits/Euler%20Certora%20report.pdf",
+  "confidence": "low",
+  "evidence": "No commit stated in PDF (12 pages + 39 links checked); reviewed = nearest master commit to Nov-22-2023 kickoff; final = 027be10 'add certora audit' which added this PDF (Jan-3-2024), near stated final report Dec-28-2023",
+  "signed_off": true
+ },
+ {
+  "id": "hunter-evc-2024",
+  "repo": "euler-xyz/ethereum-vault-connector",
+  "firm": "Hunter Security",
+  "date": "2024-01-10",
+  "commits": {
+   "reviewed": "89dcbd4d1ad149c060d0365c244746d9b160d5e5",
+   "final": "5cb1ebf53a1d537db6feabc5acf139891b37a39a"
+  },
+  "scope": [
+   "src/Errors.sol",
+   "src/EthereumVaultConnector.sol",
+   "src/Events.sol",
+   "src/ExecutionContext.sol",
+   "src/Set.sol",
+   "src/TransientStorage.sol",
+   "src/interfaces/"
+  ],
+  "report": "https://github.com/euler-xyz/ethereum-vault-connector/blob/b9d557a8ebcd3db1fbeef4aa60282aa4059a7bbf/audits/Euler%20Hunter%20Security%20report.pdf",
+  "confidence": "high",
+  "evidence": "p4 Executive Summary table states 'Commit hash 89dcbd4d...' and 'Resolution 5cb1ebf5...' (== tag audit-Hunter)",
+  "signed_off": true
+ },
+ {
+  "id": "trail-of-bits-evc-2024",
+  "repo": "euler-xyz/ethereum-vault-connector",
+  "firm": "Trail of Bits",
+  "date": "2024-01-30",
+  "commits": {
+   "reviewed": "8e1b9a7888bb40bdde16659ca47d0c3a7cafbcf6",
+   "final": "ec26831575513b50273dd3dc04d3d21aca3ec225"
+  },
+  "scope": [
+   "src/"
+  ],
+  "report": "https://github.com/euler-xyz/ethereum-vault-connector/blob/b9d557a8ebcd3db1fbeef4aa60282aa4059a7bbf/audits/Euler%20Trail%20of%20Bits%20report.pdf",
+  "confidence": "high",
+  "evidence": "p5 Executive Summary 'at commit 8e1b9a7' (rev-parse); p13 Fix Review PR #81 merge commit == tag audit-ToB",
+  "signed_off": true
+ },
+ {
+  "id": "openzeppelin-evc-2024",
+  "repo": "euler-xyz/ethereum-vault-connector",
+  "firm": "OpenZeppelin",
+  "date": "2024-04-16",
+  "commits": {
+   "reviewed": "69626eba206ae301b919f021e71b49feaf7ea8f5",
+   "final": "c30606b44f1d1cabba303dfd13046e5444cab775"
+  },
+  "scope": [
+   "src/Errors.sol",
+   "src/EthereumVaultConnector.sol",
+   "src/Events.sol",
+   "src/ExecutionContext.sol",
+   "src/Set.sol",
+   "src/TransientStorage.sol",
+   "src/interfaces/IERC1271.sol",
+   "src/interfaces/IEthereumVaultConnector.sol",
+   "src/interfaces/IVault.sol",
+   "src/utils/EVCUtil.sol"
+  ],
+  "report": "https://github.com/euler-xyz/ethereum-vault-connector/blob/b9d557a8ebcd3db1fbeef4aa60282aa4059a7bbf/audits/Euler%20OpenZeppelin%20report.pdf",
+  "confidence": "high",
+  "evidence": "p4 Scope 'audited...at the 69626eba...commit'; final == tag audit-OZ (ChainSecurity table labels it 'Initial Version, 7 April 2024')",
+  "signed_off": true
+ },
+ {
+  "id": "yaudit-evc-2024-combined",
+  "repo": "euler-xyz/ethereum-vault-connector",
+  "firm": "yAudit",
+  "date": "2024-05-05",
+  "commits": {
+   "reviewed": "7e1445d45e9189b5132132a6216c146fde9ba794",
+   "final": "7e1445d45e9189b5132132a6216c146fde9ba794"
+  },
+  "scope": [
+   "src/Errors.sol",
+   "src/EthereumVaultConnector.sol",
+   "src/Events.sol",
+   "src/ExecutionContext.sol",
+   "src/Set.sol",
+   "src/TransientStorage.sol",
+   "src/interfaces/IERC1271.sol",
+   "src/interfaces/IEthereumVaultConnector.sol",
+   "src/interfaces/IVault.sol",
+   "src/utils/EVCUtil.sol"
+  ],
+  "report": "https://github.com/euler-xyz/ethereum-vault-connector/blob/b9d557a8ebcd3db1fbeef4aa60282aa4059a7bbf/audits/Euler%20yAudit%20report%20%28EVC%20%2B%20EVK%20%2B%20Price%20Oracle%29.pdf",
+  "confidence": "high",
+  "evidence": "p8 Review Summary states '7e1445d4...for the EVC repo' (== tag audit-yAudit-2). Combined EVC+EVK+EPO review; date normalized to in-doc review-period end 2024-05-05 (shared across the 3 repo copies)",
+  "signed_off": true
+ },
+ {
+  "id": "omniscia-evc-2024",
+  "repo": "euler-xyz/ethereum-vault-connector",
+  "firm": "Omniscia",
+  "date": "2024-05-16",
+  "commits": {
+   "reviewed": "69626eba206ae301b919f021e71b49feaf7ea8f5",
+   "final": "c943dcbbb610b285025d5cae5b18e080b429425d"
+  },
+  "scope": [
+   "src/Errors.sol",
+   "src/Events.sol",
+   "src/utils/EVCUtil.sol",
+   "src/ExecutionContext.sol",
+   "src/EthereumVaultConnector.sol",
+   "src/Set.sol",
+   "src/TransientStorage.sol"
+  ],
+  "report": "https://github.com/euler-xyz/ethereum-vault-connector/blob/b9d557a8ebcd3db1fbeef4aa60282aa4059a7bbf/audits/Euler%20Omniscia%20report.pdf",
+  "confidence": "high",
+  "evidence": "p10 Target/Scope table 'Commit: 69626eba...', Revisions 69626eba20/577d1991de/c943dcbbb6 (last == tag audit-Omniscia); cover 'May 16, 2024'",
+  "signed_off": true
+ },
+ {
+  "id": "spearbit-evc-2024",
+  "repo": "euler-xyz/ethereum-vault-connector",
+  "firm": "Spearbit",
+  "date": "2024-05-17",
+  "commits": {
+   "reviewed": "c30606b44f1d1cabba303dfd13046e5444cab775",
+   "final": "9bc0c17afd6bed51cd9126d9f3b8fc31614d29a9"
+  },
+  "scope": [
+   "src/"
+  ],
+  "report": "https://github.com/euler-xyz/ethereum-vault-connector/blob/b9d557a8ebcd3db1fbeef4aa60282aa4059a7bbf/audits/Euler%20Spearbit%20report.pdf",
+  "confidence": "high",
+  "evidence": "p3 Summary 'Commit c30606...cab775' (shared Apr-2024 baseline w/ OZ); 'Fixed in PR 147' == merge of tag audit-Spearbit; cover 'May 17, 2024'",
+  "signed_off": true
+ },
+ {
+  "id": "chainsecurity-evc-2024",
+  "repo": "euler-xyz/ethereum-vault-connector",
+  "firm": "ChainSecurity",
+  "date": "2024-06-18",
+  "commits": {
+   "reviewed": "c30606b44f1d1cabba303dfd13046e5444cab775",
+   "final": "9bc0c17afd6bed51cd9126d9f3b8fc31614d29a9"
+  },
+  "scope": [
+   "src/ExecutionContext.sol",
+   "src/EthereumVaultConnector.sol",
+   "src/TransientStorage.sol",
+   "src/Errors.sol",
+   "src/Events.sol",
+   "src/Set.sol",
+   "src/utils/EVCUtil.sol"
+  ],
+  "report": "https://github.com/euler-xyz/ethereum-vault-connector/blob/b9d557a8ebcd3db1fbeef4aa60282aa4059a7bbf/audits/Euler%20ChainSecurity%20report.pdf",
+  "confidence": "high",
+  "evidence": "p5 revision table: V1 c30606b4 (7 Apr 2024 Initial), V2 9bc0c17a (22 Apr 2024 After Intermediate Report, == tag audit-ChainSecurity); cover '18 Jun, 2024'",
+  "signed_off": true
+ },
+ {
+  "id": "yaudit-evc-2024-comp-fixes",
+  "repo": "euler-xyz/ethereum-vault-connector",
+  "firm": "yAudit",
+  "date": "2024-07-31",
+  "commits": {
+   "reviewed": "f791f94e6e790dd82041908983b57412dc04fb84",
+   "final": "084b32284ba643921f8d21bff3ddaf0c4e08d754"
+  },
+  "scope": [
+   "src/"
+  ],
+  "report": "https://github.com/euler-xyz/ethereum-vault-connector/blob/b9d557a8ebcd3db1fbeef4aa60282aa4059a7bbf/audits/Euler%20yAudit%20Code%20Competition%20Fixes%20report.pdf",
+  "confidence": "medium",
+  "evidence": "PDF scopes companion repo 'evc-cantina-fixes' (no direct main-repo hash). TOC issues cantina-41/102/103/173/196/213/483/516 merged into cantina-fixes = PR#169 = v1.0.0 tag 084b3228; reviewed = cantina-contest baseline. Derived -> medium",
+  "signed_off": true
+ },
+ {
+  "id": "cantina-evc-2024",
+  "repo": "euler-xyz/ethereum-vault-connector",
+  "firm": "Cantina",
+  "date": "2024-11-13",
+  "commits": {
+   "reviewed": "f791f94e6e790dd82041908983b57412dc04fb84",
+   "final": "f791f94e6e790dd82041908983b57412dc04fb84"
+  },
+  "scope": [
+   "src/"
+  ],
+  "report": "https://github.com/euler-xyz/ethereum-vault-connector/blob/b9d557a8ebcd3db1fbeef4aa60282aa4059a7bbf/audits/Euler%20Cantina%20Code%20Competition%20report.pdf",
+  "confidence": "high",
+  "evidence": "p87 finding hyperlink pins ethereum-vault-connector@f791f94e (== tag cantina-contest); contest 'May 20-Jun 17'; cover 'November 13, 2024'. Multi-repo Euler-v2 competition; EVC scope = whole src/",
+  "signed_off": true
+ },
+ {
+  "id": "yaudit-evc-2026-setsize",
+  "repo": "euler-xyz/ethereum-vault-connector",
+  "firm": "yAudit",
+  "date": "2026-05-11",
+  "commits": {
+   "reviewed": "dd04b59071525425cab2960ede5d7495847d87ee",
+   "final": "dd04b59071525425cab2960ede5d7495847d87ee"
+  },
+  "scope": [
+   "src/Set.sol",
+   "src/EthereumVaultConnector.sol"
+  ],
+  "report": "https://github.com/euler-xyz/ethereum-vault-connector/blob/b9d557a8ebcd3db1fbeef4aa60282aa4059a7bbf/audits/Euler%20yAudit%20report%20%28set%20size%20increase%29.pdf",
+  "confidence": "high",
+  "evidence": "p3 'Commit Hash: dd04b590...' verbatim (rev-parse ok); 'Completed 2026-05-11'. WARNING: commit lives only on branch feat/set-max-elements-increase; PDF NOT tracked at pin sha -> report URL 404s",
+  "signed_off": true
+ },
+ {
+  "id": "sigma-prime-euler-earn-2025",
+  "repo": "euler-xyz/euler-earn",
+  "firm": "Sigma Prime",
+  "date": "2025-07-01",
+  "commits": {
+   "reviewed": "558b15b0444750f742c85feda67ad6b9b851c4db",
+   "final": "558b15b0444750f742c85feda67ad6b9b851c4db"
+  },
+  "scope": [
+   "src/EulerEarn.sol",
+   "src/EulerEarnFactory.sol",
+   "src/PublicAllocator.sol",
+   "src/libraries/*"
+  ],
+  "report": "https://github.com/euler-xyz/euler-earn/blob/b2fd6e699ee20bcfe7459f375b3cee5d2fa53345/audits/Sigma_Prime_EulerEarn_report.pdf",
+  "confidence": "high",
+  "evidence": "PDF pages 1-7: 'strictly limited to the following files, assessed at commit 558b15b'. Full hash verified present in euler-earn (origin/master lineage).",
+  "signed_off": true
+ },
+ {
+  "id": "certora-euler-earn-2025",
+  "repo": "euler-xyz/euler-earn",
+  "firm": "Certora",
+  "date": "2025-07-15",
+  "commits": {
+   "reviewed": "a73c52b718def89ab6c05f2e2fe60841c880639e",
+   "final": "685ee26bdbc340151070a37087bbd8fa0871a098"
+  },
+  "scope": [
+   "src/libraries/**",
+   "src/EulerEarn.sol",
+   "src/EulerEarnFactory.sol",
+   "src/PublicAllocator.sol"
+  ],
+  "report": "https://github.com/euler-xyz/euler-earn/blob/b2fd6e699ee20bcfe7459f375b3cee5d2fa53345/audits/Certora_EulerEarn_report.pdf",
+  "confidence": "high",
+  "evidence": "PDF pages 1-6 Project Scope table: 'euler-xyz/euler-earn | a73c52b | 685ee26'; work June 26 - July 15, 2025. Both short hashes resolved in euler-earn.",
+  "signed_off": true
+ },
+ {
+  "id": "pashov-euler-earn-2025",
+  "repo": "euler-xyz/euler-earn",
+  "firm": "Pashov Audit Group",
+  "date": "2025-07-30",
+  "commits": {
+   "reviewed": "12c0220226cdefc8fee2f229c5e75bd656c7b2b5",
+   "final": "b95775f4235fe4ea738dde226524d25f317d987c"
+  },
+  "scope": [
+   "EulerEarn.sol",
+   "EulerEarnFactory.sol",
+   "PublicAllocator.sol",
+   "ConstantsLib.sol",
+   "ErrorsLib.sol",
+   "EventsLib.sol",
+   "PendingLib.sol",
+   "SafeERC20Permit2Lib.sol",
+   "UtilsLib.sol",
+   "interfaces/"
+  ],
+  "report": "https://github.com/euler-xyz/euler-earn/blob/b2fd6e699ee20bcfe7459f375b3cee5d2fa53345/audits/Pashov_Audit_Group_report.pdf",
+  "confidence": "high",
+  "evidence": "PDF pages 1-6: 'Review commit hash: 12c0220226cdefc8fee2f229c5e75bd656c7b2b5 (euler-xyz/euler-earn)' / 'Fixes review commit hash: b95775f4235fe4ea738dde226524d25f317d987c'. Both full hashes verified in euler-earn. Scope printed as bare filenames (src/ and src/libraries/ layout).",
+  "signed_off": true
+ },
+ {
+  "id": "bailsec-eul-erc20-2025",
+  "repo": "euler-xyz/euler-governance",
+  "firm": "BailSec",
+  "date": "2025-06-01",
+  "commits": {
+   "reviewed": "1249ea8be20cd10b795251ba18bc785a26c1361f",
+   "final": "1249ea8be20cd10b795251ba18bc785a26c1361f"
+  },
+  "scope": [
+   "contracts/governance/Eul.sol"
+  ],
+  "report": "https://github.com/euler-xyz/evk-periphery/blob/3d3b4b96109c8468198ac70a71dc73d027467927/audits/BailSec%20EUL%20ERC20.pdf",
+  "confidence": "high",
+  "evidence": "PDF pages 1-6 Project Details: blob URL github.com/euler-xyz/euler-governance/blob/1249ea8be20cd10b795251ba18bc785a26c1361f/contracts/governance/Eul.sol. Full hash verified present in local euler-governance checkout. NOTE: PDF is filed in evk-periphery/audits but audits euler-governance; report URL points to the PDF's actual location (evk-periphery).",
+  "signed_off": true
+ },
+ {
+  "id": "yaudit-oracle-2024-combined",
+  "repo": "euler-xyz/euler-price-oracle",
+  "firm": "yAudit",
+  "date": "2024-05-05",
+  "commits": {
+   "reviewed": "416d131f79e66bc54574194ea922bce232ce398c",
+   "final": "416d131f79e66bc54574194ea922bce232ce398c"
+  },
+  "scope": [
+   "src/EulerRouter.sol",
+   "src/adapter/BaseAdapter.sol",
+   "src/adapter/CrossAdapter.sol",
+   "src/adapter/chainlink/AggregatorV3Interface.sol",
+   "src/adapter/chainlink/ChainlinkOracle.sol",
+   "src/adapter/chronicle/ChronicleOracle.sol",
+   "src/adapter/chronicle/IChronicle.sol",
+   "src/adapter/lido/IStEth.sol",
+   "src/adapter/lido/LidoOracle.sol",
+   "src/adapter/maker/IPot.sol",
+   "src/adapter/maker/SDaiOracle.sol",
+   "src/adapter/pyth/PythOracle.sol",
+   "src/adapter/redstone/RedstoneCoreOracle.sol",
+   "src/adapter/rocketpool/IReth.sol",
+   "src/adapter/rocketpool/RethOracle.sol",
+   "src/adapter/uniswap/UniswapV3Oracle.sol",
+   "src/interfaces/IPriceOracle.sol",
+   "src/lib/Errors.sol",
+   "src/lib/Governable.sol",
+   "src/lib/ScaleUtils.sol"
+  ],
+  "report": "https://github.com/euler-xyz/euler-price-oracle/blob/18a3e34d516992b38797a1c61ebbf7dd8e957dcd/audits/Euler_Price_Oracle_yAudit_Report.pdf",
+  "confidence": "high",
+  "evidence": "Text 'limited to ...416d131f... for the EPO repo' (combined EVC+EVK+EPO review). Date normalized to in-doc review-period end 2024-05-05 (shared across the 3 repo copies)",
+  "signed_off": true
+ },
+ {
+  "id": "omniscia-oracle-2024",
+  "repo": "euler-xyz/euler-price-oracle",
+  "firm": "Omniscia",
+  "date": "2024-05-10",
+  "commits": {
+   "reviewed": "c91093256f62ca7d35cc35885d1b8a77d567983d",
+   "final": "eeb1847df7d9d58029de37225dabf963bf1a65e6"
+  },
+  "scope": [
+   "src/adapter/chainlink/AggregatorV3Interface.sol",
+   "src/adapter/BaseAdapter.sol",
+   "src/adapter/chainlink/ChainlinkOracle.sol",
+   "src/adapter/chronicle/ChronicleOracle.sol",
+   "src/lib/Errors.sol",
+   "src/EulerRouter.sol",
+   "src/lib/Governable.sol",
+   "src/adapter/lido/LidoOracle.sol",
+   "src/adapter/pyth/PythOracle.sol",
+   "src/adapter/rocketpool/RethOracle.sol",
+   "src/adapter/redstone/RedstoneCoreOracle.sol",
+   "src/adapter/maker/SDaiOracle.sol",
+   "src/lib/ScaleUtils.sol",
+   "src/adapter/uniswap/UniswapV3Oracle.sol"
+  ],
+  "report": "https://github.com/euler-xyz/euler-price-oracle/blob/18a3e34d516992b38797a1c61ebbf7dd8e957dcd/audits/Euler_Price_Oracle_Omniscia_Report.pdf",
+  "confidence": "high",
+  "evidence": "Cover Audit Report Revisions: c91093256f (1 Apr 2024) -> eeb1847df7 (10 May 2024); final == OpenZeppelin-audit tag",
+  "signed_off": true
+ },
+ {
+  "id": "chainsecurity-oracle-2024",
+  "repo": "euler-xyz/euler-price-oracle",
+  "firm": "ChainSecurity",
+  "date": "2024-05-15",
+  "commits": {
+   "reviewed": "a89b2a4a89d7806702a27592baad03288c74a633",
+   "final": "e6e87993685ca123e5fa542fb784ba5203824769"
+  },
+  "scope": [
+   "src/"
+  ],
+  "report": "https://github.com/euler-xyz/euler-price-oracle/blob/18a3e34d516992b38797a1c61ebbf7dd8e957dcd/audits/Euler_Price_Oracle_ChainSecurity_Report.pdf",
+  "confidence": "high",
+  "evidence": "Assessment Overview revision table: V1 a89b2a4a (1 May 2024 Initial) -> V2 e6e87993 (15 May 2024 After Intermediate Report). Scope: all files in ./src/ (root ./lib excluded)",
+  "signed_off": true
+ },
+ {
+  "id": "openzeppelin-oracle-2024",
+  "repo": "euler-xyz/euler-price-oracle",
+  "firm": "OpenZeppelin",
+  "date": "2024-05-17",
+  "commits": {
+   "reviewed": "eeb1847df7d9d58029de37225dabf963bf1a65e6",
+   "final": "eeb1847df7d9d58029de37225dabf963bf1a65e6"
+  },
+  "scope": [
+   "src/EulerRouter.sol",
+   "src/adapter/BaseAdapter.sol",
+   "src/adapter/CrossAdapter.sol",
+   "src/adapter/chainlink/AggregatorV3Interface.sol",
+   "src/adapter/chainlink/ChainlinkOracle.sol",
+   "src/adapter/chronicle/ChronicleOracle.sol",
+   "src/adapter/chronicle/IChronicle.sol",
+   "src/adapter/lido/IStEth.sol",
+   "src/adapter/lido/LidoOracle.sol",
+   "src/adapter/maker/IPot.sol",
+   "src/adapter/maker/SDaiOracle.sol",
+   "src/adapter/pyth/PythOracle.sol",
+   "src/adapter/redstone/RedstoneCoreOracle.sol",
+   "src/adapter/uniswap/UniswapV3Oracle.sol",
+   "src/interfaces/IPriceOracle.sol",
+   "src/lib/Errors.sol",
+   "src/lib/Governable.sol",
+   "src/lib/ScaleUtils.sol"
+  ],
+  "report": "https://github.com/euler-xyz/euler-price-oracle/blob/18a3e34d516992b38797a1c61ebbf7dd8e957dcd/audits/Euler_Price_Oracle_OpenZeppelin_Report.pdf",
+  "confidence": "high",
+  "evidence": "Scope 'at commit eeb1847' == OpenZeppelin-audit tag verbatim; full file tree listed; cover May 17, 2024",
+  "signed_off": true
+ },
+ {
+  "id": "spearbit-oracle-2024-draft",
+  "repo": "euler-xyz/euler-price-oracle",
+  "firm": "Spearbit",
+  "date": "2024-05-20",
+  "commits": {
+   "reviewed": "eeb1847df7d9d58029de37225dabf963bf1a65e6",
+   "final": "eeb1847df7d9d58029de37225dabf963bf1a65e6"
+  },
+  "scope": [
+   "src/EulerRouter.sol",
+   "src/adapter/BaseAdapter.sol",
+   "src/adapter/CrossAdapter.sol",
+   "src/adapter/chainlink/AggregatorV3Interface.sol",
+   "src/adapter/chainlink/ChainlinkOracle.sol",
+   "src/adapter/chronicle/ChronicleOracle.sol",
+   "src/adapter/chronicle/IChronicle.sol",
+   "src/adapter/lido/IStEth.sol",
+   "src/adapter/lido/LidoOracle.sol",
+   "src/adapter/maker/IPot.sol",
+   "src/adapter/maker/SDaiOracle.sol",
+   "src/adapter/pyth/PythOracle.sol",
+   "src/adapter/redstone/RedstoneCoreOracle.sol",
+   "src/adapter/uniswap/UniswapV3Oracle.sol",
+   "src/interfaces/IPriceOracle.sol",
+   "src/lib/Errors.sol",
+   "src/lib/Governable.sol",
+   "src/lib/ScaleUtils.sol"
+  ],
+  "report": "https://github.com/euler-xyz/euler-price-oracle/blob/18a3e34d516992b38797a1c61ebbf7dd8e957dcd/audits/Euler_Price_Oracle_Spearbit_Report_DRAFT.pdf",
+  "confidence": "high",
+  "evidence": "Executive Summary table: Commit 'eeb184...1a65e6' == OpenZeppelin-audit tag (same commit as OZ audit); doc marked DRAFT",
+  "signed_off": true
+ },
+ {
+  "id": "yaudit-oracle-2024-comp-fixes",
+  "repo": "euler-xyz/euler-price-oracle",
+  "firm": "yAudit",
+  "date": "2024-07-31",
+  "commits": {
+   "reviewed": "c4074ab7a7aa0c6ffbc555391d9f0bfe1ee5fd6f",
+   "final": "47296ad7e479da98ede31936d05398cbf1fc330e"
+  },
+  "scope": [
+   "src/adapter/BaseAdapter.sol",
+   "src/adapter/uniswap/UniswapV3Oracle.sol",
+   "src/EulerRouter.sol",
+   "src/lib/Governable.sol"
+  ],
+  "report": "https://github.com/euler-xyz/euler-price-oracle/blob/18a3e34d516992b38797a1c61ebbf7dd8e957dcd/audits/Euler%20yAudit%20Code%20Competition%20Fixes%20report.pdf",
+  "confidence": "medium",
+  "evidence": "No hash in doc; EPO findings #118/#205/#443 map to commits 'fix: cantina-118/205/443 (#52/#53/#54)' merged 2024-07-30; final = latest (47296ad7); reviewed = cantina-contest baseline. Derived -> medium",
+  "signed_off": true
+ },
+ {
+  "id": "yaudit-oracle-2024-oracleupdate",
+  "repo": "euler-xyz/euler-price-oracle",
+  "firm": "yAudit",
+  "date": "2024-09-15",
+  "commits": {
+   "reviewed": "8c4aeedd12b987543498b772a081e8cd261072be",
+   "final": "2fa395536397bf0310a00d8ab39e239f6b716dd1"
+  },
+  "scope": [
+   "src/adapter/lido/LidoFundamentalOracle.sol",
+   "src/adapter/fixed/FixedRateOracle.sol",
+   "src/adapter/rate/IRateProvider.sol",
+   "src/adapter/rate/RateProviderOracle.sol"
+  ],
+  "report": "https://github.com/euler-xyz/euler-price-oracle/blob/18a3e34d516992b38797a1c61ebbf7dd8e957dcd/audits/Euler_Price_Oracle_yAudit_OracleUpdate_Report.pdf",
+  "confidence": "medium",
+  "evidence": "Text 'commit 8c4aeedd... for the EPO repository' (review Sep 5-6 2024); fix linked only as 'pull/61' -> git log 'fix: yaudit findings (#61)' = 2fa39553 (2024-09-09). final derived -> medium",
+  "signed_off": true
+ },
+ {
+  "id": "yaudit-oracle-2024-pendle",
+  "repo": "euler-xyz/euler-price-oracle",
+  "firm": "yAudit",
+  "date": "2024-10-07",
+  "commits": {
+   "reviewed": "1582bb4c15b907a0256ec9d649b3eef3ca963739",
+   "final": "e1bc31ebd2ee2b78bac01271db834dae912d821e"
+  },
+  "scope": [
+   "src/adapter/pendle/PendleOracle.sol"
+  ],
+  "report": "https://github.com/euler-xyz/euler-price-oracle/blob/18a3e34d516992b38797a1c61ebbf7dd8e957dcd/audits/Euler_Price_Oracle_yAudit_PendleOracle_Report.pdf",
+  "confidence": "high",
+  "evidence": "Text 'limited to the latest commit, 1582bb4c...' (review 16-17 Sep 2024); sole finding 'Fixed in .../commit/e1bc31eb...' both verbatim",
+  "signed_off": true
+ },
+ {
+  "id": "cantina-oracle-2024",
+  "repo": "euler-xyz/euler-price-oracle",
+  "firm": "Cantina",
+  "date": "2024-11-13",
+  "commits": {
+   "reviewed": "c4074ab7a7aa0c6ffbc555391d9f0bfe1ee5fd6f",
+   "final": "c4074ab7a7aa0c6ffbc555391d9f0bfe1ee5fd6f"
+  },
+  "scope": [
+   "src/EulerRouter.sol",
+   "src/adapter/BaseAdapter.sol",
+   "src/adapter/chainlink/ChainlinkOracle.sol",
+   "src/adapter/redstone/RedstoneCoreOracle.sol",
+   "src/adapter/uniswap/UniswapV3Oracle.sol"
+  ],
+  "report": "https://github.com/euler-xyz/euler-price-oracle/blob/18a3e34d516992b38797a1c61ebbf7dd8e957dcd/audits/Euler%20Cantina%20Code%20Competition%20report.pdf",
+  "confidence": "high",
+  "evidence": "Finding hyperlinks embed euler-price-oracle/blob/c4074ab7... (== cantina-contest tag); contest May20-Jun17 2024; cover Nov 13, 2024. Scope = EPO files with findings (non-exhaustive)",
+  "signed_off": true
+ },
+ {
+  "id": "electisec-oracle-2025",
+  "repo": "euler-xyz/euler-price-oracle",
+  "firm": "Electisec",
+  "date": "2025-02-23",
+  "commits": {
+   "reviewed": "82011641e57cc6623fb841611152e85a56df9b63",
+   "final": "37fba8f752214ff2895e0773404ba3427c718042"
+  },
+  "scope": [
+   "src/adapter/pendle/PendleUniversalOracle.sol",
+   "src/adapter/curve/CurveEMAOracle.sol"
+  ],
+  "report": "https://github.com/euler-xyz/euler-price-oracle/blob/18a3e34d516992b38797a1c61ebbf7dd8e957dcd/audits/Euler_Price_Oracle_Electisec_Report.pdf",
+  "confidence": "high",
+  "evidence": "Text 'commit 82011641...for PR#78 and 37fba8f7...for PR#79' (review Feb 17-18 2025); two independent PR reviews (reviewed=PR#78, final=PR#79 per doc order, not chronology)",
+  "signed_off": true
+ },
+ {
+  "id": "bailsec-oracle-2026",
+  "repo": "euler-xyz/euler-price-oracle",
+  "firm": "BailSec",
+  "date": "2026-03-11",
+  "commits": {
+   "reviewed": "6055a513adb688919ff40c09c9ec46b35df73499",
+   "final": "5c59a75c5e2a043ec0418e6b56833d54205fb6de"
+  },
+  "scope": [
+   "src/adapter/chainlink/ChainlinkInfrequentOraclXStocks.sol"
+  ],
+  "report": "https://github.com/euler-xyz/euler-price-oracle/blob/18a3e34d516992b38797a1c61ebbf7dd8e957dcd/audits/Euler_Price_Oracle_BailSec_Report.pdf",
+  "confidence": "high",
+  "evidence": "Project Details table: tree/6055a513 (initial) -> Resolution 1 tree/5c59a75c. Report also covers 2 evk-periphery files (out of scope here). Path uses real repo spelling 'OraclXStocks'",
+  "signed_off": true
+ },
+ {
+  "id": "fuzzland-euler-swap-2025",
+  "repo": "euler-xyz/euler-swap",
+  "firm": "Fuzzland",
+  "date": "2025-02-17",
+  "commits": {
+   "reviewed": "449beb4cc188a3203eaab4a25cf134adec6ea15d",
+   "final": "449beb4cc188a3203eaab4a25cf134adec6ea15d"
+  },
+  "scope": [
+   "src/"
+  ],
+  "report": "https://github.com/euler-xyz/euler-swap/blob/81cf6dc988468fd56f690e6bc0e338a5be02d034/audits/eulerswap-audit-report.pdf",
+  "confidence": "medium",
+  "evidence": "PDF pages 1-6 Scope table: 'commit | 449beb4cc188a3203eaab4a25cf134adec6ea15d', 'Scope | src/*.sol'. Full hash verified in euler-swap. Date is the Feb 17 2025 engagement date (no publication date printed).",
+  "signed_off": true,
+  "notes": "scope normalized 2026-07-24 from prose placeholder to path form (original: ['src/*.sol'])"
+ },
+ {
+  "id": "spearbit-euler-swap-2025",
+  "repo": "euler-xyz/euler-swap",
+  "firm": "Spearbit",
+  "date": "2025-03-29",
+  "commits": {
+   "reviewed": "54c1af6d7891583ddc0df332002bcbc6e06bb4cd",
+   "final": "54c1af6d7891583ddc0df332002bcbc6e06bb4cd"
+  },
+  "scope": [
+   "src/"
+  ],
+  "report": "https://github.com/euler-xyz/euler-swap/blob/81cf6dc988468fd56f690e6bc0e338a5be02d034/audits/report-euler-swap-050325.pdf",
+  "confidence": "medium",
+  "evidence": "PDF pages 1-6 (DRAFT): 'From Mar 3rd to Mar 10th the Cantina team conducted a review of euler-swap on commit hash 54c1af6d'. Leads Christoph Michel & Mario.eth (Spearbit), delivered via Cantina Managed. Full hash verified in euler-swap. NOTE: repo tag 'spearbit-audit' points to a DIFFERENT same-day commit 93d836b87208afa4ab0e8ba36d8048b5d7db1b5c (Mar 5 11:04, merge PR#47) - not the PDF-stated commit.",
+  "signed_off": true,
+  "notes": "scope normalized 2026-07-24 from prose placeholder to path form (original: ['(no explicit file list in report; reviewed euler-swap repo at commit; findings reference EulerSwap.sol, EulerSwapPeriphery.sol)'])"
+ },
+ {
+  "id": "chainsecurity-euler-swap-2025",
+  "repo": "euler-xyz/euler-swap",
+  "firm": "ChainSecurity",
+  "date": "2025-03-31",
+  "commits": {
+   "reviewed": "ec46a582d7666f0c2cb333005917fdb353e52c78",
+   "final": "54c1af6d7891583ddc0df332002bcbc6e06bb4cd"
+  },
+  "scope": [
+   "src/EulerSwap.sol",
+   "src/EulerSwapPeriphery.sol",
+   "src/interfaces/IEulerSwap.sol",
+   "src/interfaces/IEulerSwapPeriphery.sol",
+   "src/interfaces/IUniswapV2Callee.sol"
+  ],
+  "report": "https://github.com/euler-xyz/euler-swap/blob/81cf6dc988468fd56f690e6bc0e338a5be02d034/audits/ChainSecurity_EulerSwap_audit.pdf",
+  "confidence": "high",
+  "evidence": "PDF pages 1-6 Assessment Overview/Scope table: V1 19 Feb 2025 ec46a582... (Initial); V2 5 Mar 2025 54c1af6d... (Version with Fixes). Both full hashes match tags chainsecurity-audit / chainsecurity-audit-fixes.",
+  "signed_off": true
+ },
+ {
+  "id": "cantina-euler-swap-2025-05",
+  "repo": "euler-xyz/euler-swap",
+  "firm": "Cantina",
+  "date": "2025-05-03",
+  "commits": {
+   "reviewed": "a8cf4966e1357e205b9fe4d16432d8a24b40ad56",
+   "final": "a8cf4966e1357e205b9fe4d16432d8a24b40ad56"
+  },
+  "scope": [
+   "src/"
+  ],
+  "report": "https://github.com/euler-xyz/euler-swap/blob/81cf6dc988468fd56f690e6bc0e338a5be02d034/audits/report-cantinacode-uniswap-euler-0422.pdf",
+  "confidence": "medium",
+  "evidence": "PDF pages 1-6 (DRAFT): 'From Apr 25th to Apr 29th the Cantina team conducted a review of euler-swap on commit hash a8cf4966'. Leads MiloTruck, Cryptara. Full hash verified in euler-swap. Fixes cited only as 'PR 74' (no fix commit hash printed); no named tag.",
+  "signed_off": true,
+  "notes": "scope normalized 2026-07-24 from prose placeholder to path form (original: ['(no explicit file list in report; reviewed euler-swap repo at commit; findings reference FundsLib.sol, QuoteLib.sol, EulerSwapFactory.sol, CurveLib.sol, UniswapHook)'])"
+ },
+ {
+  "id": "cyfrin-euler-swap-2025",
+  "repo": "euler-xyz/euler-swap",
+  "firm": "Cyfrin",
+  "date": "2025-05-26",
+  "commits": {
+   "reviewed": "1022c0bb3c034d905005f4c5aee0932a66adf4f8",
+   "final": "c1c375f9b5b611e7e2cd722eda197750d1b13bc2"
+  },
+  "scope": [
+   "src/EulerSwap.sol",
+   "src/EulerSwapFactory.sol",
+   "src/EulerSwapPeriphery.sol",
+   "src/UniswapHook.sol"
+  ],
+  "report": "https://github.com/euler-xyz/euler-swap/blob/81cf6dc988468fd56f690e6bc0e338a5be02d034/audits/2025-05-26-cyfrin-eulerswap-v2.0.pdf",
+  "confidence": "high",
+  "evidence": "PDF pages 1-6: main commit '1022c0bb3c03...' (matches cyfrin-audit tag), audit May 5-9 2025; 'An additional commit, c1c375f, was reviewed after the conclusion of the engagement'. Both hashes verified in euler-swap. Scope printed as bare filenames in the Audit Scope box.",
+  "signed_off": true,
+  "notes": "scope normalized 2026-07-24 from prose placeholder to path form (original: ['EulerSwap.sol'])"
+ },
+ {
+  "id": "cantina-euler-swap-v2-2025-09",
+  "repo": "euler-xyz/euler-swap",
+  "firm": "Cantina",
+  "date": "2025-09-18",
+  "commits": {
+   "reviewed": "6f5bde45b89818a793d3572dc8b0412daabe2343",
+   "final": "22bb23aa456a72ae4bde1517e73d9a54da19ac28"
+  },
+  "scope": [
+   "src/"
+  ],
+  "report": "https://github.com/euler-xyz/euler-swap/blob/81cf6dc988468fd56f690e6bc0e338a5be02d034/audits/report-cantinacode-euler-0901.pdf",
+  "confidence": "medium",
+  "evidence": "PDF pages 1-12: 'From Aug 31st to Sep 6th the Cantina team conducted a review of euler-swap on commit hash 6f5bde45' (= tag eulerswap2-cantina-audit). Fixes verified per-finding across many commits incl. 22bb23aa (= tag eulerswap2-cantina-audit-fixes), used here as final. Both verified in euler-swap.",
+  "signed_off": true,
+  "notes": "scope normalized 2026-07-24 from prose placeholder to path form (original: ['(EulerSwap v2 architecture; no explicit file list in report; reviewed euler-swap repo at commit; findings reference EulerSwapRegistry.sol, EulerSwap.sol, QuoteLib.sol, CurveLib.sol, SwapLib, UniswapHook)'])"
+ },
+ {
+  "id": "enigma-dark-evk-2024",
+  "repo": "euler-xyz/euler-vault-kit",
+  "firm": "Enigma Dark",
+  "date": "2024-03-01",
+  "commits": {
+   "reviewed": "",
+   "final": ""
+  },
+  "scope": [],
+  "report": "https://github.com/euler-xyz/euler-vault-kit/blob/5b98b42048ba11ae82fb62dfec06d1010c8e41e6/audits/EnigmaDark_EVK_report.pdf",
+  "confidence": "low",
+  "evidence": "Cover 'March, 2024' (no day); ModDate 2024-06-28. All 7 pages + links checked: NO commit hash anywhere (links target mutable 'master'); no file scope; continuous fuzzing/invariant engagement, not point-in-time. No tag. Left unresolved rather than invented",
+  "signed_off": true
+ },
+ {
+  "id": "yaudit-evk-2024-combined",
+  "repo": "euler-xyz/euler-vault-kit",
+  "firm": "yAudit",
+  "date": "2024-05-05",
+  "commits": {
+   "reviewed": "7d2408dc1013b6f3149a5f08a69ded4dc99db7c8",
+   "final": "7d2408dc1013b6f3149a5f08a69ded4dc99db7c8"
+  },
+  "scope": [
+   "src/EVault/DToken.sol",
+   "src/EVault/Dispatch.sol",
+   "src/EVault/EVault.sol",
+   "src/EVault/IEVault.sol",
+   "src/EVault/modules/BalanceForwarder.sol",
+   "src/EVault/modules/Borrowing.sol",
+   "src/EVault/modules/Governance.sol",
+   "src/EVault/modules/Initialize.sol",
+   "src/EVault/modules/Liquidation.sol",
+   "src/EVault/modules/RiskManager.sol",
+   "src/EVault/modules/Token.sol",
+   "src/EVault/modules/Vault.sol",
+   "src/EVault/shared/AssetTransfers.sol",
+   "src/EVault/shared/BalanceUtils.sol",
+   "src/EVault/shared/Base.sol",
+   "src/EVault/shared/BorrowUtils.sol",
+   "src/EVault/shared/Cache.sol",
+   "src/EVault/shared/Constants.sol",
+   "src/EVault/shared/EVCClient.sol",
+   "src/EVault/shared/Errors.sol",
+   "src/EVault/shared/Events.sol",
+   "src/EVault/shared/LTVUtils.sol",
+   "src/EVault/shared/LiquidityUtils.sol",
+   "src/EVault/shared/Storage.sol",
+   "src/EVault/shared/lib/ConversionHelpers.sol",
+   "src/EVault/shared/lib/ProxyUtils.sol",
+   "src/EVault/shared/lib/RPow.sol",
+   "src/EVault/shared/lib/RevertBytes.sol",
+   "src/EVault/shared/lib/SafeERC20Lib.sol",
+   "src/EVault/shared/types/AmountCap.sol",
+   "src/EVault/shared/types/Assets.sol",
+   "src/EVault/shared/types/ConfigAmount.sol",
+   "src/EVault/shared/types/Flags.sol",
+   "src/EVault/shared/types/LTVConfig.sol",
+   "src/EVault/shared/types/LTVType.sol",
+   "src/EVault/shared/types/Owed.sol",
+   "src/EVault/shared/types/Shares.sol",
+   "src/EVault/shared/types/Snapshot.sol",
+   "src/EVault/shared/types/Types.sol",
+   "src/EVault/shared/types/UserStorage.sol",
+   "src/EVault/shared/types/VaultCache.sol",
+   "src/EVault/shared/types/VaultStorage.sol",
+   "src/GenericFactory/BeaconProxy.sol",
+   "src/GenericFactory/GenericFactory.sol",
+   "src/GenericFactory/MetaProxyDeployer.sol",
+   "src/InterestRateModels/IIRM.sol",
+   "src/InterestRateModels/IRMLinearKink.sol",
+   "src/ProductLines/BaseProductLine.sol",
+   "src/ProductLines/Core.sol",
+   "src/ProductLines/Escrow.sol",
+   "src/ProtocolConfig/IProtocolConfig.sol",
+   "src/ProtocolConfig/ProtocolConfig.sol",
+   "src/Synths/ERC20Collateral.sol",
+   "src/Synths/ESynth.sol",
+   "src/Synths/EulerSavingsRate.sol",
+   "src/Synths/IRMSynth.sol",
+   "src/Synths/PegStabilityModule.sol",
+   "src/interfaces/IBalanceTracker.sol",
+   "src/interfaces/IPermit2.sol",
+   "src/interfaces/IPriceOracle.sol"
+  ],
+  "report": "https://github.com/euler-xyz/euler-vault-kit/blob/5b98b42048ba11ae82fb62dfec06d1010c8e41e6/audits/yAudit_EVK_report.pdf",
+  "confidence": "high",
+  "evidence": "Review Summary: EVK commit 7d2408dc... (== yAudit-audit tag). Combined EVC+EVK+EPO review. Date normalized to in-doc review-period end 2024-05-05 (EVK file PDF metadata was 2024-05-21)",
+  "signed_off": true
+ },
+ {
+  "id": "openzeppelin-evk-2024",
+  "repo": "euler-xyz/euler-vault-kit",
+  "firm": "OpenZeppelin",
+  "date": "2024-05-17",
+  "commits": {
+   "reviewed": "83ea1ad97b7c561d6601b220d23ec85d67ceb297",
+   "final": "83ea1ad97b7c561d6601b220d23ec85d67ceb297"
+  },
+  "scope": [
+   "src/EVault/DToken.sol",
+   "src/EVault/Dispatch.sol",
+   "src/EVault/EVault.sol",
+   "src/EVault/IEVault.sol",
+   "src/EVault/modules/BalanceForwarder.sol",
+   "src/EVault/modules/Borrowing.sol",
+   "src/EVault/modules/Governance.sol",
+   "src/EVault/modules/Initialize.sol",
+   "src/EVault/modules/Liquidation.sol",
+   "src/EVault/modules/RiskManager.sol",
+   "src/EVault/modules/Token.sol",
+   "src/EVault/modules/Vault.sol",
+   "src/EVault/shared/AssetTransfers.sol",
+   "src/EVault/shared/BalanceUtils.sol",
+   "src/EVault/shared/Base.sol",
+   "src/EVault/shared/BorrowUtils.sol",
+   "src/EVault/shared/Cache.sol",
+   "src/EVault/shared/Constants.sol",
+   "src/EVault/shared/EVCClient.sol",
+   "src/EVault/shared/Errors.sol",
+   "src/EVault/shared/Events.sol",
+   "src/EVault/shared/LTVUtils.sol",
+   "src/EVault/shared/LiquidityUtils.sol",
+   "src/EVault/shared/Storage.sol",
+   "src/EVault/shared/lib/ConversionHelpers.sol",
+   "src/EVault/shared/lib/ProxyUtils.sol",
+   "src/EVault/shared/lib/RPow.sol",
+   "src/EVault/shared/lib/RevertBytes.sol",
+   "src/EVault/shared/lib/SafeERC20Lib.sol",
+   "src/EVault/shared/types/AmountCap.sol",
+   "src/EVault/shared/types/Assets.sol",
+   "src/EVault/shared/types/ConfigAmount.sol",
+   "src/EVault/shared/types/Flags.sol",
+   "src/EVault/shared/types/LTVConfig.sol",
+   "src/EVault/shared/types/LTVType.sol",
+   "src/EVault/shared/types/Owed.sol",
+   "src/EVault/shared/types/Shares.sol",
+   "src/EVault/shared/types/Snapshot.sol",
+   "src/EVault/shared/types/Types.sol",
+   "src/EVault/shared/types/UserStorage.sol",
+   "src/EVault/shared/types/VaultCache.sol",
+   "src/EVault/shared/types/VaultStorage.sol",
+   "src/GenericFactory/BeaconProxy.sol",
+   "src/GenericFactory/GenericFactory.sol",
+   "src/GenericFactory/MetaProxyDeployer.sol",
+   "src/InterestRateModels/IIRM.sol",
+   "src/InterestRateModels/IRMLinearKink.sol",
+   "src/ProtocolConfig/IProtocolConfig.sol",
+   "src/ProtocolConfig/ProtocolConfig.sol",
+   "src/interfaces/IBalanceTracker.sol",
+   "src/interfaces/IPermit2.sol",
+   "src/interfaces/IPriceOracle.sol"
+  ],
+  "report": "https://github.com/euler-xyz/euler-vault-kit/blob/5b98b42048ba11ae82fb62dfec06d1010c8e41e6/audits/OpenZeppelin_EVK_report.pdf",
+  "confidence": "high",
+  "evidence": "Cover May 17 2024; Scope 'at commit 83ea1ad' (== OpenZeppelin-audit tag); explicit 51-file scope; single commit, no fix round",
+  "signed_off": true
+ },
+ {
+  "id": "omniscia-evk-2024",
+  "repo": "euler-xyz/euler-vault-kit",
+  "firm": "Omniscia",
+  "date": "2024-05-20",
+  "commits": {
+   "reviewed": "a44880b0c051bec87bd3bf35383666fd6e9053d2",
+   "final": "0f2192ac81e2594502980097ad72ee2629649274"
+  },
+  "scope": [
+   "src/EVault/shared/types/Assets.sol",
+   "src/EVault/shared/types/AmountCap.sol",
+   "src/EVault/shared/AssetTransfers.sol",
+   "src/EVault/shared/Base.sol",
+   "src/EVault/modules/Borrowing.sol",
+   "src/GenericFactory/BeaconProxy.sol",
+   "src/EVault/shared/BorrowUtils.sol",
+   "src/EVault/shared/BalanceUtils.sol",
+   "src/EVault/modules/BalanceForwarder.sol",
+   "src/EVault/shared/Cache.sol",
+   "src/EVault/shared/Constants.sol",
+   "src/EVault/shared/types/ConfigAmount.sol",
+   "src/EVault/shared/lib/ConversionHelpers.sol",
+   "src/EVault/DToken.sol",
+   "src/EVault/Dispatch.sol",
+   "src/Synths/ESynth.sol",
+   "src/EVault/EVault.sol",
+   "src/EVault/shared/Errors.sol",
+   "src/EVault/shared/Events.sol",
+   "src/EVault/shared/EVCClient.sol",
+   "src/Synths/ERC20Collateral.sol",
+   "src/Synths/EulerSavingsRate.sol",
+   "src/EVault/shared/types/Flags.sol",
+   "src/EVault/modules/Governance.sol",
+   "src/GenericFactory/GenericFactory.sol",
+   "src/Synths/IRMSynth.sol",
+   "src/EVault/modules/Initialize.sol",
+   "src/InterestRateModels/IRMLinearKink.sol",
+   "src/EVault/shared/types/LTVType.sol",
+   "src/EVault/shared/LTVUtils.sol",
+   "src/EVault/shared/types/LTVConfig.sol",
+   "src/EVault/modules/Liquidation.sol",
+   "src/EVault/shared/LiquidityUtils.sol",
+   "src/GenericFactory/MetaProxyDeployer.sol",
+   "src/EVault/shared/types/Owed.sol",
+   "src/EVault/shared/lib/ProxyUtils.sol",
+   "src/ProtocolConfig/ProtocolConfig.sol",
+   "src/Synths/PegStabilityModule.sol",
+   "src/EVault/shared/lib/RPow.sol",
+   "src/EVault/shared/lib/RevertBytes.sol",
+   "src/EVault/modules/RiskManager.sol",
+   "src/EVault/shared/types/Shares.sol",
+   "src/EVault/shared/Storage.sol",
+   "src/EVault/shared/types/Snapshot.sol",
+   "src/EVault/shared/lib/SafeERC20Lib.sol",
+   "src/EVault/modules/Token.sol",
+   "src/EVault/shared/types/Types.sol",
+   "src/EVault/shared/types/UserStorage.sol",
+   "src/EVault/modules/Vault.sol",
+   "src/EVault/shared/types/VaultCache.sol",
+   "src/EVault/shared/types/VaultStorage.sol"
+  ],
+  "report": "https://github.com/euler-xyz/euler-vault-kit/blob/5b98b42048ba11ae82fb62dfec06d1010c8e41e6/audits/Omniscia_EVK_report.pdf",
+  "confidence": "high",
+  "evidence": "Cover May 20 2024; Audit Report Revisions: a44880b0 (9 Apr, initial, == Omniscia-audit tag) / fb2dd77a6f / 0f2192ac81 (last, 16/20 May); explicit 51-file 'Contracts Assessed' table",
+  "signed_off": true
+ },
+ {
+  "id": "openzeppelin-evk-2024-synths",
+  "repo": "euler-xyz/euler-vault-kit",
+  "firm": "OpenZeppelin",
+  "date": "2024-06-14",
+  "commits": {
+   "reviewed": "82dd71819d6edfd265d3f6afd31530f4206b7805",
+   "final": "82dd71819d6edfd265d3f6afd31530f4206b7805"
+  },
+  "scope": [
+   "src/Synths/ERC20Collateral.sol",
+   "src/Synths/ESynth.sol",
+   "src/Synths/EulerSavingsRate.sol",
+   "src/Synths/IRMSynth.sol",
+   "src/Synths/PegStabilityModule.sol"
+  ],
+  "report": "https://github.com/euler-xyz/euler-vault-kit/blob/5b98b42048ba11ae82fb62dfec06d1010c8e41e6/audits/OpenZeppelin_Synths_report.pdf",
+  "confidence": "high",
+  "evidence": "Cover 'Synths Audit' June 14 2024; Scope 'Synths directory ... at commit 82dd718' (== OpenZeppelin-audit-synthetics tag); explicit 5-file scope",
+  "signed_off": true
+ },
+ {
+  "id": "chainsecurity-evk-2024",
+  "repo": "euler-xyz/euler-vault-kit",
+  "firm": "ChainSecurity",
+  "date": "2024-06-18",
+  "commits": {
+   "reviewed": "ae7795f7fda71c18bb79805b29bb9fd4634a5930",
+   "final": "55d1a1fd7d572372f1c8b9f58aba0604bda3ca4f"
+  },
+  "scope": [
+   "src/EVault/Dispatch.sol",
+   "src/EVault/DToken.sol",
+   "src/EVault/EVault.sol",
+   "src/EVault/IEVault.sol",
+   "src/EVault/modules/BalanceForwarder.sol",
+   "src/EVault/modules/Borrowing.sol",
+   "src/EVault/modules/Governance.sol",
+   "src/EVault/modules/Initialize.sol",
+   "src/EVault/modules/Liquidation.sol",
+   "src/EVault/modules/RiskManager.sol",
+   "src/EVault/modules/Token.sol",
+   "src/EVault/modules/Vault.sol",
+   "src/EVault/shared/AssetTransfers.sol",
+   "src/EVault/shared/BalanceUtils.sol",
+   "src/EVault/shared/Base.sol",
+   "src/EVault/shared/BorrowUtils.sol",
+   "src/EVault/shared/Cache.sol",
+   "src/EVault/shared/Constants.sol",
+   "src/EVault/shared/Errors.sol",
+   "src/EVault/shared/EVCClient.sol",
+   "src/EVault/shared/Events.sol",
+   "src/EVault/shared/LiquidityUtils.sol",
+   "src/EVault/shared/LTVUtils.sol",
+   "src/EVault/shared/Storage.sol",
+   "src/EVault/shared/lib/AddressUtils.sol",
+   "src/EVault/shared/lib/ConversionHelpers.sol",
+   "src/EVault/shared/lib/ProxyUtils.sol",
+   "src/EVault/shared/lib/RevertBytes.sol",
+   "src/EVault/shared/lib/RPow.sol",
+   "src/EVault/shared/lib/SafeERC20Lib.sol",
+   "src/EVault/shared/types/AmountCap.sol",
+   "src/EVault/shared/types/Assets.sol",
+   "src/EVault/shared/types/ConfigAmount.sol",
+   "src/EVault/shared/types/Flags.sol",
+   "src/EVault/shared/types/LTVConfig.sol",
+   "src/EVault/shared/types/Owed.sol",
+   "src/EVault/shared/types/Shares.sol",
+   "src/EVault/shared/types/Snapshot.sol",
+   "src/EVault/shared/types/Types.sol",
+   "src/EVault/shared/types/UserStorage.sol",
+   "src/EVault/shared/types/VaultCache.sol",
+   "src/EVault/shared/types/VaultStorage.sol",
+   "src/InterestRateModels/IIRM.sol",
+   "src/InterestRateModels/IRMLinearKink.sol",
+   "src/interfaces/IBalanceTracker.sol",
+   "src/interfaces/IFlashLoan.sol",
+   "src/interfaces/IHookTarget.sol",
+   "src/interfaces/IPermit2.sol",
+   "src/interfaces/IPriceOracle.sol",
+   "src/ProductLines/BaseProductLine.sol",
+   "src/ProductLines/Core.sol",
+   "src/ProductLines/Escrow.sol",
+   "src/ProtocolConfig/IProtocolConfig.sol",
+   "src/ProtocolConfig/ProtocolConfig.sol",
+   "src/GenericFactory/BeaconProxy.sol",
+   "src/GenericFactory/GenericFactory.sol",
+   "src/GenericFactory/MetaProxyDeployer.sol",
+   "src/Synths/ERC20Collateral.sol",
+   "src/Synths/ESynth.sol",
+   "src/Synths/EulerSavingsRate.sol",
+   "src/Synths/IRMSynth.sol",
+   "src/Synths/PegStabilityModule.sol"
+  ],
+  "report": "https://github.com/euler-xyz/euler-vault-kit/blob/5b98b42048ba11ae82fb62dfec06d1010c8e41e6/audits/ChainSecurity_EVK_report.pdf",
+  "confidence": "high",
+  "evidence": "Cover 18 Jun 2024; sec 2.1 Scope table: V1 ae7795f7 (22 Apr, Initial, == ChainSecurity-audit tag & ground truth), V2 55d1a1fd (13 Jun, first round of fixes); sec 2.1.1 explicit 61-file list. Matches supplied ground truth exactly",
+  "signed_off": true
+ },
+ {
+  "id": "spearbit-evk-2024",
+  "repo": "euler-xyz/euler-vault-kit",
+  "firm": "Spearbit",
+  "date": "2024-07-05",
+  "commits": {
+   "reviewed": "2bcd7e5ba33d53d1236f5ff2d4d3f71e04c61d0d",
+   "final": "2bcd7e5ba33d53d1236f5ff2d4d3f71e04c61d0d"
+  },
+  "scope": [
+   "src/EVault/Dispatch.sol",
+   "src/EVault/IEVault.sol",
+   "src/EVault/modules/BalanceForwarder.sol",
+   "src/EVault/modules/Borrowing.sol",
+   "src/EVault/modules/Governance.sol",
+   "src/EVault/modules/Liquidation.sol",
+   "src/EVault/modules/RiskManager.sol",
+   "src/EVault/modules/Token.sol",
+   "src/EVault/modules/Vault.sol",
+   "src/EVault/shared/AssetTransfers.sol",
+   "src/EVault/shared/BalanceUtils.sol",
+   "src/EVault/shared/Base.sol",
+   "src/EVault/shared/BorrowUtils.sol",
+   "src/EVault/shared/Cache.sol",
+   "src/EVault/shared/Events.sol",
+   "src/EVault/shared/lib/ProxyUtils.sol",
+   "src/EVault/shared/LiquidityUtils.sol",
+   "src/EVault/shared/types/LTVConfig.sol",
+   "src/EVault/shared/types/Shares.sol",
+   "src/GenericFactory/GenericFactory.sol",
+   "src/GenericFactory/MetaProxyDeployer.sol",
+   "src/interfaces/IBalanceTracker.sol",
+   "src/Synths/ERC20Collateral.sol",
+   "src/Synths/ESynth.sol",
+   "src/Synths/EulerSavingsRate.sol",
+   "src/Synths/IRMSynth.sol",
+   "src/Synths/PegStabilityModule.sol"
+  ],
+  "report": "https://github.com/euler-xyz/euler-vault-kit/blob/5b98b42048ba11ae82fb62dfec06d1010c8e41e6/audits/Spearbit_EVK_report.pdf",
+  "confidence": "high",
+  "evidence": "Cover July 5 2024; commit resolved via pdftohtml hyperlink to tree/2bcd7e5b... (rev-parse ok, dated 2024-04-20). DISCREPANCY: differs from Spearbit-audit tag ae7795f7 (2 days later) - report's OWN linked commit is 2bcd7e5b; no fix round -> final=reviewed. Scope from per-finding Context links (no scope section)",
+  "signed_off": true
+ },
+ {
+  "id": "yaudit-evk-2024-comp-fixes",
+  "repo": "euler-xyz/euler-vault-kit",
+  "firm": "yAudit",
+  "date": "2024-07-31",
+  "commits": {
+   "reviewed": "f6fd0ee3b454630abd961d6471beb0c7eaf1216a",
+   "final": "1dad88bd75b40cbce1103860f616a27c2aed314c"
+  },
+  "scope": [
+   "src/EVault/Dispatch.sol",
+   "src/EVault/EVault.sol",
+   "src/EVault/IEVault.sol",
+   "src/EVault/modules/Borrowing.sol",
+   "src/EVault/modules/Governance.sol",
+   "src/EVault/modules/Initialize.sol",
+   "src/EVault/modules/Liquidation.sol",
+   "src/EVault/modules/RiskManager.sol",
+   "src/EVault/modules/Token.sol",
+   "src/EVault/shared/AssetTransfers.sol",
+   "src/EVault/shared/BalanceUtils.sol",
+   "src/EVault/shared/BorrowUtils.sol",
+   "src/EVault/shared/Cache.sol",
+   "src/EVault/shared/Constants.sol",
+   "src/EVault/shared/Errors.sol",
+   "src/EVault/shared/LiquidityUtils.sol",
+   "src/EVault/shared/lib/SafeERC20Lib.sol",
+   "src/EVault/shared/types/LTVConfig.sol",
+   "src/GenericFactory/GenericFactory.sol",
+   "src/InterestRateModels/IRMLinearKink.sol",
+   "src/SequenceRegistry/SequenceRegistry.sol",
+   "src/Synths/ERC20Collateral.sol",
+   "src/Synths/ERC20EVCCompatible.sol",
+   "src/Synths/ESynth.sol",
+   "src/Synths/EulerSavingsRate.sol",
+   "src/Synths/IRMSynth.sol",
+   "src/Synths/PegStabilityModule.sol"
+  ],
+  "report": "https://github.com/euler-xyz/euler-vault-kit/blob/5b98b42048ba11ae82fb62dfec06d1010c8e41e6/audits/yAudit_competition_fixes_report.pdf",
+  "confidence": "medium",
+  "evidence": "PDF scopes 4 *-cantina-fixes repos (no direct evk hash). reviewed = cantina-contest tag; final = 1dad88bd derived via git (PR#262 cantina-contest-fixes, 2024-08-12, descends from cantina baseline; 27-file diff matches finding titles). Derived -> medium",
+  "signed_off": true
+ },
+ {
+  "id": "certora-evk-2024",
+  "repo": "euler-xyz/euler-vault-kit",
+  "firm": "Certora",
+  "date": "2024-08-01",
+  "commits": {
+   "reviewed": "d674d7501853643796081591d686c64d811ad1c1",
+   "final": "d674d7501853643796081591d686c64d811ad1c1"
+  },
+  "scope": [
+   "src/EVault/modules/BalanceForwarder.sol",
+   "src/EVault/modules/RiskManager.sol",
+   "src/EVault/modules/Liquidation.sol",
+   "src/EVault/modules/Vault.sol",
+   "src/EVault/shared/Cache.sol",
+   "src/EVault/shared/LiquidityUtils.sol",
+   "src/EVault/shared/types/ConfigAmount.sol",
+   "src/ProductLines/BaseProductLine.sol",
+   "src/ProtocolConfig/ProtocolConfig.sol"
+  ],
+  "report": "https://github.com/euler-xyz/euler-vault-kit/blob/5b98b42048ba11ae82fb62dfec06d1010c8e41e6/audits/Certora_EVK_report.pdf",
+  "confidence": "high",
+  "evidence": "Cover 'August 2024' (no day -> 1st-of-month approx); Project Summary single 'Last Commit Hash' d674d750 (rev-parse ok). Manual audit covered all src/; scope list = contracts named in findings/TOC (non-exhaustive)",
+  "signed_off": true
+ },
+ {
+  "id": "cantina-evk-2024",
+  "repo": "euler-xyz/euler-vault-kit",
+  "firm": "Cantina",
+  "date": "2024-11-13",
+  "commits": {
+   "reviewed": "f6fd0ee3b454630abd961d6471beb0c7eaf1216a",
+   "final": "f6fd0ee3b454630abd961d6471beb0c7eaf1216a"
+  },
+  "scope": [
+   "src/EVault/IEVault.sol",
+   "src/EVault/modules/Borrowing.sol",
+   "src/EVault/modules/Liquidation.sol",
+   "src/EVault/modules/RiskManager.sol",
+   "src/EVault/shared/AssetTransfers.sol",
+   "src/EVault/shared/Cache.sol",
+   "src/SequenceRegistry/SequenceRegistry.sol",
+   "src/Synths/ERC20Collateral.sol",
+   "src/Synths/ESynth.sol",
+   "src/Synths/IRMSynth.sol",
+   "src/Synths/PegStabilityModule.sol"
+  ],
+  "report": "https://github.com/euler-xyz/euler-vault-kit/blob/5b98b42048ba11ae82fb62dfec06d1010c8e41e6/audits/Cantina_competition_report.pdf",
+  "confidence": "high",
+  "evidence": "Cover Nov 13 2024; majority of finding Context hyperlinks resolve to euler-vault-kit/blob/f6fd0ee3... (== cantina-contest tag); contest May 20-Jun 17 2024. Scope = 11-file non-exhaustive sample from context links",
+  "signed_off": true
+ },
+ {
+  "id": "m4rio-evk-2025-setltv",
+  "repo": "euler-xyz/euler-vault-kit",
+  "firm": "M4rio.eth",
+  "date": "2025-01-23",
+  "commits": {
+   "reviewed": "3e5c2fea5e5296265d5c3a513b170f74b29b74b1",
+   "final": "3e5c2fea5e5296265d5c3a513b170f74b29b74b1"
+  },
+  "scope": [
+   "src/EVault/modules/Governance.sol"
+  ],
+  "report": "https://github.com/euler-xyz/euler-vault-kit/blob/5b98b42048ba11ae82fb62dfec06d1010c8e41e6/audits/M4rio.eth_setLTV_report.pdf",
+  "confidence": "high",
+  "evidence": "Cover 'Solo review by M4rio.eth' Jan 23 2025; 'review ... on commit hash 3e5c2fea' short -> rev-parse 3e5c2fea... (dated 2025-01-23). Scope = sole finding Context (Governance.sol setLTV)",
+  "signed_off": true
+ },
+ {
+  "id": "electisec-evk-2025-setltv",
+  "repo": "euler-xyz/euler-vault-kit",
+  "firm": "Electisec",
+  "date": "2025-02-04",
+  "commits": {
+   "reviewed": "233afad9155a296016201663b0628ce18cdbd680",
+   "final": "233afad9155a296016201663b0628ce18cdbd680"
+  },
+  "scope": [
+   "src/EVault/modules/Governance.sol"
+  ],
+  "report": "https://github.com/euler-xyz/euler-vault-kit/blob/5b98b42048ba11ae82fb62dfec06d1010c8e41e6/audits/Electisec_setLTV_report.pdf",
+  "confidence": "high",
+  "evidence": "Title 'Electisec Euler EVK PR#288 - setLTV() fix Review'; body 'review ... limited to the latest pull request commit 233afad9...' verbatim 40-hex (rev-parse ok); Scope lists single file Governance.sol",
+  "signed_off": true
+ },
+ {
+  "id": "yaudit-deployment-polygon-avalanche",
+  "repo": "euler-xyz/evk-periphery",
+  "firm": "yAudit (Electisec)",
+  "date": null,
+  "commits": {
+   "reviewed": null,
+   "final": null
+  },
+  "scope": [],
+  "report": "https://github.com/euler-xyz/evk-periphery/blob/3d3b4b96109c8468198ac70a71dc73d027467927/audits/yAudit_Euler_Deployment_Polygon_Avalanche_Report.pdf",
+  "confidence": "low",
+  "evidence": "PDF pages 1-14 (full doc): a deployment-feasibility review of the Euler core onto Polygon & Avalanche. No commit hash, no git URL, and no date printed anywhere. Findings mention GenericFactory.sol, LidoOracle.sol, RedstoneCoreOracle.sol only in passing (not a defined scope).",
+  "signed_off": true,
+  "notes": "scope normalized 2026-07-24 (was: ['(deployment/chain-compatibility review for Polygon & Avalanche; NO src/ file scope and NO commit hash in document; assessed categories: Opcode Support/Diff Semantics (PUSH0, Cancun), Blocks (reorgs, block time/numbering), Mempool, Other chain features (signature replay, Permit2, address derivation, deterministic deployment, precompiles), Oracles (Chainlink, Uniswap, Pyth, Chronicle, Redstone, Lido))'])"
+ },
+ {
+  "id": "yaudit-evk-periphery-2024",
+  "repo": "euler-xyz/evk-periphery",
+  "firm": "yAudit (Electisec)",
+  "date": "2024-06-26",
+  "commits": {
+   "reviewed": "090cbba2870f7ddbbbd6d360ee35a69475ab6ff8",
+   "final": "090cbba2870f7ddbbbd6d360ee35a69475ab6ff8"
+  },
+  "scope": [
+   "src/BaseFactory/BaseFactory.sol",
+   "src/BaseFactory/interfaces/IFactory.sol",
+   "src/IRMFactory/EulerKinkIRMFactory.sol",
+   "src/IRMFactory/interfaces/IEulerKinkIRMFactory.sol",
+   "src/OracleFactory/AdapterRegistry.sol",
+   "src/OracleFactory/EulerRouterFactory.sol",
+   "src/OracleFactory/interfaces/IEulerRouter.sol",
+   "src/OracleFactory/interfaces/IEulerRouterFactory.sol",
+   "src/Perspectives/deployed/EscrowSingletonPerspective.sol",
+   "src/Perspectives/deployed/EulerDefaultClusterPerspective.sol",
+   "src/Perspectives/deployed/EulerFactoryPerspective.sol",
+   "src/Perspectives/deployed/ImmutableWhitelistPerspective.sol",
+   "src/Perspectives/implementation/BasePerspective.sol",
+   "src/Perspectives/implementation/DefaultClusterPerspective.sol",
+   "src/Perspectives/implementation/PerspectiveErrors.sol",
+   "src/Perspectives/implementation/interfaces/IPerspective.sol",
+   "src/Swaps/ISwapper.sol",
+   "src/Swaps/SwapVerifier.sol",
+   "src/Swaps/Swapper.sol",
+   "src/Swaps/handlers/BaseHandler.sol",
+   "src/Swaps/handlers/OneInchHandler.sol",
+   "src/Swaps/handlers/UniswapAutoRouterHandler.sol",
+   "src/Swaps/handlers/UniswapV2Handler.sol",
+   "src/Swaps/handlers/UniswapV3Handler.sol",
+   "src/Swaps/vendor/ISwapRouterV2.sol",
+   "src/Swaps/vendor/ISwapRouterV3.sol",
+   "src/Swaps/vendor/IUniswapV3SwapCallback.sol"
+  ],
+  "report": "https://github.com/euler-xyz/evk-periphery/blob/3d3b4b96109c8468198ac70a71dc73d027467927/audits/yAudit%20EVK%20Periphery.pdf",
+  "confidence": "high",
+  "evidence": "PDF pages 1-6: 'This was commit 090cbba2870f7ddbbbd6d360ee35a69475ab6ff8 for the EVK Periphery repository.' Full scope tree on pp.5-6. Hash verified in evk-periphery. Date = review window end (Jun 17-26 2024); no publication date.",
+  "signed_off": true
+ },
+ {
+  "id": "yaudit-evk-periphery-guardians-2024",
+  "repo": "euler-xyz/evk-periphery",
+  "firm": "yAudit (Electisec)",
+  "date": "2024-08-09",
+  "commits": {
+   "reviewed": "c8b4af83b37a49d86be379e7427ee325dfdde036",
+   "final": "c8b4af83b37a49d86be379e7427ee325dfdde036"
+  },
+  "scope": [
+   "src/Governor/FactoryGovernor.sol",
+   "src/Governor/GovernorGuardian.sol",
+   "src/Governor/ReadOnlyProxy.sol",
+   "src/HookTarget/HookTargetGuardian.sol"
+  ],
+  "report": "https://github.com/euler-xyz/evk-periphery/blob/3d3b4b96109c8468198ac70a71dc73d027467927/audits/yAudit%20EVK%20Periphery%20Guardians.pdf",
+  "confidence": "high",
+  "evidence": "PDF pages 1-6: 'This was commit c8b4af83b37a49d86be379e7427ee325dfdde036 for the EVK Periphery repository.' Hash verified in evk-periphery. Date = review window end (Aug 8-9 2024); no publication date.",
+  "signed_off": true
+ },
+ {
+  "id": "yaudit-hook-target-firewall-2024",
+  "repo": "euler-xyz/evk-periphery",
+  "firm": "yAudit (Electisec)",
+  "date": "2024-09-18",
+  "commits": {
+   "reviewed": "620f9f036018e11186b1b83114204c1801e1bb70",
+   "final": "620f9f036018e11186b1b83114204c1801e1bb70"
+  },
+  "scope": [
+   "src/HookTarget/HookTargetFirewall.sol"
+  ],
+  "report": "https://github.com/euler-xyz/evk-periphery/blob/3d3b4b96109c8468198ac70a71dc73d027467927/audits/yAudit%20Euler%20Hook%20Target%20Firewall.pdf",
+  "confidence": "high",
+  "evidence": "PDF pages 1-6: 'the review was limited to the latest commit, 620f9f036018e11186b1b83114204c1801e1bb70'. Hash verified in evk-periphery. Date = review window end (Sep 17-18 2024); no publication date.",
+  "signed_off": true
+ },
+ {
+  "id": "yaudit-reul-erc20wrapperlocked-2024",
+  "repo": "euler-xyz/evk-periphery",
+  "firm": "yAudit (Electisec)",
+  "date": "2024-10-04",
+  "commits": {
+   "reviewed": "a6a8024b90b334806c0d99b7bab3b10b45a74bc5",
+   "final": "a6a8024b90b334806c0d99b7bab3b10b45a74bc5"
+  },
+  "scope": [
+   "src/ERC20/deployed/RewardToken.sol",
+   "src/ERC20/implementation/ERC20WrapperLocked.sol"
+  ],
+  "report": "https://github.com/euler-xyz/evk-periphery/blob/3d3b4b96109c8468198ac70a71dc73d027467927/audits/yAudit%20rEUL%20ERC20%20Wrapper%20Locked.pdf",
+  "confidence": "high",
+  "evidence": "PDF pages 1-6: 'This was commit a6a8024b90b334806c0d99b7bab3b10b45a74bc5 for the Euler EVK periphery ERC20 Wrapper Locked PR.' Hash verified in evk-periphery. Fixes in PR#110. Date = review window end (Oct 2-4 2024); no publication date.",
+  "signed_off": true
+ },
+ {
+  "id": "yaudit-evk-custom-liquidator-selector-2024",
+  "repo": "euler-xyz/evk-periphery",
+  "firm": "yAudit (Electisec)",
+  "date": "2024-10-21",
+  "commits": {
+   "reviewed": "6c74e21ead5074df9125b1511d4613b92172bfc1",
+   "final": "4a4fdfdc805bcf735596cc03bc0a1a71a0a03b5e"
+  },
+  "scope": [
+   "src/AccessControl/SelectorAccessControl.sol",
+   "src/Governor/GovernorAccessControl.sol",
+   "src/HookTarget/BaseHookTarget.sol",
+   "src/HookTarget/HookTargetAccessControl.sol",
+   "src/Liquidator/CustomLiquidatorBase.sol",
+   "src/Liquidator/SBLiquidator.sol",
+   "src/Governor/FactoryGovernor.sol"
+  ],
+  "report": "https://github.com/euler-xyz/evk-periphery/blob/3d3b4b96109c8468198ac70a71dc73d027467927/audits/yAudit%20EVK%20Custom%20Liquidator%20%26%20Selector%20Access%20Control.pdf",
+  "confidence": "high",
+  "evidence": "PDF pages 1-6: main scope at commit 6c74e21e...; FactoryGovernor.sol at commit ce7b05b5...; GovernorAccessControl.sol refactor at commit 4a4fdfdc... (last-reviewed). All three hashes verified in evk-periphery. Date = review window end (Oct 17-21 2024).",
+  "signed_off": true
+ },
+ {
+  "id": "cdsecurity-erc20wrapperlocked-2024",
+  "repo": "euler-xyz/evk-periphery",
+  "firm": "CD Security",
+  "date": "2024-10-28",
+  "commits": {
+   "reviewed": "f81de18be410e77176e2da247d8402576e99c40b",
+   "final": "f81de18be410e77176e2da247d8402576e99c40b"
+  },
+  "scope": [
+   "src/ERC20/implementation/ERC20WrapperLocked.sol"
+  ],
+  "report": "https://github.com/euler-xyz/evk-periphery/blob/3d3b4b96109c8468198ac70a71dc73d027467927/audits/CDSecurity%20ERC20%20Wrapper%20Locked.pdf",
+  "confidence": "high",
+  "evidence": "PDF pages 1-8: 'review commit hash - f81de18be410e77176e2da247d8402576e99c40b'; scope 'ERC20WrapperLocked.sol'. Hash verified in evk-periphery; path resolved in-repo (PDF gave bare filename). Cover date month-only 'October 2024'. No repo URL printed (repo=evk-periphery inferred+confirmed). Date reflects the engagement conclusion: the PDF's own reviewed commit f81de18b is dated 2024-10-28 and targets the PR #141 double-tiered whitelist merged 2024-10-28, so the engagement concluded late Oct 2024 (cover says only 'October 2024'); CD Security \u2014 not yAudit \u2014 is therefore the last dedicated rEUL review.",
+  "signed_off": true
+ },
+ {
+  "id": "bailsec-erc20burnablemintable-2024",
+  "repo": "euler-xyz/evk-periphery",
+  "firm": "BailSec",
+  "date": "2024-12-01",
+  "commits": {
+   "reviewed": "b3ac5f126c6c0a0374374a6b7fbf18b4461f5496",
+   "final": "b3ac5f126c6c0a0374374a6b7fbf18b4461f5496"
+  },
+  "scope": [
+   "src/ERC20/deployed/ERC20BurnableMintable.sol"
+  ],
+  "report": "https://github.com/euler-xyz/evk-periphery/blob/3d3b4b96109c8468198ac70a71dc73d027467927/audits/BailSec%20ERC20BurnableMintable.pdf",
+  "confidence": "high",
+  "evidence": "PDF pages 1-6 blob URL: github.com/euler-xyz/evk-periphery/blob/b3ac5f126c6c0a0374374a6b7fbf18b4461f5496/src/ERC20/deployed/ERC20BurnableMintable.sol. Hash verified in evk-periphery. Cover date month-only 'December 2024'.",
+  "signed_off": true
+ },
+ {
+  "id": "paladin-layerzero-adapters-2025",
+  "repo": "euler-xyz/evk-periphery",
+  "firm": "Paladin Blockchain Security",
+  "date": "2025-01-23",
+  "commits": {
+   "reviewed": "70b26235cfa1e36627ccdca59a760411c1aa8288",
+   "final": "e3699ffb644bb96bfcff4fb6f0f35d11d23f6503"
+  },
+  "scope": [
+   "src/OFT/MintBurnOFTAdapter.sol",
+   "src/OFT/OFTAdapterUpgradeable.sol",
+   "src/ERC20/deployed/ERC20BurnableMintable.sol"
+  ],
+  "report": "https://github.com/euler-xyz/evk-periphery/blob/8c946bb15574c764bee054de79758b958d0130d4/audits/Paladin%20LayerZero%20Adapters.pdf",
+  "confidence": "high",
+  "evidence": "In-repo PDF 'Smart Contract Security Assessment \u2014 For LayerZero (Euler)' (added to master via PR #422 chore/paladin-report). Preliminary commit 70b26235 (introduces both adapters, 2025-01-08); resolution verified at e3699ffb ('fix: Paladin audit Issue #02', _disableInitializers). 2 informationals: #01 acknowledged (mainnet lockbox stranding via burnable bridged tokens), #02 resolved. ERC20BurnableMintable: no issues found. This report is the covering audit for the OFT adapters.",
+  "signed_off": true
+ },
+ {
+  "id": "electisec-adaptive-irm-2025",
+  "repo": "euler-xyz/evk-periphery",
+  "firm": "Electisec",
+  "date": "2025-02-05",
+  "commits": {
+   "reviewed": "52a2572ed6f23fa4e0b293d0cc2d77d8ce7f1f8c",
+   "final": "21f0cfdad33774d76aac77083926f0381f1dbabe"
+  },
+  "scope": [
+   "src/IRM/IRMAdaptiveCurve.sol",
+   "src/IRM/lib/ExpLib.sol",
+   "src/IRMFactory/EulerIRMAdaptiveCurveFactory.sol"
+  ],
+  "report": "https://github.com/euler-xyz/evk-periphery/blob/3d3b4b96109c8468198ac70a71dc73d027467927/audits/Electisec%20Adaptive%20IRM.pdf",
+  "confidence": "high",
+  "evidence": "PDF pages 1-6: two-phase review - PR#58 latest commit 52a2572e... (Aug 26-27 2024), PR#233 latest commit 21f0cfda... (Feb 4-5 2025, last-reviewed). Both hashes verified in evk-periphery. No single publication date; date = second review window. High-finding fix commits b279f65.../53a192fd... noted separately.",
+  "signed_off": true
+ },
+ {
+  "id": "electisec-governor-access-control-emergency-factory-2025",
+  "repo": "euler-xyz/evk-periphery",
+  "firm": "Electisec",
+  "date": "2025-03-11",
+  "commits": {
+   "reviewed": "7b7a9dcb42bb517c46eead9a701eec504149edd3",
+   "final": "7b7a9dcb42bb517c46eead9a701eec504149edd3"
+  },
+  "scope": [
+   "src/GovernorFactory/GovernorAccessControlEmergencyFactory.sol"
+  ],
+  "report": "https://github.com/euler-xyz/evk-periphery/blob/3d3b4b96109c8468198ac70a71dc73d027467927/audits/Electisec%20GovernorAccessControlEmergencyFactory.pdf",
+  "confidence": "high",
+  "evidence": "PDF pages 1-3: 'This was commit 7b7a9dcb42bb517c46eead9a701eec504149edd3' (PR#261). Hash verified in evk-periphery. Also reviewed on-chain deployments (Base block 27416679, Ethereum block 22018607). No publication date; date = review window (Mar 10-11 2025).",
+  "signed_off": true
+ },
+ {
+  "id": "mixbytes-caprisksteward-2025",
+  "repo": "euler-xyz/evk-periphery",
+  "firm": "MixBytes",
+  "date": "2025-04-22",
+  "commits": {
+   "reviewed": "a438c1e910f7292adbd527b4ea72742d3f736f23",
+   "final": "f311fa49f4442643c4473ac46b520b1f40e99dcb"
+  },
+  "scope": [
+   "src/Governor/CapRiskSteward.sol"
+  ],
+  "report": "https://github.com/euler-xyz/evk-periphery/blob/3d3b4b96109c8468198ac70a71dc73d027467927/audits/MixBytes%20CapRiskSteward.pdf",
+  "confidence": "high",
+  "evidence": "PDF pages 1-6 Versions Log: a438c1e9... (Initial 02.04.2025), dfaf4e94... (Re-audit 04.04.2025), f311fa49... (updates 14.04.2025, final). All three verified in evk-periphery. Report/cover date 2025-04-22.",
+  "signed_off": true
+ },
+ {
+  "id": "mixbytes-hooktargetstakedelegator-2025",
+  "repo": "euler-xyz/evk-periphery",
+  "firm": "MixBytes",
+  "date": "2025-04-22",
+  "commits": {
+   "reviewed": "995449e6e960b515869f00235fdcd417ad8e08fc",
+   "final": "491a657e865c9ad2e6ecd1c3c20f0443e0d68422"
+  },
+  "scope": [
+   "src/HookTarget/HookTargetStakeDelegator.sol"
+  ],
+  "report": "https://github.com/euler-xyz/evk-periphery/blob/3d3b4b96109c8468198ac70a71dc73d027467927/audits/MixBytes%20HookTargetStakeDelegator.pdf",
+  "confidence": "high",
+  "evidence": "PDF pages 1-6 Versions Log: 995449e6... (Initial 07.04.2025), 64786662... (Re-audit 14.04.2025), 491a657e... (updates 16.04.2025, final). All three verified in evk-periphery. Report/cover date 2025-04-22.",
+  "signed_off": true
+ },
+ {
+  "id": "supremacy-irmlinearkinky-2025",
+  "repo": "euler-xyz/evk-periphery",
+  "firm": "Supremacy",
+  "date": "2025-06-13",
+  "commits": {
+   "reviewed": "a647325c329cb1ed398fab7cac9b8e31108c282e",
+   "final": "a647325c329cb1ed398fab7cac9b8e31108c282e"
+  },
+  "scope": [
+   "src/IRM/IRMLinearKinky.sol"
+  ],
+  "report": "https://github.com/euler-xyz/evk-periphery/blob/3d3b4b96109c8468198ac70a71dc73d027467927/audits/Supremacy%20IRMLinearKinky.pdf",
+  "confidence": "high",
+  "evidence": "PDF pages 1-6: 'Repository: github.com/euler-xyz/evk-periphery/blob/a647325c329cb1ed398fab7cac9b8e31108c282e/src/IRM/IRMLinearKinky.sol', 'Commit Hash: a647325c...'. Verified in evk-periphery. v1.0 Final Release 2025-06-13 (v0.1 draft 2025-06-12); single code commit.",
+  "signed_off": true
+ },
+ {
+  "id": "cdsecurity-hooktargetmarketstatus-2025",
+  "repo": "euler-xyz/evk-periphery",
+  "firm": "CD Security",
+  "date": "2025-08-01",
+  "commits": {
+   "reviewed": "e3d31d4f39df5d0ab193f25a5c4ee4ff58d29f01",
+   "final": "5eed034a9119f5405ee045349da926fafff9e7ba"
+  },
+  "scope": [
+   "src/Chainlink/DataStreamsVerifier.sol",
+   "src/HookTarget/HookTargetMarketStatus.sol"
+  ],
+  "report": "https://github.com/euler-xyz/evk-periphery/blob/3d3b4b96109c8468198ac70a71dc73d027467927/audits/CD%20Security%20HookTargetMarketStatus.pdf",
+  "confidence": "high",
+  "evidence": "PDF pages 1-5: 'review commit hash - e3d31d4f...'; 'fixes review commit hash - 5eed034a...'; scope 'DataStreamsVerifier.sol, HookTargetMarketStatus.sol'. Both verified in evk-periphery; paths resolved in-repo (PDF gave bare filenames). Cover date month-only 'August 2025'. No repo URL printed.",
+  "signed_off": true
+ },
+ {
+  "id": "cantina-evk-periphery-pr361-2025",
+  "repo": "euler-xyz/evk-periphery",
+  "firm": "Cantina",
+  "date": "2025-10-14",
+  "commits": {
+   "reviewed": "642602f8cb487969932d86298993f40b42727c88",
+   "final": "4711a8ad0f23bdc0209b7be772efa42b887e3518"
+  },
+  "scope": [
+   "src/FeeFlow/FeeFlowControllerEVK.sol",
+   "src/OFT/OFTFeeCollector.sol",
+   "src/OFT/OFTGulper.sol",
+   "src/Util/FeeCollectorUtil.sol",
+   "src/Util/FeeCollectorGulper.sol",
+   "src/IRM/IRMBasePremium.sol",
+   "src/IRM/IIRMBasePremium.sol"
+  ],
+  "report": "https://github.com/euler-xyz/evk-periphery/blob/1f83f782c91552d496232036667be81e5e046791/audits/Cantina%20Crosschain%20Fee%20Flow%20and%20Auxiliary%20Contracts.pdf",
+  "confidence": "medium",
+  "evidence": "PDF pages 1-10 (DRAFT): 'From Oct 10th to Oct 12th the Cantina team conducted a review of evk-periphery on commit hash 642602f8'; holistic re-review at 4711a8ad. Both verified in evk-periphery. WARNING: the PDF filename says 'Spearbit ERC20Synth' but the content is a Cantina Managed DRAFT titled 'Euler EVK Periphery PR 361' (FeeFlow/OFT/IRM), not Spearbit and not ERC20Synth-titled.",
+  "signed_off": true,
+  "notes": "dropped prose scope entry 2026-07-24: (no explicit scope section in report; paths above inferred f"
+ },
+ {
+  "id": "electisec-erc20synth-aux-2025",
+  "repo": "euler-xyz/evk-periphery",
+  "firm": "Electisec",
+  "date": "2025-10-14",
+  "commits": {
+   "reviewed": "642602f8cb487969932d86298993f40b42727c88",
+   "final": "642602f8cb487969932d86298993f40b42727c88"
+  },
+  "scope": [
+   "src/ERC20/deployed/ERC20Synth.sol",
+   "src/FeeFlow/FeeFlowControllerEVK.sol",
+   "src/IRM/IRMBasePremium.sol",
+   "src/OFT/OFTFeeCollector.sol",
+   "src/OFT/OFTGulper.sol",
+   "src/Util/FeeCollectorGulper.sol",
+   "src/Util/FeeCollectorUtil.sol"
+  ],
+  "report": "https://github.com/euler-xyz/evk-periphery/blob/3d3b4b96109c8468198ac70a71dc73d027467927/audits/Electisec%20ERC20Synth%20and%20auxiliary%20contracts.pdf",
+  "confidence": "high",
+  "evidence": "PDF pages 1-6: 'Repository: github.com/euler-xyz/evk-periphery  Commit Hash: 642602f8cb487969932d86298993f40b42727c88' with full Audit Scope tree. Verified in evk-periphery. Cover date 2025-10-14. Same PR361/commit as the Cantina PR361 report. Per-finding fix commits noted in dev responses.",
+  "signed_off": true
+ },
+ {
+  "id": "pashov-erc4626-vault-securitize-2025",
+  "repo": "euler-xyz/evk-periphery",
+  "firm": "Pashov Audit Group",
+  "date": "2025-11-06",
+  "commits": {
+   "reviewed": "3d70bf28e13625d99bb3b90ab5b3d28ec2b7f264",
+   "final": "06c0817d1fe4dcd9f420c28085204024fdf8188d"
+  },
+  "scope": [
+   "src/Vault/deployed/ERC4626EVCCollateralSecuritize.sol",
+   "src/Vault/implementation/ERC4626EVC.sol",
+   "src/Vault/implementation/ERC4626EVCCollateral.sol",
+   "src/Vault/implementation/ERC4626EVCCollateralCapped.sol",
+   "src/Vault/implementation/ERC4626EVCCollateralFreezable.sol",
+   "src/VaultFactory/ERC4626EVCCollateralSecuritizeFactory.sol",
+   "src/VaultFactory/interfaces/IERC4626EVCCollateralSecuritizeFactory.sol",
+   "src/Swaps/SwapVerifier.sol",
+   "src/Swaps/TransferFromSender.sol"
+  ],
+  "report": "https://github.com/euler-xyz/evk-periphery/blob/3d3b4b96109c8468198ac70a71dc73d027467927/audits/Pashov%20Group%20ERC4626%20and%20Vault%20Securitize.pdf",
+  "confidence": "high",
+  "evidence": "PDF pages 1-6: 'Review commit hashes: 3d70bf28... 0467fb77... (euler-xyz/evk-periphery); Fixes review commit hash: 06c0817d...'. All verified in evk-periphery. Scope printed as bare filename chips; paths resolved in-repo. Second review commit 0467fb77dcf269be6d572bcd6427a3626a3a4e14 also listed.",
+  "signed_off": true
+ },
+ {
+  "id": "yaudit-erc4626-vault-securitize-2025",
+  "repo": "euler-xyz/evk-periphery",
+  "firm": "yAudit (Electisec)",
+  "date": "2025-11-21",
+  "commits": {
+   "reviewed": "101860e5a2b6cdf469f0888faa3cad67e6236c95",
+   "final": "6d5a5af16773b26ff62828cab0305e9809958855"
+  },
+  "scope": [
+   "src/Swaps/SwapVerifier.sol",
+   "src/Swaps/TransferFromSender.sol",
+   "src/Vault/implementation/ERC4626EVC.sol",
+   "src/Vault/implementation/ERC4626EVCCollateral.sol",
+   "src/Vault/implementation/ERC4626EVCCollateralCapped.sol",
+   "src/Vault/implementation/ERC4626EVCCollateralFreezable.sol",
+   "src/Vault/deployed/ERC4626EVCCollateralSecuritize.sol",
+   "src/VaultFactory/ERC4626EVCCollateralSecuritizeFactory.sol"
+  ],
+  "report": "https://github.com/euler-xyz/evk-periphery/blob/3d3b4b96109c8468198ac70a71dc73d027467927/audits/yAudit%20ERC4626%20and%20Vault%20Securitize.pdf",
+  "confidence": "high",
+  "evidence": "PDF pages 1-6: 'Repository: github.com/euler-xyz/evk-periphery/  Commit Hashes: 101860e5... / 6d5a5af1...' with explicit 8-file scope tree. Both verified in evk-periphery. Findings cite 'Fixed in: bb0bb5' so 6d5a5af1 taken as final. Cover date 2025-11-21.",
+  "signed_off": true
+ },
+ {
+  "id": "yaudit-swapverifier-update-2026",
+  "repo": "euler-xyz/evk-periphery",
+  "firm": "yAudit (Electisec)",
+  "date": "2026-02-04",
+  "commits": {
+   "reviewed": "bf0185f502968049e1374631424e09517532c3e2",
+   "final": "bf0185f502968049e1374631424e09517532c3e2"
+  },
+  "scope": [
+   "src/Swaps/SwapVerifier.sol"
+  ],
+  "report": "https://github.com/euler-xyz/evk-periphery/blob/3d3b4b96109c8468198ac70a71dc73d027467927/audits/yAudit%20SwapVerifier%20update.pdf",
+  "confidence": "high",
+  "evidence": "PDF pages 1-6: 'Repository: github.com/euler-xyz/evk-periphery/  Commit Hash: bf0185f502968049e1374631424e09517532c3e2' (PR#406). Verified in evk-periphery. Cover date 2026-02-04. Dev-cited fix commit b6046f4 -> b6046f44e2d3249a9ce87c9e48be4040d90a8225 (not a reviewed revision).",
+  "signed_off": true
+ },
+ {
+  "id": "bailsec-evk-periphery-auxiliary-2026",
+  "repo": "euler-xyz/evk-periphery",
+  "firm": "BailSec",
+  "date": "2026-03-01",
+  "commits": {
+   "reviewed": "d2b3925ea9373b72310f95d9a350f0715f5b7e20",
+   "final": "87b425bfc84dca50e30f26f8d5014c722e61c8d1"
+  },
+  "scope": [
+   "src/HookTarget/HookTargetTermsOfUse.sol",
+   "src/Swaps/SwapVerifier.sol"
+  ],
+  "report": "https://github.com/euler-xyz/evk-periphery/blob/3d3b4b96109c8468198ac70a71dc73d027467927/audits/BailSec%20EVK%20Periphery%20Oracle%20Hook%20SwapVerifier.pdf",
+  "confidence": "medium",
+  "evidence": "PDF pages 1-6 multi-repo/multi-revision. evk-periphery: HookTargetTermsOfUse.sol initial d2b3925e... -> Res1 28682195c0823a4ec1508caa2fb7e96b00816402 -> Res2 87b425bf...; SwapVerifier.sol at eae25d38...; all evk-periphery hashes verified. euler-price-oracle: 6055a513/5c59a75c verified in euler-price-oracle checkout. reviewed set to first evk-periphery commit, final to Res2 (last). Cover date month-only 'March 2026'.",
+  "signed_off": true,
+  "notes": "dropped prose scope entry 2026-07-24: (also covers euler-price-oracle: ChainlinkInfrequentOracleXS"
+ },
+ {
+  "id": "enigma-dark-swapverifier-update-2026",
+  "repo": "euler-xyz/evk-periphery",
+  "firm": "Enigma Dark",
+  "date": "2026-07-01",
+  "commits": {
+   "reviewed": "ad5325fe3e7e1e16f111da31f6d47d438754b18e",
+   "final": "469d9cfefc08b7a5e5acefb572f840864a19a8d5"
+  },
+  "scope": [
+   "src/Swaps/MigrationHelper.sol",
+   "src/Swaps/SwapVerifier.sol"
+  ],
+  "report": "https://github.com/euler-xyz/evk-periphery/blob/3d3b4b96109c8468198ac70a71dc73d027467927/audits/Enigma%20Dark%20SwapVerifier%20update.pdf",
+  "confidence": "high",
+  "evidence": "PDF pages 1-6: 'evk-periphery | diff ad5325fe...469d9cfe (PR #423)' covering src/Swaps/MigrationHelper.sol and src/Swaps/SwapVerifier.sol. Both short hashes resolved+verified in evk-periphery (diff base=reviewed, diff head=final). Cover date month-only 'Jul, 2026'.",
+  "signed_off": true
+ },
+ {
+  "id": "zellic-fee-flow-2024",
+  "repo": "euler-xyz/fee-flow",
+  "firm": "Zellic",
+  "date": "2024-02-06",
+  "commits": {
+   "reviewed": "a16608ef753194491b270ca2616cc2189f22aca1",
+   "final": "0b67c0308a80835c8aa4a5d7011ed349bcbb8445"
+  },
+  "scope": [
+   "src/"
+  ],
+  "report": "https://github.com/euler-xyz/fee-flow/blob/3bee858a1568d1313f37d615953f83391a897866/audits/FeeFlow%20Zellic%20Report.pdf",
+  "confidence": "medium",
+  "evidence": "Cover/2.3 Scope table commit a16608ef... verbatim; 3.1-3.3 fixes cite a42879c0/c789fcaa/8c2767f5 (tip of origin/fix/zellic-audit-fixes, merged into 0b67c030 - the base OtterSec & Team Omega both cite). final derived via branch/merge tracing -> medium",
+  "signed_off": true
+ },
+ {
+  "id": "ottersec-fee-flow-2024",
+  "repo": "euler-xyz/fee-flow",
+  "firm": "OtterSec",
+  "date": "2024-02-21",
+  "commits": {
+   "reviewed": "0b67c0308a80835c8aa4a5d7011ed349bcbb8445",
+   "final": "03b445222d31f60741d785c10696ce030a7fdf87"
+  },
+  "scope": [
+   "src/"
+  ],
+  "report": "https://github.com/euler-xyz/fee-flow/blob/3bee858a1568d1313f37d615953f83391a897866/audits/FeeFlow%20Ottersec%20Report.pdf",
+  "confidence": "high",
+  "evidence": "Cover Feb 21 2024 (fieldwork Feb 19-20); 02 Scope short commit 0b67c0 -> 0b67c030...; finding 'Fixed in 03b4452' -> 03b44522...; both match Team Omega full hashes exactly",
+  "signed_off": true
+ },
+ {
+  "id": "team-omega-fee-flow-2024",
+  "repo": "euler-xyz/fee-flow",
+  "firm": "Team Omega",
+  "date": "2024-02-27",
+  "commits": {
+   "reviewed": "0b67c0308a80835c8aa4a5d7011ed349bcbb8445",
+   "final": "03b445222d31f60741d785c10696ce030a7fdf87"
+  },
+  "scope": [
+   "src/"
+  ],
+  "report": "https://github.com/euler-xyz/fee-flow/blob/3bee858a1568d1313f37d615953f83391a897866/audits/FeeFlow%20Team%20Omega%20Report.pdf",
+  "confidence": "high",
+  "evidence": "Cover 'Final Audit Report, February 27, 2024'; Scope full commit 0b67c030... (Feb 9 2024) verbatim over src/; Resolution full commit 03b44522... verbatim",
+  "signed_off": true
+ },
+ {
+  "id": "hunter-reward-streams-2024",
+  "repo": "euler-xyz/reward-streams",
+  "firm": "Hunter Security",
+  "date": "2024-05-09",
+  "commits": {
+   "reviewed": "967c73de100620b83adce8897dc6b67bc74aac1c",
+   "final": "95783173eff4668bb177eeefd9e8a9dc1a44669c"
+  },
+  "scope": [
+   "src/BaseRewardStreams.sol",
+   "src/StakingRewardStreams.sol",
+   "src/TrackingRewardStreams.sol",
+   "src/interfaces/IBalanceTracker.sol",
+   "src/interfaces/IRewardStreams.sol"
+  ],
+  "report": "https://github.com/euler-xyz/reward-streams/blob/a63c358265bc8184a6d893e510a2c8566351d2e6/audits/Euler%20Hunter%20Security%20report.pdf",
+  "confidence": "high",
+  "evidence": "Cover Hunter Security v1.0 May 9 2024; Exec Summary Overview: commit 967c73de..., Resolution 95783173... (== audit-HunterSecurity tag); Scope table 5 files",
+  "signed_off": true
+ },
+ {
+  "id": "mixbytes-reward-streams-2024",
+  "repo": "euler-xyz/reward-streams",
+  "firm": "MixBytes",
+  "date": "2024-05-16",
+  "commits": {
+   "reviewed": "95783173eff4668bb177eeefd9e8a9dc1a44669c",
+   "final": "92b946d4a089f03ac56a0735b92f1270bab215da"
+  },
+  "scope": [
+   "src/BaseRewardStreams.sol",
+   "src/StakingRewardStreams.sol",
+   "src/TrackingRewardStreams.sol"
+  ],
+  "report": "https://github.com/euler-xyz/reward-streams/blob/a63c358265bc8184a6d893e510a2c8566351d2e6/audits/Euler%20MixBytes%20report.pdf",
+  "confidence": "high",
+  "evidence": "Cover MixBytes May 16 2024; Project Dashboard log: 09.05 commit 95783173 (audit), 16.05 commit 92b946d4 (reaudit, == audit-MixBytes tag); Scope 3 files",
+  "signed_off": true
+ },
+ {
+  "id": "yaudit-reward-streams-2024-comp-fixes",
+  "repo": "euler-xyz/reward-streams",
+  "firm": "yAudit",
+  "date": "2024-07-31",
+  "commits": {
+   "reviewed": "4f63aea41dae996b59d0ba453326b6e97f44f680",
+   "final": "d124216a23fe042963a4bcc15e65b40d41a32b25"
+  },
+  "scope": [
+   "src/BaseRewardStreams.sol",
+   "src/StakingRewardStreams.sol",
+   "src/TrackingRewardStreams.sol",
+   "src/interfaces/IBalanceTracker.sol",
+   "src/interfaces/IRewardStreams.sol"
+  ],
+  "report": "https://github.com/euler-xyz/reward-streams/blob/a63c358265bc8184a6d893e510a2c8566351d2e6/audits/Euler%20yAudit%20Code%20Competition%20Fixes%20report.pdf",
+  "confidence": "medium",
+  "evidence": "GitBook export, no printed date/commit (metadata 2024-07-31). Reward Streams issues #31/154/167/231/233/240/273/313/339 + DistributionStorage refactor map to 'fix: cantina NNN' commits (PRs #1-#10, 2024-07-02..07-15, final d124216); reviewed = cantina-contest tag. Derived -> medium",
+  "signed_off": true
+ },
+ {
+  "id": "cantina-reward-streams-2024",
+  "repo": "euler-xyz/reward-streams",
+  "firm": "Cantina",
+  "date": "2024-11-13",
+  "commits": {
+   "reviewed": "4f63aea41dae996b59d0ba453326b6e97f44f680",
+   "final": "4f63aea41dae996b59d0ba453326b6e97f44f680"
+  },
+  "scope": [
+   "src/BaseRewardStreams.sol",
+   "src/StakingRewardStreams.sol",
+   "src/TrackingRewardStreams.sol"
+  ],
+  "report": "https://github.com/euler-xyz/reward-streams/blob/a63c358265bc8184a6d893e510a2c8566351d2e6/audits/Euler%20Cantina%20Code%20Competition%20report.pdf",
+  "confidence": "high",
+  "evidence": "Cover Cantina Nov 13 2024; shared Euler-v2 competition May20-Jun17 2024; no per-repo commit table in report; findings reference the 3 src files; mapped to cantina-contest tag (repo pin)",
+  "signed_off": true
+ }
+]
