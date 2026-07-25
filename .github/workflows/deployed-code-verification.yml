@@ -1,4 +1,4 @@
-name: verify
+name: Deployed Code Verification
 
 on:
   pull_request:
@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  verify:
+  deployed-code-verification:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
