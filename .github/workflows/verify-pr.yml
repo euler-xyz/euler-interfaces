@@ -17,7 +17,7 @@ jobs:
         with:
           repository: euler-xyz/euler-verifier
           # Engine pinned by commit SHA; bump deliberately via PR.
-          ref: 9cee89d057b9d327d13c7afd950194d07c7a8d04
+          ref: 534dcf9eda294a46c208c7b8767fdd76dfc2fd29
           path: .verifier
 
       - uses: pnpm/action-setup@v4
