@@ -19,15 +19,6 @@ let chains = [
   },
 
   {
-    chainId: 1923,
-    name: 'swell',
-    viemName: 'swellchain',
-    safeBaseUrl: 'https://safe.optimism.io',
-    safeAddressPrefix: 'swell-l2',
-    status: 'production',
-  },
-
-  {
     chainId: 146,
     name: 'sonic',
     safeBaseUrl: 'https://app.safe.global',
@@ -123,14 +114,6 @@ let chains = [
     name: 'monad',
     safeBaseUrl: 'https://app.safe.global',
     safeAddressPrefix: 'monad',
-    status: 'production',
-  },
-
-  {
-    chainId: 2818,
-    name: 'morph',
-    safeBaseUrl: 'https://safe.morphl2.io/',
-    safeAddressPrefix: 'morph',
     status: 'production',
   },
 

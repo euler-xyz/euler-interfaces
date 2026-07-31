@@ -62,6 +62,8 @@ interface IAccountLens {
     }
 
     struct VaultAccountInfo {
+        bool queryFailure;
+        bytes queryFailureReason;
         uint256 timestamp;
         address account;
         address vault;
@@ -89,10 +91,7 @@ interface IAccountLens {
         view
         returns (AccountMultipleVaultsInfo memory);
     function getAccountInfo(address account, address vault) external view returns (AccountInfo memory);
-    function getAccountLiquidityInfo(address account, address vault)
-        external
-        view
-        returns (AccountLiquidityInfo memory);
+    function getAccountLiquidityInfo(address account, address vault) external view returns (AccountLiquidityInfo memory);
     function getAccountLiquidityInfoNoValidation(address account, address vault)
         external
         view
