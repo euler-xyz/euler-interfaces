@@ -19,7 +19,6 @@ contracts=(
   "SequenceRegistry"
   "BasePerspective"
   "EscrowedCollateralPerspective"
-  "SnapshotRegistry"
   "FeeFlowController"
   "EulerKinkIRMFactory"
   "EulerRouterFactory"
@@ -35,7 +34,6 @@ contracts=(
   "EulerRouter"
   "TermsOfUseSigner"
   "RewardToken"
-  "EdgeFactory"
   "ERC4626EVCCollateralSecuritize"
   "ERC4626EVCCollateralSecuritizeFactory"
 )
