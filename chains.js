@@ -1,10 +1,9 @@
 let chains = [
-  //// PRODUCTION
-
   {
     chainId: 1,
     name: 'ethereum',
     viemName: 'mainnet',
+    explorerUrl: 'https://etherscan.io',
     safeBaseUrl: 'https://app.safe.global',
     safeAddressPrefix: 'eth',
     status: 'production',
@@ -13,6 +12,8 @@ let chains = [
   {
     chainId: 8453,
     name: 'base',
+    viemName: 'base',
+    explorerUrl: 'https://basescan.org',
     safeBaseUrl: 'https://app.safe.global',
     safeAddressPrefix: 'base',
     status: 'production',
@@ -21,31 +22,35 @@ let chains = [
   {
     chainId: 146,
     name: 'sonic',
+    explorerUrl: 'https://sonicscan.org',
     safeBaseUrl: 'https://app.safe.global',
     safeAddressPrefix: 'sonic',
-    status: 'production',
+    status: 'deprecated',
   },
 
   {
     chainId: 60808,
     name: 'BOB',
     viemName: 'bob',
+    explorerUrl: 'https://explorer.gobob.xyz',
     safeBaseUrl: 'https://safe.gobob.xyz',
     safeAddressPrefix: 'bob',
-    status: 'production',
+    status: 'deprecated',
   },
 
   {
     chainId: 80094,
     name: 'berachain',
+    explorerUrl: 'https://berascan.com',
     safeBaseUrl: 'https://safe.berachain.com',
     safeAddressPrefix: 'berachain',
-    status: 'production',
+    status: 'deprecated',
   },
 
   {
     chainId: 43114,
     name: 'avalanche',
+    explorerUrl: 'https://snowtrace.io',
     safeBaseUrl: 'https://app.safe.global',
     safeAddressPrefix: 'avax',
     status: 'production',
@@ -55,6 +60,7 @@ let chains = [
     chainId: 56,
     name: 'BSC',
     viemName: 'bsc',
+    explorerUrl: 'https://bscscan.com',
     safeBaseUrl: 'https://app.safe.global',
     safeAddressPrefix: 'bnb',
     status: 'production',
@@ -63,6 +69,7 @@ let chains = [
   {
     chainId: 130,
     name: 'unichain',
+    explorerUrl: 'https://uniscan.xyz',
     safeBaseUrl: 'https://app.safe.global',
     safeAddressPrefix: 'unichain',
     status: 'production',
@@ -71,6 +78,7 @@ let chains = [
   {
     chainId: 42161,
     name: 'arbitrum',
+    explorerUrl: 'https://arbiscan.io',
     safeBaseUrl: 'https://app.safe.global',
     safeAddressPrefix: 'arb1',
     status: 'production',
@@ -80,14 +88,16 @@ let chains = [
     chainId: 239,
     name: 'TAC',
     viemName: 'tac',
+    explorerUrl: 'https://explorer.tac.build',
     safeBaseUrl: 'https://safe.tac.build',
     safeAddressPrefix: 'tac',
-    status: 'production',
+    status: 'deprecated',
   },
 
   {
     chainId: 59144,
     name: 'linea',
+    explorerUrl: 'https://lineascan.build',
     safeBaseUrl: 'https://app.safe.global',
     safeAddressPrefix: 'linea',
     status: 'production',
@@ -96,6 +106,8 @@ let chains = [
   {
     chainId: 999,
     name: 'hyperEVM',
+    viemName: 'hyperEvm',
+    explorerUrl: 'https://hyperevmscan.io',
     safeBaseUrl: 'https://app.safe.global',
     safeAddressPrefix: 'hyper-evm',
     status: 'production',
@@ -104,6 +116,7 @@ let chains = [
   {
     chainId: 9745,
     name: 'plasma',
+    explorerUrl: 'https://plasmascan.to',
     safeBaseUrl: 'https://app.safe.global',
     safeAddressPrefix: 'plasma',
     status: 'production',
@@ -112,6 +125,7 @@ let chains = [
   {
     chainId: 143,
     name: 'monad',
+    explorerUrl: 'https://monadscan.com',
     safeBaseUrl: 'https://app.safe.global',
     safeAddressPrefix: 'monad',
     status: 'production',
@@ -120,15 +134,11 @@ let chains = [
   {
     chainId: 137,
     name: 'polygon',
+    explorerUrl: 'https://polygonscan.com',
     safeBaseUrl: 'https://app.safe.global',
     safeAddressPrefix: 'matic',
-    status: 'production',
+    status: 'unlisted',
   },
-
-  //// BETA
-
-  //// TESTING
-
 ];
 
 
@@ -152,7 +162,6 @@ for (const c of chains) {
       section = section.charAt(0).toLowerCase() + section.slice(1);
       const newAddrs = JSON.parse(fs.readFileSync(`${addrsDir}/${file}`).toString());
       if (c.addresses[section]) {
-        // Merge new addresses into the existing section (shallow merge)
         Object.assign(c.addresses[section], newAddrs);
       } else {
         c.addresses[section] = newAddrs;
