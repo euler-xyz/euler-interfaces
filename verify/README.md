@@ -13,7 +13,6 @@ Bytecode-level verification of every allowlisted Euler contract: on-chain code i
 | [TAC](239.md) | 239 | 21/21 |
 | [HyperEVM](999.md) | 999 | 18/18 |
 | [Swell](1923.md) | 1923 | 21/21 |
-| [Morph](2818.md) | 2818 | 18/18 |
 | [Base](8453.md) | 8453 | 21/21 |
 | [Plasma](9745.md) | 9745 | 21/21 |
 | [Arbitrum](42161.md) | 42161 | 21/21 |
