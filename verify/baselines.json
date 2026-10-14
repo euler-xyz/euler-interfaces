@@ -34,6 +34,10 @@
     "912b301f51301e586e5a7f09e48cf52bd52e9a0e": {
      "summary": "Polygon-only deployment: the yaudit-evc-2026-setsize state (SET_MAX_ELEMENTS 10\u2192100 for the Gondor/Polymarket integration; 0 C/H/M/L findings, informational fixes included via PR #203). Descendant of the baseline; its delta = the 14-chain pin's signer-exclusion hardening plus exactly the set-size audit scope. The branch remains unmerged to master by design.",
      "label": "set-size 10\u2192100 (audited) + signer hardening"
+    },
+    "7b2f05f8f2fc093f679463209dea202e9af3b120": {
+     "summary": "Morph deployment: tip of the public origin/deployment-morph branch (\u201cfacilitate Morph deployment\u201d, 2025-02-13); descendant of the baseline, compiled at 0.8.24/runs 20000/cancun.",
+     "label": "Morph deployment-branch additions"
     }
    }
   },
@@ -135,7 +139,7 @@
      "label": "24kB fit: setName/setSymbol commented out"
     },
     "bece7172a87551e6943a52b08c9a0117eb02c6c3": {
-     "summary": "Monad deployment: public euler-earn master commit (\u201cfix: absolute import paths\u201d, 2025-10-14); descendant of the baseline with import-path-style deltas only. Compiled at the repo profile (0.8.26, runs 200, via_ir) with the deploy workspace\u2019s OpenZeppelin v5.1.0.",
+     "summary": "Monad/Morph deployments: public euler-earn master commit (\u201cfix: absolute import paths\u201d, 2025-10-14); descendant of the baseline with import-path-style deltas only. Compiled at the repo profile (0.8.26, runs 200, via_ir) with the deploy workspace\u2019s OpenZeppelin v5.1.0.",
      "label": "import-path style only"
     }
    }

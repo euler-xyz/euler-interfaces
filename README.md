@@ -120,11 +120,6 @@ moves its pin.
    `addresses/<chainId>/` to `addresses/test/<chainId>/`. `addresses/test/`
    holds testnet and retired-chain addresses: they are not published in
    `EulerChains.json` and not bytecode-verified.
-3. A chain that never went live is removed entirely instead: its
-   `addresses/` and `config/` folders, its `verify/manifest.json` entries, its
-   `verify/<chainId>.md` report and its row in `verify/README.md`. For a chain
-   that was live, the report and manifest entries stay as the record of what
-   was deployed.
 
 ## Security
 
