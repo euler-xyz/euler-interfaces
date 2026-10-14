@@ -75,9 +75,11 @@ npm run validate
 | `unlisted` | Hidden in the apps, but still indexed and checked. |
 | `deprecated` | Shown with a deprecated badge, so users can exit. For chains Euler is leaving. |
 
-The former status `testing` is retired; CI rejects it. Apps read
-`EulerChains.json` at runtime, so a merged change to `status` or
-`explorerUrl` reaches them without an app release.
+The former status `testing` is retired; CI rejects it. Most apps read the
+latest `EulerChains.json` at runtime, so a merged change to `status` or
+`explorerUrl` reaches them without an app release. The Toolbox reads a
+pinned registry commit instead and picks up the change only once a Toolbox PR
+moves its pin.
 
 ### Steps
 
