@@ -60,6 +60,7 @@ npm run validate
 | `name` | Short chain name. |
 | `status` | `staging`, `production`, `unlisted` or `deprecated` (see below). Required. |
 | `explorerUrl` | The chain's canonical block explorer: an https origin with no trailing slash, such as `https://etherscan.io`. Apps link `${explorerUrl}/address/<address>` and `${explorerUrl}/tx/<hash>`. Required. |
+| `verifier` | How to verify a contract's source so `explorerUrl` shows it, as `{ "type": …, "url": … }` with evk-periphery's verifier names: `etherscan` (Etherscan V2; no `url`), `blockscout` (`url` is its API, as forge's `--verifier-url` takes it, such as `https://explorer.tac.build/api`), `sourcify` (`url` only for a server other than sourcify.dev) or `custom` (an Etherscan-compatible API such as Routescan; `url` required). URLs are canonical https with no trailing slash. Required. The Toolbox reads it; deployment scripts keep their `--verifier` flag, because a new chain's contracts are verified before it has an entry here. |
 | `viemName` | The chain's export name in `viem/chains`, such as `base`. It must name a viem chain with this chain ID. Required when viem exports more than one chain with the ID; without it, viem must export exactly one. CI checks this against the viem version pinned in `package.json`. |
 | `safeBaseUrl` | The Safe{Wallet} app that serves the chain. |
 | `safeAddressPrefix` | Safe's short name for the chain, as in `eth:0x…`. |
@@ -107,7 +108,8 @@ moves its pin.
    its README) and commit `verify/<chainId>.md` and the updated
    `verify/README.md`.
 5. **Chain entry.** Add the chain to `chains.js` with `status: 'staging'`, its
-   `explorerUrl` and, if needed, `viemName`. Run `node chains.js`.
+   `explorerUrl`, its `verifier` and, if needed, `viemName`. Run
+   `node chains.js`.
 6. **Launch.** Set `status: 'production'` once each app's runbook for the
    chain is done.
 

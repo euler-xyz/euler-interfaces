@@ -8,9 +8,11 @@ import { fileURLToPath } from 'node:url';
 import * as viemChains from 'viem/chains';
 import {
   CHAIN_STATUSES,
+  VERIFIER_TYPES,
   explorerUrlProblem,
   statusProblem,
   validateChains,
+  verifierProblem,
   viemChainProblem,
 } from './validate-chains.mjs';
 
@@ -39,6 +41,7 @@ const row = (overrides = {}) => ({
   chainId: 10,
   name: 'one',
   explorerUrl: 'https://explorer.one.example',
+  verifier: { type: 'sourcify' },
   status: 'production',
   addresses: {},
   ...overrides,
@@ -104,6 +107,65 @@ describe('explorerUrlProblem', () => {
   });
 });
 
+describe('verifierProblem', () => {
+  it('lists exactly the four verifier types', () => {
+    assert.deepEqual([...VERIFIER_TYPES], ['etherscan', 'blockscout', 'sourcify', 'custom']);
+  });
+
+  it('accepts each type with its url rule', () => {
+    for (const verifier of [
+      { type: 'etherscan' },
+      { type: 'blockscout', url: 'https://explorer.one.example/api' },
+      { type: 'sourcify' },
+      { type: 'sourcify', url: 'https://sourcify.one.example' },
+      { type: 'custom', url: 'https://api.one.example/v2/network/mainnet/evm/10/etherscan/api' },
+    ]) {
+      assert.equal(verifierProblem(verifier), null, JSON.stringify(verifier));
+    }
+  });
+
+  it('rejects a missing verifier', () => {
+    assert.match(verifierProblem(undefined), /verifier is missing; use one of etherscan, blockscout, sourcify, custom/);
+  });
+
+  it('rejects an unknown type or a value that is not an object', () => {
+    assert.match(verifierProblem({ type: 'routescan' }), /verifier type "routescan" is not one of etherscan, blockscout, sourcify, custom/);
+    assert.match(verifierProblem(null), /verifier type null is not one of/);
+    assert.match(verifierProblem('etherscan'), /verifier type "etherscan" is not one of/);
+    assert.match(verifierProblem([{ type: 'etherscan' }]), /is not one of/);
+  });
+
+  it('rejects an unknown field', () => {
+    assert.match(verifierProblem({ type: 'etherscan', apiKey: 'x' }), /verifier etherscan has unknown field apiKey/);
+  });
+
+  it('requires a url for blockscout and custom', () => {
+    assert.match(verifierProblem({ type: 'blockscout' }), /verifier blockscout needs a url/);
+    assert.match(verifierProblem({ type: 'custom' }), /verifier custom needs a url/);
+    assert.match(verifierProblem({ type: 'custom', url: '' }), /verifier custom needs a url/);
+  });
+
+  it('rejects a url on etherscan', () => {
+    assert.match(verifierProblem({ type: 'etherscan', url: 'https://api.etherscan.io/v2/api' }), /verifier etherscan takes no url/);
+  });
+
+  it('rejects a url that is not canonical https', () => {
+    assert.match(verifierProblem({ type: 'blockscout', url: 'explorer.one.example/api' }), /is not a URL/);
+    assert.match(verifierProblem({ type: 'blockscout', url: 'http://explorer.one.example/api' }), /must use https/);
+    for (const url of [
+      'https://explorer.one.example/api/',
+      'https://explorer.one.example/',
+      'https://explorer.one.example/api?apikey=x',
+      'https://explorer.one.example/api#top',
+      'https://user:pass@explorer.one.example/api',
+      'https://Explorer.one.example/api',
+      'https://explorer.one.example:443/api',
+    ]) {
+      assert.match(verifierProblem({ type: 'blockscout', url }), /must be a canonical https URL/, url);
+    }
+  });
+});
+
 describe('viemChainProblem', () => {
   it('accepts a viemName that names a viem chain with the chain id', () => {
     assert.equal(viemChainProblem({ chainId: 20, viemName: 'twinA' }, catalog), null);
@@ -143,11 +205,16 @@ describe('viemChainProblem', () => {
     assert.match(viemChainProblem({ chainId: 10, viemName: '' }, catalog), /viemName must be a non-empty string/);
   });
 
-  it('resolves the duplicate ids in the pinned viem only through viemName', () => {
-    assert.match(viemChainProblem({ chainId: 8453 }, viemChains), /viem has several chains with id 8453/);
-    assert.match(viemChainProblem({ chainId: 999 }, viemChains), /viem has several chains with id 999/);
-    assert.equal(viemChainProblem({ chainId: 8453, viemName: 'base' }, viemChains), null);
-    assert.equal(viemChainProblem({ chainId: 999, viemName: 'hyperEvm' }, viemChains), null);
+  it('resolves every duplicate id in the pinned viem only through one of its names', () => {
+    const ids = [...new Set(Object.values(viemChains).filter((chain) => typeof chain?.id === 'number').map((chain) => chain.id))];
+    for (const chainId of ids) {
+      const names = Object.entries(viemChains)
+        .filter(([, chain]) => typeof chain?.id === 'number' && chain.id === chainId && chain.rpcUrls?.default)
+        .map(([name]) => name);
+      if (new Set(names.map((name) => viemChains[name])).size < 2) continue;
+      assert.match(viemChainProblem({ chainId }, viemChains), /viem has several chains with id/, String(chainId));
+      assert.equal(viemChainProblem({ chainId, viemName: names[0] }, viemChains), null, String(chainId));
+    }
   });
 });
 
@@ -158,10 +225,10 @@ describe('validateChains', () => {
 
   it('prefixes each problem with the chain it belongs to', () => {
     const problems = validateChains(
-      [row({ chainId: 20, name: 'two', status: 'testing', explorerUrl: 'https://two.example/' })],
+      [row({ chainId: 20, name: 'two', status: 'testing', explorerUrl: 'https://two.example/', verifier: undefined })],
       catalog,
     );
-    assert.equal(problems.length, 3);
+    assert.equal(problems.length, 4);
     for (const problem of problems) assert.match(problem, /^chain 20 \(two\): /);
   });
 
@@ -200,10 +267,12 @@ describe('command line', () => {
   });
 
   it('exits 1 and reports each problem for an invalid file', () => {
-    const result = run([row({ chainId: 8453, name: 'base', status: 'testing', explorerUrl: 'https://basescan.org/' })]);
+    const result = run([
+      row({ chainId: 1, name: 'ethereum', viemName: 'mainnet', status: 'testing', explorerUrl: 'https://etherscan.io/', verifier: { type: 'custom' } }),
+    ]);
     assert.equal(result.status, 1);
-    assert.match(result.stderr, /chain 8453 \(base\): status "testing"/);
-    assert.match(result.stderr, /chain 8453 \(base\): explorerUrl .* must not end with a slash/);
-    assert.match(result.stderr, /chain 8453 \(base\): viem has several chains with id 8453/);
+    assert.match(result.stderr, /chain 1 \(ethereum\): status "testing"/);
+    assert.match(result.stderr, /chain 1 \(ethereum\): explorerUrl .* must not end with a slash/);
+    assert.match(result.stderr, /chain 1 \(ethereum\): verifier custom needs a url/);
   });
 });

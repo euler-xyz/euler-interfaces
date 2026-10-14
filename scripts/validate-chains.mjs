@@ -48,6 +48,37 @@ export const explorerUrlProblem = (value) => {
   return null;
 };
 
+export const VERIFIER_TYPES = Object.freeze(['etherscan', 'blockscout', 'sourcify', 'custom']);
+
+const VERIFIER_URL = Object.freeze({ etherscan: 'none', blockscout: 'required', sourcify: 'optional', custom: 'required' });
+
+const canonicalUrl = (url) => (url.pathname === '/' ? url.origin : url.href);
+
+const verifierUrlProblem = (type, value) => {
+  if (typeof value !== 'string' || value.length === 0) return `verifier ${type} needs a url`;
+  const url = parseUrl(value);
+  if (!url) return `verifier ${type} url "${value}" is not a URL`;
+  if (url.protocol !== 'https:') return `verifier ${type} url "${value}" must use https`;
+  if (url.username || url.password || url.search || url.hash || value.endsWith('/') || canonicalUrl(url) !== value) {
+    return `verifier ${type} url "${value}" must be a canonical https URL without credentials, query, fragment or trailing slash`;
+  }
+  return null;
+};
+
+export const verifierProblem = (verifier) => {
+  if (verifier === undefined) return `verifier is missing; use one of ${VERIFIER_TYPES.join(', ')}`;
+  if (!isRecord(verifier) || Array.isArray(verifier) || !VERIFIER_TYPES.includes(verifier.type)) {
+    const type = isRecord(verifier) && !Array.isArray(verifier) ? verifier.type : verifier;
+    return `verifier type ${JSON.stringify(type)} is not one of ${VERIFIER_TYPES.join(', ')}`;
+  }
+  const unknown = Object.keys(verifier).filter((key) => key !== 'type' && key !== 'url');
+  if (unknown.length > 0) return `verifier ${verifier.type} has unknown field ${unknown.join(', ')}`;
+  const rule = VERIFIER_URL[verifier.type];
+  if (verifier.url === undefined) return rule === 'required' ? `verifier ${verifier.type} needs a url` : null;
+  if (rule === 'none') return `verifier ${verifier.type} takes no url`;
+  return verifierUrlProblem(verifier.type, verifier.url);
+};
+
 export const viemChainProblem = ({ chainId, viemName }, catalog) => {
   if (viemName !== undefined) {
     if (typeof viemName !== 'string' || viemName.length === 0) return 'viemName must be a non-empty string';
@@ -68,7 +99,12 @@ const chainProblems = (chain, index, catalog) => {
   if (!isRecord(chain) || !Number.isSafeInteger(chain.chainId) || chain.chainId <= 0) {
     return [`row ${index}: chainId must be a positive integer`];
   }
-  return [statusProblem(chain.status), explorerUrlProblem(chain.explorerUrl), viemChainProblem(chain, catalog)]
+  return [
+    statusProblem(chain.status),
+    explorerUrlProblem(chain.explorerUrl),
+    verifierProblem(chain.verifier),
+    viemChainProblem(chain, catalog),
+  ]
     .filter((problem) => problem !== null)
     .map((problem) => `${label(chain)}: ${problem}`);
 };
