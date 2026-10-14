@@ -56,7 +56,7 @@ let chains = [
     chainId: 43114,
     name: 'avalanche',
     explorerUrl: 'https://snowtrace.io',
-    verifier: { type: 'custom', url: 'https://api.routescan.io/v2/network/mainnet/evm/43114/etherscan/api' },
+    verifier: { type: 'custom', url: 'https://api.routescan.io/v2/network/mainnet/evm/43114/etherscan' },
     safeBaseUrl: 'https://app.safe.global',
     safeAddressPrefix: 'avax',
     status: 'production',
