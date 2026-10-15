@@ -9,7 +9,11 @@ Every security-relevant Euler contract is **verified at the bytecode level**:
 the on-chain runtime code is proven equal to a build of an exact, recorded
 source commit — block explorers are never in the trust path — and each
 deployment is diffed against its component's most recent **audited baseline**,
-so any code beyond audited revisions is visible as a real diff.
+so any code beyond audited revisions is visible as a real diff. The claim is
+runtime correspondence under explicit normalization (metadata trailer
+stripped; immutables and build-located embedded metadata digests masked), not
+proof of initialization, governance, immutable configuration or deployment
+safety.
 
 **[Browse the per-chain verification reports →](verify/README.md)**
 
@@ -23,8 +27,12 @@ so any code beyond audited revisions is visible as a real diff.
   Ethereum mainnet). Manifest entries and reports are generated with
   euler-verifier's `pnpm add-entries` in the PR that changes addresses (see
   [Adding or redeploying a contract](#adding-or-redeploying-a-contract)), never
-  written by hand. CI checks that every deployed contract has an entry and
-  proves the bytecode of every chain the PR changes; it is a required check.
+  written by hand. CI checks that every deployed contract has an entry proven
+  at its current address, and proves the bytecode, EVault modules and
+  EulerSwap management contract of every chain whose verification inputs the
+  PR changes: its address files, `config/addresses` overlay, manifest entries
+  or `EulerChains.json` row (every chain when the verifier pin, workflow,
+  baselines or audits change). It is a required check.
 
 Anyone can reproduce the proofs with [euler-verifier](https://github.com/euler-xyz/euler-verifier)
 using only public RPC endpoints — no API keys or secrets required.
@@ -40,7 +48,7 @@ using only public RPC endpoints — no API keys or secrets required.
 | `interfaces/` | Solidity interface definitions |
 | `verify/` | Bytecode verification reports and provenance manifests |
 | `EulerChains.json`, `chains.js` | Supported chain metadata (see [Adding a chain](#adding-a-chain)) |
-| `scripts/` | `EulerChains.json` validator run by CI |
+| `scripts/` | `EulerChains.json` validator and the proof's chain selection, run by CI |
 
 ## Adding or redeploying a contract
 
@@ -49,7 +57,9 @@ The manifest entry and the report come from
 deployed bytecode against candidate commits and writes what proves.
 
 1. Deploy. The deployment writes the address into your checkout of this repo
-   under `addresses/<chainId>/`.
+   under `addresses/<chainId>/`. Run `node chains.js`: the verifier checks
+   the addresses consumers receive (with `config/addresses/` applied) and
+   refuses an `EulerChains.json` that lags the address files.
 2. Push the commit you deployed from; the verifier builds it from GitHub.
 3. In a euler-verifier checkout (`pnpm install`, with `forge` on PATH), name
    the deploying checkout or the exact commit:
@@ -61,15 +71,18 @@ deployed bytecode against candidate commits and writes what proves.
 
    `--candidates-from ../evk-periphery` offers that checkout's HEAD and its
    submodule commits instead. The command writes the entry into
-   `verify/manifest.json`, and re-renders `verify/8453.md` and that chain's row
-   in `verify/README.md`. Without `--chain`, it handles every chain with a
-   contract that has no entry.
+   `verify/manifest.json` with the address it was proven at, and re-renders
+   `verify/8453.md` and that chain's row in `verify/README.md`. A redeploy at a
+   new address is detected from that recorded address and the entry is
+   regenerated. Without `--chain`, it handles every chain with a contract that
+   has no entry or a stale one.
 4. Commit the address change and the generated `verify/` files in one PR. CI
    proves the changed chain again.
 
 If no candidate proves, the command lists the contract with every candidate it
 tried and writes nothing for it. If a PR leaves a contract without an entry,
-the completeness check fails and names the command to run.
+or with an entry proven at another address, the completeness check fails and
+names the command to run.
 
 ## Adding a chain
 
