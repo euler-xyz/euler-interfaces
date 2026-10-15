@@ -401,11 +401,11 @@
     "submoduleOverrides": [
      {
       "path": "lib/ethereum-vault-connector",
-      "ref": "dc3be15"
+      "ref": "dc3be1525e30dc3b709ad810b39a5397c88ceb4b"
      },
      {
       "path": "lib/openzeppelin-contracts",
-      "ref": "v5.1.0"
+      "ref": "69c8def5f222ff96f2b5beff05dfba996368aa79"
      }
     ]
    },
@@ -983,11 +983,11 @@
     "submoduleOverrides": [
      {
       "path": "lib/ethereum-vault-connector",
-      "ref": "dc3be15"
+      "ref": "dc3be1525e30dc3b709ad810b39a5397c88ceb4b"
      },
      {
       "path": "lib/openzeppelin-contracts",
-      "ref": "v5.1.0"
+      "ref": "69c8def5f222ff96f2b5beff05dfba996368aa79"
      }
     ]
    },
@@ -1289,11 +1289,11 @@
     "submoduleOverrides": [
      {
       "path": "lib/ethereum-vault-connector",
-      "ref": "dc3be15"
+      "ref": "dc3be1525e30dc3b709ad810b39a5397c88ceb4b"
      },
      {
       "path": "lib/openzeppelin-contracts",
-      "ref": "v5.1.0"
+      "ref": "69c8def5f222ff96f2b5beff05dfba996368aa79"
      }
     ]
    },
@@ -1679,11 +1679,11 @@
     "submoduleOverrides": [
      {
       "path": "lib/ethereum-vault-connector",
-      "ref": "dc3be15"
+      "ref": "dc3be1525e30dc3b709ad810b39a5397c88ceb4b"
      },
      {
       "path": "lib/openzeppelin-contracts",
-      "ref": "v5.1.0"
+      "ref": "69c8def5f222ff96f2b5beff05dfba996368aa79"
      }
     ]
    },
@@ -2069,11 +2069,11 @@
     "submoduleOverrides": [
      {
       "path": "lib/ethereum-vault-connector",
-      "ref": "dc3be15"
+      "ref": "dc3be1525e30dc3b709ad810b39a5397c88ceb4b"
      },
      {
       "path": "lib/openzeppelin-contracts",
-      "ref": "v5.1.0"
+      "ref": "69c8def5f222ff96f2b5beff05dfba996368aa79"
      }
     ]
    },
@@ -2459,11 +2459,11 @@
     "submoduleOverrides": [
      {
       "path": "lib/ethereum-vault-connector",
-      "ref": "dc3be15"
+      "ref": "dc3be1525e30dc3b709ad810b39a5397c88ceb4b"
      },
      {
       "path": "lib/openzeppelin-contracts",
-      "ref": "v5.1.0"
+      "ref": "69c8def5f222ff96f2b5beff05dfba996368aa79"
      }
     ]
    },
@@ -2849,11 +2849,11 @@
     "submoduleOverrides": [
      {
       "path": "lib/ethereum-vault-connector",
-      "ref": "dc3be15"
+      "ref": "dc3be1525e30dc3b709ad810b39a5397c88ceb4b"
      },
      {
       "path": "lib/openzeppelin-contracts",
-      "ref": "v5.1.0"
+      "ref": "69c8def5f222ff96f2b5beff05dfba996368aa79"
      }
     ]
    },
@@ -3677,11 +3677,11 @@
     "submoduleOverrides": [
      {
       "path": "lib/ethereum-vault-connector",
-      "ref": "dc3be15"
+      "ref": "dc3be1525e30dc3b709ad810b39a5397c88ceb4b"
      },
      {
       "path": "lib/openzeppelin-contracts",
-      "ref": "v5.1.0"
+      "ref": "69c8def5f222ff96f2b5beff05dfba996368aa79"
      }
     ]
    },
@@ -3957,11 +3957,11 @@
     "submoduleOverrides": [
      {
       "path": "lib/euler-price-oracle/lib/ethereum-vault-connector",
-      "ref": "dc3be15"
+      "ref": "dc3be1525e30dc3b709ad810b39a5397c88ceb4b"
      },
      {
       "path": "lib/euler-price-oracle/lib/forge-std",
-      "ref": "v1.9.4"
+      "ref": "1eea5bae12ae557d589f9f0f0edae2faa47cb262"
      }
     ]
    },
@@ -4077,11 +4077,11 @@
     "submoduleOverrides": [
      {
       "path": "lib/ethereum-vault-connector",
-      "ref": "dc3be15"
+      "ref": "dc3be1525e30dc3b709ad810b39a5397c88ceb4b"
      },
      {
       "path": "lib/openzeppelin-contracts",
-      "ref": "v5.1.0"
+      "ref": "69c8def5f222ff96f2b5beff05dfba996368aa79"
      }
     ]
    },
@@ -4357,11 +4357,11 @@
     "submoduleOverrides": [
      {
       "path": "lib/euler-price-oracle/lib/ethereum-vault-connector",
-      "ref": "dc3be15"
+      "ref": "dc3be1525e30dc3b709ad810b39a5397c88ceb4b"
      },
      {
       "path": "lib/euler-price-oracle/lib/forge-std",
-      "ref": "v1.9.4"
+      "ref": "1eea5bae12ae557d589f9f0f0edae2faa47cb262"
      }
     ]
    },
@@ -4857,11 +4857,11 @@
     "submoduleOverrides": [
      {
       "path": "lib/ethereum-vault-connector",
-      "ref": "dc3be15"
+      "ref": "dc3be1525e30dc3b709ad810b39a5397c88ceb4b"
      },
      {
       "path": "lib/openzeppelin-contracts",
-      "ref": "v5.1.0"
+      "ref": "69c8def5f222ff96f2b5beff05dfba996368aa79"
      }
     ]
    },
@@ -5137,11 +5137,11 @@
     "submoduleOverrides": [
      {
       "path": "lib/euler-price-oracle/lib/ethereum-vault-connector",
-      "ref": "dc3be15"
+      "ref": "dc3be1525e30dc3b709ad810b39a5397c88ceb4b"
      },
      {
       "path": "lib/euler-price-oracle/lib/forge-std",
-      "ref": "v1.9.4"
+      "ref": "1eea5bae12ae557d589f9f0f0edae2faa47cb262"
      }
     ]
    },
@@ -5257,11 +5257,11 @@
     "submoduleOverrides": [
      {
       "path": "lib/ethereum-vault-connector",
-      "ref": "dc3be15"
+      "ref": "dc3be1525e30dc3b709ad810b39a5397c88ceb4b"
      },
      {
       "path": "lib/openzeppelin-contracts",
-      "ref": "v5.1.0"
+      "ref": "69c8def5f222ff96f2b5beff05dfba996368aa79"
      }
     ]
    },
@@ -5483,11 +5483,11 @@
     "submoduleOverrides": [
      {
       "path": "lib/euler-price-oracle/lib/ethereum-vault-connector",
-      "ref": "dc3be15"
+      "ref": "dc3be1525e30dc3b709ad810b39a5397c88ceb4b"
      },
      {
       "path": "lib/euler-price-oracle/lib/forge-std",
-      "ref": "v1.9.4"
+      "ref": "1eea5bae12ae557d589f9f0f0edae2faa47cb262"
      }
     ]
    },
