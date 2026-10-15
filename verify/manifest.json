@@ -9,6 +9,7 @@
    "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
    "contractName": "TrackingRewardStreams",
    "evidence": {
+    "address": "0x0D52d06ceB8Dcdeeb40Cfd9f17489B350dD7F8a3",
     "codeSize": 12330,
     "origin": "hint+explorer",
     "strippedSha256": "48762e01048ffb0f0ecdbe25a09b46310fa8252a9b7eaaad17e002ca62dbb6d8"
@@ -27,6 +28,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "GenericFactory",
    "evidence": {
+    "address": "0x29a56a1b8214D9Cf7c5561811750D5cBDb45CC8e",
     "codeSize": 5631,
     "origin": "hint+explorer",
     "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
@@ -45,6 +47,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "EVault",
    "evidence": {
+    "address": "0x8Ff1C814719096b61aBf00Bb46EAd0c9A529Dd7D",
     "codeSize": 23147,
     "origin": "hint+explorer",
     "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
@@ -63,6 +66,7 @@
    "commit": "ccd2debce48ed857c7766bb1955591cfac996d91",
    "contractName": "OFTAdapterUpgradeable",
    "evidence": {
+    "address": "0x4d7e09f73843Bd4735AaF7A74b6d877bac75a531",
     "codeSize": 13374,
     "origin": "hist+native",
     "strippedSha256": "e74a0c71c8e108ad4297b039a9e1ea9a20724761df6e1d9fdc7f8a9775f515f1"
@@ -87,6 +91,7 @@
    "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
    "contractName": "EulerEarnFactory",
    "evidence": {
+    "address": "0x59709B029B140C853FE28d277f83C3a65e308aF4",
     "codeSize": 24408,
     "origin": "hint+explorer",
     "strippedSha256": "c9ee150eb7d0223886b2ba10217238e3947c9bdef1cbe97ba978e6ebf77355c3"
@@ -105,6 +110,7 @@
    "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
    "contractName": "PublicAllocator",
    "evidence": {
+    "address": "0x8fdCb80a2894F0dC052c8d52D22544DC90274800",
     "codeSize": 5168,
     "origin": "hint+explorer",
     "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
@@ -123,6 +129,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwapFactory",
    "evidence": {
+    "address": "0xb013be1D0D380C13B58e889f412895970A2Cf228",
     "codeSize": 8305,
     "origin": "hint+native",
     "strippedSha256": "7c9a247e972a8a3c9fcdeacc4716b1614d613dc969016a2bae4e142396e082bf"
@@ -141,6 +148,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwap",
    "evidence": {
+    "address": "0xc35a0FDA69e9D71e68C0d9CBb541Adfd21D6B117",
     "codeSize": 24313,
     "origin": "hint+native",
     "strippedSha256": "20cae9a429cf62fe9cbbc90acc8fa4529a2e08f8ff0b9c34413015bdd9215ce6"
@@ -159,6 +167,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwapPeriphery",
    "evidence": {
+    "address": "0x208fF5Eb543814789321DaA1B5Eb551881D16b06",
     "codeSize": 2422,
     "origin": "hint+native",
     "strippedSha256": "703cfc72cd6c5fcfe53371822c5670cc72bce7aa91a5976ee254292b5e3f3b24"
@@ -177,6 +186,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapFactory",
    "evidence": {
+    "address": "0xD05213331221fAB8a3C387F2affBb605Bb04DF5F",
     "codeSize": 3872,
     "origin": "hint+native",
     "strippedSha256": "4bdd5d473028a3dc1c724eec0c1c60f2dc20e0d341f25dce5267305934d39e85"
@@ -195,6 +205,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwap",
    "evidence": {
+    "address": "0x8B0E044E364F2cE913799d53b300e15A6974DC97",
     "codeSize": 23365,
     "origin": "hint+native",
     "strippedSha256": "408124d9963c57097485489405479fd6df2a8e413f32e31492eb1dd5e8895aa6"
@@ -213,6 +224,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapPeriphery",
    "evidence": {
+    "address": "0xD3a349EE0A21eA0A7E9513ac236ae614b5FD513E",
     "codeSize": 2534,
     "origin": "hint+native",
     "strippedSha256": "f98bd760c3818f32272f4c5bc9485b83d34e9a557d0443dca200e52eb2cdadaa"
@@ -231,6 +243,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapProtocolFeeConfig",
    "evidence": {
+    "address": "0x5171Aed04Fa9551DB484F07c853F252Bc6F53b63",
     "codeSize": 3599,
     "origin": "hint+native",
     "strippedSha256": "83e2e2c4d440ed1073480505822963a4600d98c878a9b65cf90a81ecdd9984bf"
@@ -249,6 +262,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapRegistry",
    "evidence": {
+    "address": "0x5FcCB84363F020c0cADE052C9c654aABF932814A",
     "codeSize": 9419,
     "origin": "hint+native",
     "strippedSha256": "42c58b74bd40be0268f5ea0b37691df2a74b60d9ac3124a2148a08ad7d4c9eb4"
@@ -267,6 +281,7 @@
    "commit": "084b32284ba643921f8d21bff3ddaf0c4e08d754",
    "contractName": "EthereumVaultConnector",
    "evidence": {
+    "address": "0x0C9a3dd6b8F28529d72d7f9cE918D493519EE383",
     "codeSize": 21989,
     "origin": "hint+explorer",
     "strippedSha256": "5b4709069f7cb9c6e59f56f3cc9b06ba0fef54680d2d783242826d6ff9b0f0fd"
@@ -285,6 +300,7 @@
    "commit": "05b0acb8bfb64e663293ab8b236c72c6b3df86ae",
    "contractName": "EulerRouterFactory",
    "evidence": {
+    "address": "0x70B3f6F61b7Bf237DF04589DdAA842121072326A",
     "codeSize": 6800,
     "origin": "gitlink-bump",
     "strippedSha256": "fd6ae5667a6512931642e60dda5a0f48f6e4828bcb61b53aed57e1947b1181d0"
@@ -303,6 +319,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "ProtocolConfig",
    "evidence": {
+    "address": "0x4cD6BF1D183264c02Be7748Cb5cd3A47d013351b",
     "codeSize": 3953,
     "origin": "hint+explorer",
     "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
@@ -321,6 +338,7 @@
    "commit": "7a23305815ccb4198c117c2d6fcfe8421fe336e3",
    "contractName": "RewardToken",
    "evidence": {
+    "address": "0xf3e621395fc714B90dA337AA9108771597b4E696",
     "codeSize": 11181,
     "origin": "mainnet-explorer-input-reconstructed-unit-on-f61809fd",
     "strippedSha256": "8d4a505819ca1d05e1a1526bf0195a8a1d20e4aac24cd8bc5e7cdeda3df8f8cf"
@@ -339,6 +357,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "SequenceRegistry",
    "evidence": {
+    "address": "0xEADDD21618ad5Deb412D3fD23580FD461c106B54",
     "codeSize": 867,
     "origin": "hint+explorer",
     "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
@@ -357,6 +376,7 @@
    "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
    "contractName": "SwapVerifier",
    "evidence": {
+    "address": "0xB1C777BE7965dCdE810645497CC1e6e5997BD6C5",
     "codeSize": 5586,
     "origin": "hint+native",
     "strippedSha256": "2fc2cdd1b6e45a1d03326395d392a7418aa02fd05c71dbf5d845bcc7154354eb"
@@ -377,6 +397,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "ERC20BurnableMintable",
    "evidence": {
+    "address": "0xE9C43e09C5FA733bCC2aEAa96063A4a60147AA09",
     "codeSize": 7768,
     "origin": "sibling",
     "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
@@ -395,6 +416,7 @@
    "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
    "contractName": "TrackingRewardStreams",
    "evidence": {
+    "address": "0xFbD12fbC91311A8f17598b935e35205EAF16Aa75",
     "codeSize": 11981,
     "origin": "ovr:dc3be15-v5.1.0",
     "strippedSha256": "47294620c90c9199e0f7a39434092ca19f03307bc7b3e28dd32f37d839ae16db",
@@ -423,6 +445,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "GenericFactory",
    "evidence": {
+    "address": "0xbAd8b5BDFB2bcbcd78Cc9f1573D3Aad6E865e752",
     "codeSize": 5631,
     "origin": "hint+era",
     "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
@@ -441,6 +464,7 @@
    "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
    "contractName": "EVault",
    "evidence": {
+    "address": "0x71d7250732591C41D1BdeB1EA0Ee730E138E0c8b",
     "codeSize": 23147,
     "origin": "hint+era",
     "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
@@ -459,6 +483,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "MintBurnOFTAdapter",
    "evidence": {
+    "address": "0x41a11d85577Bb21743E11Eca62e2b241DC1eD5C0",
     "codeSize": 12615,
     "origin": "hint+native",
     "strippedSha256": "1036d1c0fbc36f8f16e64f9c1d9afdad98eab38cb9a0d678ebc1abcbe11f4baa"
@@ -477,6 +502,7 @@
    "commit": "773453b1f4a6f1d27a1cd0c6d8f6ada572503b23",
    "contractName": "EulerEarnFactory",
    "evidence": {
+    "address": "0xD785adD5F081F56616898E45b90dE307e3DC7d3E",
     "codeSize": 24408,
     "origin": "hint+native",
     "strippedSha256": "c9ee150eb7d0223886b2ba10217238e3947c9bdef1cbe97ba978e6ebf77355c3"
@@ -495,6 +521,7 @@
    "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
    "contractName": "PublicAllocator",
    "evidence": {
+    "address": "0x68a823a484a9D5A8daBB55c4d4d8006a45E557A9",
     "codeSize": 5168,
     "origin": "hint+native",
     "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
@@ -513,6 +540,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwapFactory",
    "evidence": {
+    "address": "0x45b146BC07c9985589B52df651310e75C6BE066A",
     "codeSize": 8305,
     "origin": "hint+native",
     "strippedSha256": "7c9a247e972a8a3c9fcdeacc4716b1614d613dc969016a2bae4e142396e082bf"
@@ -531,6 +559,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwap",
    "evidence": {
+    "address": "0xd91B0bfACA4691E6Aca7E0E83D9B7F8917989a03",
     "codeSize": 24313,
     "origin": "hint+native",
     "strippedSha256": "20cae9a429cf62fe9cbbc90acc8fa4529a2e08f8ff0b9c34413015bdd9215ce6"
@@ -549,6 +578,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwapPeriphery",
    "evidence": {
+    "address": "0xdAAF468d84DD8945521Ea40297ce6c5EEfc7003a",
     "codeSize": 2422,
     "origin": "hint+native",
     "strippedSha256": "703cfc72cd6c5fcfe53371822c5670cc72bce7aa91a5976ee254292b5e3f3b24"
@@ -567,6 +597,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapFactory",
    "evidence": {
+    "address": "0xf211d70Ed785f0e981E9F3188804Af43734502F1",
     "codeSize": 3872,
     "origin": "hint+native",
     "strippedSha256": "4bdd5d473028a3dc1c724eec0c1c60f2dc20e0d341f25dce5267305934d39e85"
@@ -585,6 +616,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwap",
    "evidence": {
+    "address": "0x144f1715c673dA83917B09A5B4C23E2d72c8D411",
     "codeSize": 23365,
     "origin": "hint+native",
     "strippedSha256": "408124d9963c57097485489405479fd6df2a8e413f32e31492eb1dd5e8895aa6"
@@ -603,6 +635,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapPeriphery",
    "evidence": {
+    "address": "0xAD335516c6E17815d9DD543fBCDFE325F8563E13",
     "codeSize": 2534,
     "origin": "hint+native",
     "strippedSha256": "f98bd760c3818f32272f4c5bc9485b83d34e9a557d0443dca200e52eb2cdadaa"
@@ -621,6 +654,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapProtocolFeeConfig",
    "evidence": {
+    "address": "0xeA96Ed6896aB1F00e4Fc28C75D8e6655e56Cef85",
     "codeSize": 3599,
     "origin": "hint+native",
     "strippedSha256": "83e2e2c4d440ed1073480505822963a4600d98c878a9b65cf90a81ecdd9984bf"
@@ -639,6 +673,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapRegistry",
    "evidence": {
+    "address": "0x9D9ce1540b986eF77c02F8D40603193852D2E723",
     "codeSize": 9419,
     "origin": "hint+native",
     "strippedSha256": "42c58b74bd40be0268f5ea0b37691df2a74b60d9ac3124a2148a08ad7d4c9eb4"
@@ -657,6 +692,7 @@
    "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
    "contractName": "EthereumVaultConnector",
    "evidence": {
+    "address": "0x2A1176964F5D7caE5406B627Bf6166664FE83c60",
     "codeSize": 22050,
     "origin": "hint+era",
     "strippedSha256": "b12f6d72b8c5547a8a77595732e64e7b3e7f432357252ce4b13015605877c936"
@@ -675,6 +711,7 @@
    "commit": "96b83f80ded9ac3f28bfce871b55917e360b9159",
    "contractName": "EulerRouterFactory",
    "evidence": {
+    "address": "0xE551288F0D82C10bBF517DBA66E15C60BF87FE8f",
     "codeSize": 6826,
     "origin": "gitlink-bump",
     "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4"
@@ -693,6 +730,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "ProtocolConfig",
    "evidence": {
+    "address": "0xdCD02E4eA8cd273498D315AD8c047305f8480656",
     "codeSize": 3953,
     "origin": "hint+native",
     "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
@@ -711,6 +749,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "RewardToken",
    "evidence": {
+    "address": "0x1b0e3Da51b2517E09aE74CD31b708e46B9158E8b",
     "codeSize": 10735,
     "origin": "hint+native",
     "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
@@ -729,6 +768,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "SequenceRegistry",
    "evidence": {
+    "address": "0x08799a00BC4a74890d65f77828cd2BFbBFcD96dB",
     "codeSize": 867,
     "origin": "hint+native",
     "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
@@ -747,6 +787,7 @@
    "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
    "contractName": "SwapVerifier",
    "evidence": {
+    "address": "0x49eB1C5B56AA221965C3130d472ac9318f01f934",
     "codeSize": 5586,
     "origin": "hint+native",
     "strippedSha256": "2fc2cdd1b6e45a1d03326395d392a7418aa02fd05c71dbf5d845bcc7154354eb"
@@ -767,6 +808,7 @@
    "commit": "8c946bb15574c764bee054de79758b958d0130d4",
    "contractName": "ERC20BurnableMintable",
    "evidence": {
+    "address": "0x995C71de11C1f07836ef7d09aC803340BDd91367",
     "codeSize": 7768,
     "origin": "sibling",
     "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
@@ -785,6 +827,7 @@
    "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
    "contractName": "TrackingRewardStreams",
    "evidence": {
+    "address": "0x0dCA20a43aD0DC9B6fAccf22dAF6c3CEF70971D8",
     "codeSize": 11981,
     "origin": "polygon-explorer-input-src-9eb7b8a7-deps-blob-matched",
     "strippedSha256": "da5a2a717f625b7bae655da586c5abce54ad0e718d693aea8001e24ba5bfba64",
@@ -813,6 +856,7 @@
    "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
    "contractName": "GenericFactory",
    "evidence": {
+    "address": "0xB1771a13e2a13fCafA89B00335915E732B9466b7",
     "codeSize": 5631,
     "origin": "hint+explorer",
     "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
@@ -831,6 +875,7 @@
    "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
    "contractName": "EVault",
    "evidence": {
+    "address": "0xFac635beB7d3B47d8E93B78ea6b43656Db84ffC8",
     "codeSize": 23147,
     "origin": "hint+explorer",
     "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
@@ -849,6 +894,7 @@
    "commit": "912b301f51301e586e5a7f09e48cf52bd52e9a0e",
    "contractName": "EthereumVaultConnector",
    "evidence": {
+    "address": "0x90811DacA4BD23Fc79A87FBdff7522bED2d24B4B",
     "codeSize": 22050,
     "origin": "setsize-branch+cancun",
     "strippedSha256": "f4ec720343119658712ff6b94485810b002df7c7e1fa53d1d51c2e42b136b5c9"
@@ -867,6 +913,7 @@
    "commit": "96b83f80ded9ac3f28bfce871b55917e360b9159",
    "contractName": "EulerRouterFactory",
    "evidence": {
+    "address": "0xbf5F852416deEdFaBACb8B2699b4e8568F20D889",
     "codeSize": 6826,
     "origin": "gitlink-bump",
     "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4"
@@ -885,6 +932,7 @@
    "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
    "contractName": "ProtocolConfig",
    "evidence": {
+    "address": "0xB7474ED2418ee57976d5a22B3DE5aDed68867eBF",
     "codeSize": 3953,
     "origin": "hint+explorer",
     "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
@@ -903,6 +951,7 @@
    "commit": "8c946bb15574c764bee054de79758b958d0130d4",
    "contractName": "RewardToken",
    "evidence": {
+    "address": "0xAB1ca795DDcACa7DF9ec350a4adA727e8B7212Bd",
     "codeSize": 10735,
     "origin": "hint+native",
     "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
@@ -921,6 +970,7 @@
    "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
    "contractName": "SequenceRegistry",
    "evidence": {
+    "address": "0xf52C9ef48d4510487aA107a36b24e37ae1269F71",
     "codeSize": 867,
     "origin": "hint+explorer",
     "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
@@ -939,6 +989,7 @@
    "commit": "eae25d382bb58aaaaa9f1a3a55567af993ce32be",
    "contractName": "SwapVerifier",
    "evidence": {
+    "address": "0x2FD1d2B8a7ea813240dBf8A157903034c4920c95",
     "codeSize": 3882,
     "origin": "hist+native",
     "strippedSha256": "9469decdb8d2280ac3dee6e320c52d16bcd164d10bf25d0add3000bd5be673b7"
@@ -959,6 +1010,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "ERC20BurnableMintable",
    "evidence": {
+    "address": "0xDef72Af3fc69E1Dd5a094f7DDa08Ba203CD0438B",
     "codeSize": 7768,
     "origin": "sibling",
     "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
@@ -977,6 +1029,7 @@
    "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
    "contractName": "TrackingRewardStreams",
    "evidence": {
+    "address": "0xa231DccE58EA5A43E69EF351D89ea4212Ec0f30b",
     "codeSize": 11981,
     "origin": "ovr:dc3be15-v5.1.0",
     "strippedSha256": "47294620c90c9199e0f7a39434092ca19f03307bc7b3e28dd32f37d839ae16db",
@@ -1005,6 +1058,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "GenericFactory",
    "evidence": {
+    "address": "0xba4Dd672062dE8FeeDb665DD4410658864483f1E",
     "codeSize": 5631,
     "origin": "hint+era",
     "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
@@ -1023,6 +1077,7 @@
    "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
    "contractName": "EVault",
    "evidence": {
+    "address": "0xef17750D3a162E28a302E266c474ff8989d60ECD",
     "codeSize": 23147,
     "origin": "hint+era",
     "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
@@ -1041,6 +1096,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "MintBurnOFTAdapter",
    "evidence": {
+    "address": "0x831257BFa5478111d2327e08c4068ec37Ac14B81",
     "codeSize": 12615,
     "origin": "hint+native",
     "strippedSha256": "1036d1c0fbc36f8f16e64f9c1d9afdad98eab38cb9a0d678ebc1abcbe11f4baa"
@@ -1059,6 +1115,7 @@
    "commit": "bece7172a87551e6943a52b08c9a0117eb02c6c3",
    "contractName": "EulerEarnFactory",
    "evidence": {
+    "address": "0xF463d4Acb650cc6C4E1D6cD4D0d1b0cb224094cF",
     "codeSize": 24397,
     "origin": "monad-explorer-input-src-bece7172-oz-v5.1.0",
     "strippedSha256": "c65c6dcf454964007e86648e08ee776371297fa604e88fdc17e940f809536a5e",
@@ -1083,6 +1140,7 @@
    "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
    "contractName": "PublicAllocator",
    "evidence": {
+    "address": "0x65A66F24a25E8CF651C9e31D296623298C80F742",
     "codeSize": 5168,
     "origin": "pool(n=6)",
     "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
@@ -1101,6 +1159,7 @@
    "commit": "5d270c764204b896770e967c22c7b95959bf6660",
    "contractName": "EulerSwapFactory",
    "evidence": {
+    "address": "0x34f8F028C6a446A464c10a135F44Fc6fB2CEe1A9",
     "codeSize": 8305,
     "origin": "hint+native",
     "strippedSha256": "7c9a247e972a8a3c9fcdeacc4716b1614d613dc969016a2bae4e142396e082bf"
@@ -1119,6 +1178,7 @@
    "commit": "5d270c764204b896770e967c22c7b95959bf6660",
    "contractName": "EulerSwap",
    "evidence": {
+    "address": "0xBFD5C7bb1C208FEc761284Af7dB6fF1F4314372c",
     "codeSize": 24313,
     "origin": "hint+native",
     "strippedSha256": "20cae9a429cf62fe9cbbc90acc8fa4529a2e08f8ff0b9c34413015bdd9215ce6"
@@ -1137,6 +1197,7 @@
    "commit": "98c05c56f7722887d293ef231accd689c2ea2493",
    "contractName": "EulerSwapPeriphery",
    "evidence": {
+    "address": "0xd1F69cf959c1a3AAe7BEE5ec677222d259585B27",
     "codeSize": 2422,
     "origin": "hint+native",
     "strippedSha256": "703cfc72cd6c5fcfe53371822c5670cc72bce7aa91a5976ee254292b5e3f3b24"
@@ -1155,6 +1216,7 @@
    "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
    "contractName": "EthereumVaultConnector",
    "evidence": {
+    "address": "0x7a9324E8f270413fa2E458f5831226d99C7477CD",
     "codeSize": 22050,
     "origin": "hint+era",
     "strippedSha256": "b12f6d72b8c5547a8a77595732e64e7b3e7f432357252ce4b13015605877c936"
@@ -1173,6 +1235,7 @@
    "commit": "96b83f80ded9ac3f28bfce871b55917e360b9159",
    "contractName": "EulerRouterFactory",
    "evidence": {
+    "address": "0xdDA3cBC18e90606A83FBae6F798991af06dFA902",
     "codeSize": 6826,
     "origin": "gitlink-bump",
     "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4"
@@ -1191,6 +1254,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "ProtocolConfig",
    "evidence": {
+    "address": "0x94A2d1d175F1d828935a374091e2009CF1cED858",
     "codeSize": 3953,
     "origin": "hint+native",
     "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
@@ -1209,6 +1273,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "RewardToken",
    "evidence": {
+    "address": "0xff074349C8b89bB7362bD25c58742896D817A862",
     "codeSize": 10735,
     "origin": "hint+native",
     "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
@@ -1227,6 +1292,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "SequenceRegistry",
    "evidence": {
+    "address": "0x39F81037f20AC6068CbCd30f748094c58bfE7d7b",
     "codeSize": 867,
     "origin": "hint+native",
     "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
@@ -1245,6 +1311,7 @@
    "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
    "contractName": "SwapVerifier",
    "evidence": {
+    "address": "0x24a00DaB8a85e70B59Cd03B4250Db80Fcd30bE5f",
     "codeSize": 5586,
     "origin": "hint+native",
     "strippedSha256": "2fc2cdd1b6e45a1d03326395d392a7418aa02fd05c71dbf5d845bcc7154354eb"
@@ -1265,6 +1332,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "ERC20BurnableMintable",
    "evidence": {
+    "address": "0x8e15C8D399e86d4FD7B427D42f06c60cDD9397e7",
     "codeSize": 7768,
     "origin": "sibling",
     "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
@@ -1283,6 +1351,7 @@
    "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
    "contractName": "TrackingRewardStreams",
    "evidence": {
+    "address": "0xe6E4687C35429942391AfE42CDdECba857531492",
     "codeSize": 11981,
     "origin": "ovr:dc3be15-v5.1.0",
     "strippedSha256": "47294620c90c9199e0f7a39434092ca19f03307bc7b3e28dd32f37d839ae16db",
@@ -1311,6 +1380,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "GenericFactory",
    "evidence": {
+    "address": "0xF075cC8660B51D0b8a4474e3f47eDAC5fA034cFB",
     "codeSize": 5631,
     "origin": "hint+explorer",
     "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
@@ -1329,6 +1399,7 @@
    "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
    "contractName": "EVault",
    "evidence": {
+    "address": "0x11f95aaa59F1AD89576c61E3C9Cd24DF1FdCF46f",
     "codeSize": 23147,
     "origin": "hint+explorer",
     "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
@@ -1347,6 +1418,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "MintBurnOFTAdapter",
    "evidence": {
+    "address": "0x31aA74232A0b0E50e5bF95780b2116710a34c7E9",
     "codeSize": 12615,
     "origin": "hint+native",
     "strippedSha256": "1036d1c0fbc36f8f16e64f9c1d9afdad98eab38cb9a0d678ebc1abcbe11f4baa"
@@ -1365,6 +1437,7 @@
    "commit": "773453b1f4a6f1d27a1cd0c6d8f6ada572503b23",
    "contractName": "EulerEarnFactory",
    "evidence": {
+    "address": "0x3397ec7d28cF645A017869Fe4B41c75f5B0b75a8",
     "codeSize": 24408,
     "origin": "hint+explorer",
     "strippedSha256": "c9ee150eb7d0223886b2ba10217238e3947c9bdef1cbe97ba978e6ebf77355c3"
@@ -1383,6 +1456,7 @@
    "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
    "contractName": "PublicAllocator",
    "evidence": {
+    "address": "0x82b27b528DA0516E653e02e5f870853d22Cbc6Df",
     "codeSize": 5168,
     "origin": "hint+explorer",
     "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
@@ -1401,6 +1475,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwapFactory",
    "evidence": {
+    "address": "0x94041db6deC15f79666B07846c13e6F7341b4a80",
     "codeSize": 8305,
     "origin": "hint+native",
     "strippedSha256": "7c9a247e972a8a3c9fcdeacc4716b1614d613dc969016a2bae4e142396e082bf"
@@ -1419,6 +1494,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwap",
    "evidence": {
+    "address": "0x4D57F54582b333E4184A3cF40d1D61FE6D70c35D",
     "codeSize": 24313,
     "origin": "hint+native",
     "strippedSha256": "20cae9a429cf62fe9cbbc90acc8fa4529a2e08f8ff0b9c34413015bdd9215ce6"
@@ -1437,6 +1513,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwapPeriphery",
    "evidence": {
+    "address": "0xb2237DC86B184e50Fc2F8b028B2b7AE192ef2566",
     "codeSize": 2422,
     "origin": "hint+native",
     "strippedSha256": "703cfc72cd6c5fcfe53371822c5670cc72bce7aa91a5976ee254292b5e3f3b24"
@@ -1455,6 +1532,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapFactory",
    "evidence": {
+    "address": "0x46D23b2d948b159859A5BB9C96c3190F4b43Ebb6",
     "codeSize": 3872,
     "origin": "hint+native",
     "strippedSha256": "4bdd5d473028a3dc1c724eec0c1c60f2dc20e0d341f25dce5267305934d39e85"
@@ -1473,6 +1551,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwap",
    "evidence": {
+    "address": "0x1C266a986B6AfA7EbA68263c5323a0bF0fe4F2a4",
     "codeSize": 23365,
     "origin": "hint+native",
     "strippedSha256": "408124d9963c57097485489405479fd6df2a8e413f32e31492eb1dd5e8895aa6"
@@ -1491,6 +1570,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapPeriphery",
    "evidence": {
+    "address": "0x4e4e524613d840D2D30B694F363b5b1931e82A75",
     "codeSize": 2534,
     "origin": "hint+native",
     "strippedSha256": "f98bd760c3818f32272f4c5bc9485b83d34e9a557d0443dca200e52eb2cdadaa"
@@ -1509,6 +1589,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapProtocolFeeConfig",
    "evidence": {
+    "address": "0x8653d1B50AA6adaaD64Dc140588dBC8c11141581",
     "codeSize": 3599,
     "origin": "hint+native",
     "strippedSha256": "83e2e2c4d440ed1073480505822963a4600d98c878a9b65cf90a81ecdd9984bf"
@@ -1527,6 +1608,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapRegistry",
    "evidence": {
+    "address": "0x0601a38324D3cde22EBD531c799Ad318a6B8CF93",
     "codeSize": 9419,
     "origin": "hint+native",
     "strippedSha256": "42c58b74bd40be0268f5ea0b37691df2a74b60d9ac3124a2148a08ad7d4c9eb4"
@@ -1545,6 +1627,7 @@
    "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
    "contractName": "EthereumVaultConnector",
    "evidence": {
+    "address": "0x4860C903f6Ad709c3eDA46D3D502943f184D4315",
     "codeSize": 22050,
     "origin": "hint+explorer",
     "strippedSha256": "b12f6d72b8c5547a8a77595732e64e7b3e7f432357252ce4b13015605877c936"
@@ -1563,6 +1646,7 @@
    "commit": "96b83f80ded9ac3f28bfce871b55917e360b9159",
    "contractName": "EulerRouterFactory",
    "evidence": {
+    "address": "0xc5b9B95a769C24c18c344c2659db61a0AdFB736E",
     "codeSize": 6826,
     "origin": "gitlink-bump",
     "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4"
@@ -1581,6 +1665,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "ProtocolConfig",
    "evidence": {
+    "address": "0xc2f9FE90bd17e017898b6EfDaa73c34Fddde299e",
     "codeSize": 3953,
     "origin": "hint+explorer",
     "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
@@ -1599,6 +1684,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "RewardToken",
    "evidence": {
+    "address": "0x09E6cab47B7199b9d3839A2C40654f246d518a80",
     "codeSize": 10735,
     "origin": "hint+native",
     "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
@@ -1617,6 +1703,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "SequenceRegistry",
    "evidence": {
+    "address": "0x6F417AaEc1D41dB692307269acDA019Ce5F10b0e",
     "codeSize": 867,
     "origin": "hint+explorer",
     "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
@@ -1635,6 +1722,7 @@
    "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
    "contractName": "SwapVerifier",
    "evidence": {
+    "address": "0xbD0d0Fe1D6F655Aad80b360f46390d876f2d278f",
     "codeSize": 5586,
     "origin": "hint+native",
     "strippedSha256": "2fc2cdd1b6e45a1d03326395d392a7418aa02fd05c71dbf5d845bcc7154354eb"
@@ -1655,6 +1743,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "ERC20BurnableMintable",
    "evidence": {
+    "address": "0x38C043856A109066d64a60c82e07848a1C58e7Dc",
     "codeSize": 7768,
     "origin": "sibling",
     "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
@@ -1673,6 +1762,7 @@
    "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
    "contractName": "TrackingRewardStreams",
    "evidence": {
+    "address": "0x45ff89cD0e976392703048F4A4314A2010ee64b8",
     "codeSize": 11981,
     "origin": "ovr:dc3be15-v5.1.0",
     "strippedSha256": "47294620c90c9199e0f7a39434092ca19f03307bc7b3e28dd32f37d839ae16db",
@@ -1701,6 +1791,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "GenericFactory",
    "evidence": {
+    "address": "0x2b21621b8Ef1406699a99071ce04ec14cCd50677",
     "codeSize": 5631,
     "origin": "hint+era",
     "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
@@ -1719,6 +1810,7 @@
    "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
    "contractName": "EVault",
    "evidence": {
+    "address": "0x1974899F5d6B5a1f8E63b2e8Ad60e14BAC3E7980",
     "codeSize": 23147,
     "origin": "hint+era",
     "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
@@ -1737,6 +1829,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "MintBurnOFTAdapter",
    "evidence": {
+    "address": "0xe7c415484348d14c0e6B8C18E110D72EcA17d306",
     "codeSize": 12615,
     "origin": "hint+native",
     "strippedSha256": "1036d1c0fbc36f8f16e64f9c1d9afdad98eab38cb9a0d678ebc1abcbe11f4baa"
@@ -1755,6 +1848,7 @@
    "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
    "contractName": "EulerEarnFactory",
    "evidence": {
+    "address": "0x7670572aa76E6140400A948e7AAFAB0210a86d9f",
     "codeSize": 24408,
     "origin": "hint+native",
     "strippedSha256": "c9ee150eb7d0223886b2ba10217238e3947c9bdef1cbe97ba978e6ebf77355c3"
@@ -1773,6 +1867,7 @@
    "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
    "contractName": "PublicAllocator",
    "evidence": {
+    "address": "0x4873ff8a70aA92443321Edb34a48f6aBfA7feB96",
     "codeSize": 5168,
     "origin": "hint+native",
     "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
@@ -1791,6 +1886,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwapFactory",
    "evidence": {
+    "address": "0x6A72160963a562f21387B166aF31a92D154106fb",
     "codeSize": 8305,
     "origin": "hint+native",
     "strippedSha256": "7c9a247e972a8a3c9fcdeacc4716b1614d613dc969016a2bae4e142396e082bf"
@@ -1809,6 +1905,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwap",
    "evidence": {
+    "address": "0xDFfaC13fC142Fc1d8E55226dB9c98f4b66371a3c",
     "codeSize": 24313,
     "origin": "hint+native",
     "strippedSha256": "20cae9a429cf62fe9cbbc90acc8fa4529a2e08f8ff0b9c34413015bdd9215ce6"
@@ -1827,6 +1924,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwapPeriphery",
    "evidence": {
+    "address": "0xAF596563109C753b9c5e73DD596DD4bB247964cA",
     "codeSize": 2422,
     "origin": "hint+native",
     "strippedSha256": "703cfc72cd6c5fcfe53371822c5670cc72bce7aa91a5976ee254292b5e3f3b24"
@@ -1845,6 +1943,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapFactory",
    "evidence": {
+    "address": "0xb0b53c1A8046D92027B69D9f6D9C7cFC0f363933",
     "codeSize": 3872,
     "origin": "hint+native",
     "strippedSha256": "4bdd5d473028a3dc1c724eec0c1c60f2dc20e0d341f25dce5267305934d39e85"
@@ -1863,6 +1962,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwap",
    "evidence": {
+    "address": "0x32Da74f7bC1988c1c39adB561b6e9D2a6F33D404",
     "codeSize": 23365,
     "origin": "hint+native",
     "strippedSha256": "408124d9963c57097485489405479fd6df2a8e413f32e31492eb1dd5e8895aa6"
@@ -1881,6 +1981,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapPeriphery",
    "evidence": {
+    "address": "0xD356C065777871B37Cb0D3C7761b8820c832BC57",
     "codeSize": 2534,
     "origin": "hint+native",
     "strippedSha256": "f98bd760c3818f32272f4c5bc9485b83d34e9a557d0443dca200e52eb2cdadaa"
@@ -1899,6 +2000,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapProtocolFeeConfig",
    "evidence": {
+    "address": "0xb7F14f649770fB7784A02A94946D14E80f79d660",
     "codeSize": 3599,
     "origin": "hint+native",
     "strippedSha256": "83e2e2c4d440ed1073480505822963a4600d98c878a9b65cf90a81ecdd9984bf"
@@ -1917,6 +2019,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapRegistry",
    "evidence": {
+    "address": "0xd3ee91128294Ca8231260891BEC6Da7d258De7B6",
     "codeSize": 9419,
     "origin": "hint+native",
     "strippedSha256": "42c58b74bd40be0268f5ea0b37691df2a74b60d9ac3124a2148a08ad7d4c9eb4"
@@ -1935,6 +2038,7 @@
    "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
    "contractName": "EthereumVaultConnector",
    "evidence": {
+    "address": "0x01F594c66A5561b90Bc782dD0297f294cD668b64",
     "codeSize": 22050,
     "origin": "hint+era",
     "strippedSha256": "b12f6d72b8c5547a8a77595732e64e7b3e7f432357252ce4b13015605877c936"
@@ -1953,6 +2057,7 @@
    "commit": "96b83f80ded9ac3f28bfce871b55917e360b9159",
    "contractName": "EulerRouterFactory",
    "evidence": {
+    "address": "0x0512F7cbc4Fd9d8BC47FfFa3aA0372bA2375158E",
     "codeSize": 6826,
     "origin": "gitlink-bump",
     "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4"
@@ -1971,6 +2076,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "ProtocolConfig",
    "evidence": {
+    "address": "0x4C3D26D7Eb6D5AA62CFD99624ad4Ff3351E4B129",
     "codeSize": 3953,
     "origin": "hint+native",
     "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
@@ -1989,6 +2095,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "RewardToken",
    "evidence": {
+    "address": "0xCf623E50430CCb55214985F9C986a5Fa50aD7686",
     "codeSize": 10735,
     "origin": "hint+native",
     "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
@@ -2007,6 +2114,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "SequenceRegistry",
    "evidence": {
+    "address": "0xF7a9F90b5ACb4EE4Cd536940142A04522D28e0Aa",
     "codeSize": 867,
     "origin": "hint+native",
     "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
@@ -2025,6 +2133,7 @@
    "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
    "contractName": "SwapVerifier",
    "evidence": {
+    "address": "0x6D83f642A1F0206b08f4F035197F9Eee553AbFC9",
     "codeSize": 5586,
     "origin": "hint+native",
     "strippedSha256": "2fc2cdd1b6e45a1d03326395d392a7418aa02fd05c71dbf5d845bcc7154354eb"
@@ -2045,6 +2154,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "ERC20BurnableMintable",
    "evidence": {
+    "address": "0x462cD9E0247b2e63831c3189aE738E5E9a5a4b64",
     "codeSize": 7768,
     "origin": "sibling",
     "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
@@ -2063,6 +2173,7 @@
    "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
    "contractName": "TrackingRewardStreams",
    "evidence": {
+    "address": "0xbCD29c1B596d9fFAfaa6F90780956b4D3d47832f",
     "codeSize": 11981,
     "origin": "ovr:dc3be15-v5.1.0",
     "strippedSha256": "47294620c90c9199e0f7a39434092ca19f03307bc7b3e28dd32f37d839ae16db",
@@ -2091,6 +2202,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "GenericFactory",
    "evidence": {
+    "address": "0x78Df1CF5bf06a7f27f2ACc580B934238C1b80D50",
     "codeSize": 5631,
     "origin": "hint+explorer",
     "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
@@ -2109,6 +2221,7 @@
    "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
    "contractName": "EVault",
    "evidence": {
+    "address": "0x832fF4011A3164ea76ceA06A313EE0B6CD72ba96",
     "codeSize": 23147,
     "origin": "hint+explorer",
     "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
@@ -2127,6 +2240,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "MintBurnOFTAdapter",
    "evidence": {
+    "address": "0x174834a9DE4C2f0c13c7353e62C229E8D607c808",
     "codeSize": 12615,
     "origin": "hint+native",
     "strippedSha256": "1036d1c0fbc36f8f16e64f9c1d9afdad98eab38cb9a0d678ebc1abcbe11f4baa"
@@ -2145,6 +2259,7 @@
    "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
    "contractName": "EulerEarnFactory",
    "evidence": {
+    "address": "0xB9B5d62B9fE9E1B505466e75817aB178A1D2ec9d",
     "codeSize": 24408,
     "origin": "hint+explorer",
     "strippedSha256": "c9ee150eb7d0223886b2ba10217238e3947c9bdef1cbe97ba978e6ebf77355c3"
@@ -2163,6 +2278,7 @@
    "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
    "contractName": "PublicAllocator",
    "evidence": {
+    "address": "0x0161FE2CA6ED39b5D0811a94b87AC628677Ae020",
     "codeSize": 5168,
     "origin": "hint+explorer",
     "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
@@ -2181,6 +2297,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwapFactory",
    "evidence": {
+    "address": "0x7949bE8B154D7B5ce6E75cBfc646AeF3a25970E2",
     "codeSize": 8305,
     "origin": "hint+native",
     "strippedSha256": "7c9a247e972a8a3c9fcdeacc4716b1614d613dc969016a2bae4e142396e082bf"
@@ -2199,6 +2316,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwap",
    "evidence": {
+    "address": "0x04671F895c7d9EAbF33FF1dfF41269E6Fea835D1",
     "codeSize": 24313,
     "origin": "hint+native",
     "strippedSha256": "20cae9a429cf62fe9cbbc90acc8fa4529a2e08f8ff0b9c34413015bdd9215ce6"
@@ -2217,6 +2335,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwapPeriphery",
    "evidence": {
+    "address": "0x804485f5B6c293f8d63f697E9662CD4a8765858A",
     "codeSize": 2422,
     "origin": "hint+native",
     "strippedSha256": "703cfc72cd6c5fcfe53371822c5670cc72bce7aa91a5976ee254292b5e3f3b24"
@@ -2235,6 +2354,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapFactory",
    "evidence": {
+    "address": "0x138AB9B33741B25bb7BcDa466175c8B2E2b96dc4",
     "codeSize": 3872,
     "origin": "hint+native",
     "strippedSha256": "4bdd5d473028a3dc1c724eec0c1c60f2dc20e0d341f25dce5267305934d39e85"
@@ -2253,6 +2373,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwap",
    "evidence": {
+    "address": "0xAF6412D58024874b0Ffc4138FfF95fc73b372977",
     "codeSize": 23365,
     "origin": "hint+native",
     "strippedSha256": "408124d9963c57097485489405479fd6df2a8e413f32e31492eb1dd5e8895aa6"
@@ -2271,6 +2392,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapPeriphery",
    "evidence": {
+    "address": "0x223c1a20A6992a0F1E7066eD924619c3156DDA15",
     "codeSize": 2534,
     "origin": "hint+native",
     "strippedSha256": "f98bd760c3818f32272f4c5bc9485b83d34e9a557d0443dca200e52eb2cdadaa"
@@ -2289,6 +2411,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapProtocolFeeConfig",
    "evidence": {
+    "address": "0xA6fCC47f8D930f096F8749C7C7D335871bc71C0D",
     "codeSize": 3599,
     "origin": "hint+native",
     "strippedSha256": "83e2e2c4d440ed1073480505822963a4600d98c878a9b65cf90a81ecdd9984bf"
@@ -2307,6 +2430,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapRegistry",
    "evidence": {
+    "address": "0x99C341F07098ba70aC1130c479103Dc2366dbBD7",
     "codeSize": 9419,
     "origin": "hint+native",
     "strippedSha256": "42c58b74bd40be0268f5ea0b37691df2a74b60d9ac3124a2148a08ad7d4c9eb4"
@@ -2325,6 +2449,7 @@
    "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
    "contractName": "EthereumVaultConnector",
    "evidence": {
+    "address": "0x6302ef0F34100CDDFb5489fbcB6eE1AA95CD1066",
     "codeSize": 22050,
     "origin": "hint+explorer",
     "strippedSha256": "b12f6d72b8c5547a8a77595732e64e7b3e7f432357252ce4b13015605877c936"
@@ -2343,6 +2468,7 @@
    "commit": "96b83f80ded9ac3f28bfce871b55917e360b9159",
    "contractName": "EulerRouterFactory",
    "evidence": {
+    "address": "0x22d51Db42A59862D4F8c135C4406AEf9854ABFF3",
     "codeSize": 6826,
     "origin": "gitlink-bump",
     "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4"
@@ -2361,6 +2487,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "ProtocolConfig",
    "evidence": {
+    "address": "0x06c1Ab0A1672E8FC7F7D10BD7B869B4116D18a2c",
     "codeSize": 3953,
     "origin": "hint+explorer",
     "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
@@ -2379,6 +2506,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "RewardToken",
    "evidence": {
+    "address": "0xFA31599a4928c2d57C0dd77DFCA5DA1E94E6D2D2",
     "codeSize": 10735,
     "origin": "hint+native",
     "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
@@ -2397,6 +2525,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "SequenceRegistry",
    "evidence": {
+    "address": "0x924C73abAa350800fc22c11ffdFB09641106E3ce",
     "codeSize": 867,
     "origin": "hint+explorer",
     "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
@@ -2415,6 +2544,7 @@
    "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
    "contractName": "SwapVerifier",
    "evidence": {
+    "address": "0xdABeBFF75f047E725D9aC978770107491C100bbB",
     "codeSize": 5586,
     "origin": "hint+native",
     "strippedSha256": "2fc2cdd1b6e45a1d03326395d392a7418aa02fd05c71dbf5d845bcc7154354eb"
@@ -2435,6 +2565,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "ERC20BurnableMintable",
    "evidence": {
+    "address": "0x9ceeD3A7f753608372eeAb300486cc7c2F38AC68",
     "codeSize": 7768,
     "origin": "sibling",
     "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
@@ -2453,6 +2584,7 @@
    "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
    "contractName": "TrackingRewardStreams",
    "evidence": {
+    "address": "0xAf5659428FEF1F6a701FaB46d8f3aF8371A9913D",
     "codeSize": 11981,
     "origin": "ovr:dc3be15-v5.1.0",
     "strippedSha256": "47294620c90c9199e0f7a39434092ca19f03307bc7b3e28dd32f37d839ae16db",
@@ -2481,6 +2613,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "GenericFactory",
    "evidence": {
+    "address": "0xaf4B4c18B17F6a2B32F6c398a3910bdCD7f26181",
     "codeSize": 5631,
     "origin": "hint+era",
     "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
@@ -2499,6 +2632,7 @@
    "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
    "contractName": "EVault",
    "evidence": {
+    "address": "0x29E9b639e165d919FEcf02521F8A9dA0492D4f21",
     "codeSize": 23147,
     "origin": "hint+era",
     "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
@@ -2517,6 +2651,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "MintBurnOFTAdapter",
    "evidence": {
+    "address": "0xF1A5F97AB84158Cf6d8ba8dEF68780Fc2Fd64310",
     "codeSize": 12615,
     "origin": "hint+native",
     "strippedSha256": "1036d1c0fbc36f8f16e64f9c1d9afdad98eab38cb9a0d678ebc1abcbe11f4baa"
@@ -2535,6 +2670,7 @@
    "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
    "contractName": "EulerEarnFactory",
    "evidence": {
+    "address": "0x574B00f5a0C56D370F19fa887a5545d74F52fAC2",
     "codeSize": 24408,
     "origin": "hint+native",
     "strippedSha256": "c9ee150eb7d0223886b2ba10217238e3947c9bdef1cbe97ba978e6ebf77355c3"
@@ -2553,6 +2689,7 @@
    "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
    "contractName": "PublicAllocator",
    "evidence": {
+    "address": "0x2524762ddb853AB1e572B81E5E6377a8a1536aA5",
     "codeSize": 5168,
     "origin": "hint+native",
     "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
@@ -2571,6 +2708,7 @@
    "commit": "c7da2f330dff3efb98b0b4e998f9b9f498b37c30",
    "contractName": "EulerSwapFactory",
    "evidence": {
+    "address": "0x8A1D3a4850ed7deeC9003680Cf41b8E75D27e440",
     "codeSize": 8327,
     "origin": "avax-fix-solmate-remapping",
     "strippedSha256": "f165204974081f9b04925ef7b664f5cd7006624813d3413ddcae4311e54b0d74"
@@ -2589,6 +2727,7 @@
    "commit": "c7da2f330dff3efb98b0b4e998f9b9f498b37c30",
    "contractName": "EulerSwap",
    "evidence": {
+    "address": "0x4F4FDeE3568aC31C46634fb2Df3FF44A156Be351",
     "codeSize": 24332,
     "origin": "avax-fix-solmate-remapping",
     "strippedSha256": "222485e60ee4ebd2ea6f886359d760a4c95c5c006d82b7248588c32c449f2d56"
@@ -2607,6 +2746,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwapPeriphery",
    "evidence": {
+    "address": "0x31F34124a37f94efd17201A1B88d5008cD444c72",
     "codeSize": 2422,
     "origin": "hint+native",
     "strippedSha256": "703cfc72cd6c5fcfe53371822c5670cc72bce7aa91a5976ee254292b5e3f3b24"
@@ -2625,6 +2765,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapFactory",
    "evidence": {
+    "address": "0xd80e68B39e4408cb7D6c8E3343Bde46587013F62",
     "codeSize": 3872,
     "origin": "hint+native",
     "strippedSha256": "4bdd5d473028a3dc1c724eec0c1c60f2dc20e0d341f25dce5267305934d39e85"
@@ -2643,6 +2784,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwap",
    "evidence": {
+    "address": "0x2836825daeC3D5d8fD3ad71d61f72345bB868110",
     "codeSize": 23365,
     "origin": "hint+native",
     "strippedSha256": "408124d9963c57097485489405479fd6df2a8e413f32e31492eb1dd5e8895aa6"
@@ -2661,6 +2803,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapPeriphery",
    "evidence": {
+    "address": "0x4fef2f7146c0b4e6C0b1433badC6B7a2E1E7ECDb",
     "codeSize": 2534,
     "origin": "hint+native",
     "strippedSha256": "f98bd760c3818f32272f4c5bc9485b83d34e9a557d0443dca200e52eb2cdadaa"
@@ -2679,6 +2822,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapProtocolFeeConfig",
    "evidence": {
+    "address": "0x1C0e8b841DA677C685D2a8376773e8A872C1ce5C",
     "codeSize": 3599,
     "origin": "hint+native",
     "strippedSha256": "83e2e2c4d440ed1073480505822963a4600d98c878a9b65cf90a81ecdd9984bf"
@@ -2697,6 +2841,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapRegistry",
    "evidence": {
+    "address": "0xF9f2dF8A5Cc71a0424dfA9EbdfdfF8A082C19184",
     "codeSize": 9419,
     "origin": "hint+native",
     "strippedSha256": "42c58b74bd40be0268f5ea0b37691df2a74b60d9ac3124a2148a08ad7d4c9eb4"
@@ -2715,6 +2860,7 @@
    "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
    "contractName": "EthereumVaultConnector",
    "evidence": {
+    "address": "0xddcbe30A761Edd2e19bba930A977475265F36Fa1",
     "codeSize": 22050,
     "origin": "hint+explorer",
     "strippedSha256": "b12f6d72b8c5547a8a77595732e64e7b3e7f432357252ce4b13015605877c936"
@@ -2733,6 +2879,7 @@
    "commit": "96b83f80ded9ac3f28bfce871b55917e360b9159",
    "contractName": "EulerRouterFactory",
    "evidence": {
+    "address": "0x80528F014E84658e85D3C6D4896A29Fa933Be696",
     "codeSize": 6826,
     "origin": "gitlink-bump",
     "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4"
@@ -2751,6 +2898,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "ProtocolConfig",
    "evidence": {
+    "address": "0x8564160f30926eA1229DCcf24118c6De155D2e30",
     "codeSize": 3953,
     "origin": "hint+native",
     "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
@@ -2769,6 +2917,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "RewardToken",
    "evidence": {
+    "address": "0x2e3b32730B4F6b6502BdAa9122df3B026eDE5391",
     "codeSize": 10735,
     "origin": "hint+native",
     "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
@@ -2787,6 +2936,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "SequenceRegistry",
    "evidence": {
+    "address": "0x9C38f923baC407C818312EADEf69AdC116fd16FD",
     "codeSize": 867,
     "origin": "hint+native",
     "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
@@ -2805,6 +2955,7 @@
    "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
    "contractName": "SwapVerifier",
    "evidence": {
+    "address": "0x7e5893f9Ad9865261299e543FD3fac814CC11804",
     "codeSize": 5586,
     "origin": "hint+native",
     "strippedSha256": "2fc2cdd1b6e45a1d03326395d392a7418aa02fd05c71dbf5d845bcc7154354eb"
@@ -2825,6 +2976,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "ERC20BurnableMintable",
    "evidence": {
+    "address": "0x2117E8b79e8E176A670c9fCf945d4348556bfFad",
     "codeSize": 7768,
     "origin": "sibling",
     "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
@@ -2843,6 +2995,7 @@
    "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
    "contractName": "TrackingRewardStreams",
    "evidence": {
+    "address": "0x2D13C46FE6c8B6c9ad3C5A78eD51b26733caE350",
     "codeSize": 11981,
     "origin": "ovr:dc3be15-v5.1.0",
     "strippedSha256": "47294620c90c9199e0f7a39434092ca19f03307bc7b3e28dd32f37d839ae16db",
@@ -2871,6 +3024,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "GenericFactory",
    "evidence": {
+    "address": "0x7F53E2755eB3c43824E162F7F6F087832B9C9Df6",
     "codeSize": 5631,
     "origin": "hint+explorer",
     "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
@@ -2889,6 +3043,7 @@
    "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
    "contractName": "EVault",
    "evidence": {
+    "address": "0xB236413f1A8Fd4C5D5545ecAaC5e64fF686afe4e",
     "codeSize": 23147,
     "origin": "hint+explorer",
     "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
@@ -2907,6 +3062,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "MintBurnOFTAdapter",
    "evidence": {
+    "address": "0x1633269308F154fbECBb15F91d72D2aFA6af95B4",
     "codeSize": 12615,
     "origin": "hint+native",
     "strippedSha256": "1036d1c0fbc36f8f16e64f9c1d9afdad98eab38cb9a0d678ebc1abcbe11f4baa"
@@ -2925,6 +3081,7 @@
    "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
    "contractName": "EulerEarnFactory",
    "evidence": {
+    "address": "0xc456d04E3F43597CC7E5a2AF284fF4C4AdDA0cb1",
     "codeSize": 24408,
     "origin": "hint+explorer",
     "strippedSha256": "c9ee150eb7d0223886b2ba10217238e3947c9bdef1cbe97ba978e6ebf77355c3"
@@ -2943,6 +3100,7 @@
    "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
    "contractName": "PublicAllocator",
    "evidence": {
+    "address": "0xD561479477b03720bF485e91B76574374A646531",
     "codeSize": 5168,
     "origin": "hint+explorer",
     "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
@@ -2961,6 +3119,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwapFactory",
    "evidence": {
+    "address": "0x3e378e5E339DF5e0Da32964F9EEC2CDb90D28Cc7",
     "codeSize": 8305,
     "origin": "hint+native",
     "strippedSha256": "7c9a247e972a8a3c9fcdeacc4716b1614d613dc969016a2bae4e142396e082bf"
@@ -2979,6 +3138,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwap",
    "evidence": {
+    "address": "0x16BCa43290b77409e6D1c92B929f7A09C0E4EE86",
     "codeSize": 24313,
     "origin": "hint+native",
     "strippedSha256": "20cae9a429cf62fe9cbbc90acc8fa4529a2e08f8ff0b9c34413015bdd9215ce6"
@@ -2997,6 +3157,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwapPeriphery",
    "evidence": {
+    "address": "0xa8826Bb29f875Db4c4b482463961776390774525",
     "codeSize": 2422,
     "origin": "hint+native",
     "strippedSha256": "703cfc72cd6c5fcfe53371822c5670cc72bce7aa91a5976ee254292b5e3f3b24"
@@ -3015,6 +3176,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapFactory",
    "evidence": {
+    "address": "0xA1F83E3d1819C912122A1582B4B6D3d2a1E83bb7",
     "codeSize": 3872,
     "origin": "hint+native",
     "strippedSha256": "4bdd5d473028a3dc1c724eec0c1c60f2dc20e0d341f25dce5267305934d39e85"
@@ -3033,6 +3195,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwap",
    "evidence": {
+    "address": "0x90Cb0b67f189a3D914DA00f72070531152DBc85F",
     "codeSize": 23365,
     "origin": "hint+native",
     "strippedSha256": "408124d9963c57097485489405479fd6df2a8e413f32e31492eb1dd5e8895aa6"
@@ -3051,6 +3214,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapPeriphery",
    "evidence": {
+    "address": "0x4258A34923CccFa29948881Cf6Aa8FdAD6338485",
     "codeSize": 2534,
     "origin": "hint+native",
     "strippedSha256": "f98bd760c3818f32272f4c5bc9485b83d34e9a557d0443dca200e52eb2cdadaa"
@@ -3069,6 +3233,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapProtocolFeeConfig",
    "evidence": {
+    "address": "0x71dFB7138192B19CDc73487212bf6BB1Ffe3b9A1",
     "codeSize": 3599,
     "origin": "hint+native",
     "strippedSha256": "83e2e2c4d440ed1073480505822963a4600d98c878a9b65cf90a81ecdd9984bf"
@@ -3087,6 +3252,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapRegistry",
    "evidence": {
+    "address": "0xBc0f4dd9B5A10b15e6fA65e939Dbb1f98E7B08B7",
     "codeSize": 9419,
     "origin": "hint+native",
     "strippedSha256": "42c58b74bd40be0268f5ea0b37691df2a74b60d9ac3124a2148a08ad7d4c9eb4"
@@ -3105,6 +3271,7 @@
    "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
    "contractName": "EthereumVaultConnector",
    "evidence": {
+    "address": "0xb2E5a73CeE08593d1a076a2AE7A6e02925a640ea",
     "codeSize": 22050,
     "origin": "hint+explorer",
     "strippedSha256": "b12f6d72b8c5547a8a77595732e64e7b3e7f432357252ce4b13015605877c936"
@@ -3123,6 +3290,7 @@
    "commit": "96b83f80ded9ac3f28bfce871b55917e360b9159",
    "contractName": "EulerRouterFactory",
    "evidence": {
+    "address": "0xbe83f65e5e898D482FfAEA251B62647c411576F1",
     "codeSize": 6826,
     "origin": "gitlink-bump",
     "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4"
@@ -3141,6 +3309,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "ProtocolConfig",
    "evidence": {
+    "address": "0xF524F75ad063919B86d6c5D9242847A44337BFCe",
     "codeSize": 3953,
     "origin": "hint+explorer",
     "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
@@ -3159,6 +3328,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "RewardToken",
    "evidence": {
+    "address": "0x5e13d41913aDF18bb2acAe34228E8D21f3c2f2Eb",
     "codeSize": 10735,
     "origin": "hint+native",
     "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
@@ -3177,6 +3347,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "SequenceRegistry",
    "evidence": {
+    "address": "0x7fD287B3AE3Bf2F6C9871a44b6d9de208B0ABBE5",
     "codeSize": 867,
     "origin": "hint+explorer",
     "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
@@ -3195,6 +3366,7 @@
    "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
    "contractName": "SwapVerifier",
    "evidence": {
+    "address": "0x2d09e4C7Ad9c21Cf093046Da69030Dc17d01deFC",
     "codeSize": 5586,
     "origin": "pool(n=9)",
     "strippedSha256": "2fc2cdd1b6e45a1d03326395d392a7418aa02fd05c71dbf5d845bcc7154354eb"
@@ -3215,6 +3387,7 @@
    "commit": "21a169d7830f71fcfbee6f7ced12bf089f4fba20",
    "contractName": "ERC20BurnableMintable",
    "evidence": {
+    "address": "0x3eBd0148BADAb9388936E4472C4415D5700478A5",
     "codeSize": 7920,
     "origin": "sibling",
     "strippedSha256": "d6078fb22fa20b31c9375da81084e5e122563556cb846ac26158a6f32620255d"
@@ -3233,6 +3406,7 @@
    "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
    "contractName": "TrackingRewardStreams",
    "evidence": {
+    "address": "0xB9E491A3BB9d4B155d31a9cA6B9dE245CA16AAe6",
     "codeSize": 11053,
     "origin": "linea-explorer-input-deps-from-evk-periphery-edaf96e3-workspace",
     "strippedSha256": "8a4340d846344094b9311f1deba04b5c73624a0630e182b579fcf96e5d0d3252",
@@ -3261,6 +3435,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "GenericFactory",
    "evidence": {
+    "address": "0x84711986Fd3BF0bFe4a8e6d7f4E22E67f7f27F04",
     "codeSize": 5740,
     "origin": "hint+explorer",
     "strippedSha256": "57b0108017b4b57583f5d13b8dd9562d953b8b1ce592329f88e9d93ed98ed463"
@@ -3279,6 +3454,7 @@
    "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
    "contractName": "EVault",
    "evidence": {
+    "address": "0x58270C41552Bb2bef3Dc4e103b6f0c226032f007",
     "codeSize": 21328,
     "origin": "hint+explorer",
     "strippedSha256": "86133ece4a9139f6f91a43167f110f1cb6f49bcfbfb7deed7ee80a6dc8639b51"
@@ -3297,6 +3473,7 @@
    "commit": "21a169d7830f71fcfbee6f7ced12bf089f4fba20",
    "contractName": "MintBurnOFTAdapter",
    "evidence": {
+    "address": "0xd048d4e39e13482ECcE115E7BB71128d26ca19f1",
     "codeSize": 12696,
     "origin": "deployment-linea",
     "strippedSha256": "ee5f56610126fce27b460a3bb97c16b3280bac45fcc22aaca989765029df4862"
@@ -3315,6 +3492,7 @@
    "commit": "ba581a71245ad004d35241918946b08ba63552cd",
    "contractName": "EulerEarnFactory",
    "evidence": {
+    "address": "0x377879A039343FEc7564e54616e519328951DA6D",
     "codeSize": 24038,
     "origin": "deployment-linea-reconstructed+london",
     "strippedSha256": "978dba086e9345e9ef0290495242cff08456d4b0ad52076195b0b673a41bfb3a"
@@ -3333,6 +3511,7 @@
    "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
    "contractName": "PublicAllocator",
    "evidence": {
+    "address": "0x4148f90e03facFF8D2d5EFb475E36F94b4Ab4994",
     "codeSize": 5337,
     "origin": "hint+explorer",
     "strippedSha256": "055f4a97a877bf3a28e0929c84be43ec2f7440ff84304779d5b87f819050d860"
@@ -3351,6 +3530,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwapFactory",
    "evidence": {
+    "address": "0x970B065B572CC0118535Ad1101663CDBE7Db1e21",
     "codeSize": 7817,
     "origin": "linea-workspace-oz510",
     "strippedSha256": "733771fc71b8cadcc00bc5513c1e75b8726853be7f296894fc6b1733e7c2c082",
@@ -3375,6 +3555,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwap",
    "evidence": {
+    "address": "0x2b07caff83C15c5a70C4C0867DFE7A0BE01025B0",
     "codeSize": 23166,
     "origin": "linea-workspace-oz510",
     "strippedSha256": "85a323795e717a5906347400be8899e27fa4c0ab7b04fc0cc49b5bd4ebbd7ea5",
@@ -3399,6 +3580,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwapPeriphery",
    "evidence": {
+    "address": "0x0de305aB93902914909951A00079ea1df3FD98eA",
     "codeSize": 2472,
     "origin": "linea-workspace-oz510",
     "strippedSha256": "9b00707ebcd7039ada1e50c131e632a3e6a7f63cd9bf7375e51d7a0e14a1e0c7",
@@ -3423,6 +3605,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapFactory",
    "evidence": {
+    "address": "0xB0cc1D8e6fAc157c76d2c08B7D55Eca1573BcBDF",
     "codeSize": 3975,
     "origin": "linea-workspace-oz510",
     "strippedSha256": "0a646505ce6c4b4dbf511f4cfe6e374c7b3661373fc3507a2251d942a73425f0",
@@ -3447,6 +3630,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwap",
    "evidence": {
+    "address": "0x476A2ad4a7c5Ac4DF1CaA429Cb70db865A160c11",
     "codeSize": 23854,
     "origin": "linea-workspace-oz510",
     "strippedSha256": "06ec2a313646e3da14651903d31f2bfd11aa47c04de4299c7ac077c42a120529",
@@ -3471,6 +3655,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapPeriphery",
    "evidence": {
+    "address": "0x57729d78650cA751C9dB41f2536cA86da0032351",
     "codeSize": 2591,
     "origin": "linea-workspace-oz510",
     "strippedSha256": "69ef138e27b659cf40dc93b424b75bcfd17615984c03192d0fe209bd96356b71",
@@ -3495,6 +3680,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapProtocolFeeConfig",
    "evidence": {
+    "address": "0xe3ac3685D607308D4b4e26546EaDf675c37dd3dE",
     "codeSize": 3647,
     "origin": "linea-workspace-oz510",
     "strippedSha256": "e85194c7aa3ca0c668e0a5649b1cf02506a9af389a43106c06fd161633985895",
@@ -3519,6 +3705,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapRegistry",
    "evidence": {
+    "address": "0xEA3050E8A25f56AD0dbc90C3dCf016d8f5EfFE25",
     "codeSize": 9684,
     "origin": "linea-workspace-oz510",
     "strippedSha256": "507db7026ac86379bde411ec44e37f2d4091a7e12dc9d4377ff7308578820e8f",
@@ -3543,6 +3730,7 @@
    "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
    "contractName": "EthereumVaultConnector",
    "evidence": {
+    "address": "0xd8CeCEe9A04eA3d941a959F68fb4486f23271d09",
     "codeSize": 21251,
     "origin": "hint+explorer",
     "strippedSha256": "d1bce236afcafd937b3a2b18363f41c46e9be0c545d7d0b4cef42a19cf1f0e3f"
@@ -3561,6 +3749,7 @@
    "commit": "21a169d7830f71fcfbee6f7ced12bf089f4fba20",
    "contractName": "EulerRouterFactory",
    "evidence": {
+    "address": "0xf0125F638c7134e6997e4F825b78c324CcF289aF",
     "codeSize": 6942,
     "origin": "branch:origin/deployment-linea",
     "strippedSha256": "dd195cf06e17d6f9de68ceccd3a607e79d65eb037cc6894522dcfa962d8592d3"
@@ -3579,6 +3768,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "ProtocolConfig",
    "evidence": {
+    "address": "0x91868601df03ED8E134EaAaB5E06F7183CC8383f",
     "codeSize": 3990,
     "origin": "hint+explorer",
     "strippedSha256": "ae8cce18e7b6f527333d2a9920ad78eabbedb3d788960a3f091a3615c1213f30"
@@ -3597,6 +3787,7 @@
    "commit": "21a169d7830f71fcfbee6f7ced12bf089f4fba20",
    "contractName": "RewardToken",
    "evidence": {
+    "address": "0xe15C5F31cd7B767883F5654CDD3aFac28966B0a9",
     "codeSize": 9866,
     "origin": "deployment-linea",
     "strippedSha256": "2068798e559db28152cd9fc9309ed975b9007eb82cf82f3185c1d8103f7a0e89"
@@ -3615,6 +3806,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "SequenceRegistry",
    "evidence": {
+    "address": "0xcB1bB0A8A7ddeb09983dC1e7F880DCEdc39362BA",
     "codeSize": 893,
     "origin": "hint+explorer",
     "strippedSha256": "f8601f0f66ffbf0091022b7221611e59a747d2ffdde4c1f651fec2db4bebf73f"
@@ -3633,6 +3825,7 @@
    "commit": "e7337a33cb2339de7bf19d41a765c426cfe71be2",
    "contractName": "SwapVerifier",
    "evidence": {
+    "address": "0xd356D0570F8Ae45Acf275A09789c67C9E412814e",
     "codeSize": 5693,
     "origin": "linea-explorer-input-reconstructed-settings-on-edaf96e3",
     "strippedSha256": "696584513d591e3f2db7db7f42c91bd08a1ed8a7b8f3b71a31f43e75603c3e0f"
@@ -3653,6 +3846,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "ERC20BurnableMintable",
    "evidence": {
+    "address": "0xDe1763aFA5eB658CfFFfD16835AfeB47e7aC0B8D",
     "codeSize": 7768,
     "origin": "sibling",
     "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
@@ -3671,6 +3865,7 @@
    "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
    "contractName": "TrackingRewardStreams",
    "evidence": {
+    "address": "0x5a3828beA292E5f29725Fa449F9113Cb5E60ADF8",
     "codeSize": 11981,
     "origin": "ovr:dc3be15-v5.1.0",
     "strippedSha256": "47294620c90c9199e0f7a39434092ca19f03307bc7b3e28dd32f37d839ae16db",
@@ -3699,6 +3894,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "GenericFactory",
    "evidence": {
+    "address": "0x046a9837A61d6b6263f54F4E27EE072bA4bdC7e4",
     "codeSize": 5631,
     "origin": "hint+era",
     "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
@@ -3717,6 +3913,7 @@
    "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
    "contractName": "EVault",
    "evidence": {
+    "address": "0x32CFc56917C0025501b34C43f7FE767Ef1EDE3a2",
     "codeSize": 23147,
     "origin": "hint+era",
     "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
@@ -3735,6 +3932,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "MintBurnOFTAdapter",
    "evidence": {
+    "address": "0x797964F9eB3A733D443810820f56c9ebAab1d1c2",
     "codeSize": 12615,
     "origin": "hint+native",
     "strippedSha256": "1036d1c0fbc36f8f16e64f9c1d9afdad98eab38cb9a0d678ebc1abcbe11f4baa"
@@ -3753,6 +3951,7 @@
    "commit": "773453b1f4a6f1d27a1cd0c6d8f6ada572503b23",
    "contractName": "EulerEarnFactory",
    "evidence": {
+    "address": "0x8F01c6640A1c0a6085C79843F861fF0F89b9fED6",
     "codeSize": 24408,
     "origin": "hint+native",
     "strippedSha256": "c9ee150eb7d0223886b2ba10217238e3947c9bdef1cbe97ba978e6ebf77355c3"
@@ -3771,6 +3970,7 @@
    "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
    "contractName": "PublicAllocator",
    "evidence": {
+    "address": "0xB5Daee4a8AD1388B3D72C1367b8BA63DfB4AAbf5",
     "codeSize": 5168,
     "origin": "hint+native",
     "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
@@ -3789,6 +3989,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwapFactory",
    "evidence": {
+    "address": "0xE25B3cdA6fccAcbD794aEA64eE1B496d7b441644",
     "codeSize": 8305,
     "origin": "hint+native",
     "strippedSha256": "7c9a247e972a8a3c9fcdeacc4716b1614d613dc969016a2bae4e142396e082bf"
@@ -3807,6 +4008,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwap",
    "evidence": {
+    "address": "0x334eac29ffAc27E6BC3484A738DAf520359698F0",
     "codeSize": 24313,
     "origin": "hint+native",
     "strippedSha256": "20cae9a429cf62fe9cbbc90acc8fa4529a2e08f8ff0b9c34413015bdd9215ce6"
@@ -3825,6 +4027,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwapPeriphery",
    "evidence": {
+    "address": "0x199cC7C8606088bc22D82CDae2D7EE7F5F99ec9F",
     "codeSize": 2422,
     "origin": "hint+native",
     "strippedSha256": "703cfc72cd6c5fcfe53371822c5670cc72bce7aa91a5976ee254292b5e3f3b24"
@@ -3843,6 +4046,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapFactory",
    "evidence": {
+    "address": "0xa077991e2929d97f29fE39372E736FC118a4FAd3",
     "codeSize": 3872,
     "origin": "hint+native",
     "strippedSha256": "4bdd5d473028a3dc1c724eec0c1c60f2dc20e0d341f25dce5267305934d39e85"
@@ -3861,6 +4065,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwap",
    "evidence": {
+    "address": "0x90bd38E89726BdCf42E07D88B23c2A493cb3877a",
     "codeSize": 23365,
     "origin": "hint+native",
     "strippedSha256": "408124d9963c57097485489405479fd6df2a8e413f32e31492eb1dd5e8895aa6"
@@ -3879,6 +4084,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapPeriphery",
    "evidence": {
+    "address": "0xaEAab95eE90196E20fD2a5348643cCa0EF2b038e",
     "codeSize": 2534,
     "origin": "hint+native",
     "strippedSha256": "f98bd760c3818f32272f4c5bc9485b83d34e9a557d0443dca200e52eb2cdadaa"
@@ -3897,6 +4103,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapProtocolFeeConfig",
    "evidence": {
+    "address": "0x6e5dF960eccD2Bf8818526A88f6E7da99a5379d7",
     "codeSize": 3599,
     "origin": "hint+native",
     "strippedSha256": "83e2e2c4d440ed1073480505822963a4600d98c878a9b65cf90a81ecdd9984bf"
@@ -3915,6 +4122,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapRegistry",
    "evidence": {
+    "address": "0xf33F4e20905801D55531b38749727954D0152d3D",
     "codeSize": 9419,
     "origin": "hint+native",
     "strippedSha256": "42c58b74bd40be0268f5ea0b37691df2a74b60d9ac3124a2148a08ad7d4c9eb4"
@@ -3933,6 +4141,7 @@
    "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
    "contractName": "EthereumVaultConnector",
    "evidence": {
+    "address": "0x59f0FeEc4fA474Ad4ffC357cC8d8595B68abE47d",
     "codeSize": 22050,
     "origin": "hint+era",
     "strippedSha256": "b12f6d72b8c5547a8a77595732e64e7b3e7f432357252ce4b13015605877c936"
@@ -3951,6 +4160,7 @@
    "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
    "contractName": "EulerRouterFactory",
    "evidence": {
+    "address": "0xEFCF1F2f09163e3813f5C16346A9F2Aa21ABA74d",
     "codeSize": 6826,
     "origin": "sibling-proven",
     "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4",
@@ -3979,6 +4189,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "ProtocolConfig",
    "evidence": {
+    "address": "0x94047C7daF06a6DE4049365cFa95fb4389a6F9Fe",
     "codeSize": 3953,
     "origin": "hint+native",
     "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
@@ -3997,6 +4208,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "RewardToken",
    "evidence": {
+    "address": "0x9f395F610Af9ffC98693A0769190446180dc7192",
     "codeSize": 10735,
     "origin": "hint+native",
     "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
@@ -4015,6 +4227,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "SequenceRegistry",
    "evidence": {
+    "address": "0xf4C097718c64B6B0A75Cd9e0EF348fD6F176bE67",
     "codeSize": 867,
     "origin": "hint+native",
     "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
@@ -4033,6 +4246,7 @@
    "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
    "contractName": "SwapVerifier",
    "evidence": {
+    "address": "0x585DAE976333DF77ec096c3BcEf1EBEC296476a4",
     "codeSize": 5586,
     "origin": "hint+native",
     "strippedSha256": "2fc2cdd1b6e45a1d03326395d392a7418aa02fd05c71dbf5d845bcc7154354eb"
@@ -4053,6 +4267,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "ERC20BurnableMintable",
    "evidence": {
+    "address": "0xEb9b5f4EB023aE754fF59A04c9C038D58606DAC6",
     "codeSize": 7768,
     "origin": "sibling",
     "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
@@ -4071,6 +4286,7 @@
    "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
    "contractName": "TrackingRewardStreams",
    "evidence": {
+    "address": "0x70Fb24bDa46E7cFD447C64bB32180Bc746ba3A71",
     "codeSize": 11981,
     "origin": "ovr:dc3be15-v5.1.0",
     "strippedSha256": "47294620c90c9199e0f7a39434092ca19f03307bc7b3e28dd32f37d839ae16db",
@@ -4099,6 +4315,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "GenericFactory",
    "evidence": {
+    "address": "0x5C13fb43ae9BAe8470f646ea647784534E9543AF",
     "codeSize": 5631,
     "origin": "hint+explorer",
     "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
@@ -4117,6 +4334,7 @@
    "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
    "contractName": "EVault",
    "evidence": {
+    "address": "0x402598Ac4034D24f2cB37BDb0721A67365aD19BD",
     "codeSize": 23147,
     "origin": "hint+explorer",
     "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
@@ -4135,6 +4353,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "MintBurnOFTAdapter",
    "evidence": {
+    "address": "0xc1d31b2812Cc920341349a717d14bAdFb1BCab11",
     "codeSize": 12615,
     "origin": "hint+native",
     "strippedSha256": "1036d1c0fbc36f8f16e64f9c1d9afdad98eab38cb9a0d678ebc1abcbe11f4baa"
@@ -4153,6 +4372,7 @@
    "commit": "773453b1f4a6f1d27a1cd0c6d8f6ada572503b23",
    "contractName": "EulerEarnFactory",
    "evidence": {
+    "address": "0x9cbc3030e6d133D1AAa148D598FD82D70263495c",
     "codeSize": 24408,
     "origin": "hint+explorer",
     "strippedSha256": "c9ee150eb7d0223886b2ba10217238e3947c9bdef1cbe97ba978e6ebf77355c3"
@@ -4171,6 +4391,7 @@
    "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
    "contractName": "PublicAllocator",
    "evidence": {
+    "address": "0x4E7C059099496D56e8662570426991EA63C63C85",
     "codeSize": 5168,
     "origin": "hint+explorer",
     "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
@@ -4189,6 +4410,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwapFactory",
    "evidence": {
+    "address": "0xD14c95dc228E8851F63d9b83A0001F4D021B5DFf",
     "codeSize": 8305,
     "origin": "hint+native",
     "strippedSha256": "7c9a247e972a8a3c9fcdeacc4716b1614d613dc969016a2bae4e142396e082bf"
@@ -4207,6 +4429,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwap",
    "evidence": {
+    "address": "0x0e05d236cb6c350935751A73e834A13111998e3c",
     "codeSize": 24313,
     "origin": "hint+native",
     "strippedSha256": "20cae9a429cf62fe9cbbc90acc8fa4529a2e08f8ff0b9c34413015bdd9215ce6"
@@ -4225,6 +4448,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwapPeriphery",
    "evidence": {
+    "address": "0x46F951278f52f4798542C51BfB8Df1c165199150",
     "codeSize": 2422,
     "origin": "hint+native",
     "strippedSha256": "703cfc72cd6c5fcfe53371822c5670cc72bce7aa91a5976ee254292b5e3f3b24"
@@ -4243,6 +4467,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapFactory",
    "evidence": {
+    "address": "0x1A4546b988Ee133F72b7E27a4890355b0a341554",
     "codeSize": 3872,
     "origin": "hint+native",
     "strippedSha256": "4bdd5d473028a3dc1c724eec0c1c60f2dc20e0d341f25dce5267305934d39e85"
@@ -4261,6 +4486,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwap",
    "evidence": {
+    "address": "0x9253a3EF2cE8875b7D15Bd2bcd3a405b62a7b0E7",
     "codeSize": 23365,
     "origin": "hint+native",
     "strippedSha256": "408124d9963c57097485489405479fd6df2a8e413f32e31492eb1dd5e8895aa6"
@@ -4279,6 +4505,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapPeriphery",
    "evidence": {
+    "address": "0x5e044DB2Fd14fbB48334b239CfD8530C9b03150B",
     "codeSize": 2534,
     "origin": "hint+native",
     "strippedSha256": "f98bd760c3818f32272f4c5bc9485b83d34e9a557d0443dca200e52eb2cdadaa"
@@ -4297,6 +4524,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapProtocolFeeConfig",
    "evidence": {
+    "address": "0xAe26ca82da91a1157E3cC0B36a9A06f539f4DF24",
     "codeSize": 3599,
     "origin": "hint+native",
     "strippedSha256": "83e2e2c4d440ed1073480505822963a4600d98c878a9b65cf90a81ecdd9984bf"
@@ -4315,6 +4543,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapRegistry",
    "evidence": {
+    "address": "0x8D8B81F0c1be01fa3636d2cD6DeF07474d75e1e9",
     "codeSize": 9419,
     "origin": "hint+native",
     "strippedSha256": "42c58b74bd40be0268f5ea0b37691df2a74b60d9ac3124a2148a08ad7d4c9eb4"
@@ -4333,6 +4562,7 @@
    "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
    "contractName": "EthereumVaultConnector",
    "evidence": {
+    "address": "0x45334608ECE7B2775136bC847EB92B5D332806A9",
     "codeSize": 22050,
     "origin": "hint+explorer",
     "strippedSha256": "b12f6d72b8c5547a8a77595732e64e7b3e7f432357252ce4b13015605877c936"
@@ -4351,6 +4581,7 @@
    "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
    "contractName": "EulerRouterFactory",
    "evidence": {
+    "address": "0x809aB347e6ECb46714917A7796E542c86f75FbF1",
     "codeSize": 6826,
     "origin": "sibling-proven",
     "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4",
@@ -4379,6 +4610,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "ProtocolConfig",
    "evidence": {
+    "address": "0x51432af61A715DB3D0f20A3691C1E25F9A2c6B05",
     "codeSize": 3953,
     "origin": "hint+explorer",
     "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
@@ -4397,6 +4629,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "RewardToken",
    "evidence": {
+    "address": "0x56C44d2F484A61ce92Fa0BCc849feB37aBfeB59C",
     "codeSize": 10735,
     "origin": "hint+native",
     "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
@@ -4415,6 +4648,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "SequenceRegistry",
    "evidence": {
+    "address": "0x0c9a75E05764775A0cF52bC6cbfE6Cb229bb3901",
     "codeSize": 867,
     "origin": "hint+explorer",
     "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
@@ -4433,6 +4667,7 @@
    "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
    "contractName": "SwapVerifier",
    "evidence": {
+    "address": "0x562ADb2d72C1836621B2E82bCb7599DFE9578203",
     "codeSize": 5586,
     "origin": "hint+native",
     "strippedSha256": "2fc2cdd1b6e45a1d03326395d392a7418aa02fd05c71dbf5d845bcc7154354eb"
@@ -4453,6 +4688,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "ERC20BurnableMintable",
    "evidence": {
+    "address": "0xa153Ad732F831a79b5575Fa02e793EC4E99181b0",
     "codeSize": 7768,
     "origin": "sibling",
     "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
@@ -4471,6 +4707,7 @@
    "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
    "contractName": "TrackingRewardStreams",
    "evidence": {
+    "address": "0x029fDEe85BEdB0553D6fdc538546586641DD7438",
     "codeSize": 12330,
     "origin": "hint+explorer",
     "strippedSha256": "48762e01048ffb0f0ecdbe25a09b46310fa8252a9b7eaaad17e002ca62dbb6d8"
@@ -4489,6 +4726,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "GenericFactory",
    "evidence": {
+    "address": "0x7F321498A801A191a93C840750ed637149dDf8D0",
     "codeSize": 5631,
     "origin": "hint+explorer",
     "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
@@ -4507,6 +4745,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "EVault",
    "evidence": {
+    "address": "0x30a9A9654804F1e5b3291a86E83EdeD7cF281618",
     "codeSize": 23147,
     "origin": "hint+explorer",
     "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
@@ -4525,6 +4764,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "MintBurnOFTAdapter",
    "evidence": {
+    "address": "0x9ff7ea0Cf94b8665c2F5d17560Bd34Ab9BbAcd21",
     "codeSize": 12615,
     "origin": "hint+native",
     "strippedSha256": "1036d1c0fbc36f8f16e64f9c1d9afdad98eab38cb9a0d678ebc1abcbe11f4baa"
@@ -4543,6 +4783,7 @@
    "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
    "contractName": "EulerEarnFactory",
    "evidence": {
+    "address": "0x75F49a2621b6DeC6a5baB22ce961bF3e676EFAE6",
     "codeSize": 24408,
     "origin": "hint+explorer",
     "strippedSha256": "c9ee150eb7d0223886b2ba10217238e3947c9bdef1cbe97ba978e6ebf77355c3"
@@ -4561,6 +4802,7 @@
    "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
    "contractName": "PublicAllocator",
    "evidence": {
+    "address": "0x0dFFc3A53693bCd8e42FAd9be94fB8f1Fb64A8EE",
     "codeSize": 5168,
     "origin": "hint+explorer",
     "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
@@ -4579,6 +4821,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwapFactory",
    "evidence": {
+    "address": "0xf0CFe22d23699ff1B2CFe6B8f706A6DB63911262",
     "codeSize": 8305,
     "origin": "hint+native",
     "strippedSha256": "7c9a247e972a8a3c9fcdeacc4716b1614d613dc969016a2bae4e142396e082bf"
@@ -4597,6 +4840,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwap",
    "evidence": {
+    "address": "0x3Ce63C16CB719a0c755DA25cd5dD35170A00424f",
     "codeSize": 24313,
     "origin": "hint+native",
     "strippedSha256": "20cae9a429cf62fe9cbbc90acc8fa4529a2e08f8ff0b9c34413015bdd9215ce6"
@@ -4615,6 +4859,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwapPeriphery",
    "evidence": {
+    "address": "0x18e5F5C1ff5e905b32CE860576031AE90E1d1336",
     "codeSize": 2422,
     "origin": "hint+native",
     "strippedSha256": "703cfc72cd6c5fcfe53371822c5670cc72bce7aa91a5976ee254292b5e3f3b24"
@@ -4633,6 +4878,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapFactory",
    "evidence": {
+    "address": "0x6C5f4c239ceD289447737EAB8eEA64523bd9c05E",
     "codeSize": 3872,
     "origin": "hint+native",
     "strippedSha256": "4bdd5d473028a3dc1c724eec0c1c60f2dc20e0d341f25dce5267305934d39e85"
@@ -4651,6 +4897,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwap",
    "evidence": {
+    "address": "0x6F1C1a3eAFbB1b345AD5662b0374a9Bf0E4785af",
     "codeSize": 23365,
     "origin": "hint+native",
     "strippedSha256": "408124d9963c57097485489405479fd6df2a8e413f32e31492eb1dd5e8895aa6"
@@ -4669,6 +4916,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapPeriphery",
    "evidence": {
+    "address": "0xA564dAe65eA7B1ce049AbACFC4Cb1A32C93e127c",
     "codeSize": 2534,
     "origin": "hint+native",
     "strippedSha256": "f98bd760c3818f32272f4c5bc9485b83d34e9a557d0443dca200e52eb2cdadaa"
@@ -4687,6 +4935,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapProtocolFeeConfig",
    "evidence": {
+    "address": "0x78bCCFA312432cE84d0B818796eE33f9192A284d",
     "codeSize": 3599,
     "origin": "hint+native",
     "strippedSha256": "83e2e2c4d440ed1073480505822963a4600d98c878a9b65cf90a81ecdd9984bf"
@@ -4705,6 +4954,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapRegistry",
    "evidence": {
+    "address": "0x35D410A5052c7362eCdD72cFb65651A71adFaf61",
     "codeSize": 9419,
     "origin": "hint+native",
     "strippedSha256": "42c58b74bd40be0268f5ea0b37691df2a74b60d9ac3124a2148a08ad7d4c9eb4"
@@ -4723,6 +4973,7 @@
    "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
    "contractName": "EthereumVaultConnector",
    "evidence": {
+    "address": "0x5301c7dD20bD945D2013b48ed0DEE3A284ca8989",
     "codeSize": 22050,
     "origin": "hint+explorer",
     "strippedSha256": "b12f6d72b8c5547a8a77595732e64e7b3e7f432357252ce4b13015605877c936"
@@ -4741,6 +4992,7 @@
    "commit": "96b83f80ded9ac3f28bfce871b55917e360b9159",
    "contractName": "EulerRouterFactory",
    "evidence": {
+    "address": "0xA9287853987B107969f181Cce5e25e0D09c1c116",
     "codeSize": 6826,
     "origin": "gitlink-bump",
     "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4"
@@ -4759,6 +5011,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "ProtocolConfig",
    "evidence": {
+    "address": "0x1D4b9e6ACACdc82Dd9E903C3F4431558Af32C4A9",
     "codeSize": 3953,
     "origin": "hint+explorer",
     "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
@@ -4777,6 +5030,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "RewardToken",
    "evidence": {
+    "address": "0xE08e1f00D388E201e48842E53fA96195568e6813",
     "codeSize": 10735,
     "origin": "hint+native",
     "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
@@ -4795,6 +5049,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "SequenceRegistry",
    "evidence": {
+    "address": "0xfE9011FD097cd35866b9e4740BBC88B4ef26E3ba",
     "codeSize": 867,
     "origin": "hint+explorer",
     "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
@@ -4813,6 +5068,7 @@
    "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
    "contractName": "SwapVerifier",
    "evidence": {
+    "address": "0x93A732A1900697d5f51C77fe09275486BB0bb83D",
     "codeSize": 5586,
     "origin": "pool(n=9)",
     "strippedSha256": "2fc2cdd1b6e45a1d03326395d392a7418aa02fd05c71dbf5d845bcc7154354eb"
@@ -4833,6 +5089,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "ERC20BurnableMintable",
    "evidence": {
+    "address": "0xca632FA58397391C750c13F935DAA61AbBe0BaA6",
     "codeSize": 7768,
     "origin": "sibling",
     "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
@@ -4851,6 +5108,7 @@
    "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
    "contractName": "TrackingRewardStreams",
    "evidence": {
+    "address": "0x6e6e1e4FB3Ee6C074f10d3f80E0d3541accf7c2b",
     "codeSize": 11981,
     "origin": "ovr:dc3be15-v5.1.0",
     "strippedSha256": "47294620c90c9199e0f7a39434092ca19f03307bc7b3e28dd32f37d839ae16db",
@@ -4879,6 +5137,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "GenericFactory",
    "evidence": {
+    "address": "0x42388213C6F56D7E1477632b58Ae6Bba9adeEeA3",
     "codeSize": 5631,
     "origin": "hint+explorer",
     "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
@@ -4897,6 +5156,7 @@
    "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
    "contractName": "EVault",
    "evidence": {
+    "address": "0x8346BeBaA0789Eb92CFfCC07033b8bF9f3eFdcAB",
     "codeSize": 23147,
     "origin": "hint+explorer",
     "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
@@ -4915,6 +5175,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "MintBurnOFTAdapter",
    "evidence": {
+    "address": "0x78F50C520E7fCE30410516B72A48bD4fc5d974b5",
     "codeSize": 12615,
     "origin": "pool(n=12)",
     "strippedSha256": "1036d1c0fbc36f8f16e64f9c1d9afdad98eab38cb9a0d678ebc1abcbe11f4baa"
@@ -4933,6 +5194,7 @@
    "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
    "contractName": "EulerEarnFactory",
    "evidence": {
+    "address": "0xA3843A73e6a9F81309B931237Ca4759B3B02ff0E",
     "codeSize": 24408,
     "origin": "pool(n=4)",
     "strippedSha256": "c9ee150eb7d0223886b2ba10217238e3947c9bdef1cbe97ba978e6ebf77355c3"
@@ -4951,6 +5213,7 @@
    "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
    "contractName": "PublicAllocator",
    "evidence": {
+    "address": "0x667aD135188d95a32A4E743Aebe5a5b503cb9038",
     "codeSize": 5168,
     "origin": "pool(n=6)",
     "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
@@ -4969,6 +5232,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwapFactory",
    "evidence": {
+    "address": "0xD7aA03104c2CCaC58acB00CbE90865FA64BbE77D",
     "codeSize": 8305,
     "origin": "pool(n=10)",
     "strippedSha256": "7c9a247e972a8a3c9fcdeacc4716b1614d613dc969016a2bae4e142396e082bf"
@@ -4987,6 +5251,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwap",
    "evidence": {
+    "address": "0x7F6ff62e7ECED715a2f4E5Ebe14eC9d32a44EFDc",
     "codeSize": 24313,
     "origin": "pool(n=10)",
     "strippedSha256": "20cae9a429cf62fe9cbbc90acc8fa4529a2e08f8ff0b9c34413015bdd9215ce6"
@@ -5005,6 +5270,7 @@
    "commit": "b948f4052d7ab3116235ec754368b7125dbd5082",
    "contractName": "EulerSwapPeriphery",
    "evidence": {
+    "address": "0x1472ebB000190275B5e28733e45a2614F1C3F41C",
     "codeSize": 2422,
     "origin": "pool(n=11)",
     "strippedSha256": "703cfc72cd6c5fcfe53371822c5670cc72bce7aa91a5976ee254292b5e3f3b24"
@@ -5023,6 +5289,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapFactory",
    "evidence": {
+    "address": "0x29FAFDbf952e7b5c0A6Cd26957829334d54E872A",
     "codeSize": 3872,
     "origin": "pool(n=12)",
     "strippedSha256": "4bdd5d473028a3dc1c724eec0c1c60f2dc20e0d341f25dce5267305934d39e85"
@@ -5041,6 +5308,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwap",
    "evidence": {
+    "address": "0xdAdBb7a06638e3345A341002e956324A46d1c28c",
     "codeSize": 23365,
     "origin": "pool(n=12)",
     "strippedSha256": "408124d9963c57097485489405479fd6df2a8e413f32e31492eb1dd5e8895aa6"
@@ -5059,6 +5327,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapPeriphery",
    "evidence": {
+    "address": "0x741Fc7A904c9F810cbc4a21DE7D07B51B5Da853C",
     "codeSize": 2534,
     "origin": "pool(n=12)",
     "strippedSha256": "f98bd760c3818f32272f4c5bc9485b83d34e9a557d0443dca200e52eb2cdadaa"
@@ -5077,6 +5346,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapProtocolFeeConfig",
    "evidence": {
+    "address": "0x8ec298B473D17e04F819453C72747c3d4d6B7848",
     "codeSize": 3599,
     "origin": "pool(n=12)",
     "strippedSha256": "83e2e2c4d440ed1073480505822963a4600d98c878a9b65cf90a81ecdd9984bf"
@@ -5095,6 +5365,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapRegistry",
    "evidence": {
+    "address": "0x8D6A81Ec8f5680849dCFBa47c710Dd9DA02aDaea",
     "codeSize": 9419,
     "origin": "pool(n=12)",
     "strippedSha256": "42c58b74bd40be0268f5ea0b37691df2a74b60d9ac3124a2148a08ad7d4c9eb4"
@@ -5113,6 +5384,7 @@
    "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
    "contractName": "EthereumVaultConnector",
    "evidence": {
+    "address": "0x7bdbd0A7114aA42CA957F292145F6a931a345583",
     "codeSize": 22050,
     "origin": "hint+explorer",
     "strippedSha256": "b12f6d72b8c5547a8a77595732e64e7b3e7f432357252ce4b13015605877c936"
@@ -5131,6 +5403,7 @@
    "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
    "contractName": "EulerRouterFactory",
    "evidence": {
+    "address": "0x7e539159a06CFe0A9f855d22dD82aD95eDf8C2F1",
     "codeSize": 6826,
     "origin": "ovr:epo-dc3be15-v1.9.4",
     "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4",
@@ -5159,6 +5432,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "ProtocolConfig",
    "evidence": {
+    "address": "0x593Ab8A0182f752c6f1af52CA2A0E8B9F868f64A",
     "codeSize": 3953,
     "origin": "pool(n=7)",
     "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
@@ -5177,6 +5451,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "RewardToken",
    "evidence": {
+    "address": "0xe2011F2bF6556863c3bacE991Efc8DaC26CD84c2",
     "codeSize": 10735,
     "origin": "pool(n=12)",
     "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
@@ -5195,6 +5470,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "SequenceRegistry",
    "evidence": {
+    "address": "0x3cf6e4c11333b30f0D0CEAe6B78f53a660df357c",
     "codeSize": 867,
     "origin": "pool(n=7)",
     "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
@@ -5213,6 +5489,7 @@
    "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
    "contractName": "SwapVerifier",
    "evidence": {
+    "address": "0x84Fd34E9dd12f8D6Cb884f93277d146BDbDF35B5",
     "codeSize": 5586,
     "origin": "pool(n=9)",
     "strippedSha256": "2fc2cdd1b6e45a1d03326395d392a7418aa02fd05c71dbf5d845bcc7154354eb"
@@ -5233,6 +5510,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "ERC20BurnableMintable",
    "evidence": {
+    "address": "0x3A41f426E55ECdE4BC734fA79ccE991b94aFf711",
     "codeSize": 7768,
     "origin": "sibling",
     "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
@@ -5251,6 +5529,7 @@
    "commit": "9eb7b8a7fa31c275d688063c4abd07165b50b89f",
    "contractName": "TrackingRewardStreams",
    "evidence": {
+    "address": "0x05d14f4eDFA7Cbfb90711C2EC5505bcbd49b9cD2",
     "codeSize": 11981,
     "origin": "ovr:dc3be15-v5.1.0",
     "strippedSha256": "47294620c90c9199e0f7a39434092ca19f03307bc7b3e28dd32f37d839ae16db",
@@ -5279,6 +5558,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "GenericFactory",
    "evidence": {
+    "address": "0xcF5552580fD364cdBBFcB5Ae345f75674c59273A",
     "codeSize": 5631,
     "origin": "pool(n=14)",
     "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
@@ -5297,6 +5577,7 @@
    "commit": "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2",
    "contractName": "EVault",
    "evidence": {
+    "address": "0x05de079A28386135E048369cdf0Bc4D326d5EBDF",
     "codeSize": 23147,
     "origin": "pool(n=13)",
     "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
@@ -5315,6 +5596,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "MintBurnOFTAdapter",
    "evidence": {
+    "address": "0x976666e0ae74A8A4059cF1acf706891aDE98C3d1",
     "codeSize": 12615,
     "origin": "pool(n=12)",
     "strippedSha256": "1036d1c0fbc36f8f16e64f9c1d9afdad98eab38cb9a0d678ebc1abcbe11f4baa"
@@ -5333,6 +5615,7 @@
    "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
    "contractName": "EulerEarnFactory",
    "evidence": {
+    "address": "0x587DD8285c01526769aB4803e4F02433ddbBc00E",
     "codeSize": 24408,
     "origin": "pool(n=4)",
     "strippedSha256": "c9ee150eb7d0223886b2ba10217238e3947c9bdef1cbe97ba978e6ebf77355c3"
@@ -5351,6 +5634,7 @@
    "commit": "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345",
    "contractName": "PublicAllocator",
    "evidence": {
+    "address": "0xc00ae658ce425Bb668A5Ed96c8ECa9C988706939",
     "codeSize": 5168,
     "origin": "pool(n=6)",
     "strippedSha256": "a6bee3db1d4b49237f0c9b53d2ffd95365ee9e8c77222d56665a6e25491ae314"
@@ -5369,6 +5653,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapFactory",
    "evidence": {
+    "address": "0xFbF2a49CB0cc50F4ccd4eAc826eF1A76D99D29Eb",
     "codeSize": 3872,
     "origin": "pool(n=12)",
     "strippedSha256": "4bdd5d473028a3dc1c724eec0c1c60f2dc20e0d341f25dce5267305934d39e85"
@@ -5387,6 +5672,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwap",
    "evidence": {
+    "address": "0xC00F0B7d7B4F7cA3d3f79f3892069f41C142dB84",
     "codeSize": 23365,
     "origin": "pool(n=12)",
     "strippedSha256": "408124d9963c57097485489405479fd6df2a8e413f32e31492eb1dd5e8895aa6"
@@ -5405,6 +5691,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapPeriphery",
    "evidence": {
+    "address": "0x61aFC386b47a11F8721b67Eb1607cFBd9ccE48B1",
     "codeSize": 2534,
     "origin": "pool(n=12)",
     "strippedSha256": "f98bd760c3818f32272f4c5bc9485b83d34e9a557d0443dca200e52eb2cdadaa"
@@ -5423,6 +5710,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapProtocolFeeConfig",
    "evidence": {
+    "address": "0x434b1072d96ea24967CDe289D3d4d81d2BAD4F30",
     "codeSize": 3599,
     "origin": "pool(n=12)",
     "strippedSha256": "83e2e2c4d440ed1073480505822963a4600d98c878a9b65cf90a81ecdd9984bf"
@@ -5441,6 +5729,7 @@
    "commit": "81cf6dc988468fd56f690e6bc0e338a5be02d034",
    "contractName": "EulerSwapRegistry",
    "evidence": {
+    "address": "0x7E1Efb6A2009A1FDaDee1c5d6615260AD70c14Fb",
     "codeSize": 9419,
     "origin": "pool(n=12)",
     "strippedSha256": "42c58b74bd40be0268f5ea0b37691df2a74b60d9ac3124a2148a08ad7d4c9eb4"
@@ -5459,6 +5748,7 @@
    "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
    "contractName": "EthereumVaultConnector",
    "evidence": {
+    "address": "0xceAA7cdCD7dDBee8601127a9Abb17A974d613db4",
     "codeSize": 22050,
     "origin": "pool(n=11)",
     "strippedSha256": "b12f6d72b8c5547a8a77595732e64e7b3e7f432357252ce4b13015605877c936"
@@ -5477,6 +5767,7 @@
    "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
    "contractName": "EulerRouterFactory",
    "evidence": {
+    "address": "0x1CefA54ebBCb6c9Aa7347196B03364aFe9A89f7e",
     "codeSize": 6826,
     "origin": "ovr:epo-dc3be15-v1.9.4",
     "strippedSha256": "d788109458c7d53cc7fe7773944f9123db2444b9d5bd7d4bd3ee2c759739e4c4",
@@ -5505,6 +5796,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "ProtocolConfig",
    "evidence": {
+    "address": "0x43144f09896F8759DE2ec6D777391B9F05A51128",
     "codeSize": 3953,
     "origin": "pool(n=7)",
     "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
@@ -5523,6 +5815,7 @@
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
    "contractName": "RewardToken",
    "evidence": {
+    "address": "0x14DCA6543Ef03b932cBD801FBfd70e42a9b6122b",
     "codeSize": 10735,
     "origin": "pool(n=12)",
     "strippedSha256": "ea6d1628f20671e71ebf387ba533b756f9b8b6fd3ad0f7535f129eaaa95b9d62"
@@ -5541,6 +5834,7 @@
    "commit": "9e3c760e051f5d769f7c6edb9be30198a55117d4",
    "contractName": "SequenceRegistry",
    "evidence": {
+    "address": "0x47618E4CBDcFBf5f21D6594A7e3a4f4683719994",
     "codeSize": 867,
     "origin": "pool(n=7)",
     "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
@@ -5559,6 +5853,7 @@
    "commit": "edaf96e32ebe6cb96ae30add934d74fa1d092ff6",
    "contractName": "SwapVerifier",
    "evidence": {
+    "address": "0x11F6386A84b04E83Ecd647Cb1f492a66B7A3Be33",
     "codeSize": 5586,
     "origin": "pool(n=9)",
     "strippedSha256": "2fc2cdd1b6e45a1d03326395d392a7418aa02fd05c71dbf5d845bcc7154354eb"
