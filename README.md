@@ -157,10 +157,15 @@ a change: an `rpc` override in its `networks.json`, then this repo's CI pin
 ### Retiring a chain
 
 1. Set `status: 'deprecated'` while users exit.
-2. Once the chain is no longer offered, remove it from `chains.js` and move
-   `addresses/<chainId>/` to `addresses/test/<chainId>/`. `addresses/test/`
-   holds testnet and retired-chain addresses: they are not published in
-   `EulerChains.json` and not bytecode-verified.
+2. Once the chain is no longer offered, remove it from `chains.js`, then:
+   - **A chain that was live:** move `addresses/<chainId>/` to
+     `addresses/test/<chainId>/`, merging in any `config/addresses/<chainId>/`
+     values. Remove its `verify/manifest.json` entries and its
+     `verify/<chainId>.md` report, and re-render the reports so its row leaves
+     `verify/README.md`. Only the addresses stay, as the record:
+     `addresses/test/` is not published in `EulerChains.json` and not
+     bytecode-verified.
+   - **A chain that never went live:** remove it entirely, addresses included.
 
 ## Security
 
