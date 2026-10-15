@@ -31,10 +31,95 @@ using only public RPC endpoints — no API keys or secrets required.
 | Path | Contents |
 |------|----------|
 | `addresses/<chainId>/` | Deployed contract addresses per chain |
+| `addresses/test/<chainId>/` | Testnet and retired-chain addresses, not published in `EulerChains.json` |
+| `config/` | Address overlays, expected multisig configurations and bridge routes |
 | `abis/` | Contract ABIs |
 | `interfaces/` | Solidity interface definitions |
 | `verify/` | Bytecode verification reports and provenance manifests |
-| `EulerChains.json`, `chains.js` | Supported chain metadata |
+| `EulerChains.json`, `chains.js` | Supported chain metadata (see [Adding a chain](#adding-a-chain)) |
+| `scripts/` | `EulerChains.json` validator run by CI |
+
+## Adding a chain
+
+`chains.js` is the source of `EulerChains.json`. Edit it, run `node chains.js`
+and commit both files. CI regenerates `EulerChains.json` and fails on any
+difference, then validates every chain. To run the same checks locally:
+
+```bash
+npm ci
+node chains.js
+npm test
+npm run validate
+```
+
+### Chain fields
+
+| Field | Value |
+|-------|-------|
+| `chainId` | EVM chain ID. |
+| `name` | Short chain name. |
+| `status` | `staging`, `production`, `unlisted` or `deprecated` (see below). Required. |
+| `explorerUrl` | The chain's canonical block explorer: an https origin with no trailing slash, such as `https://etherscan.io`. Apps link `${explorerUrl}/address/<address>` and `${explorerUrl}/tx/<hash>`. Required. |
+| `verifier` | How to verify a contract's source so `explorerUrl` shows it, as `{ "type": …, "url": … }` with evk-periphery's verifier names: `etherscan` (Etherscan V2; no `url`), `blockscout` (`url` is its API, as forge's `--verifier-url` takes it, such as `https://explorer.tac.build/api`), `sourcify` (`url` only for a server other than sourcify.dev) or `custom` (an Etherscan-compatible API such as Routescan; `url` required). URLs are canonical https with no trailing slash. Required. The Toolbox reads it; deployment scripts keep their `--verifier` flag, because a new chain's contracts are verified before it has an entry here. |
+| `viemName` | The chain's export name in `viem/chains`, such as `base`. It must name a viem chain with this chain ID. Required when viem exports more than one chain with the ID; without it, viem must export exactly one. CI checks this against the viem version pinned in `package.json`. |
+| `safeBaseUrl` | The Safe{Wallet} app that serves the chain. |
+| `safeAddressPrefix` | Safe's short name for the chain, as in `eth:0x…`. |
+
+`addresses` is generated from the address files; do not edit it by hand.
+
+### Status
+
+| Status | In the apps |
+|--------|-------------|
+| `staging` | Shown in staging and preview deployments only, each app per its own runbook. A new chain starts here. |
+| `production` | Shown everywhere. |
+| `unlisted` | Hidden in the apps, but still indexed and checked. |
+| `deprecated` | Shown with a deprecated badge, so users can exit. For chains Euler is leaving. |
+
+The former status `testing` is retired; CI rejects it. Most apps read the
+latest `EulerChains.json` at runtime, so a merged change to `status` or
+`explorerUrl` reaches them without an app release. The Toolbox reads a
+pinned registry commit instead and picks up the change only once a Toolbox PR
+moves its pin.
+
+### Steps
+
+1. **Bump the verifier pin in interfaces CI first.** Deployed-code
+   verification runs [euler-verifier](https://github.com/euler-xyz/euler-verifier)
+   at the commit pinned in `.github/workflows/deployed-code-verification.yml`,
+   and the verifier reads each chain's public RPC endpoints from its
+   `networks.json`. Add the chain there, then move the pin here in its own PR
+   before any addresses for the chain land.
+2. **Address files.** Add `addresses/<chainId>/<Group>Addresses.json` for each
+   group (`Core`, `Periphery`, `Lens`, `Governor`, `Multisig`, `Token`,
+   `Bridge`, `EulerSwap`). `chains.js` publishes each file under `addresses`,
+   for example `CoreAddresses.json` as `addresses.coreAddrs`.
+3. **`config/`.**
+   - `config/addresses/<chainId>/*Addresses.json` files are merged into the
+     same groups as `addresses/<chainId>/`.
+   - `config/multisig/<name>.json` holds the expected `threshold` and
+     `signers` of each named multisig.
+   - `config/bridge/BridgeConfigCache.json` lists, per token and source chain,
+     the chains it is bridged to. Add the chain where the token is bridged.
+4. **Verify manifest and report.** Add the chain's contracts to
+   `verify/manifest.json` (repo, commit SHA, build profile). The completeness
+   check lists any deployed address without an entry, and CI bytecode-verifies
+   every chain a PR changes. Then render the reports with euler-verifier (see
+   its README) and commit `verify/<chainId>.md` and the updated
+   `verify/README.md`.
+5. **Chain entry.** Add the chain to `chains.js` with `status: 'staging'`, its
+   `explorerUrl`, its `verifier` and, if needed, `viemName`. Run
+   `node chains.js`.
+6. **Launch.** Set `status: 'production'` once each app's runbook for the
+   chain is done.
+
+### Retiring a chain
+
+1. Set `status: 'deprecated'` while users exit.
+2. Once the chain is no longer offered, remove it from `chains.js` and move
+   `addresses/<chainId>/` to `addresses/test/<chainId>/`. `addresses/test/`
+   holds testnet and retired-chain addresses: they are not published in
+   `EulerChains.json` and not bytecode-verified.
 
 ## Security
 
