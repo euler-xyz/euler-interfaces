@@ -150,8 +150,9 @@ moves its pin.
 6. **Launch.** Set `status: 'production'` once each app's runbook for the
    chain is done.
 
-Only if viem's default RPC for the chain is unusable does euler-verifier need
-a change: an `rpc` override in its `networks.json`, then this repo's CI pin
+euler-verifier takes the chain's name and RPC endpoints from viem. If viem's
+default RPC for the chain is unusable, set `DEPLOYMENT_RPC_URL_<chainId>` for
+the local run; CI then needs a euler-verifier viem bump and this repo's CI pin
 (`.github/workflows/deployed-code-verification.yml`) moved to that commit.
 
 ### Retiring a chain
@@ -161,8 +162,10 @@ a change: an `rpc` override in its `networks.json`, then this repo's CI pin
    - **A chain that was live:** move `addresses/<chainId>/` to
      `addresses/test/<chainId>/`, merging in any `config/addresses/<chainId>/`
      values. Remove its `verify/manifest.json` entries and its
-     `verify/<chainId>.md` report, and re-render the reports so its row leaves
-     `verify/README.md`. Only the addresses stay, as the record:
+     `verify/<chainId>.md` report, and re-render the reports
+     (`pnpm add-entries --interfaces ../euler-interfaces --render` in
+     euler-verifier) so its row leaves `verify/README.md`. Only the addresses
+     stay, as the record:
      `addresses/test/` is not published in `EulerChains.json` and not
      bytecode-verified.
    - **A chain that never went live:** remove it entirely, addresses included.
