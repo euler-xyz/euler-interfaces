@@ -145,7 +145,10 @@ moves its pin.
    - `config/multisig/<name>.json` holds the expected `threshold` and
      `signers` of each named multisig.
    - `config/bridge/BridgeConfigCache.json` lists, per token and source chain,
-     the chains it is bridged to. Add the chain where the token is bridged.
+     the chains it is bridged to. evk-periphery's option 50 writes it: commit
+     the version it wrote, including the Ethereum run's row. Never edit it by
+     hand, because option 50 treats a pair already listed as configured and
+     skips that pair's bridge setup.
 4. **Verify manifest and report.** Generate every manifest entry and the
    chain's report from a euler-verifier checkout, as in
    [Adding or redeploying a contract](#adding-or-redeploying-a-contract):
@@ -166,12 +169,19 @@ moves its pin.
 euler-verifier takes the chain's name and RPC endpoints from viem. If viem's
 default RPC for the chain is unusable, set `DEPLOYMENT_RPC_URL_<chainId>` for
 the local run; CI then needs a euler-verifier viem bump and this repo's CI pin
-(`.github/workflows/deployed-code-verification.yml`) moved to that commit.
+(`.github/workflows/deployed-code-verification.yml`) moved to that commit. If
+`npm run validate` here doesn't know the chain, bump `viem` in this repo's
+`package.json` as well.
 
 ### Retiring a chain
 
 1. Set `status: 'deprecated'` while users exit.
-2. Once the chain is no longer offered, remove it from `chains.js`, then:
+2. If EUL was bridged to the chain, remove its peer on Ethereum while
+   `addresses/<chainId>/` still exists: add the chain to
+   `configIgnoreChainIds` in evk-periphery's `script/50_CoreAndPeriphery.s.sol`,
+   then run option 50 on Ethereum as a DAO Safe batch. The script only reads
+   chains under `addresses/<chainId>/`.
+3. Once the chain is no longer offered, remove it from `chains.js`, then:
    - **A chain that was live:** move `addresses/<chainId>/` to
      `addresses/test/<chainId>/`, merging in any `config/addresses/<chainId>/`
      values. Remove its `verify/manifest.json` entries and its
