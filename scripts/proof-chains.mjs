@@ -34,12 +34,20 @@ const changedKeys = (before = {}, after = {}) =>
 
 const registryByChain = (rows) => Object.fromEntries((Array.isArray(rows) ? rows : []).map((row) => [String(row.chainId), row]));
 
-/** Chains the head can prove: an addresses/<id>/ folder and manifest entries. */
+const chainFolders = (head, path) => {
+  try {
+    return git(['ls-tree', '--name-only', `${head}:${path}`]).split('\n').filter((name) => /^\d+$/.test(name));
+  } catch (error) {
+    if (/Not a valid object name/.test(String(error.stderr ?? ''))) return [];
+    throw error;
+  }
+};
+
+/** Chains the head can prove: manifest entries, and address files under addresses/ or config/addresses/ (chains.js publishes either). */
 export const provableChains = (head) => {
   const manifest = showJson(head, 'verify/manifest.json') ?? {};
-  return git(['ls-tree', '--name-only', `${head}:addresses`])
-    .split('\n')
-    .filter((name) => /^\d+$/.test(name) && manifest[name])
+  return [...new Set([...chainFolders(head, 'addresses'), ...chainFolders(head, 'config/addresses')])]
+    .filter((name) => manifest[name])
     .sort((a, b) => Number(a) - Number(b));
 };
 

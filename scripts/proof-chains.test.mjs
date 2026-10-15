@@ -76,6 +76,15 @@ test('a config-only change selects its chain', () => {
   assert.equal(prove({ 'config/addresses/8453/CoreAddresses.json': { evc: '0x44' } }), '8453');
 });
 
+test('a chain whose address files are all under config/addresses is provable', () => {
+  const configOnly = {
+    'config/addresses/130/CoreAddresses.json': { evc: '0x55' },
+    'verify/manifest.json': { 1: { evc: { commit: 'a' } }, 130: { evc: { commit: 'a' } }, 8453: { evc: { commit: 'a' } } },
+  };
+  assert.equal(prove(configOnly), '130');
+  assert.equal(prove({ ...configOnly, 'verify/audits.json': [] }), '1,130,8453');
+});
+
 test('a registry-only change selects the chain whose row changed', () => {
   assert.equal(
     prove({
