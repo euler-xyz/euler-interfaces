@@ -16,7 +16,7 @@ jobs:
         with:
           repository: euler-xyz/euler-verifier
           # Engine pinned by commit SHA; bump deliberately via PR.
-          ref: 91f824219ccc506e1e797454744aa27b5def696e
+          ref: c10246490bd0b101e241cd9361c3cf2c5e4f2920
           path: .verifier
 
       - uses: pnpm/action-setup@v4
@@ -28,6 +28,8 @@ jobs:
           cache: pnpm
           cache-dependency-path: .verifier/pnpm-lock.yaml
       - uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: v1.7.1
 
       - run: pnpm install --frozen-lockfile
         working-directory: .verifier
