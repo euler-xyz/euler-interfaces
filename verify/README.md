@@ -1,6 +1,6 @@
 # Deployed Code Verification Reports
 
-Bytecode-level verification of every allowlisted Euler contract: on-chain code is proven equal to a commit-pinned local build (metadata stripped, immutables masked) — the block explorer is never in the trust path — then each deployment is diffed against its component's audited baseline: the fixes-included state of the component's most recent audit. Reports lead with anything requiring attention and show every deployed source delta beyond audited code as a real diff. Reproducible by anyone.
+Bytecode-level verification of every allowlisted Euler contract: on-chain runtime code is proven equal to a commit-pinned local build (metadata trailer stripped; immutables and build-located embedded metadata digests masked) — the block explorer is never in the trust path — then each deployment is diffed against its component's audited baseline: the fixes-included state of the component's most recent audit. Reports lead with anything requiring attention and show every deployed source delta beyond audited code as a real diff. Reproducible by anyone. The claim is runtime correspondence under this normalization, not initialization, governance, immutable configuration or deployment safety.
 
 | Network | Chain ID | Proven |
 |---------|----------|--------|
