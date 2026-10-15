@@ -16,7 +16,7 @@ jobs:
         with:
           repository: euler-xyz/euler-verifier
           # Engine pinned by commit SHA; bump deliberately via PR.
-          ref: c26b93736af335ea3801f5c5f7020885f19a90a7
+          ref: 75b576ac2fa1c566f7635fb03b2f25e772893b58
           path: .verifier
 
       - uses: pnpm/action-setup@v4
@@ -58,6 +58,6 @@ jobs:
         run: |
           set -e
           for c in ${CHAINS//,/ }; do
-            pnpm verify --manifest $GITHUB_WORKSPACE/verify/manifest.json --addresses $GITHUB_WORKSPACE/addresses --chain "$c" --no-explorer
+            pnpm verify --manifest $GITHUB_WORKSPACE/verify/manifest.json --addresses $GITHUB_WORKSPACE/addresses --chains $GITHUB_WORKSPACE/EulerChains.json --chain "$c" --no-explorer
           done
         working-directory: .verifier
