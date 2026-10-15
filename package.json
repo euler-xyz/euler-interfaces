@@ -1,0 +1,15 @@
+{
+  "name": "euler-interfaces-registry-checks",
+  "private": true,
+  "scripts": {
+    "generate": "node chains.js",
+    "validate": "node scripts/validate-chains.mjs",
+    "test": "node --test scripts/validate-chains.test.mjs"
+  },
+  "devDependencies": {
+    "viem": "2.48.8"
+  },
+  "overrides": {
+    "ws": "8.21.3"
+  }
+}

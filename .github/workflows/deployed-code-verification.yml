@@ -2,9 +2,6 @@ name: Deployed Code Verification
 
 on:
   pull_request:
-    paths:
-      - 'addresses/**'
-      - 'verify/**'
   workflow_dispatch:
 
 jobs:
