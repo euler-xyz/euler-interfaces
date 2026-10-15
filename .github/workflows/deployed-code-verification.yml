@@ -33,25 +33,25 @@ jobs:
         working-directory: .verifier
 
       - name: Validate manifests (schema, SHA-only pins, audits integrity)
-        run: pnpm tsx src/validate-manifests.ts --manifest $GITHUB_WORKSPACE/verify/manifest.json --audits $GITHUB_WORKSPACE/verify/audits.json
+        run: pnpm tsx src/validate-manifests.ts --manifest $GITHUB_WORKSPACE/verify/manifest.json --audits $GITHUB_WORKSPACE/verify/audits.json --baselines $GITHUB_WORKSPACE/verify/baselines.json
         working-directory: .verifier
 
       - name: Completeness (every deployed address has a manifest entry)
         run: pnpm tsx src/check-completeness.ts --manifest $GITHUB_WORKSPACE/verify/manifest.json --addresses $GITHUB_WORKSPACE/addresses
         working-directory: .verifier
 
-      - name: Determine changed entries
+      - name: Select the chains to prove
         id: changed
         run: |
           # A pull_request checkout is GitHub's merge commit: its first parent is the base branch.
           CHAINS=""
           if [ "$GITHUB_EVENT_NAME" = pull_request ]; then
-            CHAINS=$(git diff --name-only HEAD^1 HEAD -- addresses verify/manifest.json | grep -oE 'addresses/[0-9]+' | grep -oE '[0-9]+' | sort -u | paste -sd, -)
+            CHAINS=$(node scripts/proof-chains.mjs --base HEAD^1 --head HEAD)
           fi
           echo "chains=$CHAINS" >> $GITHUB_OUTPUT
           echo "changed chains: ${CHAINS:-none}"
 
-      - name: Bytecode-verify changed chains
+      - name: Bytecode-verify the selected chains and their delegated code
         if: steps.changed.outputs.chains != ''
         env:
           CHAINS: ${{ steps.changed.outputs.chains }}

@@ -4,7 +4,7 @@
   "scripts": {
     "generate": "node chains.js",
     "validate": "node scripts/validate-chains.mjs",
-    "test": "node --test scripts/validate-chains.test.mjs"
+    "test": "node --test scripts/validate-chains.test.mjs scripts/proof-chains.test.mjs"
   },
   "devDependencies": {
     "viem": "2.48.8"
