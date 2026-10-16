@@ -9,12 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
       - uses: actions/checkout@v4
         with:
           repository: euler-xyz/euler-verifier
           # Engine pinned by commit SHA; bump deliberately via PR.
-          ref: 534dcf9eda294a46c208c7b8767fdd76dfc2fd29
+          ref: fd7d282358e4b12a32998093f54aec6933135b4c
           path: .verifier
 
       - uses: pnpm/action-setup@v4
@@ -26,33 +28,38 @@ jobs:
           cache: pnpm
           cache-dependency-path: .verifier/pnpm-lock.yaml
       - uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: v1.7.1
 
       - run: pnpm install --frozen-lockfile
         working-directory: .verifier
 
       - name: Validate manifests (schema, SHA-only pins, audits integrity)
-        run: pnpm tsx src/validate-manifests.ts --manifest $GITHUB_WORKSPACE/verify/manifest.json --audits $GITHUB_WORKSPACE/verify/audits.json
+        run: pnpm tsx src/validate-manifests.ts --manifest $GITHUB_WORKSPACE/verify/manifest.json --audits $GITHUB_WORKSPACE/verify/audits.json --baselines $GITHUB_WORKSPACE/verify/baselines.json
         working-directory: .verifier
 
       - name: Completeness (every deployed address has a manifest entry)
         run: pnpm tsx src/check-completeness.ts --manifest $GITHUB_WORKSPACE/verify/manifest.json --addresses $GITHUB_WORKSPACE/addresses
         working-directory: .verifier
 
-      - name: Determine changed entries
+      - name: Select the chains to prove
         id: changed
         run: |
-          git fetch --no-tags --depth=1 origin $GITHUB_BASE_REF
-          CHAINS=$(git diff --name-only origin/$GITHUB_BASE_REF...HEAD -- addresses verify/manifest.json | grep -oE 'addresses/[0-9]+' | grep -oE '[0-9]+' | sort -u | paste -sd, -)
+          # A pull_request checkout is GitHub's merge commit: its first parent is the base branch.
+          CHAINS=""
+          if [ "$GITHUB_EVENT_NAME" = pull_request ]; then
+            CHAINS=$(node scripts/proof-chains.mjs --base HEAD^1 --head HEAD)
+          fi
           echo "chains=$CHAINS" >> $GITHUB_OUTPUT
           echo "changed chains: ${CHAINS:-none}"
 
-      - name: Bytecode-verify changed chains
+      - name: Bytecode-verify the selected chains and their delegated code
         if: steps.changed.outputs.chains != ''
         env:
           CHAINS: ${{ steps.changed.outputs.chains }}
         run: |
           set -e
           for c in ${CHAINS//,/ }; do
-            pnpm verify --manifest $GITHUB_WORKSPACE/verify/manifest.json --addresses $GITHUB_WORKSPACE/addresses --chain "$c" --no-explorer
+            pnpm verify --manifest $GITHUB_WORKSPACE/verify/manifest.json --addresses $GITHUB_WORKSPACE/addresses --chains $GITHUB_WORKSPACE/EulerChains.json --chain "$c" --no-explorer
           done
         working-directory: .verifier
