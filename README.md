@@ -48,7 +48,7 @@ using only public RPC endpoints — no API keys or secrets required.
 | `interfaces/` | Solidity interface definitions |
 | `verify/` | Bytecode verification reports and provenance manifests |
 | `EulerChains.json`, `chains.js` | Supported chain metadata (see [Adding a chain](#adding-a-chain)) |
-| `scripts/` | `EulerChains.json` validator and the proof's chain selection, run by CI |
+| `scripts/` | Validators for `EulerChains.json`, `config/multisig/` and the bridge cache, and the proof's chain selection, run by CI |
 
 ## Adding or redeploying a contract
 
@@ -88,7 +88,9 @@ names the command to run.
 
 `chains.js` is the source of `EulerChains.json`. Edit it, run `node chains.js`
 and commit both files. CI regenerates `EulerChains.json` and fails on any
-difference, then validates every chain. To run the same checks locally:
+difference, then validates every chain, the `config/multisig/` files and the
+bridge cache. Both CI checks, Verify EulerChains.json and Deployed Code
+Verification, are required on `master`. To run the same checks locally:
 
 ```bash
 npm ci
@@ -106,7 +108,7 @@ npm run validate
 | `status` | `staging`, `production`, `unlisted` or `deprecated` (see below). Required. |
 | `explorerUrl` | The chain's canonical block explorer: an https origin with no trailing slash, such as `https://etherscan.io`. Apps link `${explorerUrl}/address/<address>` and `${explorerUrl}/tx/<hash>`. Required. |
 | `verifier` | How to verify a contract's source so `explorerUrl` shows it, as `{ "type": …, "url": … }` with evk-periphery's verifier names: `etherscan` (Etherscan V2; no `url`), `blockscout` (`url` is its API, as forge's `--verifier-url` takes it, such as `https://explorer.tac.build/api`), `sourcify` (`url` only for a server other than sourcify.dev) or `custom` (an Etherscan-compatible API such as Routescan; `url` required). URLs are canonical https with no trailing slash. Required. The Toolbox reads it; deployment scripts keep their `--verifier` flag, because a new chain's contracts are verified before it has an entry here. |
-| `viemName` | The chain's export name in `viem/chains`, such as `base`. It must name a viem chain with this chain ID. Required when viem exports more than one chain with the ID; without it, viem must export exactly one. CI checks this against the viem version pinned in `package.json`. |
+| `viemName` | The chain's export name in `viem/chains`, such as `base`. It must name a viem chain with this chain ID. Required when viem exports more than one chain with the ID; without it, viem must export exactly one. CI checks this against the viem version pinned in `package.json`, which is the SDK's (see below). |
 | `safeBaseUrl` | The Safe{Wallet} app that serves the chain. |
 | `safeAddressPrefix` | Safe's short name for the chain, as in `eth:0x…`. |
 
@@ -144,12 +146,14 @@ change reaches it with its next deploy.
    - `config/addresses/<chainId>/*Addresses.json` files are merged into the
      same groups as `addresses/<chainId>/`.
    - `config/multisig/<name>.json` holds the expected `threshold` and
-     `signers` of each named multisig.
+     `signers` of each named multisig. A signer is an address or the name of
+     another multisig here, as for `securityCouncil`.
    - `config/bridge/BridgeConfigCache.json` lists, per token and source chain,
      the chains it is bridged to. evk-periphery's option 50 writes it: commit
      the version it wrote, including the Ethereum run's row. Never edit it by
      hand, because option 50 treats a pair already listed as configured and
-     skips that pair's bridge setup.
+     skips that pair's bridge setup. CI checks that Ethereum and each chain
+     bridged to it list each other.
 4. **Verify manifest and report.** Generate every manifest entry and the
    chain's report from a euler-verifier checkout, as in
    [Adding or redeploying a contract](#adding-or-redeploying-a-contract):
@@ -170,9 +174,13 @@ change reaches it with its next deploy.
 euler-verifier takes the chain's name and RPC endpoints from viem. If viem's
 default RPC for the chain is unusable, set `DEPLOYMENT_RPC_URL_<chainId>` for
 the local run; CI then needs a euler-verifier viem bump and this repo's CI pin
-(`.github/workflows/deployed-code-verification.yml`) moved to that commit. If
-`npm run validate` here doesn't know the chain, bump `viem` in this repo's
-`package.json` as well.
+(`.github/workflows/deployed-code-verification.yml`) moved to that commit.
+
+`package.json` pins the same viem as the Euler SDK (`@eulerxyz/euler-v2-sdk`
+pins it exactly), not euler-verifier's newer one, so a chain that passes
+`npm run validate` also resolves in every SDK app. If `npm run validate`
+doesn't know a new chain, the SDK has to bump viem first, in a release; then
+move this pin to that version.
 
 ### Retiring a chain
 
