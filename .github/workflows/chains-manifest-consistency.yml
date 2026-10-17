@@ -1,24 +1,16 @@
 name: Verify EulerChains.json
 
 on:
+  # No path filter on pull requests: the check is required, so it must report on every PR.
   pull_request:
     branches: [master]
-    paths:
-      - 'chains.js'
-      - 'EulerChains.json'
-      - 'addresses/**'
-      - 'config/addresses/**'
-      - 'scripts/**'
-      - 'package.json'
-      - 'package-lock.json'
-      - '.github/workflows/chains-manifest-consistency.yml'
   push:
     branches: [master]
     paths:
       - 'chains.js'
       - 'EulerChains.json'
       - 'addresses/**'
-      - 'config/addresses/**'
+      - 'config/**'
       - 'scripts/**'
       - 'package.json'
       - 'package-lock.json'
@@ -61,5 +53,5 @@ jobs:
       - name: Test the chain validator
         run: npm test
 
-      - name: Validate chain status, explorerUrl and viem resolution
+      - name: Validate chain status, explorerUrl, viem resolution, multisig configs and the bridge cache
         run: npm run validate
