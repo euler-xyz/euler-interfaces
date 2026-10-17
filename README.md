@@ -123,9 +123,10 @@ npm run validate
 
 The former status `testing` is retired; CI rejects it. Most apps read the
 latest `EulerChains.json` at runtime, so a merged change to `status` or
-`explorerUrl` reaches them without an app release. The Toolbox reads a
-pinned registry commit instead and picks up the change only once a Toolbox PR
-moves its pin.
+`explorerUrl` reaches them without an app release. The Toolbox reads its
+addresses from `master` at runtime too, but builds its chain list, with each
+chain's status, explorer and verifier, from `master` at each deploy, so such a
+change reaches it with its next deploy.
 
 ### Steps
 
