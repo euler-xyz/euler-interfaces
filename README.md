@@ -185,12 +185,15 @@ move this pin to that version.
 ### Retiring a chain
 
 1. Set `status: 'deprecated'` while users exit.
-2. If EUL was bridged to the chain, remove its peer on Ethereum while
-   `addresses/<chainId>/` still exists: add the chain to
-   `configIgnoreChainIds` in evk-periphery's `script/50_CoreAndPeriphery.s.sol`,
-   then run option 50 on Ethereum as a DAO Safe batch. The script only reads
-   chains under `addresses/<chainId>/`.
-3. Once the chain is no longer offered, remove it from `chains.js`, then:
+2. If EUL was bridged to the chain, follow "Retiring a chain's EUL bridge" in
+   evk-periphery's `script/README.md`. At deprecation the bridge becomes
+   one-direction: EUL can only leave the chain. Closing it later takes option
+   50 runs on both the chain and Ethereum, and the PR carries the bridge cache
+   with both rows removed; CI rejects a cache in which only one side lists the
+   other. Option 50 only reads chains under `addresses/<chainId>/`, so a chain
+   keeps its folder until its bridge is closed.
+3. Once the chain is no longer offered and its EUL bridge, if any, is closed,
+   remove it from `chains.js`, then:
    - **A chain that was live:** move `addresses/<chainId>/` to
      `addresses/test/<chainId>/`, merging in any `config/addresses/<chainId>/`
      values. Remove its `verify/manifest.json` entries and its
