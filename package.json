@@ -3,8 +3,8 @@
   "private": true,
   "scripts": {
     "generate": "node chains.js",
-    "validate": "node scripts/validate-chains.mjs",
-    "test": "node --test scripts/validate-chains.test.mjs scripts/proof-chains.test.mjs"
+    "validate": "node scripts/validate-chains.mjs && node scripts/validate-config.mjs",
+    "test": "node --test scripts/validate-chains.test.mjs scripts/validate-config.test.mjs scripts/proof-chains.test.mjs"
   },
   "devDependencies": {
     "viem": "2.48.8"

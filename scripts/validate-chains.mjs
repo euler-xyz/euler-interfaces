@@ -9,6 +9,7 @@ const isRecord = (value) => typeof value === 'object' && value !== null;
 
 // Same shape test and resolution order as the SDK's chain resolution (euler-sdks
 // providerService/chainResolution.ts), so a row that passes here resolves there.
+// For the same reason package.json pins the SDK's exact viem, not euler-verifier's.
 const isViemChain = (value) =>
   isRecord(value) &&
   typeof value.id === 'number' &&
