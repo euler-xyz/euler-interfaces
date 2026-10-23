@@ -4,7 +4,6 @@
   "eulerEarnFactoryPerspective": "0x0f8fCf22e847b9C50FD959463a8625a8B2aE677f",
   "evkFactoryPerspective": "0xA94b77Ee44590Ac34c69615b77c6168Ebd155A4c",
   "feeFlowController": "0x0000000000000000000000000000000000000000",
-  "governorAccessControlEmergencyFactory": "0xf1D34F5722e1160415f67dbf6d3E407292a71569",
   "kinkIRMFactory": "0x3C9461Af1C3AC31524d597b5372Ec545BB7821E7",
   "oracleRouterFactory": "0x769bAF8ADFBfaf71B867b2e0288b57f850297835",
   "swapVerifier": "0xbBAcf03386E83cC6A08dda6AC68B1893520BB880",
