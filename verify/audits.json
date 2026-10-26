@@ -627,7 +627,7 @@
   ],
   "report": "https://github.com/euler-xyz/euler-swap/blob/81cf6dc988468fd56f690e6bc0e338a5be02d034/audits/report-euler-swap-050325.pdf",
   "confidence": "medium",
-  "evidence": "PDF pages 1-6 (DRAFT): 'From Mar 3rd to Mar 10th the Cantina team conducted a review of euler-swap on commit hash 54c1af6d'. Leads Christoph Michel & Mario.eth (Spearbit), delivered via Cantina Managed. Full hash verified in euler-swap. NOTE: repo tag 'spearbit-audit' points to a DIFFERENT same-day commit 93d836b87208afa4ab0e8ba36d8048b5d7db1b5c (Mar 5 11:04, merge PR#47) - not the PDF-stated commit.",
+  "evidence": "PDF pages 1-6 (DRAFT): 'From Mar 3rd to Mar 10th the Cantina team conducted a review of euler-swap on commit hash 54c1af6d'. Leads Christoph Michel & Mario.eth (Spearbit), delivered via Cantina Managed. Full hash verified in euler-swap. Repo tag 'spearbit-audit' points at 54c1af6d (moved 2026-10-25 from the same-day merge of PR#47, 93d836b8).",
   "signed_off": true,
   "notes": "scope normalized 2026-07-24 from prose placeholder to path form (original: ['(no explicit file list in report; reviewed euler-swap repo at commit; findings reference EulerSwap.sol, EulerSwapPeriphery.sol)'])"
  },

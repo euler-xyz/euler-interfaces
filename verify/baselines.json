@@ -28,11 +28,11 @@
      "summary": "Equals the baseline \u2014 the mainnet EVC deployment IS the audited fixes-included commit."
     },
     "a7d3c29ef7e4964736e47675e0588630d6afbfd7": {
-     "summary": "Descendant of the baseline and the last commit ever to touch src/ on origin/master \u2014 the 14-chain EVC equals current master source. Delta vs baseline: the PR #178/#179 isSignerValid exclusions \u2014 the EIP-7587 precompile range and the 0x42 predeploy address space barred from being message signers. Proactive, restrictive-only hardening added ahead of the Nov-2024 multichain deployment; it maps to no audit finding.",
+     "summary": "Descendant of the baseline and the last commit ever to touch src/ on origin/master \u2014 the 13-chain EVC equals current master source. Delta vs baseline: the PR #178/#179 isSignerValid exclusions \u2014 the EIP-7587 precompile range and the 0x42 predeploy address space barred from being message signers. Proactive, restrictive-only hardening added ahead of the Nov-2024 multichain deployment; it maps to no audit finding.",
      "label": "signer-exclusion hardening"
     },
     "912b301f51301e586e5a7f09e48cf52bd52e9a0e": {
-     "summary": "Polygon-only deployment: the yaudit-evc-2026-setsize state (SET_MAX_ELEMENTS 10\u2192100 for the Gondor/Polymarket integration; 0 C/H/M/L findings, informational fixes included via PR #203). Descendant of the baseline; its delta = the 14-chain pin's signer-exclusion hardening plus exactly the set-size audit scope. The branch remains unmerged to master by design.",
+     "summary": "Polygon-only deployment: the yaudit-evc-2026-setsize state (SET_MAX_ELEMENTS 10\u2192100 for the Gondor/Polymarket integration; 0 C/H/M/L findings, informational fixes included via PR #203). Descendant of the baseline; its delta = the 13-chain pin's signer-exclusion hardening plus exactly the set-size audit scope. The branch remains unmerged to master by design.",
      "label": "set-size 10\u2192100 (audited) + signer hardening"
     }
    }
@@ -68,7 +68,7 @@
      "label": "one fee-share default parameter"
     },
     "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2": {
-     "summary": "The 15-chain deployment; descendant of the baseline, shipping WITH the setLTV patch. Delta vs baseline: the Governance.sol setLTV change (PR #288) \u2014 reviewed in full by both m4rio-evk-2025-setltv and electisec-evk-2025-setltv \u2014 plus the same one-line parameter default. Zero src/ changes exist after this pin: it equals origin/master's contract tree.",
+     "summary": "The 13-chain deployment; descendant of the baseline, shipping WITH the setLTV patch. Delta vs baseline: the Governance.sol setLTV change (PR #288) \u2014 reviewed in full by both m4rio-evk-2025-setltv and electisec-evk-2025-setltv \u2014 plus the same one-line parameter default. Zero src/ changes exist after this pin: it equals origin/master's contract tree.",
      "label": "setLTV patch (audited \u00d72) + param"
     }
    }
@@ -119,7 +119,7 @@
    "baseline": {
     "commit": "8c768bd8c0f1456e70ebb6997250d2984001d150",
     "date": "2025-08-31",
-    "derivation": "Post-Pashov fix window on master: PR #22 'pag-audit-fixes' (db821fa \u2014 max-deposit for zero-shares error handling) followed by the closing fix 8c768bd 'add max mint values' (2025-08-31); the only src commits after the final reviewed revision. Validated empirically: the 5-chain pin 773453b diffs EMPTY against this baseline; the 8-chain pin b2fd6e69 differs by \u00b118 lines of import-path cosmetics only.",
+    "derivation": "Post-Pashov fix window on master: the only src commit beyond the final reviewed revision is db821fa (PR #20 \u2014 max-deposit for zero-shares error handling); a8cc099e (merge of PR #22 'pag-audit-fixes', 2025-08-12) is the first master commit containing it and the reviewed fixes. The baseline 8c768bd 'add max mint values' (2025-08-31) changes only tests; its src/ equals a8cc099e. Validated empirically: the 4-chain pin 773453b diffs EMPTY against this baseline; the 8-chain pin b2fd6e69 differs by \u00b118 lines of import-path cosmetics only.",
     "confidence": "high"
    },
    "pinNotes": {
