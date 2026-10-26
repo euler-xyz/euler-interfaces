@@ -44,6 +44,7 @@ interface IUtilsLens {
         external
         pure
         returns (uint256 borrowAPY, uint256 supplyAPY);
+    function decodeString(bytes memory data) external pure returns (string memory);
     function eVaultFactory() external view returns (address);
     function getAPYs(address vault) external view returns (uint256 borrowAPY, uint256 supplyAPY);
     function getAssetPriceInfo(address asset, address unitOfAccount) external view returns (AssetPriceInfo memory);

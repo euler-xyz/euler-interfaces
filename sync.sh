@@ -34,12 +34,22 @@ contracts=(
   "EulerRouter"
   "TermsOfUseSigner"
   "RewardToken"
-  "ERC4626EVCCollateralSecuritize"
-  "ERC4626EVCCollateralSecuritizeFactory"
 )
 
 for contract in "${contracts[@]}"; do
   jq '.abi' $evk_periphery_repo_path/out/${contract}.sol/${contract}.json | jq '.' > $abis_path/${contract}.json
+done
+
+# evk-periphery builds only the V2 Securitize contracts, whose ABI matches V1; consumers read the V1 file names.
+contracts=(
+  "ERC4626EVCCollateralSecuritizeV2:ERC4626EVCCollateralSecuritize"
+  "ERC4626EVCCollateralSecuritizeFactoryV2:ERC4626EVCCollateralSecuritizeFactory"
+)
+
+for contract in "${contracts[@]}"; do
+  source=${contract%%:*}
+  target=${contract##*:}
+  jq '.abi' $evk_periphery_repo_path/out-securitize-factory/${source}.sol/${source}.json | jq '.' > $abis_path/${target}.json
 done
 
 contracts=(
