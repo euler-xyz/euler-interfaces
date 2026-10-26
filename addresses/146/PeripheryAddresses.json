@@ -1,6 +1,6 @@
 {
   "adaptiveCurveIRMFactory": "0x1515a13551fDF554203f2a86021e0370a08a8D94",
-  "capRiskStewardFactory": "0xE5BEEAaDd7b35Ed4F9F8d519323236698a4866b7",
+  "capRiskStewardFactory": "0x0000000000000000000000000000000000000000",
   "escrowedCollateralPerspective": "0xb70DbFBBaB2B9F01A86B397F0954beA2EAF3Bce5",
   "eulerEarnFactoryPerspective": "0xeFe3F05a2270B1D0739f3ed517127A3d1a70B97a",
   "eulerEarnPublicAllocator": "0x82b27b528DA0516E653e02e5f870853d22Cbc6Df",
@@ -8,7 +8,6 @@
   "feeFlowController": "0xD3Cf3Ec3D7849F2C7Bb9Ff5a8662Ae36a177bEb8",
   "feeFlowControllerUtil": "0xa8bA1b304aDA6A7E4bcc8814071e905712f2E3AC",
   "fixedCyclicalBinaryIRMFactory": "0x5d403c8Ad3300B0cB689eA243336F4d39d0e4Dae",
-  "governorAccessControlEmergencyFactory": "0xE83A3ba3D2D04b6bfeeA198e27d2f6cA7e125bA1",
   "kinkIRMFactory": "0x52E856790779fD4fCa34bA52C67Cd191338572C0",
   "kinkyIRMFactory": "0xd10aa71E7bAEC97C397829BEdb5a3504546fe149",
   "oracleRouterFactory": "0xc5b9B95a769C24c18c344c2659db61a0AdFB736E",
