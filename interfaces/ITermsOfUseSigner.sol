@@ -10,9 +10,6 @@ interface ITermsOfUseSigner {
     event TermsOfUseSigned(address indexed account, bytes32 indexed termsOfUseHash, uint256 timestamp, string message);
 
     function EVC() external view returns (address);
-    function lastTermsOfUseSignatureTimestamp(address account, bytes32 termsOfUseHash)
-        external
-        view
-        returns (uint256);
+    function lastTermsOfUseSignatureTimestamp(address account, bytes32 termsOfUseHash) external view returns (uint256);
     function signTermsOfUse(string memory termsOfUseMessage, bytes32 termsOfUseHash) external;
 }

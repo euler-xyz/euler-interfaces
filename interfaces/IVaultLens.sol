@@ -186,6 +186,7 @@ interface IVaultLens {
     function TTL_INFINITY() external view returns (int256);
     function TTL_LIQUIDATION() external view returns (int256);
     function TTL_MORE_THAN_ONE_YEAR() external view returns (int256);
+    function decodeString(bytes memory data) external pure returns (string memory);
     function getRecognizedCollateralsLTVInfo(address vault) external view returns (LTVInfo[] memory);
     function getRewardVaultInfo(address vault, address reward, uint256 numberOfEpochs)
         external
@@ -198,10 +199,7 @@ interface IVaultLens {
         external
         view
         returns (VaultInterestRateModelInfo memory);
-    function getVaultKinkInterestRateModelInfo(address vault)
-        external
-        view
-        returns (VaultInterestRateModelInfo memory);
+    function getVaultKinkInterestRateModelInfo(address vault) external view returns (VaultInterestRateModelInfo memory);
     function irmLens() external view returns (address);
     function oracleLens() external view returns (address);
     function utilsLens() external view returns (address);

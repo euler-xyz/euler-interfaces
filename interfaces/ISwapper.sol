@@ -34,6 +34,7 @@ interface ISwapper {
     function repayAndDeposit(address token, address vault, uint256 repayAmount, address account) external;
     function swap(SwapParams memory params) external;
     function sweep(address token, uint256 amountMin, address to) external;
+    function transfer(address token, uint256 amountMin, address receiver) external;
     function uniswapRouterV2() external view returns (address);
     function uniswapRouterV3() external view returns (address);
 }

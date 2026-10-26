@@ -63,6 +63,7 @@ interface IEulerEarnVaultLens {
     function TTL_INFINITY() external view returns (int256);
     function TTL_LIQUIDATION() external view returns (int256);
     function TTL_MORE_THAN_ONE_YEAR() external view returns (int256);
+    function decodeString(bytes memory data) external pure returns (string memory);
     function getStrategiesInfo(address vault, address[] memory strategies)
         external
         view
