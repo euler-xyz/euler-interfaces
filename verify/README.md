@@ -4,19 +4,19 @@ Bytecode-level verification of every allowlisted Euler contract: on-chain runtim
 
 | Network | Chain ID | Proven |
 |---------|----------|--------|
-| [Ethereum](1.md) | 1 | 20/21 (+1 canonical) |
-| [BNB Smart Chain](56.md) | 56 | 21/21 |
-| [Unichain](130.md) | 130 | 21/21 |
-| [Polygon](137.md) | 137 | 10/10 |
-| [Monad](143.md) | 143 | 16/16 |
+| [Ethereum](1.md) | 1 | 22/23 (+1 canonical) |
+| [BNB Smart Chain](56.md) | 56 | 22/22 |
+| [Unichain](130.md) | 130 | 22/22 |
+| [Polygon](137.md) | 137 | 11/11 |
+| [Monad](143.md) | 143 | 17/17 |
 | [Sonic](146.md) | 146 | 21/21 |
 | [TAC](239.md) | 239 | 21/21 |
-| [HyperEVM](999.md) | 999 | 18/18 |
-| [Base](8453.md) | 8453 | 21/21 |
-| [Plasma](9745.md) | 9745 | 21/21 |
-| [Arbitrum One](42161.md) | 42161 | 21/21 |
-| [Avalanche](43114.md) | 43114 | 21/21 |
-| [Linea Mainnet](59144.md) | 59144 | 21/21 |
+| [HyperEVM](999.md) | 999 | 19/19 |
+| [Base](8453.md) | 8453 | 22/22 |
+| [Plasma](9745.md) | 9745 | 22/22 |
+| [Arbitrum One](42161.md) | 42161 | 22/22 |
+| [Avalanche](43114.md) | 43114 | 22/22 |
+| [Linea Mainnet](59144.md) | 59144 | 22/22 |
 | [BOB](60808.md) | 60808 | 21/21 |
 | [Berachain](80094.md) | 80094 | 21/21 |
 
