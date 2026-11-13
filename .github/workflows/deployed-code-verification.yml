@@ -57,6 +57,8 @@ jobs:
         if: steps.changed.outputs.chains != ''
         env:
           CHAINS: ${{ steps.changed.outputs.chains }}
+          # viem's only TAC endpoint (rpc.ankr.com/tac) requires an API key; drop this once a viem release has a keyless one.
+          DEPLOYMENT_RPC_URL_239: https://rpc.tac.build
         run: |
           set -e
           for c in ${CHAINS//,/ }; do

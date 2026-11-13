@@ -1,6 +1,6 @@
 {
  "$comment": "Component audit baselines. ONE baseline per component: the fixes-included state of the component's LAST audit \u2014 derived by tracing post-review fix commits (fix commits are usually not stated in reports). Every deployed pin is diffed against this single baseline, restricted to componentPaths \u2014 git pathspecs, where :(exclude) entries scope out source files that are not part of any deployed contract's compilation unit. Pins that predate the baseline carry a naturalBaseline: the audit whose fixes-included state the deployed code actually matches, plus the audits that reviewed the pin\u2192baseline delta. Derivations reference PRs/commits/tags verifiable in the public repos.",
- "generated": "2026-10-27",
+ "generated": "2026-11-13",
  "components": [
   {
    "component": "evc",
@@ -21,7 +21,7 @@
     "commit": "5be2e1b043fe31060528c823cf450c6fd55486d1",
     "date": "2024-07-31",
     "confidence": "medium",
-    "derivation": "Last full-scope audited state of the broadly-deployed EVC lineage: yAudit's Cantina-competition fixes review, which reviewed the evc-cantina-fixes PRs #1-#9 and the operator-bypass fix a4dcf9e, every EVC fix 'Fix OK'. 5be2e1b0 is that repo's master after the last of them (2024-07-31), so baseline = final. The later PR #169 merge 084b3228 adds a comment rewording in EthereumVaultConnector.sol (97d2c12) and EVCUtil changes (16c1745, a85425a) outside componentPaths. Registry entries dated later do not displace it: cantina-evc-2024 is the competition report whose reviewed revision (tag cantina-contest, 2024-05-20) PREDATES these fixes, and yaudit-evc-2026-setsize is a feature review (SET_MAX_ELEMENTS 10->100) commissioned for the Gondor/Polymarket integration and deployed only on Polygon \u2014 it covers that pin's delta rather than anchoring the component. Final derived from the fix-PR history -> medium."
+    "derivation": "Last full-scope audited state of the broadly-deployed EVC lineage: yAudit's Cantina-competition fixes review, which reviewed the evc-cantina-fixes PRs #1-#9 and the operator-bypass fix a4dcf9e, every EVC fix 'Fix OK'. 5be2e1b0 is that repo's master after the last of them (2024-07-31), so baseline = final. The later PR #169 merge 084b3228 adds a comment rewording in EthereumVaultConnector.sol (97d2c12) and EVCUtil changes (16c1745, a85425a) outside componentPaths. Registry entries dated later do not displace it: cantina-evc-2024 is the competition report whose reviewed revision (tag cantina-contest, 2024-05-20) PREDATES these fixes, and yaudit-evc-2026-setsize is a feature review (SET_MAX_ELEMENTS 10->100) commissioned for the Gondor/Polymarket integration and deployed only on Polygon \u2014 it covers that pin's delta rather than anchoring the component. Final derived from the fix-PR history -> medium. enigma-dark-evcutil-erc1271-2026 reviewed only src/utils/EVCUtil.sol, which componentPaths exclude; it anchors the EVCUtil lib baselines."
    },
    "pinNotes": {
     "084b32284ba643921f8d21bff3ddaf0c4e08d754": {
@@ -109,15 +109,15 @@
       "src/utils/EVCUtil.sol"
      ],
      "lastAudit": {
-      "id": "pashov-euler-earn-2025",
-      "date": "2025-07-30",
-      "finalReviewedCommit": "b95775f4235fe4ea738dde226524d25f317d987c"
+      "id": "enigma-dark-evcutil-erc1271-2026",
+      "date": "2026-11-01",
+      "finalReviewedCommit": "883f048b49179aa64efec8c79341f6f566f92486"
      },
      "baseline": {
-      "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
-      "date": "2024-11-11",
-      "confidence": "medium",
-      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at EVC v1.0.1 (a7d3c29e; identical in b9d557a8 and 4538f073), the version the audited contracts that depend on it compile: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025, all on EVC v1.0.1) cover code calling its _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling its _haveCommonOwner and _getAddressPrefix. Anchor = Pashov's EulerEarn review, the latest of them that calls a v1.0.1 addition. Earlier EVC versions predate this baseline; v1.0.2 adds the isValidSignature check (883f048)."
+      "commit": "883f048b49179aa64efec8c79341f6f566f92486",
+      "date": "2026-10-22",
+      "confidence": "high",
+      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further."
      }
     }
    ]
@@ -141,7 +141,7 @@
     "commit": "b95775f4235fe4ea738dde226524d25f317d987c",
     "date": "2025-08-05",
     "confidence": "high",
-    "derivation": "Pashov's report states its 'Fixes review commit hash: b95775f4' (p4): baseline = that commit. PR #20 (db821fa, max-deposit returns 0 when shares would be 0; the ZeroAssets revert and error removed) branches from the reviewed commit 12c02202, came after the fixes review, so the deployed pins show it as a diff."
+    "derivation": "Pashov's report states its 'Fixes review commit hash: b95775f4' (p4): baseline = that commit. PR #20 (db821fa, max-deposit returns 0 when shares would be 0; the ZeroAssets revert and error removed) branches from the reviewed commit 12c02202, came after the fixes review, so the deployed pins show it as a diff. enigma-dark-euler-earn-permit2-2026 does not move it: it reviewed only the PR #46 change to SafeERC20Permit2Lib.sol, and PR #20 and the import-path change bece717 between this baseline and that review's base e42a2a45 are outside its scope. No deployed euler-earn pin contains PR #46."
    },
    "pinNotes": {
     "773453b1f4a6f1d27a1cd0c6d8f6ada572503b23": {
@@ -169,15 +169,15 @@
       "src/utils/EVCUtil.sol"
      ],
      "lastAudit": {
-      "id": "pashov-euler-earn-2025",
-      "date": "2025-07-30",
-      "finalReviewedCommit": "b95775f4235fe4ea738dde226524d25f317d987c"
+      "id": "enigma-dark-evcutil-erc1271-2026",
+      "date": "2026-11-01",
+      "finalReviewedCommit": "883f048b49179aa64efec8c79341f6f566f92486"
      },
      "baseline": {
-      "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
-      "date": "2024-11-11",
-      "confidence": "medium",
-      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at EVC v1.0.1 (a7d3c29e; identical in b9d557a8 and 4538f073), the version the audited contracts that depend on it compile: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025, all on EVC v1.0.1) cover code calling its _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling its _haveCommonOwner and _getAddressPrefix. Anchor = Pashov's EulerEarn review, the latest of them that calls a v1.0.1 addition. Earlier EVC versions predate this baseline; v1.0.2 adds the isValidSignature check (883f048)."
+      "commit": "883f048b49179aa64efec8c79341f6f566f92486",
+      "date": "2026-10-22",
+      "confidence": "high",
+      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further."
      }
     }
    ]
@@ -230,15 +230,15 @@
       "src/utils/EVCUtil.sol"
      ],
      "lastAudit": {
-      "id": "pashov-euler-earn-2025",
-      "date": "2025-07-30",
-      "finalReviewedCommit": "b95775f4235fe4ea738dde226524d25f317d987c"
+      "id": "enigma-dark-evcutil-erc1271-2026",
+      "date": "2026-11-01",
+      "finalReviewedCommit": "883f048b49179aa64efec8c79341f6f566f92486"
      },
      "baseline": {
-      "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
-      "date": "2024-11-11",
-      "confidence": "medium",
-      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at EVC v1.0.1 (a7d3c29e; identical in b9d557a8 and 4538f073), the version the audited contracts that depend on it compile: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025, all on EVC v1.0.1) cover code calling its _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling its _haveCommonOwner and _getAddressPrefix. Anchor = Pashov's EulerEarn review, the latest of them that calls a v1.0.1 addition. Earlier EVC versions predate this baseline; v1.0.2 adds the isValidSignature check (883f048)."
+      "commit": "883f048b49179aa64efec8c79341f6f566f92486",
+      "date": "2026-10-22",
+      "confidence": "high",
+      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further."
      }
     }
    ]
@@ -281,15 +281,15 @@
       "src/utils/EVCUtil.sol"
      ],
      "lastAudit": {
-      "id": "pashov-euler-earn-2025",
-      "date": "2025-07-30",
-      "finalReviewedCommit": "b95775f4235fe4ea738dde226524d25f317d987c"
+      "id": "enigma-dark-evcutil-erc1271-2026",
+      "date": "2026-11-01",
+      "finalReviewedCommit": "883f048b49179aa64efec8c79341f6f566f92486"
      },
      "baseline": {
-      "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
-      "date": "2024-11-11",
-      "confidence": "medium",
-      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at EVC v1.0.1 (a7d3c29e; identical in b9d557a8 and 4538f073), the version the audited contracts that depend on it compile: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025, all on EVC v1.0.1) cover code calling its _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling its _haveCommonOwner and _getAddressPrefix. Anchor = Pashov's EulerEarn review, the latest of them that calls a v1.0.1 addition. Earlier EVC versions predate this baseline; v1.0.2 adds the isValidSignature check (883f048)."
+      "commit": "883f048b49179aa64efec8c79341f6f566f92486",
+      "date": "2026-10-22",
+      "confidence": "high",
+      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further."
      }
     }
    ]
@@ -337,15 +337,15 @@
       "src/utils/EVCUtil.sol"
      ],
      "lastAudit": {
-      "id": "pashov-euler-earn-2025",
-      "date": "2025-07-30",
-      "finalReviewedCommit": "b95775f4235fe4ea738dde226524d25f317d987c"
+      "id": "enigma-dark-evcutil-erc1271-2026",
+      "date": "2026-11-01",
+      "finalReviewedCommit": "883f048b49179aa64efec8c79341f6f566f92486"
      },
      "baseline": {
-      "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
-      "date": "2024-11-11",
-      "confidence": "medium",
-      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at EVC v1.0.1 (a7d3c29e; identical in b9d557a8 and 4538f073), the version the audited contracts that depend on it compile: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025, all on EVC v1.0.1) cover code calling its _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling its _haveCommonOwner and _getAddressPrefix. Anchor = Pashov's EulerEarn review, the latest of them that calls a v1.0.1 addition. Earlier EVC versions predate this baseline; v1.0.2 adds the isValidSignature check (883f048)."
+      "commit": "883f048b49179aa64efec8c79341f6f566f92486",
+      "date": "2026-10-22",
+      "confidence": "high",
+      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further."
      }
     }
    ]
@@ -420,15 +420,15 @@
       "src/utils/EVCUtil.sol"
      ],
      "lastAudit": {
-      "id": "pashov-euler-earn-2025",
-      "date": "2025-07-30",
-      "finalReviewedCommit": "b95775f4235fe4ea738dde226524d25f317d987c"
+      "id": "enigma-dark-evcutil-erc1271-2026",
+      "date": "2026-11-01",
+      "finalReviewedCommit": "883f048b49179aa64efec8c79341f6f566f92486"
      },
      "baseline": {
-      "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
-      "date": "2024-11-11",
-      "confidence": "medium",
-      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at EVC v1.0.1 (a7d3c29e; identical in b9d557a8 and 4538f073), the version the audited contracts that depend on it compile: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025, all on EVC v1.0.1) cover code calling its _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling its _haveCommonOwner and _getAddressPrefix. Anchor = Pashov's EulerEarn review, the latest of them that calls a v1.0.1 addition. Earlier EVC versions predate this baseline; v1.0.2 adds the isValidSignature check (883f048)."
+      "commit": "883f048b49179aa64efec8c79341f6f566f92486",
+      "date": "2026-10-22",
+      "confidence": "high",
+      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further."
      }
     }
    ]
@@ -535,8 +535,8 @@
      "label": "formatting only"
     },
     "fc359a04cc7b61f1a421d3a3baacca15a03fa9a6": {
-     "summary": "Polygon redeploy (2026-10-26). Within componentPaths: forge-fmt re-wrapping only (the same blobs as edaf96e3). The pin builds against newer submodules than the baseline's EVC b9d557a8 and euler-earn b2fd6e69: EVC 4e5b8c56 (v1.0.2), whose EVCUtil._msgSender reverts when the EVC calls isValidSignature (883f048, PR #209), and euler-earn 246bcbac, whose SafeERC20Permit2Lib uses Permit2 only when the token's allowance to Permit2 covers the amount (0a285ce, c01d5e5). MigrationHelper inherits EVCUtil and calls safeTransferFromWithPermit2, so both are behaviour changes. The submodule diffs below show them.",
-     "label": "formatting + EVC v1.0.2 and euler-earn Permit2 dependencies"
+     "summary": "Polygon redeploy (2026-10-26). Within componentPaths: forge-fmt re-wrapping only (the same blobs as edaf96e3). The pin builds against newer submodules than the other chains' pins (EVC b9d557a8, euler-earn b2fd6e69): EVC 4e5b8c56 (v1.0.2), whose EVCUtil._msgSender reverts when the EVC calls isValidSignature (883f048, PR #209), and euler-earn 246bcbac, whose SafeERC20Permit2Lib uses Permit2 only when the token's allowance to Permit2 covers the amount (0a285ce, c01d5e5). MigrationHelper inherits EVCUtil and calls safeTransferFromWithPermit2, so both are behaviour changes. Both libs equal their baselines, the finals of Enigma Dark's PR #209 and PR #46 fix reviews.",
+     "label": "formatting + audited EVC v1.0.2 and euler-earn Permit2 dependencies"
     }
    },
    "libComponents": [
@@ -547,15 +547,15 @@
       "src/utils/EVCUtil.sol"
      ],
      "lastAudit": {
-      "id": "pashov-euler-earn-2025",
-      "date": "2025-07-30",
-      "finalReviewedCommit": "b95775f4235fe4ea738dde226524d25f317d987c"
+      "id": "enigma-dark-evcutil-erc1271-2026",
+      "date": "2026-11-01",
+      "finalReviewedCommit": "883f048b49179aa64efec8c79341f6f566f92486"
      },
      "baseline": {
-      "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
-      "date": "2024-11-11",
-      "confidence": "medium",
-      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at EVC v1.0.1 (a7d3c29e; identical in b9d557a8 and 4538f073), the version the audited contracts that depend on it compile: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025, all on EVC v1.0.1) cover code calling its _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling its _haveCommonOwner and _getAddressPrefix. Anchor = Pashov's EulerEarn review, the latest of them that calls a v1.0.1 addition. Earlier EVC versions predate this baseline; v1.0.2 adds the isValidSignature check (883f048)."
+      "commit": "883f048b49179aa64efec8c79341f6f566f92486",
+      "date": "2026-10-22",
+      "confidence": "high",
+      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further."
      }
     },
     {
@@ -565,15 +565,15 @@
       "src/libraries/SafeERC20Permit2Lib.sol"
      ],
      "lastAudit": {
-      "id": "pashov-euler-earn-2025",
-      "date": "2025-07-30",
-      "finalReviewedCommit": "b95775f4235fe4ea738dde226524d25f317d987c"
+      "id": "enigma-dark-euler-earn-permit2-2026",
+      "date": "2026-11-01",
+      "finalReviewedCommit": "7e8a139663d6c2738e54f4267e069f9f5c296212"
      },
      "baseline": {
-      "commit": "b95775f4235fe4ea738dde226524d25f317d987c",
-      "date": "2025-08-05",
+      "commit": "7e8a139663d6c2738e54f4267e069f9f5c296212",
+      "date": "2026-10-26",
       "confidence": "high",
-      "derivation": "The contract compiles SafeERC20Permit2Lib.sol from its euler-earn submodule. Pashov's EulerEarn review covers it; baseline = the report's stated fixes-review commit b95775f4 (the euler-earn component's baseline). The Permit2 allowance check and ERC20 fallback (0a285ce, c01d5e5, 2026-10-23) come after it."
+      "derivation": "The contract compiles SafeERC20Permit2Lib.sol from its euler-earn submodule. Baseline = the final 7e8a1396 of Enigma Dark's fix review of PR #46 (e42a2a45...7e8a1396): the Permit2 allowance check and ERC20 fallback (0a285ce, c01d5e5). No findings in euler-earn, so baseline = final; the file is identical in the PR #46 merge 246bcba and on master. Between Pashov's fixes-review commit b95775f4 and the review base e42a2a45 the file changed only in two OpenZeppelin import paths (bece717). Submodules before PR #46 predate this baseline."
      }
     }
    ]
@@ -597,21 +597,15 @@
     "src/BaseFactory/"
    ],
    "lastAudit": {
-    "id": "electisec-governor-access-control-emergency-factory-2025",
-    "date": "2025-03-11",
-    "finalReviewedCommit": "7b7a9dcb42bb517c46eead9a701eec504149edd3"
+    "id": "enigma-dark-governor-v2-2026",
+    "date": "2026-11-01",
+    "finalReviewedCommit": "7c5b7249cc2fc560c1fbc945ae29a49ee48da773"
    },
    "baseline": {
-    "commit": "7b7a9dcb42bb517c46eead9a701eec504149edd3",
-    "date": "2025-03-09",
-    "derivation": "Electisec's PR #261 review is the last audit of the governor suite factory. Every check in its outcome table passed and it lists no findings, so no fix window exists: baseline = the reviewed commit. The governor the factory embeds (GovernorAccessControl and GovernorAccessControlEmergency) was last reviewed by yAudit (yaudit-evk-custom-liquidator-selector-2024, final 4a4fdfdc); the baseline holds that code plus the 2024-10-29 'yAudit audit Issue 1/3' fixes and 5be42440 (isGovernorAccessControl). The TimelockController it embeds comes from the openzeppelin-contracts submodule and is not diffed here.",
-    "confidence": "medium"
-   },
-   "pinNotes": {
-    "b54367e3f2284362b54d126cafc305f0efa55cf3": {
-     "summary": "Delta vs baseline within componentPaths: the V2 rename of the factory, governor and interface files, plus natspec. The pin builds against EVC 4e5b8c56 (v1.0.2) instead of the baseline's a7d3c29e: its EVCUtil._msgSender reverts when the EVC calls isValidSignature (883f048, PR #209), and SelectorAccessControl._msgSender returns EVCUtil._msgSender. The submodule diffs below show them.",
-     "label": "V2 rename + EVC v1.0.2 dependency"
-    }
+    "commit": "7c5b7249cc2fc560c1fbc945ae29a49ee48da773",
+    "date": "2026-10-24",
+    "derivation": "Enigma Dark's fix review of PR #445 (475b0514...7c5b7249) is the last audit of the governor suite factory: the V2 rename of the factory, both governors and the factory interface, and the EVC gitlink bump b9d557a8 \u2192 4e5b8c56 (v1.0.2), through which SelectorAccessControl._msgSender, which returns EVCUtil._msgSender, rejects EVC authentication inside isValidSignature (SelectorAccessControl.sol itself changes in comments only). No findings in evk-periphery, so baseline = final 7c5b7249. Within componentPaths the review base 475b0514 equals the previous baseline 7b7a9dcb (Electisec's PR #261 review, no findings), so the review covers the whole delta from it. The governors in that state were last reviewed by yAudit (yaudit-evk-custom-liquidator-selector-2024, final 4a4fdfdc) and include the 2024-10-29 'yAudit audit Issue 1/3' fixes and 5be42440 (isGovernorAccessControl). The TimelockController the factory embeds comes from the openzeppelin-contracts submodule and is not diffed here.",
+    "confidence": "high"
    },
    "libComponents": [
     {
@@ -621,15 +615,15 @@
       "src/utils/EVCUtil.sol"
      ],
      "lastAudit": {
-      "id": "pashov-euler-earn-2025",
-      "date": "2025-07-30",
-      "finalReviewedCommit": "b95775f4235fe4ea738dde226524d25f317d987c"
+      "id": "enigma-dark-evcutil-erc1271-2026",
+      "date": "2026-11-01",
+      "finalReviewedCommit": "883f048b49179aa64efec8c79341f6f566f92486"
      },
      "baseline": {
-      "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
-      "date": "2024-11-11",
-      "confidence": "medium",
-      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at EVC v1.0.1 (a7d3c29e; identical in b9d557a8 and 4538f073), the version the audited contracts that depend on it compile: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025, all on EVC v1.0.1) cover code calling its _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling its _haveCommonOwner and _getAddressPrefix. Anchor = Pashov's EulerEarn review, the latest of them that calls a v1.0.1 addition. Earlier EVC versions predate this baseline; v1.0.2 adds the isValidSignature check (883f048)."
+      "commit": "883f048b49179aa64efec8c79341f6f566f92486",
+      "date": "2026-10-22",
+      "confidence": "high",
+      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further."
      }
     }
    ]
@@ -666,15 +660,15 @@
       "src/utils/EVCUtil.sol"
      ],
      "lastAudit": {
-      "id": "pashov-euler-earn-2025",
-      "date": "2025-07-30",
-      "finalReviewedCommit": "b95775f4235fe4ea738dde226524d25f317d987c"
+      "id": "enigma-dark-evcutil-erc1271-2026",
+      "date": "2026-11-01",
+      "finalReviewedCommit": "883f048b49179aa64efec8c79341f6f566f92486"
      },
      "baseline": {
-      "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
-      "date": "2024-11-11",
-      "confidence": "medium",
-      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at EVC v1.0.1 (a7d3c29e; identical in b9d557a8 and 4538f073), the version the audited contracts that depend on it compile: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025, all on EVC v1.0.1) cover code calling its _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling its _haveCommonOwner and _getAddressPrefix. Anchor = Pashov's EulerEarn review, the latest of them that calls a v1.0.1 addition. Earlier EVC versions predate this baseline; v1.0.2 adds the isValidSignature check (883f048)."
+      "commit": "883f048b49179aa64efec8c79341f6f566f92486",
+      "date": "2026-10-22",
+      "confidence": "high",
+      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further."
      }
     },
     {
@@ -684,15 +678,15 @@
       "src/libraries/SafeERC20Permit2Lib.sol"
      ],
      "lastAudit": {
-      "id": "pashov-euler-earn-2025",
-      "date": "2025-07-30",
-      "finalReviewedCommit": "b95775f4235fe4ea738dde226524d25f317d987c"
+      "id": "enigma-dark-euler-earn-permit2-2026",
+      "date": "2026-11-01",
+      "finalReviewedCommit": "7e8a139663d6c2738e54f4267e069f9f5c296212"
      },
      "baseline": {
-      "commit": "b95775f4235fe4ea738dde226524d25f317d987c",
-      "date": "2025-08-05",
+      "commit": "7e8a139663d6c2738e54f4267e069f9f5c296212",
+      "date": "2026-10-26",
       "confidence": "high",
-      "derivation": "The contract compiles SafeERC20Permit2Lib.sol from its euler-earn submodule. Pashov's EulerEarn review covers it; baseline = the report's stated fixes-review commit b95775f4 (the euler-earn component's baseline). The Permit2 allowance check and ERC20 fallback (0a285ce, c01d5e5, 2026-10-23) come after it."
+      "derivation": "The contract compiles SafeERC20Permit2Lib.sol from its euler-earn submodule. Baseline = the final 7e8a1396 of Enigma Dark's fix review of PR #46 (e42a2a45...7e8a1396): the Permit2 allowance check and ERC20 fallback (0a285ce, c01d5e5). No findings in euler-earn, so baseline = final; the file is identical in the PR #46 merge 246bcba and on master. Between Pashov's fixes-review commit b95775f4 and the review base e42a2a45 the file changed only in two OpenZeppelin import paths (bece717). Submodules before PR #46 predate this baseline."
      }
     }
    ]
@@ -729,15 +723,15 @@
       "src/utils/EVCUtil.sol"
      ],
      "lastAudit": {
-      "id": "pashov-euler-earn-2025",
-      "date": "2025-07-30",
-      "finalReviewedCommit": "b95775f4235fe4ea738dde226524d25f317d987c"
+      "id": "enigma-dark-evcutil-erc1271-2026",
+      "date": "2026-11-01",
+      "finalReviewedCommit": "883f048b49179aa64efec8c79341f6f566f92486"
      },
      "baseline": {
-      "commit": "a7d3c29ef7e4964736e47675e0588630d6afbfd7",
-      "date": "2024-11-11",
-      "confidence": "medium",
-      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at EVC v1.0.1 (a7d3c29e; identical in b9d557a8 and 4538f073), the version the audited contracts that depend on it compile: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025, all on EVC v1.0.1) cover code calling its _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling its _haveCommonOwner and _getAddressPrefix. Anchor = Pashov's EulerEarn review, the latest of them that calls a v1.0.1 addition. Earlier EVC versions predate this baseline; v1.0.2 adds the isValidSignature check (883f048)."
+      "commit": "883f048b49179aa64efec8c79341f6f566f92486",
+      "date": "2026-10-22",
+      "confidence": "high",
+      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further."
      }
     },
     {
@@ -747,15 +741,15 @@
       "src/libraries/SafeERC20Permit2Lib.sol"
      ],
      "lastAudit": {
-      "id": "pashov-euler-earn-2025",
-      "date": "2025-07-30",
-      "finalReviewedCommit": "b95775f4235fe4ea738dde226524d25f317d987c"
+      "id": "enigma-dark-euler-earn-permit2-2026",
+      "date": "2026-11-01",
+      "finalReviewedCommit": "7e8a139663d6c2738e54f4267e069f9f5c296212"
      },
      "baseline": {
-      "commit": "b95775f4235fe4ea738dde226524d25f317d987c",
-      "date": "2025-08-05",
+      "commit": "7e8a139663d6c2738e54f4267e069f9f5c296212",
+      "date": "2026-10-26",
       "confidence": "high",
-      "derivation": "The contract compiles SafeERC20Permit2Lib.sol from its euler-earn submodule. Pashov's EulerEarn review covers it; baseline = the report's stated fixes-review commit b95775f4 (the euler-earn component's baseline). The Permit2 allowance check and ERC20 fallback (0a285ce, c01d5e5, 2026-10-23) come after it."
+      "derivation": "The contract compiles SafeERC20Permit2Lib.sol from its euler-earn submodule. Baseline = the final 7e8a1396 of Enigma Dark's fix review of PR #46 (e42a2a45...7e8a1396): the Permit2 allowance check and ERC20 fallback (0a285ce, c01d5e5). No findings in euler-earn, so baseline = final; the file is identical in the PR #46 merge 246bcba and on master. Between Pashov's fixes-review commit b95775f4 and the review base e42a2a45 the file changed only in two OpenZeppelin import paths (bece717). Submodules before PR #46 predate this baseline."
      }
     }
    ]

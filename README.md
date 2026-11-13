@@ -174,7 +174,9 @@ change reaches it with its next deploy.
 euler-verifier takes the chain's name and RPC endpoints from viem. If viem's
 default RPC for the chain is unusable, set `DEPLOYMENT_RPC_URL_<chainId>` for
 the local run; CI then needs a euler-verifier viem bump and this repo's CI pin
-(`.github/workflows/deployed-code-verification.yml`) moved to that commit.
+(`.github/workflows/deployed-code-verification.yml`) moved to that commit. If
+no viem release has a working keyless endpoint for the chain, set
+`DEPLOYMENT_RPC_URL_<chainId>` to one in that workflow's verify step instead.
 
 `package.json` pins the same viem as the Euler SDK (`@eulerxyz/euler-v2-sdk`
 pins it exactly), not euler-verifier's newer one, so a chain that passes
