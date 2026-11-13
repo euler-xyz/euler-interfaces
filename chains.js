@@ -122,7 +122,7 @@ let chains = [
     verifier: { type: 'etherscan' },
     safeBaseUrl: 'https://app.safe.global',
     safeAddressPrefix: 'hyper-evm',
-    status: 'production',
+    status: 'deprecated',
   },
 
   {
