@@ -1,9 +1,9 @@
 # Deployed Code Verification Reports
 
-Bytecode-level verification of the contracts on the euler-verifier allowlist: on-chain runtime code is proven equal to a commit-pinned local build (metadata trailer stripped; immutables and build-located embedded metadata digests masked), and block explorers are not trusted. Each deployment is then diffed against its component's audited baseline, the fixes-included state of the last audit that reviewed the whole component, and against the audited baselines of the Euler libraries compiled into it. Third-party dependencies are not compared. The claim is runtime correspondence under this normalization, not initialization, governance, immutable configuration or deployment safety.
+Each report shows whether the code deployed on a chain is the code built from a specific commit, and how that code differs from its audited version. Matches are byte-for-byte rebuilds; block explorers are not trusted. Euler's shared libraries are compared with their own audited versions; third-party libraries are not compared. A match says nothing about how a contract was initialised or configured, or who controls it.
 
-| Network | Chain ID | Bytecode-proven (of contracts in scope) |
-|---------|----------|-----------------------------------------|
+| Network | Chain ID | Bytecode matches (of contracts in scope) |
+|---------|----------|------------------------------------------|
 | [Ethereum](1.md) | 1 | 22 of 23 · 1 canonical |
 | [BNB Smart Chain](56.md) | 56 | 22 of 22 |
 | [Unichain](130.md) | 130 | 22 of 22 |
@@ -20,4 +20,4 @@ Bytecode-level verification of the contracts on the euler-verifier allowlist: on
 | [BOB](60808.md) | 60808 | 21 of 21 |
 | [Berachain](80094.md) | 80094 | 21 of 21 |
 
-_Inputs: `manifest.json` (declared provenance, SHA-only), `audits.json` (audit registry), `baselines.json` (component baselines with derivations), and euler-verifier `manifests/attention-notes.json`. Regenerated only when a PR changes those inputs or addresses._
+_Inputs: `manifest.json` (the source commit of each contract), `audits.json` (the audits), `baselines.json` (the audited version of each product and library), and euler-verifier `manifests/attention-notes.json` (Euler notes). Regenerated only when a PR changes those inputs or the addresses._

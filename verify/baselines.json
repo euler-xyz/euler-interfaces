@@ -4,6 +4,7 @@
  "components": [
   {
    "component": "evc",
+   "name": "Ethereum Vault Connector",
    "repo": "euler-xyz/ethereum-vault-connector",
    "keys": [
     "evc"
@@ -26,15 +27,15 @@
    "pinNotes": {
     "084b32284ba643921f8d21bff3ddaf0c4e08d754": {
      "summary": "Delta vs baseline within componentPaths: one permit() comment reworded (97d2c12, +2/\u22121); no code change.",
-     "label": "comment only"
+     "label": "comment change only"
     },
     "a7d3c29ef7e4964736e47675e0588630d6afbfd7": {
      "summary": "Descendant of the baseline; within componentPaths it equals master as of 2026-11-13 (later EVC changes touch only src/utils/EVCUtil.sol, which is excluded). Delta vs baseline: the permit() comment rewording (97d2c12) and the PR #178/#179 isSignerValid exclusions \u2014 the EIP-7587 precompile range and the 0x42 predeploy address space barred from being message signers. Restrictive-only hardening added ahead of the Nov-2024 multichain deployment.",
-     "label": "signer-exclusion hardening"
+     "label": "signature check rejects more addresses (hardening)"
     },
     "912b301f51301e586e5a7f09e48cf52bd52e9a0e": {
      "summary": "Polygon-only deployment: the yaudit-evc-2026-setsize state (SET_MAX_ELEMENTS 10\u2192100, for Gondor's integration with Polymarket tokens). The review reports no Critical, High, Medium or Low findings and 4 informationals: 2 addressed in PR #203 (tests, and the interface comments now stating 100) and 2 acknowledged (2.10.1: raising SET_MAX_ELEMENTS amplifies computation, indexing and bad-debt risk; 2.10.2: Set size during EVK liquidations). Its overall assessment adds that most tests and the Certora rules use a loop bound below the previous cap of 10 and were not re-tuned for 100. Descendant of the baseline; its delta = pin a7d3c29e's delta (the permit() comment and the signer-exclusion hardening) plus the reviewed Set.sol change (dd04b59) and PR #203's interface-comment update (dce4f7e). The branch is not merged to master.",
-     "label": "set-size 10\u2192100 (audited) + signer hardening",
+     "label": "account set size 10 \u2192 100 (audited) + signature-check hardening",
      "audits": [
       "yaudit-evc-2026-setsize"
      ]
@@ -43,6 +44,7 @@
   },
   {
    "component": "evk",
+   "name": "Euler Vault Kit",
    "repo": "euler-xyz/euler-vault-kit",
    "keys": [
     "eVaultFactory",
@@ -69,17 +71,17 @@
    "pinNotes": {
     "9e3c760e051f5d769f7c6edb9be30198a55117d4": {
      "summary": "Descendant of the baseline. Delta vs baseline: Liquidation.sol and Cache.sol private->internal (5d33e3e1, no behaviour change) and one default-parameter line (ProtocolConfig's default protocolFeeShare 0.1e4->0.5e4, i.e. 10% -> 50%, PR #264); the pin merge itself is an EVC submodule refresh (PR #271).",
-     "label": "visibility change + one fee-share default",
+     "label": "two functions made internal + default protocol fee share 10% \u2192 50%",
      "labels": {
-      "eVaultImplementation": "private \u2192 internal in Liquidation and Cache (no behaviour change)",
+      "eVaultImplementation": "two functions made internal (no behaviour change)",
       "protocolConfig": "default protocol fee share 10% \u2192 50%"
      }
     },
     "422bf2447047d32aa9f4e5bab4be16ab3ea67ec2": {
      "summary": "Descendant of the baseline, with the setLTV patch: setLTV no longer asks the oracle for a quote of the collateral (PR #288, Governance.sol), reviewed in full by m4rio-evk-2025-setltv and electisec-evk-2025-setltv. The rest of the delta vs baseline: Liquidation.sol and Cache.sol private->internal (5d33e3e1), ProtocolConfig's default protocolFeeShare 0.1e4->0.5e4 (PR #264), and a comment typo fix in Governance.sol (854a0dd5). No src/ file has changed on master since this pin (checked 2026-11-13).",
-     "label": "setLTV patch (audited \u00d72) + visibility + param",
+     "label": "setLTV no longer requires an oracle price (audited) + two functions made internal + default protocol fee share 10% \u2192 50%",
      "labels": {
-      "eVaultImplementation": "setLTV no longer requires an oracle quote (audited) + private \u2192 internal",
+      "eVaultImplementation": "setLTV no longer requires an oracle price (audited) + two functions made internal",
       "protocolConfig": "default protocol fee share 10% \u2192 50%"
      },
      "audits": [
@@ -91,6 +93,7 @@
   },
   {
    "component": "reward-streams",
+   "name": "Reward Streams",
    "repo": "euler-xyz/reward-streams",
    "keys": [
     "balanceTracker"
@@ -113,7 +116,7 @@
    "pinNotes": {
     "9eb7b8a7fa31c275d688063c4abd07165b50b89f": {
      "summary": "Descendant of the baseline; src unchanged on master since (checked 2026-11-13). The only src delta vs the baseline is PR #26 (2024-08-06): enableReward/disableReward return bool, updateReward/claimReward return the claimed amount, new isRewardEnabled view \u2014 interface/return plumbing with no accounting change. PR #27 (merged as this pin) moves the EVC submodule gitlink to v1.0.0 (084b3228), which changes the compiled bytecode through inherited EVCUtil; a deployment built with an EVC submodule override compiles that override's EVCUtil instead.",
-     "label": "claim return values + isRewardEnabled view"
+     "label": "reward functions return values; new isRewardEnabled view"
     }
    },
    "libComponents": [
@@ -132,13 +135,15 @@
       "commit": "883f048b49179aa64efec8c79341f6f566f92486",
       "date": "2026-10-22",
       "confidence": "high",
-      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further. The PR #209 check matters only for a contract the EVC can call as an ERC-1271 signer: one with an isValidSignature function or a fallback. No deployed contract in these reports that compiles an older EVCUtil has either in its compilation unit, nor do the contracts their factories create (EulerSwap pools are proxies to an implementation with neither); the only EVCUtil contract with a fallback, GovernorAccessControlV2, compiles v1.0.2. The review is one combined Enigma Dark report covering ethereum-vault-connector PR #209, evk-periphery PR #445 and euler-earn PR #46, filed under a different name in each repo."
-     }
+      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further. The review is one combined Enigma Dark report covering ethereum-vault-connector PR #209, evk-periphery PR #445 and euler-earn PR #46, filed under a different name in each repo."
+     },
+     "note": "Older versions lack the check added by EVC PR #209: a contract built on EVCUtil refuses EVC authentication while the EVC asks it to validate a signature. The check matters only for a contract the EVC can ask to validate a signature, which needs an isValidSignature function or a fallback. None of the contracts in this report that compile an older EVCUtil has either, and neither do the contracts their factories create. GovernorAccessControlV2, which has a fallback, compiles the audited version."
     }
    ]
   },
   {
    "component": "euler-earn",
+   "name": "Euler Earn",
    "repo": "euler-xyz/euler-earn",
    "keys": [
     "eulerEarnFactory",
@@ -161,19 +166,19 @@
    "pinNotes": {
     "773453b1f4a6f1d27a1cd0c6d8f6ada572503b23": {
      "summary": "Delta vs baseline: PR #20 only (+5/\u22125 in EulerEarn.sol and ErrorsLib.sol).",
-     "label": "PR #20 max-deposit change"
+     "label": "maxDeposit returns 0 when a deposit would mint no shares (PR #20)"
     },
     "b2fd6e699ee20bcfe7459f375b3cee5d2fa53345": {
      "summary": "Delta vs baseline: PR #20 plus import-path style changes (+23/\u221223 in 8 files).",
-     "label": "PR #20 + import-path style"
+     "label": "maxDeposit change (PR #20) + import paths"
     },
     "ba581a71245ad004d35241918946b08ba63552cd": {
      "summary": "Linea 24kB size-fit variant (commit on the euler-earn deployment-linea branch, reconstructed from the Lineascan-verified source and bytecode-proven): equals 773453b1 with setName/setSymbol commented out ('commented out not to exceed 24kB limit') in EulerEarn.sol and IEulerEarn.sol. Delta vs baseline: PR #20 plus that size fit (+10/\u22129). Deploy-time compile: solc 0.8.26, optimizer_runs 200, evm london, via_ir.",
-     "label": "PR #20 + 24kB fit"
+     "label": "maxDeposit change (PR #20) + setName/setSymbol removed to fit 24 kB"
     },
     "bece7172a87551e6943a52b08c9a0117eb02c6c3": {
      "summary": "Monad deployment: public euler-earn master commit ('fix: absolute import paths', 2025-10-14); descendant of the baseline. Delta vs baseline: PR #20 plus import-path style changes (+23/\u221223). Compiled at the repo profile (0.8.26, runs 200, via_ir) with the deploy workspace's OpenZeppelin v5.1.0.",
-     "label": "PR #20 + import-path style"
+     "label": "maxDeposit change (PR #20) + import paths"
     }
    },
    "libComponents": [
@@ -192,13 +197,15 @@
       "commit": "883f048b49179aa64efec8c79341f6f566f92486",
       "date": "2026-10-22",
       "confidence": "high",
-      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further. The PR #209 check matters only for a contract the EVC can call as an ERC-1271 signer: one with an isValidSignature function or a fallback. No deployed contract in these reports that compiles an older EVCUtil has either in its compilation unit, nor do the contracts their factories create (EulerSwap pools are proxies to an implementation with neither); the only EVCUtil contract with a fallback, GovernorAccessControlV2, compiles v1.0.2. The review is one combined Enigma Dark report covering ethereum-vault-connector PR #209, evk-periphery PR #445 and euler-earn PR #46, filed under a different name in each repo."
-     }
+      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further. The review is one combined Enigma Dark report covering ethereum-vault-connector PR #209, evk-periphery PR #445 and euler-earn PR #46, filed under a different name in each repo."
+     },
+     "note": "Older versions lack the check added by EVC PR #209: a contract built on EVCUtil refuses EVC authentication while the EVC asks it to validate a signature. The check matters only for a contract the EVC can ask to validate a signature, which needs an isValidSignature function or a fallback. None of the contracts in this report that compile an older EVCUtil has either, and neither do the contracts their factories create. GovernorAccessControlV2, which has a fallback, compiles the audited version."
     }
    ]
   },
   {
    "component": "euler-swap-v1",
+   "name": "EulerSwap V1",
    "repo": "euler-xyz/euler-swap",
    "keys": [
     "eulerSwapV1Factory",
@@ -222,34 +229,34 @@
    "pinNotes": {
     "b948f4052d7ab3116235ec754368b7125dbd5082": {
      "summary": "Tag eulerswap-1.0 (official V1 release), descendant of the baseline. src delta: SPDX headers set on 14 files (9 GPL-2.0-or-later, 4 MIT interfaces, 1 BUSL-1.1 for CurveLib.sol; the new Events.sol among them) + PR #99 event hoisting (new Events.sol; hook emits Swap with sender). No state-machine or math changes. The tag's foundry.toml sets optimizer_runs 1000000, up from 10000 at the audited commit; each deployment's compile settings are recorded in verify/manifest.json.",
-     "label": "SPDX licenses + event hoisting",
+     "label": "license headers + event declarations moved",
      "labels": {
-      "eulerSwapV1Factory": "SPDX licenses + event hoisting",
-      "eulerSwapV1Implementation": "SPDX licenses + event hoisting",
-      "eulerSwapV1Periphery": "SPDX licenses only"
+      "eulerSwapV1Factory": "license headers + event declarations moved",
+      "eulerSwapV1Implementation": "license headers + event declarations moved",
+      "eulerSwapV1Periphery": "license headers only"
      }
     },
     "5d270c764204b896770e967c22c7b95959bf6660": {
      "summary": "Monad factory/implementation pin; descendant of eulerswap-1.0 on linear master. Adds natspec-only named returns + a solmate import-path remapping fix. Zero semantic change.",
-     "label": "licenses/events + natspec, import fix",
+     "label": "license headers, event declarations, comments, import fix",
      "labels": {
-      "eulerSwapV1Factory": "licenses/events + natspec named returns + solmate import path",
-      "eulerSwapV1Implementation": "licenses/events + natspec named returns"
+      "eulerSwapV1Factory": "license headers, event declarations, comments + solmate import path",
+      "eulerSwapV1Implementation": "license headers, event declarations, comments"
      }
     },
     "98c05c56f7722887d293ef231accd689c2ea2493": {
      "summary": "Monad periphery pin; descendant of 5d270c76. Adds one forge-fmt line-wrap. Zero semantic change.",
-     "label": "licenses/events + natspec/formatting",
+     "label": "license headers, event declarations, comments, formatting",
      "labels": {
-      "eulerSwapV1Periphery": "SPDX licenses + natspec named returns + formatting"
+      "eulerSwapV1Periphery": "license headers, comments, formatting"
      }
     },
     "c7da2f330dff3efb98b0b4e998f9b9f498b37c30": {
      "summary": "Avalanche deployment: public branch fix/solmate-remapping \u2014 the eulerswap-1.0 release pin b948f405 plus one commit correcting the solmate import path in utils/ProtocolFee.sol (no code change). Compiled standalone at the repo profile (0.8.27, runs 1000000, shanghai).",
-     "label": "licenses/events + solmate import fix",
+     "label": "license headers, event declarations + solmate import fix",
      "labels": {
-      "eulerSwapV1Factory": "licenses/events + solmate import path",
-      "eulerSwapV1Implementation": "SPDX licenses + event hoisting"
+      "eulerSwapV1Factory": "license headers, event declarations + solmate import path",
+      "eulerSwapV1Implementation": "license headers + event declarations moved"
      }
     }
    },
@@ -269,13 +276,15 @@
       "commit": "883f048b49179aa64efec8c79341f6f566f92486",
       "date": "2026-10-22",
       "confidence": "high",
-      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further. The PR #209 check matters only for a contract the EVC can call as an ERC-1271 signer: one with an isValidSignature function or a fallback. No deployed contract in these reports that compiles an older EVCUtil has either in its compilation unit, nor do the contracts their factories create (EulerSwap pools are proxies to an implementation with neither); the only EVCUtil contract with a fallback, GovernorAccessControlV2, compiles v1.0.2. The review is one combined Enigma Dark report covering ethereum-vault-connector PR #209, evk-periphery PR #445 and euler-earn PR #46, filed under a different name in each repo."
-     }
+      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further. The review is one combined Enigma Dark report covering ethereum-vault-connector PR #209, evk-periphery PR #445 and euler-earn PR #46, filed under a different name in each repo."
+     },
+     "note": "Older versions lack the check added by EVC PR #209: a contract built on EVCUtil refuses EVC authentication while the EVC asks it to validate a signature. The check matters only for a contract the EVC can ask to validate a signature, which needs an isValidSignature function or a fallback. None of the contracts in this report that compile an older EVCUtil has either, and neither do the contracts their factories create. GovernorAccessControlV2, which has a fallback, compiles the audited version."
     }
    ]
   },
   {
    "component": "euler-swap-v2",
+   "name": "EulerSwap V2",
    "repo": "euler-xyz/euler-swap",
    "keys": [
     "eulerSwapV2Factory",
@@ -301,13 +310,13 @@
    "pinNotes": {
     "81cf6dc988468fd56f690e6bc0e338a5be02d034": {
      "summary": "Tag eulerswap-2.0 (the deployed release), descendant of the baseline with a substantive post-audit delta (+444/\u2212267 in src/): (1) the protocol-fee mechanism replacement \u2014 new EulerSwapProtocolFeeConfig singleton queried live at swap time, replacing the audited burned-in-at-install ProtocolFee model (see attention note); (2) an EIP-170 code-size refactor splitting EulerSwapManagement (delegatecall implementation) and EulerSwapBase out of EulerSwap; (3) ZeroShares handling for EulerEarn-style vaults; (4) hardening commits included at the release merge (pool locked during activate; the fee-config admin and a pool's LP fee recipient may not be known EVC sub-accounts; fee-config events; bond returned to the account owner 46f0558; a non-zero default protocol fee needs a non-zero default recipient 9f5a227).",
-     "label": "fee-config redesign + code-size refactor",
+     "label": "protocol fee redesigned + code split for size",
      "labels": {
-      "eulerSwapV2Factory": "fee-config redesign + code-size refactor",
-      "eulerSwapV2Implementation": "fee-config redesign + code-size refactor",
-      "eulerSwapV2Periphery": "interface only: protocol-fee params removed, managers() view added",
-      "eulerSwapV2ProtocolFeeConfig": "new contract: protocol-fee config singleton",
-      "eulerSwapV2Registry": "fee-config redesign + bond returned to the account owner"
+      "eulerSwapV2Factory": "protocol fee redesigned + code split for size",
+      "eulerSwapV2Implementation": "protocol fee redesigned + code split for size",
+      "eulerSwapV2Periphery": "interface only: protocol fee fields removed, managers() view added",
+      "eulerSwapV2ProtocolFeeConfig": "new contract: protocol fee settings",
+      "eulerSwapV2Registry": "protocol fee redesign + bond returned to the account owner"
      }
     }
    },
@@ -327,13 +336,15 @@
       "commit": "883f048b49179aa64efec8c79341f6f566f92486",
       "date": "2026-10-22",
       "confidence": "high",
-      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further. The PR #209 check matters only for a contract the EVC can call as an ERC-1271 signer: one with an isValidSignature function or a fallback. No deployed contract in these reports that compiles an older EVCUtil has either in its compilation unit, nor do the contracts their factories create (EulerSwap pools are proxies to an implementation with neither); the only EVCUtil contract with a fallback, GovernorAccessControlV2, compiles v1.0.2. The review is one combined Enigma Dark report covering ethereum-vault-connector PR #209, evk-periphery PR #445 and euler-earn PR #46, filed under a different name in each repo."
-     }
+      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further. The review is one combined Enigma Dark report covering ethereum-vault-connector PR #209, evk-periphery PR #445 and euler-earn PR #46, filed under a different name in each repo."
+     },
+     "note": "Older versions lack the check added by EVC PR #209: a contract built on EVCUtil refuses EVC authentication while the EVC asks it to validate a signature. The check matters only for a contract the EVC can ask to validate a signature, which needs an isValidSignature function or a fallback. None of the contracts in this report that compile an older EVCUtil has either, and neither do the contracts their factories create. GovernorAccessControlV2, which has a fallback, compiles the audited version."
     }
    ]
   },
   {
    "component": "rEUL",
+   "name": "rEUL (locked EUL)",
    "repo": "euler-xyz/evk-periphery",
    "keys": [
     "rEUL"
@@ -383,13 +394,15 @@
       "commit": "883f048b49179aa64efec8c79341f6f566f92486",
       "date": "2026-10-22",
       "confidence": "high",
-      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further. The PR #209 check matters only for a contract the EVC can call as an ERC-1271 signer: one with an isValidSignature function or a fallback. No deployed contract in these reports that compiles an older EVCUtil has either in its compilation unit, nor do the contracts their factories create (EulerSwap pools are proxies to an implementation with neither); the only EVCUtil contract with a fallback, GovernorAccessControlV2, compiles v1.0.2. The review is one combined Enigma Dark report covering ethereum-vault-connector PR #209, evk-periphery PR #445 and euler-earn PR #46, filed under a different name in each repo."
-     }
+      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further. The review is one combined Enigma Dark report covering ethereum-vault-connector PR #209, evk-periphery PR #445 and euler-earn PR #46, filed under a different name in each repo."
+     },
+     "note": "Older versions lack the check added by EVC PR #209: a contract built on EVCUtil refuses EVC authentication while the EVC asks it to validate a signature. The check matters only for a contract the EVC can ask to validate a signature, which needs an isValidSignature function or a fallback. None of the contracts in this report that compile an older EVCUtil has either, and neither do the contracts their factories create. GovernorAccessControlV2, which has a fallback, compiles the audited version."
     }
    ]
   },
   {
    "component": "oracleRouterFactory",
+   "name": "Oracle router factory",
    "repo": "euler-xyz/evk-periphery",
    "keys": [
     "oracleRouterFactory"
@@ -414,19 +427,19 @@
    "pinNotes": {
     "05b0acb8bfb64e663293ab8b236c72c6b3df86ae": {
      "summary": "Factory blobs identical across all four deployed pins. Delta vs baseline: the src/OracleFactory\u2192src/EulerRouterFactory rename (content-neutral) and +10/\u22121 in EulerRouterFactory.sol \u2014 commit 59243614 threading the EVC address through the factory constructor into the embedded EulerRouter. That pass-through mirrors the router's EVC integration, which was audited on the oracle side (Cantina finding 443 fix + onlyEVCAccountOwner enhancement, approved by yaudit-oracle-2024-comp-fixes).",
-     "label": "EVC constructor pass-through"
+     "label": "EVC address passed to each new router"
     },
     "96b83f80ded9ac3f28bfce871b55917e360b9159": {
      "summary": "Same factory delta as pin 05b0acb8 (identical blobs): the src/OracleFactory\u2192src/EulerRouterFactory rename and the EVC constructor pass-through (59243614, +10/\u22121).",
-     "label": "EVC constructor pass-through"
+     "label": "EVC address passed to each new router"
     },
     "edaf96e32ebe6cb96ae30add934d74fa1d092ff6": {
      "summary": "Same factory delta as pin 05b0acb8 (identical blobs): the src/OracleFactory\u2192src/EulerRouterFactory rename and the EVC constructor pass-through (59243614, +10/\u22121).",
-     "label": "EVC constructor pass-through"
+     "label": "EVC address passed to each new router"
     },
     "21a169d7830f71fcfbee6f7ced12bf089f4fba20": {
      "summary": "Same factory delta as pin 05b0acb8 (identical blobs): the src/OracleFactory\u2192src/EulerRouterFactory rename and the EVC constructor pass-through (59243614, +10/\u22121).",
-     "label": "EVC constructor pass-through"
+     "label": "EVC address passed to each new router"
     }
    },
    "libComponents": [
@@ -466,13 +479,15 @@
       "commit": "883f048b49179aa64efec8c79341f6f566f92486",
       "date": "2026-10-22",
       "confidence": "high",
-      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further. The PR #209 check matters only for a contract the EVC can call as an ERC-1271 signer: one with an isValidSignature function or a fallback. No deployed contract in these reports that compiles an older EVCUtil has either in its compilation unit, nor do the contracts their factories create (EulerSwap pools are proxies to an implementation with neither); the only EVCUtil contract with a fallback, GovernorAccessControlV2, compiles v1.0.2. The review is one combined Enigma Dark report covering ethereum-vault-connector PR #209, evk-periphery PR #445 and euler-earn PR #46, filed under a different name in each repo."
-     }
+      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further. The review is one combined Enigma Dark report covering ethereum-vault-connector PR #209, evk-periphery PR #445 and euler-earn PR #46, filed under a different name in each repo."
+     },
+     "note": "Older versions lack the check added by EVC PR #209: a contract built on EVCUtil refuses EVC authentication while the EVC asks it to validate a signature. The check matters only for a contract the EVC can ask to validate a signature, which needs an isValidSignature function or a fallback. None of the contracts in this report that compile an older EVCUtil has either, and neither do the contracts their factories create. GovernorAccessControlV2, which has a fallback, compiles the audited version."
     }
    ]
   },
   {
    "component": "eulOFTAdapter",
+   "name": "EUL bridge adapter (LayerZero OFT)",
    "repo": "euler-xyz/evk-periphery",
    "keys": [
     "eulOFTAdapter"
@@ -506,6 +521,7 @@
   },
   {
    "component": "EUL-bridged",
+   "name": "Bridged EUL",
    "repo": "euler-xyz/evk-periphery",
    "keys": [
     "EUL"
@@ -529,9 +545,9 @@
      "summary": "Predates the baseline: the Paladin-audited natspec revision, byte-identical to Paladin's resolution commit e3699ffb; its delta vs the baseline is the 'virtual' keyword on mint(), added by PR #361.",
      "naturalBaseline": {
       "auditId": "paladin-layerzero-adapters-2025",
-      "justification": "ERC20BurnableMintable was in Paladin's assessed-contracts list with 'no issues found'; this pin's file equals Paladin's resolution commit e3699ffb exactly."
+      "justification": "ERC20BurnableMintable was among the contracts Paladin assessed, with no issues found; this commit's file is the same as Paladin's resolution commit e3699ffb."
      },
-     "label": "Paladin-audited revision"
+     "label": "the revision Paladin audited"
     },
     "8c946bb15574c764bee054de79758b958d0130d4": {
      "summary": "Component file byte-identical to the baseline (the PR #361 revision)."
@@ -543,6 +559,7 @@
   },
   {
    "component": "swapVerifier",
+   "name": "Swap verifier",
    "repo": "euler-xyz/evk-periphery",
    "keys": [
     "swapVerifier"
@@ -574,7 +591,7 @@
     },
     "fc359a04cc7b61f1a421d3a3baacca15a03fa9a6": {
      "summary": "Polygon redeploy (2026-10-26). Within componentPaths: forge-fmt re-wrapping only (the same blobs as edaf96e3). The pin builds against newer submodules than pins edaf96e3 and e7337a33 (EVC b9d557a8, euler-earn b2fd6e69): EVC 4e5b8c56 (v1.0.2), whose EVCUtil._msgSender reverts when the EVC calls isValidSignature (883f048, PR #209), and euler-earn 246bcbac, whose SafeERC20Permit2Lib uses Permit2 only when the token's allowance to Permit2 covers the amount (0a285ce, c01d5e5). MigrationHelper inherits EVCUtil and calls safeTransferFromWithPermit2, so both are behaviour changes. Both libs equal their baselines, the finals of Enigma Dark's PR #209 and PR #46 fix reviews.",
-     "label": "formatting + audited EVC v1.0.2 and euler-earn Permit2 dependencies"
+     "label": "formatting + audited EVC and Permit2 library updates"
     }
    },
    "libComponents": [
@@ -593,8 +610,9 @@
       "commit": "883f048b49179aa64efec8c79341f6f566f92486",
       "date": "2026-10-22",
       "confidence": "high",
-      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further. The PR #209 check matters only for a contract the EVC can call as an ERC-1271 signer: one with an isValidSignature function or a fallback. No deployed contract in these reports that compiles an older EVCUtil has either in its compilation unit, nor do the contracts their factories create (EulerSwap pools are proxies to an implementation with neither); the only EVCUtil contract with a fallback, GovernorAccessControlV2, compiles v1.0.2. The review is one combined Enigma Dark report covering ethereum-vault-connector PR #209, evk-periphery PR #445 and euler-earn PR #46, filed under a different name in each repo."
-     }
+      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further. The review is one combined Enigma Dark report covering ethereum-vault-connector PR #209, evk-periphery PR #445 and euler-earn PR #46, filed under a different name in each repo."
+     },
+     "note": "Older versions lack the check added by EVC PR #209: a contract built on EVCUtil refuses EVC authentication while the EVC asks it to validate a signature. The check matters only for a contract the EVC can ask to validate a signature, which needs an isValidSignature function or a fallback. None of the contracts in this report that compile an older EVCUtil has either, and neither do the contracts their factories create. GovernorAccessControlV2, which has a fallback, compiles the audited version."
     },
     {
      "repo": "euler-xyz/euler-earn",
@@ -611,13 +629,15 @@
       "commit": "7e8a139663d6c2738e54f4267e069f9f5c296212",
       "date": "2026-10-26",
       "confidence": "high",
-      "derivation": "The contract compiles SafeERC20Permit2Lib.sol from its euler-earn submodule. Baseline = the final 7e8a1396 of Enigma Dark's fix review of PR #46 (e42a2a45...7e8a1396): the Permit2 allowance check and ERC20 fallback (0a285ce, c01d5e5). No findings in euler-earn, so baseline = final; the file is identical in the PR #46 merge 246bcba and on master. Between Pashov's fixes-review commit b95775f4 and the review base e42a2a45 the file changed only in two OpenZeppelin import paths (bece717). Submodules before PR #46 predate this baseline. PR #46 changes availability only: without it, safeTransferFromWithPermit2 reverts when the owner's Permit2 allowance is valid but their ERC20 allowance to Permit2 does not cover the amount, even if they approved the spender directly; no tokens move in that case. The review is one combined Enigma Dark report covering ethereum-vault-connector PR #209, evk-periphery PR #445 and euler-earn PR #46, filed under a different name in each repo."
-     }
+      "derivation": "The contract compiles SafeERC20Permit2Lib.sol from its euler-earn submodule. Baseline = the final 7e8a1396 of Enigma Dark's fix review of PR #46 (e42a2a45...7e8a1396): the Permit2 allowance check and ERC20 fallback (0a285ce, c01d5e5). No findings in euler-earn, so baseline = final; the file is identical in the PR #46 merge 246bcba and on master. Between Pashov's fixes-review commit b95775f4 and the review base e42a2a45 the file changed only in two OpenZeppelin import paths (bece717). Submodules before PR #46 predate this baseline. The review is one combined Enigma Dark report covering ethereum-vault-connector PR #209, evk-periphery PR #445 and euler-earn PR #46, filed under a different name in each repo."
+     },
+     "note": "Older versions lack PR #46, which affects availability only. Without it, a transfer reverts when the owner's Permit2 allowance is valid but their token allowance to Permit2 does not cover the amount, even if they approved the contract directly. No tokens move in that case."
     }
    ]
   },
   {
    "component": "governorAccessControlEmergencyFactoryV2",
+   "name": "Governor suite factory (V2)",
    "repo": "euler-xyz/evk-periphery",
    "keys": [
     "governorAccessControlEmergencyFactoryV2"
@@ -661,13 +681,15 @@
       "commit": "883f048b49179aa64efec8c79341f6f566f92486",
       "date": "2026-10-22",
       "confidence": "high",
-      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further. The PR #209 check matters only for a contract the EVC can call as an ERC-1271 signer: one with an isValidSignature function or a fallback. No deployed contract in these reports that compiles an older EVCUtil has either in its compilation unit, nor do the contracts their factories create (EulerSwap pools are proxies to an implementation with neither); the only EVCUtil contract with a fallback, GovernorAccessControlV2, compiles v1.0.2. The review is one combined Enigma Dark report covering ethereum-vault-connector PR #209, evk-periphery PR #445 and euler-earn PR #46, filed under a different name in each repo."
-     }
+      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further. The review is one combined Enigma Dark report covering ethereum-vault-connector PR #209, evk-periphery PR #445 and euler-earn PR #46, filed under a different name in each repo."
+     },
+     "note": "Older versions lack the check added by EVC PR #209: a contract built on EVCUtil refuses EVC authentication while the EVC asks it to validate a signature. The check matters only for a contract the EVC can ask to validate a signature, which needs an isValidSignature function or a fallback. None of the contracts in this report that compile an older EVCUtil has either, and neither do the contracts their factories create. GovernorAccessControlV2, which has a fallback, compiles the audited version."
     }
    ]
   },
   {
    "component": "securitizeFactory",
+   "name": "Securitize vault factory",
    "repo": "euler-xyz/evk-periphery",
    "keys": [
     "securitizeFactory"
@@ -706,8 +728,9 @@
       "commit": "883f048b49179aa64efec8c79341f6f566f92486",
       "date": "2026-10-22",
       "confidence": "high",
-      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further. The PR #209 check matters only for a contract the EVC can call as an ERC-1271 signer: one with an isValidSignature function or a fallback. No deployed contract in these reports that compiles an older EVCUtil has either in its compilation unit, nor do the contracts their factories create (EulerSwap pools are proxies to an implementation with neither); the only EVCUtil contract with a fallback, GovernorAccessControlV2, compiles v1.0.2. The review is one combined Enigma Dark report covering ethereum-vault-connector PR #209, evk-periphery PR #445 and euler-earn PR #46, filed under a different name in each repo."
-     }
+      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further. The review is one combined Enigma Dark report covering ethereum-vault-connector PR #209, evk-periphery PR #445 and euler-earn PR #46, filed under a different name in each repo."
+     },
+     "note": "Older versions lack the check added by EVC PR #209: a contract built on EVCUtil refuses EVC authentication while the EVC asks it to validate a signature. The check matters only for a contract the EVC can ask to validate a signature, which needs an isValidSignature function or a fallback. None of the contracts in this report that compile an older EVCUtil has either, and neither do the contracts their factories create. GovernorAccessControlV2, which has a fallback, compiles the audited version."
     },
     {
      "repo": "euler-xyz/euler-earn",
@@ -724,13 +747,15 @@
       "commit": "7e8a139663d6c2738e54f4267e069f9f5c296212",
       "date": "2026-10-26",
       "confidence": "high",
-      "derivation": "The contract compiles SafeERC20Permit2Lib.sol from its euler-earn submodule. Baseline = the final 7e8a1396 of Enigma Dark's fix review of PR #46 (e42a2a45...7e8a1396): the Permit2 allowance check and ERC20 fallback (0a285ce, c01d5e5). No findings in euler-earn, so baseline = final; the file is identical in the PR #46 merge 246bcba and on master. Between Pashov's fixes-review commit b95775f4 and the review base e42a2a45 the file changed only in two OpenZeppelin import paths (bece717). Submodules before PR #46 predate this baseline. PR #46 changes availability only: without it, safeTransferFromWithPermit2 reverts when the owner's Permit2 allowance is valid but their ERC20 allowance to Permit2 does not cover the amount, even if they approved the spender directly; no tokens move in that case. The review is one combined Enigma Dark report covering ethereum-vault-connector PR #209, evk-periphery PR #445 and euler-earn PR #46, filed under a different name in each repo."
-     }
+      "derivation": "The contract compiles SafeERC20Permit2Lib.sol from its euler-earn submodule. Baseline = the final 7e8a1396 of Enigma Dark's fix review of PR #46 (e42a2a45...7e8a1396): the Permit2 allowance check and ERC20 fallback (0a285ce, c01d5e5). No findings in euler-earn, so baseline = final; the file is identical in the PR #46 merge 246bcba and on master. Between Pashov's fixes-review commit b95775f4 and the review base e42a2a45 the file changed only in two OpenZeppelin import paths (bece717). Submodules before PR #46 predate this baseline. The review is one combined Enigma Dark report covering ethereum-vault-connector PR #209, evk-periphery PR #445 and euler-earn PR #46, filed under a different name in each repo."
+     },
+     "note": "Older versions lack PR #46, which affects availability only. Without it, a transfer reverts when the owner's Permit2 allowance is valid but their token allowance to Permit2 does not cover the amount, even if they approved the contract directly. No tokens move in that case."
     }
    ]
   },
   {
    "component": "securitizeFactoryV2",
+   "name": "Securitize vault factory (V2)",
    "repo": "euler-xyz/evk-periphery",
    "keys": [
     "securitizeFactoryV2"
@@ -769,8 +794,9 @@
       "commit": "883f048b49179aa64efec8c79341f6f566f92486",
       "date": "2026-10-22",
       "confidence": "high",
-      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further. The PR #209 check matters only for a contract the EVC can call as an ERC-1271 signer: one with an isValidSignature function or a fallback. No deployed contract in these reports that compiles an older EVCUtil has either in its compilation unit, nor do the contracts their factories create (EulerSwap pools are proxies to an implementation with neither); the only EVCUtil contract with a fallback, GovernorAccessControlV2, compiles v1.0.2. The review is one combined Enigma Dark report covering ethereum-vault-connector PR #209, evk-periphery PR #445 and euler-earn PR #46, filed under a different name in each repo."
-     }
+      "derivation": "The contract compiles EVCUtil.sol from its EVC submodule. Baseline = EVCUtil at 883f048b (EVC v1.0.2; identical in the PR #209 merge 4e5b8c56 and on master), the final of Enigma Dark's fix review of PR #209 (e66a518e...883f048b): _msgSender reverts when the EVC calls isValidSignature. Its one finding is a docs/specs.md wording fix, so baseline = final. EVCUtil at the review base e66a518e equals v1.0.1 (a7d3c29e), whose additions the audits of the contracts that depend on it cover: the EulerEarn reviews (Sigma Prime, Certora and Pashov 2025) cover code calling _msgSenderOnlyEVCAccountOwner, and the Securitize, SwapVerifier, hook and ERC20Synth reviews cover code calling _haveCommonOwner and _getAddressPrefix. Submodules whose EVCUtil equals v1.0.1 (a7d3c29e; identical in 4538f073 and b9d557a8) predate it by exactly PR #209; earlier ones predate it further. The review is one combined Enigma Dark report covering ethereum-vault-connector PR #209, evk-periphery PR #445 and euler-earn PR #46, filed under a different name in each repo."
+     },
+     "note": "Older versions lack the check added by EVC PR #209: a contract built on EVCUtil refuses EVC authentication while the EVC asks it to validate a signature. The check matters only for a contract the EVC can ask to validate a signature, which needs an isValidSignature function or a fallback. None of the contracts in this report that compile an older EVCUtil has either, and neither do the contracts their factories create. GovernorAccessControlV2, which has a fallback, compiles the audited version."
     },
     {
      "repo": "euler-xyz/euler-earn",
@@ -787,8 +813,9 @@
       "commit": "7e8a139663d6c2738e54f4267e069f9f5c296212",
       "date": "2026-10-26",
       "confidence": "high",
-      "derivation": "The contract compiles SafeERC20Permit2Lib.sol from its euler-earn submodule. Baseline = the final 7e8a1396 of Enigma Dark's fix review of PR #46 (e42a2a45...7e8a1396): the Permit2 allowance check and ERC20 fallback (0a285ce, c01d5e5). No findings in euler-earn, so baseline = final; the file is identical in the PR #46 merge 246bcba and on master. Between Pashov's fixes-review commit b95775f4 and the review base e42a2a45 the file changed only in two OpenZeppelin import paths (bece717). Submodules before PR #46 predate this baseline. PR #46 changes availability only: without it, safeTransferFromWithPermit2 reverts when the owner's Permit2 allowance is valid but their ERC20 allowance to Permit2 does not cover the amount, even if they approved the spender directly; no tokens move in that case. The review is one combined Enigma Dark report covering ethereum-vault-connector PR #209, evk-periphery PR #445 and euler-earn PR #46, filed under a different name in each repo."
-     }
+      "derivation": "The contract compiles SafeERC20Permit2Lib.sol from its euler-earn submodule. Baseline = the final 7e8a1396 of Enigma Dark's fix review of PR #46 (e42a2a45...7e8a1396): the Permit2 allowance check and ERC20 fallback (0a285ce, c01d5e5). No findings in euler-earn, so baseline = final; the file is identical in the PR #46 merge 246bcba and on master. Between Pashov's fixes-review commit b95775f4 and the review base e42a2a45 the file changed only in two OpenZeppelin import paths (bece717). Submodules before PR #46 predate this baseline. The review is one combined Enigma Dark report covering ethereum-vault-connector PR #209, evk-periphery PR #445 and euler-earn PR #46, filed under a different name in each repo."
+     },
+     "note": "Older versions lack PR #46, which affects availability only. Without it, a transfer reverts when the owner's Permit2 allowance is valid but their token allowance to Permit2 does not cover the amount, even if they approved the contract directly. No tokens move in that case."
     }
    ]
   }
