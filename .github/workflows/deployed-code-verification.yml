@@ -16,7 +16,7 @@ jobs:
         with:
           repository: euler-xyz/euler-verifier
           # Engine pinned by commit SHA; bump deliberately via PR.
-          ref: 399267df26c2b5df81093dc1ede9c60b9d876100
+          ref: a45acd6ae2b29f31f750ed4c8c5ba0f01464335b
           path: .verifier
 
       - uses: pnpm/action-setup@v4
@@ -57,6 +57,8 @@ jobs:
         if: steps.changed.outputs.chains != ''
         env:
           CHAINS: ${{ steps.changed.outputs.chains }}
+          # viem's only TAC endpoint (rpc.ankr.com/tac) requires an API key; drop this once a viem release has a keyless one.
+          DEPLOYMENT_RPC_URL_239: https://rpc.tac.build
         run: |
           set -e
           for c in ${CHAINS//,/ }; do
