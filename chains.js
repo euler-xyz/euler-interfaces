@@ -154,6 +154,16 @@ let chains = [
     safeAddressPrefix: 'matic',
     status: 'unlisted',
   },
+
+  {
+    chainId: 5042,
+    name: 'arc',
+    explorerUrl: 'https://arc.etherscan.io',
+    verifier: { type: 'etherscan' },
+    safeBaseUrl: 'https://app.safe.global',
+    safeAddressPrefix: 'arc',
+    status: 'staging',
+  },
 ];
 
 
