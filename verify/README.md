@@ -12,6 +12,7 @@ Each report shows whether the code deployed on a chain is the code built from a 
 | [Sonic](146.md) | 146 | 21 of 21 |
 | [TAC](239.md) | 239 | 21 of 21 |
 | [HyperEVM](999.md) | 999 | 19 of 19 |
+| [Arc](5042.md) | 5042 | 13 of 13 |
 | [Base](8453.md) | 8453 | 22 of 22 |
 | [Plasma](9745.md) | 9745 | 22 of 22 |
 | [Arbitrum One](42161.md) | 42161 | 22 of 22 |
