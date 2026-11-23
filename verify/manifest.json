@@ -3104,6 +3104,267 @@
    "waiver": null
   }
  },
+ "5042": {
+  "EUL": {
+   "commit": "63bd77f7f09f47b9df1e3ce0f30a87eac90c6fe3",
+   "contractName": "ERC20BurnableMintable",
+   "evidence": {
+    "address": "0x2082115B97D179Eb935Ba3569f9BAA95498EC716",
+    "codeSize": 7768,
+    "origin": "candidates-from:euler-xyz/evk-periphery@63bd77f7",
+    "strippedSha256": "0b021e3f1f7f0d3d62c9b7c3c0820ebd29075123385c09b27e57327a09486e1b"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "balanceTracker": {
+   "commit": "b1b55bf824b48f1ea844a1d4b5942231b111f0b2",
+   "contractName": "TrackingRewardStreams",
+   "evidence": {
+    "address": "0x11a52D84464CB1D4B2301235003F096a638C1f7b",
+    "codeSize": 12105,
+    "origin": "candidates-from:euler-xyz/evk-periphery@63bd77f7",
+    "strippedSha256": "c9c45831b0c408a55f07047ea9ed42d9b914a3c26eb845be8d01b89023a281f0",
+    "submoduleOverrides": [
+     {
+      "path": "lib/openzeppelin-contracts",
+      "ref": "69c8def5f222ff96f2b5beff05dfba996368aa79"
+     }
+    ]
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/reward-streams",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultFactory": {
+   "commit": "a86e7302839ecf3e1608a3cc2eed4ee04a25f114",
+   "contractName": "GenericFactory",
+   "evidence": {
+    "address": "0x37079FE02d6Ae8926C50CA2712144f817Df91747",
+    "codeSize": 5631,
+    "origin": "candidates-from:euler-xyz/evk-periphery@63bd77f7",
+    "strippedSha256": "3971bde2116cbb49dd941ad5f892a32aea759ea73ac4aa6e1e680e356c517e4e"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eVaultImplementation": {
+   "commit": "a86e7302839ecf3e1608a3cc2eed4ee04a25f114",
+   "contractName": "EVault",
+   "evidence": {
+    "address": "0xbfD86C70895BaBF1bAFF196d10a0797Be7Ff0a8A",
+    "codeSize": 23147,
+    "origin": "candidates-from:euler-xyz/evk-periphery@63bd77f7",
+    "strippedSha256": "8c0012726d857229772babd3ecfc138d6084183ee5d5e133d50e80f22fc799d9"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnFactory": {
+   "commit": "246bcbacaee9062cf2ac0c7480368fe8e1a636a1",
+   "contractName": "EulerEarnFactory",
+   "evidence": {
+    "address": "0x49A462C31D19F97E1346aa7240F10dD63598b299",
+    "codeSize": 24522,
+    "origin": "candidates-from:euler-xyz/evk-periphery@63bd77f7",
+    "strippedSha256": "7962bd3b51f6c2534b85059556ee6e1481fb4db91c7a685195542d8aabf42419",
+    "submoduleOverrides": [
+     {
+      "path": "lib/openzeppelin-contracts",
+      "ref": "69c8def5f222ff96f2b5beff05dfba996368aa79"
+     }
+    ]
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 100,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "eulerEarnPublicAllocator": {
+   "commit": "246bcbacaee9062cf2ac0c7480368fe8e1a636a1",
+   "contractName": "PublicAllocator",
+   "evidence": {
+    "address": "0xe34a5deAE5b7799c02eb8Ac74dA0837eE682897a",
+    "codeSize": 5158,
+    "origin": "candidates-from:euler-xyz/evk-periphery@63bd77f7",
+    "strippedSha256": "ec1b6592609c1b0246ee5c352ea6123313e513acf75be196cbeb1a26ee4cfbf2"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 100,
+    "solc": "0.8.26"
+   },
+   "repo": "euler-xyz/euler-earn",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "evc": {
+   "commit": "4e5b8c56a13809165b8b4b3f01ac2f93f7c0ecb5",
+   "contractName": "EthereumVaultConnector",
+   "evidence": {
+    "address": "0xf721258d9De993147B22ef7802b42C48Dd707349",
+    "codeSize": 22050,
+    "origin": "candidates-from:euler-xyz/evk-periphery@63bd77f7",
+    "strippedSha256": "b12f6d72b8c5547a8a77595732e64e7b3e7f432357252ce4b13015605877c936"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/ethereum-vault-connector",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "governorAccessControlEmergencyFactoryV2": {
+   "commit": "63bd77f7f09f47b9df1e3ce0f30a87eac90c6fe3",
+   "contractName": "GovernorAccessControlEmergencyFactoryV2",
+   "evidence": {
+    "address": "0xa05ad61af647C821f45F8b5FBDe277fd66FaF4D1",
+    "codeSize": 24146,
+    "origin": "candidates-from:euler-xyz/evk-periphery@63bd77f7",
+    "strippedSha256": "a0de30b238273a7529403b151a6180424fec3d84bea93999a4aa3059fb461de5"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 10000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "oracleRouterFactory": {
+   "commit": "63bd77f7f09f47b9df1e3ce0f30a87eac90c6fe3",
+   "contractName": "EulerRouterFactory",
+   "evidence": {
+    "address": "0x17076f5555EEB28Dda2c03025bC8Bdd21906CD89",
+    "codeSize": 7074,
+    "origin": "candidates-from:euler-xyz/evk-periphery@63bd77f7",
+    "strippedSha256": "891c39d1e7b03ff85f7a3f72b21ba7caa8922b47d0821e3b6f0a10a537e270fa"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "protocolConfig": {
+   "commit": "a86e7302839ecf3e1608a3cc2eed4ee04a25f114",
+   "contractName": "ProtocolConfig",
+   "evidence": {
+    "address": "0x6a3d32b6e290C7064B586401dF952005F93C07d2",
+    "codeSize": 3953,
+    "origin": "candidates-from:euler-xyz/evk-periphery@63bd77f7",
+    "strippedSha256": "844a4ed8293ed243d58f7df3514f8aec50a39523b3ef733451bea057d68bd04d"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "rEUL": {
+   "commit": "63bd77f7f09f47b9df1e3ce0f30a87eac90c6fe3",
+   "contractName": "RewardToken",
+   "evidence": {
+    "address": "0xaE967dDa19b40a887d71486835497274998439F7",
+    "codeSize": 10983,
+    "origin": "candidates-from:euler-xyz/evk-periphery@63bd77f7",
+    "strippedSha256": "495a7c8115e61a1c67d990ff6bab3495b90a7b8c889e0da9409ce2b94e0bfb05"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "sequenceRegistry": {
+   "commit": "a86e7302839ecf3e1608a3cc2eed4ee04a25f114",
+   "contractName": "SequenceRegistry",
+   "evidence": {
+    "address": "0x48c379b2335d0032D971307861f7B9f99c7E6223",
+    "codeSize": 867,
+    "origin": "candidates-from:euler-xyz/evk-periphery@63bd77f7",
+    "strippedSha256": "83359e0027ead6632fc814808fd8c8dfaa4e1538638a28047f85c043c76e3e85"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/euler-vault-kit",
+   "verified": "bytecode",
+   "waiver": null
+  },
+  "swapVerifier": {
+   "commit": "63bd77f7f09f47b9df1e3ce0f30a87eac90c6fe3",
+   "contractName": "SwapVerifier",
+   "evidence": {
+    "address": "0xDf5DC11b49c7d713c5EdC76e08B16AD299da853A",
+    "codeSize": 5877,
+    "origin": "candidates-from:euler-xyz/evk-periphery@63bd77f7",
+    "strippedSha256": "2ff33956883ea0a08b7779d51a1dc21b0c4d31a0059fc84fe3b1d2477d5dca72"
+   },
+   "profile": {
+    "context": "evk-periphery",
+    "evm_version": "cancun",
+    "optimizer_runs": 20000,
+    "solc": "0.8.24"
+   },
+   "repo": "euler-xyz/evk-periphery",
+   "verified": "bytecode",
+   "waiver": null
+  }
+ },
  "56": {
   "EUL": {
    "commit": "392c7bd035c6fa1f50388fe4b3f3f3cd04df09d8",
