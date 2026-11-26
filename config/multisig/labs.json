@@ -1,11 +1,8 @@
 {
     "threshold": 2,
     "signers": [
-        "0x6901bECf23cf23C3866CaE6D8612f04358a4fc9a",
-        "0x48f40fc9ac1c72e1ee36eff6521da8068fccb51e",
-        "0x6dfbE28bbAAa8D52d8826c0b402898E578B1E58e",
-        "0x70759C643C4e60d87A50F96A9813a18EE4b2672b",
-        "0x42360aA7A906aCb052EfE82fcbC2180eB09aeF60",
-        "0x91Ef12ab10909a0f39311223C3dB5a47d03d90dE"
+        "0x04bF58A67932659d2C865049db6aEE58c747cCa5",
+        "0x297a228C14121A7B1F802f34394dA577A174E8da",
+        "techTeam"
     ]
 }
