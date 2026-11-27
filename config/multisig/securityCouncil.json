@@ -1,8 +1,8 @@
 {
     "threshold": 2,
     "signers": [
-        "labs",
-        "securityPartnerA",
-        "securityPartnerB"
+        "0x0a95744cC224622B7098Cf53B97d3e884C922d4c",
+        "0xF57F8a84AEad2ec707a6217e21C3505B51212690",
+        "techTeam"
     ]
 }
